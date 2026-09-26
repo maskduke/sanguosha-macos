@@ -1,0 +1,577 @@
+UpdateCTestConfiguration  from :/Users/haoranliu/Projects/sanguosha/DartConfiguration.tcl
+Test project /Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug
+Constructing a list of tests
+Done constructing a list of tests
+Updating test list for fixtures
+Added 0 tests to meet fixture requirements
+Checking test dependency graph...
+Checking test dependency graph end
+test 12
+    Start 12: ai.dual_general
+
+12: Test command: /Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug/test_ai_decision
+12: Working Directory: /Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug
+12: Environment variables: 
+12:  QS_DATA_DIR=/private/tmp/qs-ai-decision-test
+12:  QT_QPA_PLATFORM=offscreen
+12: Test timeout computed to be: 120
+12: ********* Start testing of AIDecisionTest *********
+12: Config: Using QtTest library 6.11.1, Qt 6.11.1 (arm64-little_endian-lp64 shared (dynamic) release build; by Apple LLVM 21.0.0 (clang-2100.0.123.102)), macos 26.6.2
+12: PASS   : AIDecisionTest::initTestCase()
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-0) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-0) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-0)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-1) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-1) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-1)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-2) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-2) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-2)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-3) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-3) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-3)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-4) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-4) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-4)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-5) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-5) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-5)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-6) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-6) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-6)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-7) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-7) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-7)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-8) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-8) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-8)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-9) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-9) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-9)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-10) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-10) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-10)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-11) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-11) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-11)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-12) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-12) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-12)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-13) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-13) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-13)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-14) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-14) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-14)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-15) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-15) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-15)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-16) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-16) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-16)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-17) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-17) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-17)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-18) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-18) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-18)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-19) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-19) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-19)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-20) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-20) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-20)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-21) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-21) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-21)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-22) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-22) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-22)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-23) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-23) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-23)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-24) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-24) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-24)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-25) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-25) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-25)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-26) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-26) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-26)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-27) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-27) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-27)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-28) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-28) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-28)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-29) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-29) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-29)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-30) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-30) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-30)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-31) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-31) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-31)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-32) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-32) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-32)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-33) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-33) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-33)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-34) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-34) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-34)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-35) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-35) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-35)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-36) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-36) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-36)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-37) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-37) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-37)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-38) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-38) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-38)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-39) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-39) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-39)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-40) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-40) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-40)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-41) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-41) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-41)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-42) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-42) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-42)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-43) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-43) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-43)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-44) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-44) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-44)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-45) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-45) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-45)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-46) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-46) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-46)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-47) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-47) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-47)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-48) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-48) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-48)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-49) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-49) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-49)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-50) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-50) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-50)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-51) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-51) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-51)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-52) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-52) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-52)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-53) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-53) AI_CHOSE "sunshangxiang" "machao" "crossbow"
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-53)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-54) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-54) AI_CHOSE "sunshangxiang" "machao" "crossbow"
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-54)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-55) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-55) AI_CHOSE "sunshangxiang" "machao" "double_sword"
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-55)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-56) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-56) AI_CHOSE "sunshangxiang" "machao" "qinggang_sword"
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-56)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-57) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-57) AI_CHOSE "sunshangxiang" "machao" "blade"
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-57)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-58) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-58) AI_CHOSE "sunshangxiang" "machao" "spear"
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-58)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-59) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-59) AI_CHOSE "sunshangxiang" "machao" "axe"
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-59)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-60) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-60) AI_CHOSE "sunshangxiang" "machao" "halberd"
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-60)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-61) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-61) AI_CHOSE "sunshangxiang" "machao" "kylin_bow"
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-61)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-62) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-62) AI_CHOSE "sunshangxiang" "machao" "eight_diagram"
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-62)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-63) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-63) AI_CHOSE "sunshangxiang" "machao" "eight_diagram"
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-63)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-64) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-64) AI_CHOSE "sunshangxiang" "machao" "jueying"
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-64)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-65) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-65) AI_CHOSE "sunshangxiang" "machao" "dilu"
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-65)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-66) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-66) AI_CHOSE "sunshangxiang" "machao" "zhuahuangfeidian"
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-66)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-67) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-67) AI_CHOSE "sunshangxiang" "machao" "chitu"
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-67)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-68) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-68) AI_CHOSE "sunshangxiang" "machao" "dayuan"
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-68)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-69) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-69) AI_CHOSE "sunshangxiang" "machao" "zixing"
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-69)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-70) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-70) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-70)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-71) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-71) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-71)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-72) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-72) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-72)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-73) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-73) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-73)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-74) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-74) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-74)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-75) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-75) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-75)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-76) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-76) AI_CHOSE "sunshangxiang" "machao" "archery_attack"
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-76)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-77) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-77) AI_CHOSE "sunshangxiang" "machao" "duel"
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-77)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-78) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-78) AI_CHOSE "sunshangxiang" "machao" "duel"
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-78)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-79) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-79) AI_CHOSE "sunshangxiang" "machao" "duel"
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-79)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-80) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-80) AI_CHOSE "sunshangxiang" "machao" "ex_nihilo"
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-80)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-81) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-81) AI_CHOSE "sunshangxiang" "machao" "ex_nihilo"
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-81)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-82) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-82) AI_CHOSE "sunshangxiang" "machao" "ex_nihilo"
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-82)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-83) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-83) AI_CHOSE "sunshangxiang" "machao" "ex_nihilo"
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-83)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-84) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-84) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-84)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-85) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-85) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-85)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-86) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-86) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-86)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-87) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-87) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-87)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-88) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-88) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-88)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-89) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-89) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-89)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-90) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-90) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-90)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-91) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-91) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-91)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-92) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-92) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-92)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-93) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-93) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-93)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-94) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-94) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-94)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-95) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-95) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-95)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-96) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-96) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-96)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-97) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-97) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-97)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-98) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-98) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-98)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-99) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-99) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-99)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-100) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-100) AI_CHOSE "sunshangxiang" "machao" "indulgence"
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-100)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-101) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-101) AI_CHOSE "sunshangxiang" "machao" "indulgence"
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-101)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-102) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-102) AI_CHOSE "sunshangxiang" "machao" "indulgence"
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-102)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-103) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-103) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-103)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-104) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-104) AI_CHOSE "sunshangxiang" "machao" "ice_sword"
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-104)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-105) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-105) AI_CHOSE "sunshangxiang" "machao" "renwang_shield"
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-105)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-106) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-106) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-106)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-107) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-107) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-107)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-108) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-108) AI_CHOSE "sunshangxiang" "machao" "guding_blade"
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-108)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-109) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-109) AI_CHOSE "sunshangxiang" "machao" "vine"
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-109)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-110) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-110) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-110)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-111) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-111) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-111)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-112) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-112) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-112)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-113) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-113) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-113)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-114) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-114) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-114)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-115) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-115) AI_CHOSE "sunshangxiang" "machao" "thunder_slash"
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-115)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-116) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-116) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-116)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-117) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-117) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-117)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-118) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-118) AI_CHOSE "sunshangxiang" "machao" "iron_chain"
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-118)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-119) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-119) AI_CHOSE "sunshangxiang" "machao" "iron_chain"
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-119)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-120) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-120) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-120)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-121) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-121) AI_CHOSE "sunshangxiang" "machao" "silver_lion"
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-121)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-122) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-122) AI_CHOSE "sunshangxiang" "machao" "vine"
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-122)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-123) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-123) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-123)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-124) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-124) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-124)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-125) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-125) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-125)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-126) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-126) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-126)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-127) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-127) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-127)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-128) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-128) AI_CHOSE "sunshangxiang" "machao" "thunder_slash"
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-128)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-129) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-129) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-129)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-130) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-130) AI_CHOSE "sunshangxiang" "machao" "iron_chain"
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-130)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-131) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-131) AI_CHOSE "sunshangxiang" "machao" "iron_chain"
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-131)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-132) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-132) AI_CHOSE "sunshangxiang" "machao" "iron_chain"
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-132)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-133) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-133) AI_CHOSE "sunshangxiang" "machao" "iron_chain"
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-133)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-134) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-134) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-134)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-135) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-135) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-135)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-136) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-136) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-136)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-137) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-137) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-137)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-138) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-138) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-138)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-139) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-139) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-139)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-140) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-140) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-140)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-141) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-141) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-141)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-142) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-142) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-142)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-143) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-143) AI_CHOSE "sunshangxiang" "machao" "fire_slash"
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-143)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-144) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-144) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-144)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-145) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-145) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-145)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-146) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-146) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-146)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-147) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-147) AI_CHOSE "sunshangxiang" "machao" "fan"
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-147)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-148) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-148) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-148)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-149) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-149) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-149)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-150) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-150) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-150)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-151) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-151) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-151)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-152) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-152) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-152)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-153) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-153) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-153)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-154) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-154) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-154)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-155) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-155) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-155)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-156) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-156) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-156)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-157) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-157) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-157)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-158) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-158) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-158)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-159) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-159) AI_CHOSE "sunshangxiang" "machao" "hualiu"
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-159)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-160) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-160) AI_CHOSE "sunshangxiang" "machao" "sp_moonspear"
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-160)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-161) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-161) AI_CHOSE "sunshangxiang" "machao" "moon_spear"
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-161)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-162) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-162) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-162)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-163) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-163) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-163)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-164) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-164) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-164)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-165) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-165) AI_CHOSE "sunshangxiang" "machao" "yitian_sword"
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-165)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-166) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-166) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-166)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-167) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-167) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-167)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-168) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-168) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-168)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-169) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-169) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-169)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-170) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-170) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-170)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-171) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-171) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-171)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-172) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-172) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-172)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-173) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-173) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-173)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-174) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-174) AI_CHOSE "sunshangxiang" "machao" ""
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-174)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-175) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-175) AI_CHOSE "sunshangxiang" "machao" "monkey"
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-175)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-176) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-176) AI_CHOSE "sunshangxiang" "machao" "gale-shell"
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-176)
+12: QWARN  : AIDecisionTest::fixedHandSweep(extra-card-177) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::fixedHandSweep(extra-card-177) AI_CHOSE "sunshangxiang" "machao" "yx_sword"
+12: PASS   : AIDecisionTest::fixedHandSweep(extra-card-177)
+12: QWARN  : AIDecisionTest::playableHand(sunshangxiang) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::playableHand(sunshangxiang) AI_CHOSE "sunshangxiang" "" "slash"
+12: PASS   : AIDecisionTest::playableHand(sunshangxiang)
+12: QWARN  : AIDecisionTest::playableHand(machao) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::playableHand(machao) AI_CHOSE "machao" "" "slash"
+12: PASS   : AIDecisionTest::playableHand(machao)
+12: QWARN  : AIDecisionTest::playableHand(sunshangxiang-machao) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::playableHand(sunshangxiang-machao) AI_CHOSE "sunshangxiang" "machao" "slash"
+12: PASS   : AIDecisionTest::playableHand(sunshangxiang-machao)
+12: QWARN  : AIDecisionTest::playableHand(machao-sunshangxiang) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+12: QINFO  : AIDecisionTest::playableHand(machao-sunshangxiang) AI_CHOSE "machao" "sunshangxiang" "slash"
+12: PASS   : AIDecisionTest::playableHand(machao-sunshangxiang)
+12: PASS   : AIDecisionTest::cleanupTestCase()
+12: Totals: 184 passed, 0 failed, 0 skipped, 0 blacklisted, 25749ms
+12: ********* Finished testing of AIDecisionTest *********
+1/1 Test #12: ai.dual_general ..................   Passed   25.84 sec
+
+The following tests passed:
+	ai.dual_general
+
+100% tests passed, 0 tests failed out of 1
+
+Total Test time (real) =  25.84 sec

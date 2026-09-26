@@ -19,6 +19,7 @@ struct LogMessage;
 
 class Room : public QThread{
     Q_OBJECT
+    friend class AIDecisionTest; // Deterministic AI fixtures, without starting a game thread.
 
 public:
     friend class RoomThread;
