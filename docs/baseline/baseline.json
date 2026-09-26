@@ -1,0 +1,23 @@
+{
+  "schema": 1,
+  "content_version": "20120715",
+  "content_name": "涅槃版",
+  "source_repository": "https://github.com/yedezhanghao/QSanguosha",
+  "source_commit": "323f112658b5ea0c081b02e240afb92af7a379c1",
+  "source_tree": "7507d501f70dcef8ac17d8a21b531ba05473d54f",
+  "archive_sha256": "ce8cba0f55815682d74658943ed528cd12539a5b74cb5341b0613a7c20b1b6e0",
+  "resource_matches": 2372,
+  "resource_mismatches": 0,
+  "font_matches_archived_font": true,
+  "font_sha256": "373c0b1e267077567d0a0ff659969ff871d8b0231e8dfbb2a785bbc8918e029f",
+  "evidence_grade": "B",
+  "engine_binary_equivalence": "NOT_VERIFIED",
+  "runtime_feature_registration": "NOT_RUN",
+  "baseline_gate": "IN_PROGRESS",
+  "local_only_explanations": {
+    "QSanguosha": "compiled x86_64 executable",
+    "sanguosha.qm": "compiled translation; use original for initial visual comparison",
+    "font/FONT.TTF": "byte-identical to FONT.TTF inside source font/font.7z",
+    "**/.DS_Store": "Finder metadata; omitted from new assets"
+  }
+}

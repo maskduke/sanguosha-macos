@@ -1,0 +1,28 @@
+test_detects_modified_missing_and_added_entries (test_baseline.BaselineTests) ... ok
+test_detects_permission_change (test_baseline.BaselineTests) ... ok
+test_preserves_internal_symlink_without_hashing_target_twice (test_baseline.BaselineTests) ... ok
+test_records_content_empty_directory_and_executable_mode (test_baseline.BaselineTests) ... ok
+test_refuses_overwriting_existing_destination (test_baseline.BaselineTests) ... ok
+test_refuses_snapshot_inside_source (test_baseline.BaselineTests) ... ok
+test_rejects_links_outside_bundle_before_copying (test_baseline.BaselineTests) ... ok
+test_same_content_in_different_location_has_same_manifest (test_baseline.BaselineTests) ... ok
+test_source_match (unittest.loader._FailedTest) ... ERROR
+
+======================================================================
+ERROR: test_source_match (unittest.loader._FailedTest)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_source_match
+Traceback (most recent call last):
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/unittest/loader.py", line 436, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/unittest/loader.py", line 377, in _get_module_from_name
+    __import__(name)
+  File "/Users/haoranliu/Projects/sanguosha/tests/test_source_match.py", line 7, in <module>
+    from tools.source_match import compare_resources, parse_git_tree
+ModuleNotFoundError: No module named 'tools.source_match'
+
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.017s
+
+FAILED (errors=1)
