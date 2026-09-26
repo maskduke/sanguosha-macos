@@ -20,7 +20,9 @@
 #include <QLabel>
 #include <QRadioButton>
 #include <QApplication>
-#include <QHttp>
+#include <QNetworkAccessManager>
+#include <QNetworkReply>
+#include <QNetworkRequest>
 #include <QAction>
 
 static QLayout *HLay(QWidget *left, QWidget *right){
@@ -92,7 +94,7 @@ QWidget *ServerDialog::createPackageTab(){
     extension_group->setExclusive(false);
 
     QStringList extensions = Sanguosha->getExtensions();
-    QSet<QString> ban_packages = Config.BanPackages.toSet();
+    QSet<QString> ban_packages = qToSet(Config.BanPackages);
 
     QGroupBox *box1 = new QGroupBox(tr("General package"));
     QGroupBox *box2 = new QGroupBox(tr("Card package"));
@@ -365,13 +367,13 @@ BanlistDialog::BanlistDialog(QWidget *parent, bool view)
     list = new QListWidget;
     list->setObjectName("Pairs");
     this->list = list;
-    foreach(QString banned, BanPair::getAllBanSet().toList()){
+    foreach(QString banned, BanPair::getAllBanSet().values()){
         addGeneral(banned);
     }
-    foreach(QString banned, BanPair::getSecondBanSet().toList()){
+    foreach(QString banned, BanPair::getSecondBanSet().values()){
         add2ndGeneral(banned);
     }
-    foreach(BanPair pair, BanPair::getBanPairSet().toList()){
+    foreach(BanPair pair, BanPair::getBanPairSet().values()){
         addPair(pair.first, pair.second);
     }
 
@@ -475,7 +477,7 @@ void BanlistDialog::save(){
         banset << list->item(i)->data(Qt::UserRole).toString();
     }
 
-    QStringList banlist = banset.toList();
+    QStringList banlist = banset.values();
     Config.setValue(QString("Banlist/%1").arg(ban_list.at(item)), QVariant::fromValue(banlist));
 }
 
@@ -691,15 +693,17 @@ QLayout *ServerDialog::createButtonLayout(){
 void ServerDialog::onDetectButtonClicked(){
     QString host = "www.net.cn";
     QString path = "/static/customercare/yourIP.asp";
-    QHttp *http = new QHttp(this);
-    http->setHost(host);
-
-    connect(http, SIGNAL(done(bool)), this, SLOT(onHttpDone(bool)));
-    http->get(path);
+    auto *manager = new QNetworkAccessManager(this);
+    auto *reply = manager->get(QNetworkRequest(QUrl("http://" + host + path)));
+    connect(reply, SIGNAL(finished()), this, SLOT(onHttpDone()));
+    connect(reply, &QObject::destroyed, manager, &QObject::deleteLater);
 }
 
-void ServerDialog::onHttpDone(bool error){
-    QHttp *http = qobject_cast<QHttp *>(sender());
+void ServerDialog::onHttpDone(){
+    auto *http = qobject_cast<QNetworkReply *>(sender());
+    if (!http) return;
+    const bool error = http->error() != QNetworkReply::NoError;
+    http->deleteLater();
 
     if(error){
         QMessageBox::warning(this, tr("Warning"), http->errorString());
@@ -727,7 +731,7 @@ Select3v3GeneralDialog::Select3v3GeneralDialog(QDialog *parent)
 {
     setWindowTitle(tr("Select generals in extend 3v3 mode"));
 
-    ex_generals = Config.value("3v3/ExtensionGenerals").toStringList().toSet();
+    ex_generals = qToSet(Config.value("3v3/ExtensionGenerals").toStringList());
 
     QVBoxLayout *layout = new QVBoxLayout;
 
@@ -843,7 +847,7 @@ void Select3v3GeneralDialog::save3v3Generals(){
         }
     }
 
-    QStringList list = ex_generals.toList();
+    QStringList list = ex_generals.values();
     QVariant data = QVariant::fromValue(list);
     Config.setValue("3v3/ExtensionGenerals", data);
 }
@@ -934,7 +938,7 @@ bool ServerDialog::config(){
         }
     }
 
-    Config.BanPackages = ban_packages.toList();
+    Config.BanPackages = ban_packages.values();
     Config.setValue("BanPackages", Config.BanPackages);
 
     if(Config.ContestMode){
@@ -945,9 +949,19 @@ bool ServerDialog::config(){
     return true;
 }
 
+static QSet<Server *> liveServers;
+Server::~Server(){ liveServers.remove(this); }
+bool Server::shutdownAll(){
+    for(Server *server:liveServers)
+        for(Room *room:server->findChildren<Room *>())
+            if(!room->shutdown()) return false;
+    return true;
+}
+
 Server::Server(QObject *parent)
     :QObject(parent)
 {
+    liveServers.insert(this);
     server = new NativeServerSocket;
     server->setParent(this);
 
@@ -969,8 +983,8 @@ void Server::broadcast(const QString &msg){
         room->broadcastInvoke("speak", to_sent);
 }
 
-bool Server::listen(){
-    return server->listen();
+bool Server::listen(bool localOnly){
+    return server->listen(localOnly);
 }
 
 void Server::daemonize(){
@@ -1004,21 +1018,21 @@ void Server::processNewConnection(ClientSocket *socket){
     socket->send("setup " + Sanguosha->getSetupString());
     emit server_message(tr("%1 connected").arg(socket->peerName()));
 
-    connect(socket, SIGNAL(message_got(char*)), this, SLOT(processRequest(char*)));
+    connect(socket, SIGNAL(message_got(QByteArray)), this, SLOT(processRequest(QByteArray)));
 }
 
 static inline QString ConvertFromBase64(const QString &base64){
-    QByteArray data = QByteArray::fromBase64(base64.toAscii());
+    QByteArray data = QByteArray::fromBase64(base64.toLatin1());
     return QString::fromUtf8(data);
 }
 
-void Server::processRequest(char *request){
+void Server::processRequest(QByteArray request){
     ClientSocket *socket = qobject_cast<ClientSocket *>(sender());
-    socket->disconnect(this, SLOT(processRequest(char*)));
+    socket->disconnect(this, SLOT(processRequest(QByteArray)));
 
     QRegExp rx("(signupr?) (.+):(.+)(:.+)?\n");
-    if(!rx.exactMatch(request)){
-        emit server_message(tr("Invalid signup string: %1").arg(request));
+    if(!rx.exactMatch(QString::fromUtf8(request))){
+        emit server_message(tr("Invalid signup string: %1").arg(QString::fromUtf8(request)));
         socket->send("warn INVALID_FORMAT");
         socket->disconnectFromHost();
         return;

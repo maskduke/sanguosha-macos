@@ -1,0 +1,14 @@
+[
+  {
+    "mode": "06_3v3",
+    "exit": 0,
+    "duration_seconds": 22.54,
+    "pass": true
+  },
+  {
+    "mode": "02_1v1",
+    "exit": 0,
+    "duration_seconds": 12.96,
+    "pass": true
+  }
+]

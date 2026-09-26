@@ -60,7 +60,9 @@ lua_State *CreateLuaState(){
 void DoLuaScript(lua_State *L, const char *script){
     int error = luaL_dofile(L, script);
     if(error){
-        QString error_msg = lua_tostring(L, -1);
+        QString error_msg = QString::fromUtf8(lua_tostring(L, -1));
+        qCritical().noquote() << script << error_msg;
+        if(qApp->arguments().contains("--smoke-test")) exit(1);
         QMessageBox::critical(NULL, QObject::tr("Lua script error"), error_msg);
         exit(1);
     }

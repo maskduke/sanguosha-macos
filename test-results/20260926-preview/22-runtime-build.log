@@ -1,0 +1,52 @@
+[0/2] Re-checking globbed directories...
+[1/42] Generating qt_values_wrap.cxx
+[2/42] Automatic MOC for target qs_legacy_protocol
+[3/41] Automatic MOC for target test_lua_runtime
+[4/39] Automatic MOC for target test_original_audio
+[5/37] Automatic MOC for target test_audio_backend
+[6/35] Automatic MOC for target test_qt_values
+[7/34] Automatic MOC for target test_line_framer
+[8/33] Building CXX object CMakeFiles/qs_legacy_protocol.dir/src/core/protocol.cpp.o
+[9/33] Automatic MOC for target test_qt_compat
+[10/32] Automatic MOC and UIC for target qs_legacy_objects
+[11/32] Building CXX object CMakeFiles/qs_legacy_protocol.dir/src/core/jsonutils.cpp.o
+[12/32] Linking CXX static library libqs_legacy_protocol.a
+[13/32] Building CXX object CMakeFiles/test_qt_values.dir/qt_values_wrap.cxx.o
+[14/32] Linking CXX executable test_qt_values
+[15/32] Automatic MOC for target test_legacy_protocol
+[16/31] Building CXX object CMakeFiles/test_line_framer.dir/tests/protocol/test_line_framer.cpp.o
+[17/31] Linking CXX executable test_line_framer
+[18/31] Building CXX object CMakeFiles/test_legacy_protocol.dir/tests/protocol/test_legacy_protocol.cpp.o
+[19/31] Building CXX object CMakeFiles/test_qt_compat.dir/tests/platform/test_qt_compat.cpp.o
+[20/31] Linking CXX executable test_legacy_protocol
+[21/31] Linking CXX executable test_qt_compat
+[22/31] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/dialog/choosegeneraldialog.cpp.o
+In file included from /Users/haoranliu/Projects/sanguosha/src/dialog/choosegeneraldialog.cpp:1:
+In file included from /Users/haoranliu/Projects/sanguosha/src/dialog/choosegeneraldialog.h:6:
+/Users/haoranliu/Projects/sanguosha/src/ui/TimedProgressBar.h:11:77: warning: implicit conversion of NULL constant to 'int' [-Wnull-conversion]
+   11 |     inline TimedProgressBar():m_hasTimer(false), m_autoHide(false), m_timer(NULL), m_step(0), m_max(0), m_val(0)
+      |                                                                            ~^~~~
+      |                                                                             0
+1 warning generated.
+[23/31] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/scenario/miniscenarios.cpp.o
+[24/31] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/core/engine.cpp.o
+[25/31] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/dialog/customassigndialog.cpp.o
+[26/31] Building CXX object CMakeFiles/qs_legacy_objects.dir/qs_legacy_objects_autogen/mocs_compilation.cpp.o
+In file included from /Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug/qs_legacy_objects_autogen/mocs_compilation.cpp:15:
+In file included from /Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug/qs_legacy_objects_autogen/LOXWS6PXLU/moc_choosegeneraldialog.cpp:9:
+In file included from /Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug/qs_legacy_objects_autogen/LOXWS6PXLU/../../../../src/dialog/choosegeneraldialog.h:6:
+/Users/haoranliu/Projects/sanguosha/src/ui/TimedProgressBar.h:11:77: warning: implicit conversion of NULL constant to 'int' [-Wnull-conversion]
+   11 |     inline TimedProgressBar():m_hasTimer(false), m_autoHide(false), m_timer(NULL), m_step(0), m_max(0), m_val(0)
+      |                                                                            ~^~~~
+      |                                                                             0
+1 warning generated.
+[27/31] Automatic MOC for target QSanguosha
+[28/30] Building CXX object CMakeFiles/QSanguosha.dir/src/main.cpp.o
+/Users/haoranliu/Projects/sanguosha/src/main.cpp:36:5: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   36 |     qt_translator.load("qt_zh_CN.qm");
+      |     ^~~~~~~~~~~~~~~~~~
+/Users/haoranliu/Projects/sanguosha/src/main.cpp:37:5: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   37 |     translator.load("sanguosha.qm");
+      |     ^~~~~~~~~~~~~~~
+2 warnings generated.
+[29/30] Linking CXX executable QSanguosha.app/Contents/MacOS/QSanguosha

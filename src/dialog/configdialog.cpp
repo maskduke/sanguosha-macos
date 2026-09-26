@@ -68,7 +68,7 @@ ConfigDialog::~ConfigDialog()
 
 void ConfigDialog::on_browseBgButton_clicked()
 {
-    QString location = QDesktopServices::storageLocation(QDesktopServices::PicturesLocation);
+    QString location = QStandardPaths::writableLocation(QStandardPaths::PicturesLocation);
     QString filename = QFileDialog::getOpenFileName(this,
                                                     tr("Select a background image"),
                                                     location,
@@ -142,7 +142,7 @@ void ConfigDialog::saveConfig()
 
 void ConfigDialog::on_browseBgMusicButton_clicked()
 {
-    QString location = QDesktopServices::storageLocation(QDesktopServices::MusicLocation);
+    QString location = QStandardPaths::writableLocation(QStandardPaths::MusicLocation);
     QString filename = QFileDialog::getOpenFileName(this,
                                                     tr("Select a background music"),
                                                     location,

@@ -22,3 +22,5 @@ add_library(qs_legacy_objects OBJECT EXCLUDE_FROM_ALL ${LEGACY_SOURCES} ${JSON_S
 set_target_properties(qs_legacy_objects PROPERTIES AUTOUIC ON)
 target_include_directories(qs_legacy_objects PRIVATE ${LEGACY_INCLUDES} src/jsoncpp/include include)
 target_link_libraries(qs_legacy_objects PRIVATE qs_lua Qt6::Widgets Qt6::Network Qt6::Sql Qt6::Core5Compat)
+
+target_compile_options(qs_legacy_objects PRIVATE "-include${PROJECT_SOURCE_DIR}/src/platform/qt_compat.h")

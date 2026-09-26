@@ -17,7 +17,7 @@
       "name": "macos-arm64-release",
       "inherits": "macos-arm64-debug",
       "cacheVariables": {
-        "CMAKE_BUILD_TYPE": "Release"
+        "CMAKE_BUILD_TYPE": "RelWithDebInfo"
       }
     },
     {

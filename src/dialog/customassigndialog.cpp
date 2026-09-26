@@ -1,3 +1,4 @@
+#include "platform/paths/paths.h"
 #include "customassigndialog.h"
 #include "miniscenarios.h"
 
@@ -389,7 +390,7 @@ void CustomAssignDialog::exchangePlayersInfo(QListWidgetItem *first, QListWidget
     player_marks[first_name].clear();
     player_marks[first_name] = player_marks[second_name];
     set_nationality[first_name] = set_nationality[second_name];
-    assign_nationality[first_name] = set_nationality[second_name];
+    assign_nationality[first_name] = assign_nationality[second_name];
 
     role_mapping[second_name] = role;
     general_mapping[second_name] = general;
@@ -998,7 +999,7 @@ void CustomAssignDialog::exchangeListItem(){
         int id1 = pile_list->item(first_index)->data(Qt::UserRole).toInt();
         int id2 = pile_list->item(second_index)->data(Qt::UserRole).toInt();
 
-        set_pile.swap(set_pile.indexOf(id1), set_pile.indexOf(id2));
+        set_pile.swapItemsAt(set_pile.indexOf(id1), set_pile.indexOf(id2));
         updatePileInfo();
         pile_list->setCurrentRow(second_index);
     }
@@ -1119,7 +1120,7 @@ void CustomAssignDialog::load()
                                                     tr("Pure text replay file (*.txt)"));
 
 
-    QFile file(filename);
+    QFile file(qs::readOverride(filename));
 
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
         return;
@@ -1209,48 +1210,48 @@ void CustomAssignDialog::load()
             player.insert(keys.at(0),keys.at(1));
         }
 
-        if(player["role"]!= NULL)role_mapping[name] = player["role"];
+        if(player["role"]!= QString())role_mapping[name] = player["role"];
 
         if(player["general"]=="select")free_choose_general[name] = true;
-        else if(player["general"]!=NULL)general_mapping[name]=player["general"];
+        else if(player["general"]!=QString())general_mapping[name]=player["general"];
 
         if(player["general2"]=="select")free_choose_general2[name] = true;
-        else if(player["general2"]!=NULL)general2_mapping[name]=player["general2"];
+        else if(player["general2"]!=QString())general2_mapping[name]=player["general2"];
 
-        if(player["maxhp"]!=NULL){
+        if(player["maxhp"]!=QString()){
             player_maxhp[name] = player["maxhp"].toInt();
             if(player_hp[name]>player_maxhp[name]) player_hp[name] = player_maxhp[name];
         }
-        if(player["hp"]!=NULL)player_hp[name]=player["hp"].toInt();
-        if(player["draw"]!=NULL)player_start_draw[name]=player["draw"].toInt();
+        if(player["hp"]!=QString())player_hp[name]=player["hp"].toInt();
+        if(player["draw"]!=QString())player_start_draw[name]=player["draw"].toInt();
         else player_start_draw[name] = 4;
 
-        if(player["starter"]!=NULL)starter = name;
-        if(player["chained"]!=NULL)player_chained[name]=true;
-        if(player["turned"]!=NULL)player_turned[name]=true;
-        if(player["nationality"] != NULL){
+        if(player["starter"]!=QString())starter = name;
+        if(player["chained"]!=QString())player_chained[name]=true;
+        if(player["turned"]!=QString())player_turned[name]=true;
+        if(player["nationality"] != QString()){
             assign_nationality[name] = player["nationality"];
             set_nationality[name] = true;
         }
         else{
             set_nationality[name] = false;
         }
-        if(player["acquireSkills"] != NULL){
+        if(player["acquireSkills"] != QString()){
             QStringList skills;
             foreach(QString skill_name, player["acquireSkills"].split(","))
                 skills << skill_name;
 
             player_exskills[name].append(skills);
         }
-        if(player["singleTurn"] != NULL){
+        if(player["singleTurn"] != QString()){
             single_turn_box->setCurrentIndex(role_index.value(player["singleTurn"], 0));
             is_single_turn = true;
         }
-        if(player["beforeNext"] != NULL){
+        if(player["beforeNext"] != QString()){
             before_next_box->setCurrentIndex(role_index.value(player["beforeNext"], 0));
             is_before_next = true;
         }
-        if(player["marks"] != NULL){
+        if(player["marks"] != QString()){
             foreach(QString mark, player["marks"].split(",")){
                 QString mark_name = mark.split("*").at(0);
                 int mark_number = mark.split("*").at(1).toInt();
@@ -1259,7 +1260,7 @@ void CustomAssignDialog::load()
             }
         }
 
-        if(player["hand"]!=NULL)
+        if(player["hand"]!=QString())
         {
             foreach(QString id,player["hand"].split(","))
             {
@@ -1277,7 +1278,7 @@ void CustomAssignDialog::load()
             }
         }
 
-        if(player["equip"]!=NULL)
+        if(player["equip"]!=QString())
         {
             foreach(QString id,player["equip"].split(","))
             {
@@ -1295,7 +1296,7 @@ void CustomAssignDialog::load()
             }
         }
 
-        if(player["judge"]!=NULL)
+        if(player["judge"]!=QString())
         {
             foreach(QString id,player["judge"].split(","))
             {
@@ -1496,9 +1497,10 @@ bool CustomAssignDialog::save(QString path)
     QString filename = path;
     if(path.size()<1)filename = QFileDialog::getSaveFileName(this,
                                                     tr("Save mini scenario settings"),
-                                                    "etc/customScenes/",
+                                                    qs::userPath("etc/customScenes/"),
                                                     tr("Pure text replay file (*.txt)"));
 
+    if(QDir::isRelativePath(filename)) filename=qs::userPath(filename);
     QFile file(filename);
     if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
         return false;

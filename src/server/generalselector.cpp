@@ -130,7 +130,7 @@ QStringList GeneralSelector::arrange3v3(ServerPlayer *player){
     arranged = arranged.mid(0, 3);
 
     qSort(arranged.begin(), arranged.end(), CompareByMaxHp);
-    arranged.swap(0, 1);
+    arranged.swapItemsAt(0, 1);
 
     return arranged;
 }

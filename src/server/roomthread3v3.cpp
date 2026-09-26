@@ -91,13 +91,14 @@ void RoomThread3v3::run()
 
     askForTakeGeneral(first);
 
-    while(general_names.length() > 1){
+    while(general_names.length() > 1 && !room->isFinished()){
         qSwap(first, next);
 
         askForTakeGeneral(first);
         askForTakeGeneral(first);
     }
 
+    if(room->isFinished()) return;
     askForTakeGeneral(next);
 
     startArrange(first);
@@ -107,6 +108,7 @@ void RoomThread3v3::run()
 }
 
 void RoomThread3v3::askForTakeGeneral(ServerPlayer *player){
+    if(room->isFinished()) return;
     QString name;
     if(general_names.length() == 1 || player->getState() != "online")
         name = GeneralSelector::GetInstance()->select3v3(player, general_names);
@@ -115,6 +117,7 @@ void RoomThread3v3::askForTakeGeneral(ServerPlayer *player){
         player->invoke("askForGeneral3v3");
     }else{
         msleep(1000);
+        if(room->isFinished()) return;
         takeGeneral(player, name);
     }
 
@@ -242,9 +245,9 @@ void RoomThread3v3::assignRoles(const QString &scheme){
             map["leader2"] = "lord";
             map["guard2"] = "loyalist";
 
-            room->m_players.swap(0, 3);
-            room->m_players.swap(1, 4);
-            room->m_players.swap(2, 5);
+            room->m_players.swapItemsAt(0, 3);
+            room->m_players.swapItemsAt(1, 4);
+            room->m_players.swapItemsAt(2, 5);
         }
 
         foreach(ServerPlayer *player, room->m_players){

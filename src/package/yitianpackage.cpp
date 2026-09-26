@@ -1240,7 +1240,7 @@ public:
     virtual const Card *viewAs(const QList<CardItem *> &cards) const{
         if(Self->hasUsed("LexueCard")){
             if(!Self->hasFlag("lexue"))
-                return false;
+                return nullptr;
 
             if(cards.length() != 1)
                 return NULL;

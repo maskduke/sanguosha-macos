@@ -1,0 +1,4 @@
+ERROR: Cannot resolve rpath "@rpath/QtSvg.framework/Versions/A/QtSvg"
+ERROR:  using QList("/opt/homebrew/opt/qtbase/lib", "/opt/homebrew/opt/qt5compat/lib", "/opt/homebrew/opt/brotli/lib", "/opt/homebrew/opt/zstd/lib", "/opt/homebrew/opt/md4c/lib", "/opt/homebrew/Cellar/dbus/1.16.2_1/lib", "/opt/homebrew/opt/graphite2/lib", "/Users/haoranliu/Projects/sanguosha/dist/preview-3/lib")
+
+macdeployqt reported an unresolved dependency

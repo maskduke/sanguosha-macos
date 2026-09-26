@@ -56,7 +56,7 @@ public:
     CustomScenario()
         :MiniScene("custom_scenario")
     {
-        setupCustom(NULL);
+        // Resources are loaded by Engine after application startup.
     }
 };
 
@@ -67,7 +67,7 @@ public:
     LoadedScenario(const QString &name)
         :MiniScene(QString("_mini_%1").arg(name))
     {
-        setupCustom(QString("%1").arg(name));
+        // Resources are loaded by Engine after application startup.
     }
 };
 

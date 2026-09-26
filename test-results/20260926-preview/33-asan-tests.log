@@ -1,0 +1,21 @@
+Test project /Users/haoranliu/Projects/sanguosha/build/macos-arm64-asan
+    Start 1: protocol.line_framer
+1/8 Test #1: protocol.line_framer .............   Passed    0.48 sec
+    Start 2: bindings.lua_runtime
+2/8 Test #2: bindings.lua_runtime .............   Passed    0.05 sec
+    Start 3: bindings.qt_values
+3/8 Test #3: bindings.qt_values ...............   Passed    0.50 sec
+    Start 4: protocol.legacy_json
+4/8 Test #4: protocol.legacy_json .............   Passed    0.46 sec
+    Start 5: platform.qt_compat
+5/8 Test #5: platform.qt_compat ...............   Passed    0.47 sec
+    Start 6: audio.backend
+6/8 Test #6: audio.backend ....................   Passed    0.65 sec
+    Start 7: platform.paths
+7/8 Test #7: platform.paths ...................   Passed    0.46 sec
+    Start 8: replay.roundtrip
+8/8 Test #8: replay.roundtrip .................   Passed    0.48 sec
+
+100% tests passed, 0 tests failed out of 8
+
+Total Test time (real) =   3.56 sec

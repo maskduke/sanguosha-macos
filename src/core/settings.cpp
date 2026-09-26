@@ -1,3 +1,4 @@
+#include "platform/paths/paths.h"
 #include "settings.h"
 #include "photo.h"
 #include "card.h"
@@ -25,11 +26,7 @@ const int Settings::S_SERVER_TIMEOUT_GRACIOUS_PERIOD = 1000;
 
 Settings::Settings()
 
-#ifdef Q_OS_WIN32
-    :QSettings("config.ini", QSettings::IniFormat)
-#else
-    :QSettings("QSanguosha.org", "QSanguosha")
-#endif
+:QSettings(qs::configFile(), QSettings::IniFormat)
 
      ,Rect(-ViewWidth/2, -ViewHeight/2, ViewWidth, ViewHeight)
 {
@@ -37,15 +34,18 @@ Settings::Settings()
 
 void Settings::init(){
     if(!qApp->arguments().contains("-server")){
-        QString font_path = value("DefaultFontPath", "font/font.ttf").toString();
-        int font_id = QFontDatabase::addApplicationFont(font_path);
+        QString font_path = value("DefaultFontPath", "font/FONT.TTF").toString();
+        int font_id = QFontDatabase::addApplicationFont(QFileInfo(font_path).absoluteFilePath());
         if(font_id!=-1){
             QString font_family = QFontDatabase::applicationFontFamilies(font_id).first();
             BigFont.setFamily(font_family);
             SmallFont.setFamily(font_family);
             TinyFont.setFamily(font_family);
-        }else
+        }else {
+            qCritical() << "Font cannot be loaded:" << font_path;
+            if(qApp->arguments().contains("--smoke-test")) exit(2);
             QMessageBox::warning(NULL, tr("Warning"), tr("Font file %1 could not be loaded!").arg(font_path));
+        }
 
         BigFont.setPixelSize(56);
         SmallFont.setPixelSize(27);

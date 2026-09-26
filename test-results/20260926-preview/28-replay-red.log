@@ -1,0 +1,11 @@
+********* Start testing of ReplayTest *********
+Config: Using QtTest library 6.11.1, Qt 6.11.1 (arm64-little_endian-lp64 shared (dynamic) release build; by Apple LLVM 21.0.0 (clang-2100.0.123.102)), macos 26.6.2
+PASS   : ReplayTest::initTestCase()
+QWARN  : ReplayTest::pngRoundTrip() qUncompress: Input data is corrupted
+FAIL!  : ReplayTest::pngRoundTrip() Compared values are not the same
+   Actual   (Replayer::PNG2TXT(d.filePath("record.png"))): ""
+   Expected (text)                                       : "0 checkVersion 20120715\n10 speak \xE5\x88\x98\xE5\xA4\x87 \xE7\xA9\xBA \xE6\xA0\xBC\n"
+   Loc: [/Users/haoranliu/Projects/sanguosha/tests/replay/test_replay.cpp(7)]
+QWARN  : ReplayTest::malformedImage() qUncompress: Input data is corrupted
+Received signal 11 (SIGSEGV), code SEGV_ACCERR, at instruction address 0x000000010074ecc8, accessing address 0x0000000000000000
+         malformedImage function time: 6ms, total time: 11ms

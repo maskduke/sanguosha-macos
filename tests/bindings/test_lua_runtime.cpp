@@ -5,6 +5,20 @@ using State = std::unique_ptr<lua_State, decltype(&lua_close)>;
 class LuaRuntimeTest : public QObject {
     Q_OBJECT
 private slots:
+    void discardOptionalMinimum() {
+        QFile file(QByteArray(QS_RUNTIME_ASSET_ROOT)+"/lua/ai/smart-ai.lua");
+        QVERIFY(file.open(QIODevice::ReadOnly));
+        QByteArray source=file.readAll();
+        int begin=source.indexOf("function SmartAI:askForDiscard(");
+        int end=source.indexOf("function SmartAI:askForNullification(",begin);
+        QVERIFY(begin>=0 && end>begin);
+        State state(luaL_newstate(),lua_close);luaL_openlibs(state.get());
+        QByteArray code="SmartAI={}; sgs={ai_skill_discard={},QList2Table=function(x)return x end};\n"+source.mid(begin,end-begin);
+        code += "local ai={player={getHp=function()return 3 end,getCards=function()return {} end},assignKeep=function()end}; assert(#SmartAI.askForDiscard(ai,'gamerule',2)==0); assert(#SmartAI.askForDiscard(ai,'gamerule',2,1)==0)";
+        int rc=luaL_dostring(state.get(),code.constData());
+        QVERIFY2(rc==0,rc?lua_tostring(state.get(),-1):"");
+    }
+
     void historicalRuntimeAndConfiguration() {
         QCOMPARE(LUA_VERSION_NUM, 501);
         State state(luaL_newstate(), lua_close);

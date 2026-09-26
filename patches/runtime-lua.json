@@ -1,0 +1,9 @@
+[
+  {
+    "id": "LEGACY-AI-001",
+    "file": "lua/ai/smart-ai.lua",
+    "reason": "Original nostalgia/yitian AI callers omit min_num; default it to the required discard count.",
+    "old": "function SmartAI:askForDiscard(reason, discard_num, min_num, optional, include_equip)",
+    "new": "function SmartAI:askForDiscard(reason, discard_num, min_num, optional, include_equip)\n\tmin_num = min_num or discard_num"
+  }
+]

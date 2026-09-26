@@ -1,0 +1,21 @@
+********* Start testing of LegacyProtocolTest *********
+Config: Using QtTest library 6.11.1, Qt 6.11.1 (arm64-little_endian-lp64 shared (dynamic) release build; by Apple LLVM 21.0.0 (clang-2100.0.123.102)), macos 26.6.2
+PASS   : LegacyProtocolTest::initTestCase()
+PASS   : LegacyProtocolTest::streamReader()
+PASS   : LegacyProtocolTest::packetGoldenSample()
+PASS   : LegacyProtocolTest::rejectsMalformedPacket()
+FAIL!  : LegacyProtocolTest::modernPacketLimit() Compared values are not the same
+   Actual   (packet.parse(wire)): 0
+   Expected (size <= 1024*1024) : 1
+   Loc: [/Users/haoranliu/Projects/sanguosha/tests/protocol/test_legacy_protocol.cpp(41)]
+PASS   : LegacyProtocolTest::integerArrayRejectsWithoutPartialAppend()
+PASS   : LegacyProtocolTest::stringArrayOrderAndRejection()
+FAIL!  : LegacyProtocolTest::utf8AndWhitespaceRoundTrip() Compared values are not the same
+   Actual   (Utils::toQString(Utils::toJsonString(text))): "?? caf\u00E9 ? ?\t??"
+   Expected (text)                                       : "\u5218\u5907 caf\u00E9 \u7A7A \u683C\t\u4FDD\u7559"
+   Loc: [/Users/haoranliu/Projects/sanguosha/tests/protocol/test_legacy_protocol.cpp(64)]
+PASS   : LegacyProtocolTest::smallArrayOverloads()
+PASS   : LegacyProtocolTest::countdownGoldenSamples()
+PASS   : LegacyProtocolTest::cleanupTestCase()
+Totals: 9 passed, 2 failed, 0 skipped, 0 blacklisted, 2ms
+********* Finished testing of LegacyProtocolTest *********

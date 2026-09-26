@@ -1,0 +1,1330 @@
+[0/2] Re-checking globbed directories...
+[1/2] Re-running CMake...
+-- Could NOT find WrapVulkanHeaders (missing: Vulkan_INCLUDE_DIR) 
+-- Found Python3: /Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/bin/python3.9 (found version "3.9.6") found components: Interpreter
+-- Configuring done (0.4s)
+-- Generating done (0.1s)
+-- Build files have been written to: /Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug
+[0/4] Re-checking globbed directories...
+[1/120] Copying OS X Content QSanguosha.app/Contents/Resources/sgs.icns
+[2/120] Automatic MOC for target qs_audio
+[3/118] Automatic MOC for target qs_protocol
+[4/117] Automatic MOC for target qs_paths
+[5/117] Building CXX object CMakeFiles/qs_paths.dir/qs_paths_autogen/mocs_compilation.cpp.o
+[6/117] Building CXX object CMakeFiles/qs_protocol.dir/src/platform/network/line_framer.cpp.o
+[7/117] Linking CXX static library libqs_protocol.a
+[8/117] Building CXX object CMakeFiles/qs_paths.dir/src/platform/paths/paths.cpp.o
+[9/117] Linking CXX static library libqs_paths.a
+[10/117] Automatic MOC for target test_paths
+AutoMoc warning
+---------------
+"SRC:/tests/platform/test_paths.cpp"
+includes the moc file "test_paths.moc", but does not contain a Q_OBJECT, Q_GADGET, Q_NAMESPACE, Q_NAMESPACE_EXPORT, Q_GADGET_EXPORT or Q_ENUM_NS macro.
+
+[11/116] Building CXX object CMakeFiles/test_paths.dir/tests/platform/test_paths.cpp.o
+/Users/haoranliu/Projects/sanguosha/tests/platform/test_paths.cpp:8:27: warning: 'useVerifyThrowsException' is deprecated: Don't use QVERIFY_EXCEPTION_THROWN(expr, type) anymore, use QVERIFY_THROWS_EXCEPTION(type, expr...) instead [-Wdeprecated-declarations]
+    8 |  void traversalRejected(){QVERIFY_EXCEPTION_THROWN(qs::userPath("../outside"),std::invalid_argument);}
+      |                           ^
+/opt/homebrew/opt/qtbase/lib/QtTest.framework/Headers/qtestcase.h:128:52: note: expanded from macro 'QVERIFY_EXCEPTION_THROWN'
+  128 |     QVERIFY_THROWS_EXCEPTION(exceptiontype, QTest::useVerifyThrowsException(); expression)
+      |                                                    ^
+/opt/homebrew/opt/qtbase/lib/QtTest.framework/Headers/qtestcase.h:123:1: note: 'useVerifyThrowsException' has been explicitly marked deprecated here
+  123 | QT_DEPRECATED_VERSION_X_6_3("Don't use QVERIFY_EXCEPTION_THROWN(expr, type) anymore, "
+      | ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:167:44: note: expanded from macro 'QT_DEPRECATED_VERSION_X_6_3'
+  167 | # define QT_DEPRECATED_VERSION_X_6_3(text) QT_DEPRECATED_X(text)
+      |                                            ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:31:33: note: expanded from macro 'QT_DEPRECATED_X'
+   31 | #  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+      |                                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qcompilerdetection.h:1018:36: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+ 1018 | #  define Q_DECL_DEPRECATED_X(x) [[deprecated(x)]]
+      |                                    ^
+1 warning generated.
+[12/116] Linking CXX executable test_paths
+[13/116] Automatic MOC and UIC for target qs_legacy_objects
+[14/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/core/jsonutils.cpp.o
+[15/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/core/banpair.cpp.o
+[16/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/core/lua-wrapper.cpp.o
+[17/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/client/aux-skills.cpp.o
+[18/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/client/clientstruct.cpp.o
+[19/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/core/general.cpp.o
+[20/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/client/clientplayer.cpp.o
+[21/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/core/card.cpp.o
+[22/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/client/client.cpp.o
+In file included from /Users/haoranliu/Projects/sanguosha/src/client/client.cpp:5:
+In file included from /Users/haoranliu/Projects/sanguosha/src/dialog/choosegeneraldialog.h:6:
+/Users/haoranliu/Projects/sanguosha/src/ui/TimedProgressBar.h:11:77: warning: implicit conversion of NULL constant to 'int' [-Wnull-conversion]
+   11 |     inline TimedProgressBar():m_hasTimer(false), m_autoHide(false), m_timer(NULL), m_step(0), m_max(0), m_val(0)
+      |                                                                            ~^~~~
+      |                                                                             0
+/Users/haoranliu/Projects/sanguosha/src/client/client.cpp:1728:18: warning: add explicit braces to avoid dangling else [-Wdangling-else]
+ 1728 |         if(furui)foreach(const Skill *skill, furui->getVisibleSkills()){
+      |                  ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qforeach.h:75:21: note: expanded from macro 'foreach'
+   75 | #    define foreach Q_FOREACH
+      |                     ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qforeach.h:68:5: note: expanded from macro 'Q_FOREACH'
+   68 |     Q_FOREACH_IMPL(variable, Q_FOREACH_JOIN(_container_, __LINE__), container)
+      |     ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qforeach.h:62:43: note: expanded from macro 'Q_FOREACH_IMPL'
+   62 |         if (variable = *name.i; false) {} else
+      |                                           ^
+/Users/haoranliu/Projects/sanguosha/src/client/client.cpp:1732:21: warning: add explicit braces to avoid dangling else [-Wdangling-else]
+ 1732 |         if(atarashi)foreach(const Skill *skill, atarashi->getVisibleSkills()){
+      |                     ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qforeach.h:75:21: note: expanded from macro 'foreach'
+   75 | #    define foreach Q_FOREACH
+      |                     ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qforeach.h:68:5: note: expanded from macro 'Q_FOREACH'
+   68 |     Q_FOREACH_IMPL(variable, Q_FOREACH_JOIN(_container_, __LINE__), container)
+      |     ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qforeach.h:62:43: note: expanded from macro 'Q_FOREACH_IMPL'
+   62 |         if (variable = *name.i; false) {} else
+      |                                           ^
+3 warnings generated.
+[23/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/core/player.cpp.o
+[24/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/core/engine.cpp.o
+[25/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/core/protocol.cpp.o
+[26/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/core/statistics.cpp.o
+[27/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/core/util.cpp.o
+[28/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/core/settings.cpp.o
+In file included from /Users/haoranliu/Projects/sanguosha/src/core/settings.cpp:3:
+In file included from /Users/haoranliu/Projects/sanguosha/src/ui/photo.h:8:
+/Users/haoranliu/Projects/sanguosha/src/ui/TimedProgressBar.h:11:77: warning: implicit conversion of NULL constant to 'int' [-Wnull-conversion]
+   11 |     inline TimedProgressBar():m_hasTimer(false), m_autoHide(false), m_timer(NULL), m_step(0), m_max(0), m_val(0)
+      |                                                                            ~^~~~
+      |                                                                             0
+1 warning generated.
+[29/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/core/skill.cpp.o
+[30/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/dialog/configdialog.cpp.o
+[31/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/dialog/cardoverview.cpp.o
+[32/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/dialog/choosegeneraldialog.cpp.o
+In file included from /Users/haoranliu/Projects/sanguosha/src/dialog/choosegeneraldialog.cpp:1:
+In file included from /Users/haoranliu/Projects/sanguosha/src/dialog/choosegeneraldialog.h:6:
+/Users/haoranliu/Projects/sanguosha/src/ui/TimedProgressBar.h:11:77: warning: implicit conversion of NULL constant to 'int' [-Wnull-conversion]
+   11 |     inline TimedProgressBar():m_hasTimer(false), m_autoHide(false), m_timer(NULL), m_step(0), m_max(0), m_val(0)
+      |                                                                            ~^~~~
+      |                                                                             0
+1 warning generated.
+[33/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/dialog/cardeditor.cpp.o
+/Users/haoranliu/Projects/sanguosha/src/dialog/cardeditor.cpp:427:55: warning: field 'name_box' is uninitialized when used here [-Wuninitialized]
+  427 |     :QGraphicsRectItem(0, 0, width, height), name_box(name_box)
+      |                                                       ^
+/Users/haoranliu/Projects/sanguosha/src/dialog/cardeditor.cpp:769:34: warning: 'operator+' is deprecated: Use operator| instead [-Wdeprecated-declarations]
+  769 |     import->setShortcut(Qt::CTRL + Qt::Key_O);
+      |                                  ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qnamespace.h:2016:1: note: 'operator+' has been explicitly marked deprecated here
+ 2016 | QT_DEPRECATED_VERSION_X(6, 0, "Use operator| instead")
+      | ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:279:53: note: expanded from macro 'QT_DEPRECATED_VERSION_X'
+  279 | #define QT_DEPRECATED_VERSION_X(major, minor, text) QT_DEPRECATED_VERSION_X_##major##_##minor(text)
+      |                                                     ^
+<scratch space>:157:1: note: expanded from here
+  157 | QT_DEPRECATED_VERSION_X_6_0
+      | ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:143:44: note: expanded from macro 'QT_DEPRECATED_VERSION_X_6_0'
+  143 | # define QT_DEPRECATED_VERSION_X_6_0(text) QT_DEPRECATED_X(text)
+      |                                            ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:31:33: note: expanded from macro 'QT_DEPRECATED_X'
+   31 | #  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+      |                                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qcompilerdetection.h:1018:36: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+ 1018 | #  define Q_DECL_DEPRECATED_X(x) [[deprecated(x)]]
+      |                                    ^
+/Users/haoranliu/Projects/sanguosha/src/dialog/cardeditor.cpp:771:32: warning: 'operator+' is deprecated: Use operator| instead [-Wdeprecated-declarations]
+  771 |     save->setShortcut(Qt::CTRL + Qt::Key_S);
+      |                                ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qnamespace.h:2016:1: note: 'operator+' has been explicitly marked deprecated here
+ 2016 | QT_DEPRECATED_VERSION_X(6, 0, "Use operator| instead")
+      | ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:279:53: note: expanded from macro 'QT_DEPRECATED_VERSION_X'
+  279 | #define QT_DEPRECATED_VERSION_X(major, minor, text) QT_DEPRECATED_VERSION_X_##major##_##minor(text)
+      |                                                     ^
+<scratch space>:157:1: note: expanded from here
+  157 | QT_DEPRECATED_VERSION_X_6_0
+      | ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:143:44: note: expanded from macro 'QT_DEPRECATED_VERSION_X_6_0'
+  143 | # define QT_DEPRECATED_VERSION_X_6_0(text) QT_DEPRECATED_X(text)
+      |                                            ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:31:33: note: expanded from macro 'QT_DEPRECATED_X'
+   31 | #  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+      |                                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qcompilerdetection.h:1018:36: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+ 1018 | #  define Q_DECL_DEPRECATED_X(x) [[deprecated(x)]]
+      |                                    ^
+/Users/haoranliu/Projects/sanguosha/src/dialog/cardeditor.cpp:773:32: warning: 'operator+' is deprecated: Use operator| instead [-Wdeprecated-declarations]
+  773 |     exit->setShortcut(Qt::CTRL + Qt::Key_Q);
+      |                                ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qnamespace.h:2016:1: note: 'operator+' has been explicitly marked deprecated here
+ 2016 | QT_DEPRECATED_VERSION_X(6, 0, "Use operator| instead")
+      | ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:279:53: note: expanded from macro 'QT_DEPRECATED_VERSION_X'
+  279 | #define QT_DEPRECATED_VERSION_X(major, minor, text) QT_DEPRECATED_VERSION_X_##major##_##minor(text)
+      |                                                     ^
+<scratch space>:157:1: note: expanded from here
+  157 | QT_DEPRECATED_VERSION_X_6_0
+      | ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:143:44: note: expanded from macro 'QT_DEPRECATED_VERSION_X_6_0'
+  143 | # define QT_DEPRECATED_VERSION_X_6_0(text) QT_DEPRECATED_X(text)
+      |                                            ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:31:33: note: expanded from macro 'QT_DEPRECATED_X'
+   31 | #  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+      |                                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qcompilerdetection.h:1018:36: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+ 1018 | #  define Q_DECL_DEPRECATED_X(x) [[deprecated(x)]]
+      |                                    ^
+/Users/haoranliu/Projects/sanguosha/src/dialog/cardeditor.cpp:788:36: warning: 'operator+' is deprecated: Use operator| instead [-Wdeprecated-declarations]
+  788 |     add_skill->setShortcut(Qt::ALT + Qt::Key_S);
+      |                                    ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qnamespace.h:2016:1: note: 'operator+' has been explicitly marked deprecated here
+ 2016 | QT_DEPRECATED_VERSION_X(6, 0, "Use operator| instead")
+      | ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:279:53: note: expanded from macro 'QT_DEPRECATED_VERSION_X'
+  279 | #define QT_DEPRECATED_VERSION_X(major, minor, text) QT_DEPRECATED_VERSION_X_##major##_##minor(text)
+      |                                                     ^
+<scratch space>:157:1: note: expanded from here
+  157 | QT_DEPRECATED_VERSION_X_6_0
+      | ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:143:44: note: expanded from macro 'QT_DEPRECATED_VERSION_X_6_0'
+  143 | # define QT_DEPRECATED_VERSION_X_6_0(text) QT_DEPRECATED_X(text)
+      |                                            ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:31:33: note: expanded from macro 'QT_DEPRECATED_X'
+   31 | #  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+      |                                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qcompilerdetection.h:1018:36: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+ 1018 | #  define Q_DECL_DEPRECATED_X(x) [[deprecated(x)]]
+      |                                    ^
+/Users/haoranliu/Projects/sanguosha/src/dialog/cardeditor.cpp:793:39: warning: 'operator+' is deprecated: Use operator| instead [-Wdeprecated-declarations]
+  793 |     remove_skill->setShortcut(Qt::ALT + Qt::Key_D);
+      |                                       ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qnamespace.h:2016:1: note: 'operator+' has been explicitly marked deprecated here
+ 2016 | QT_DEPRECATED_VERSION_X(6, 0, "Use operator| instead")
+      | ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:279:53: note: expanded from macro 'QT_DEPRECATED_VERSION_X'
+  279 | #define QT_DEPRECATED_VERSION_X(major, minor, text) QT_DEPRECATED_VERSION_X_##major##_##minor(text)
+      |                                                     ^
+<scratch space>:157:1: note: expanded from here
+  157 | QT_DEPRECATED_VERSION_X_6_0
+      | ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:143:44: note: expanded from macro 'QT_DEPRECATED_VERSION_X_6_0'
+  143 | # define QT_DEPRECATED_VERSION_X_6_0(text) QT_DEPRECATED_X(text)
+      |                                            ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:31:33: note: expanded from macro 'QT_DEPRECATED_X'
+   31 | #  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+      |                                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qcompilerdetection.h:1018:36: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+ 1018 | #  define Q_DECL_DEPRECATED_X(x) [[deprecated(x)]]
+      |                                    ^
+/Users/haoranliu/Projects/sanguosha/src/dialog/cardeditor.cpp:798:37: warning: 'operator+' is deprecated: Use operator| instead [-Wdeprecated-declarations]
+  798 |     edit_skill->setShortcut(Qt::ALT + Qt::Key_E);
+      |                                     ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qnamespace.h:2016:1: note: 'operator+' has been explicitly marked deprecated here
+ 2016 | QT_DEPRECATED_VERSION_X(6, 0, "Use operator| instead")
+      | ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:279:53: note: expanded from macro 'QT_DEPRECATED_VERSION_X'
+  279 | #define QT_DEPRECATED_VERSION_X(major, minor, text) QT_DEPRECATED_VERSION_X_##major##_##minor(text)
+      |                                                     ^
+<scratch space>:157:1: note: expanded from here
+  157 | QT_DEPRECATED_VERSION_X_6_0
+      | ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:143:44: note: expanded from macro 'QT_DEPRECATED_VERSION_X_6_0'
+  143 | # define QT_DEPRECATED_VERSION_X_6_0(text) QT_DEPRECATED_X(text)
+      |                                            ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:31:33: note: expanded from macro 'QT_DEPRECATED_X'
+   31 | #  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+      |                                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qcompilerdetection.h:1018:36: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+ 1018 | #  define Q_DECL_DEPRECATED_X(x) [[deprecated(x)]]
+      |                                    ^
+/Users/haoranliu/Projects/sanguosha/src/dialog/cardeditor.cpp:805:37: warning: 'operator+' is deprecated: Use operator| instead [-Wdeprecated-declarations]
+  805 |     making_big->setShortcut(Qt::ALT + Qt::Key_B);
+      |                                     ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qnamespace.h:2016:1: note: 'operator+' has been explicitly marked deprecated here
+ 2016 | QT_DEPRECATED_VERSION_X(6, 0, "Use operator| instead")
+      | ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:279:53: note: expanded from macro 'QT_DEPRECATED_VERSION_X'
+  279 | #define QT_DEPRECATED_VERSION_X(major, minor, text) QT_DEPRECATED_VERSION_X_##major##_##minor(text)
+      |                                                     ^
+<scratch space>:157:1: note: expanded from here
+  157 | QT_DEPRECATED_VERSION_X_6_0
+      | ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:143:44: note: expanded from macro 'QT_DEPRECATED_VERSION_X_6_0'
+  143 | # define QT_DEPRECATED_VERSION_X_6_0(text) QT_DEPRECATED_X(text)
+      |                                            ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:31:33: note: expanded from macro 'QT_DEPRECATED_X'
+   31 | #  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+      |                                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qcompilerdetection.h:1018:36: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+ 1018 | #  define Q_DECL_DEPRECATED_X(x) [[deprecated(x)]]
+      |                                    ^
+/Users/haoranliu/Projects/sanguosha/src/dialog/cardeditor.cpp:810:39: warning: 'operator+' is deprecated: Use operator| instead [-Wdeprecated-declarations]
+  810 |     making_small->setShortcut(Qt::ALT + Qt::Key_M);
+      |                                       ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qnamespace.h:2016:1: note: 'operator+' has been explicitly marked deprecated here
+ 2016 | QT_DEPRECATED_VERSION_X(6, 0, "Use operator| instead")
+      | ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:279:53: note: expanded from macro 'QT_DEPRECATED_VERSION_X'
+  279 | #define QT_DEPRECATED_VERSION_X(major, minor, text) QT_DEPRECATED_VERSION_X_##major##_##minor(text)
+      |                                                     ^
+<scratch space>:157:1: note: expanded from here
+  157 | QT_DEPRECATED_VERSION_X_6_0
+      | ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:143:44: note: expanded from macro 'QT_DEPRECATED_VERSION_X_6_0'
+  143 | # define QT_DEPRECATED_VERSION_X_6_0(text) QT_DEPRECATED_X(text)
+      |                                            ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:31:33: note: expanded from macro 'QT_DEPRECATED_X'
+   31 | #  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+      |                                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qcompilerdetection.h:1018:36: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+ 1018 | #  define Q_DECL_DEPRECATED_X(x) [[deprecated(x)]]
+      |                                    ^
+/Users/haoranliu/Projects/sanguosha/src/dialog/cardeditor.cpp:815:38: warning: 'operator+' is deprecated: Use operator| instead [-Wdeprecated-declarations]
+  815 |     making_tiny->setShortcut(Qt::ALT + Qt::Key_T);
+      |                                      ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qnamespace.h:2016:1: note: 'operator+' has been explicitly marked deprecated here
+ 2016 | QT_DEPRECATED_VERSION_X(6, 0, "Use operator| instead")
+      | ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:279:53: note: expanded from macro 'QT_DEPRECATED_VERSION_X'
+  279 | #define QT_DEPRECATED_VERSION_X(major, minor, text) QT_DEPRECATED_VERSION_X_##major##_##minor(text)
+      |                                                     ^
+<scratch space>:157:1: note: expanded from here
+  157 | QT_DEPRECATED_VERSION_X_6_0
+      | ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:143:44: note: expanded from macro 'QT_DEPRECATED_VERSION_X_6_0'
+  143 | # define QT_DEPRECATED_VERSION_X_6_0(text) QT_DEPRECATED_X(text)
+      |                                            ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:31:33: note: expanded from macro 'QT_DEPRECATED_X'
+   31 | #  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+      |                                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qcompilerdetection.h:1018:36: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+ 1018 | #  define Q_DECL_DEPRECATED_X(x) [[deprecated(x)]]
+      |                                    ^
+/Users/haoranliu/Projects/sanguosha/src/dialog/cardeditor.cpp:820:38: warning: 'operator+' is deprecated: Use operator| instead [-Wdeprecated-declarations]
+  820 |     hiding_rect->setShortcut(Qt::ALT + Qt::Key_H);
+      |                                      ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qnamespace.h:2016:1: note: 'operator+' has been explicitly marked deprecated here
+ 2016 | QT_DEPRECATED_VERSION_X(6, 0, "Use operator| instead")
+      | ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:279:53: note: expanded from macro 'QT_DEPRECATED_VERSION_X'
+  279 | #define QT_DEPRECATED_VERSION_X(major, minor, text) QT_DEPRECATED_VERSION_X_##major##_##minor(text)
+      |                                                     ^
+<scratch space>:157:1: note: expanded from here
+  157 | QT_DEPRECATED_VERSION_X_6_0
+      | ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:143:44: note: expanded from macro 'QT_DEPRECATED_VERSION_X_6_0'
+  143 | # define QT_DEPRECATED_VERSION_X_6_0(text) QT_DEPRECATED_X(text)
+      |                                            ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:31:33: note: expanded from macro 'QT_DEPRECATED_X'
+   31 | #  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+      |                                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qcompilerdetection.h:1018:36: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+ 1018 | #  define Q_DECL_DEPRECATED_X(x) [[deprecated(x)]]
+      |                                    ^
+/Users/haoranliu/Projects/sanguosha/src/dialog/cardeditor.cpp:827:38: warning: 'operator+' is deprecated: Use operator| instead [-Wdeprecated-declarations]
+  827 |     reset_photo->setShortcut(Qt::ALT + Qt::Key_R);
+      |                                      ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qnamespace.h:2016:1: note: 'operator+' has been explicitly marked deprecated here
+ 2016 | QT_DEPRECATED_VERSION_X(6, 0, "Use operator| instead")
+      | ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:279:53: note: expanded from macro 'QT_DEPRECATED_VERSION_X'
+  279 | #define QT_DEPRECATED_VERSION_X(major, minor, text) QT_DEPRECATED_VERSION_X_##major##_##minor(text)
+      |                                                     ^
+<scratch space>:157:1: note: expanded from here
+  157 | QT_DEPRECATED_VERSION_X_6_0
+      | ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:143:44: note: expanded from macro 'QT_DEPRECATED_VERSION_X_6_0'
+  143 | # define QT_DEPRECATED_VERSION_X_6_0(text) QT_DEPRECATED_X(text)
+      |                                            ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:31:33: note: expanded from macro 'QT_DEPRECATED_X'
+   31 | #  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+      |                                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qcompilerdetection.h:1018:36: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+ 1018 | #  define Q_DECL_DEPRECATED_X(x) [[deprecated(x)]]
+      |                                    ^
+/Users/haoranliu/Projects/sanguosha/src/dialog/cardeditor.cpp:832:38: warning: 'operator+' is deprecated: Use operator| instead [-Wdeprecated-declarations]
+  832 |     copy_photo->setShortcut(Qt::CTRL + Qt::Key_C);
+      |                                      ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qnamespace.h:2016:1: note: 'operator+' has been explicitly marked deprecated here
+ 2016 | QT_DEPRECATED_VERSION_X(6, 0, "Use operator| instead")
+      | ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:279:53: note: expanded from macro 'QT_DEPRECATED_VERSION_X'
+  279 | #define QT_DEPRECATED_VERSION_X(major, minor, text) QT_DEPRECATED_VERSION_X_##major##_##minor(text)
+      |                                                     ^
+<scratch space>:157:1: note: expanded from here
+  157 | QT_DEPRECATED_VERSION_X_6_0
+      | ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:143:44: note: expanded from macro 'QT_DEPRECATED_VERSION_X_6_0'
+  143 | # define QT_DEPRECATED_VERSION_X_6_0(text) QT_DEPRECATED_X(text)
+      |                                            ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:31:33: note: expanded from macro 'QT_DEPRECATED_X'
+   31 | #  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+      |                                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qcompilerdetection.h:1018:36: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+ 1018 | #  define Q_DECL_DEPRECATED_X(x) [[deprecated(x)]]
+      |                                    ^
+13 warnings generated.
+[34/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/dialog/connectiondialog.cpp.o
+[35/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/dialog/customassigndialog.cpp.o
+[36/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/dialog/distanceviewdialog.cpp.o
+In file included from /Users/haoranliu/Projects/sanguosha/src/dialog/distanceviewdialog.cpp:6:
+In file included from /Users/haoranliu/Projects/sanguosha/src/ui/roomscene.h:4:
+In file included from /Users/haoranliu/Projects/sanguosha/src/ui/photo.h:8:
+/Users/haoranliu/Projects/sanguosha/src/ui/TimedProgressBar.h:11:77: warning: implicit conversion of NULL constant to 'int' [-Wnull-conversion]
+   11 |     inline TimedProgressBar():m_hasTimer(false), m_autoHide(false), m_timer(NULL), m_step(0), m_max(0), m_val(0)
+      |                                                                            ~^~~~
+      |                                                                             0
+1 warning generated.
+[37/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/qs_legacy_objects_autogen/mocs_compilation.cpp.o
+In file included from /Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug/qs_legacy_objects_autogen/mocs_compilation.cpp:15:
+In file included from /Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug/qs_legacy_objects_autogen/LOXWS6PXLU/moc_choosegeneraldialog.cpp:9:
+In file included from /Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug/qs_legacy_objects_autogen/LOXWS6PXLU/../../../../src/dialog/choosegeneraldialog.h:6:
+/Users/haoranliu/Projects/sanguosha/src/ui/TimedProgressBar.h:11:77: warning: implicit conversion of NULL constant to 'int' [-Wnull-conversion]
+   11 |     inline TimedProgressBar():m_hasTimer(false), m_autoHide(false), m_timer(NULL), m_step(0), m_max(0), m_val(0)
+      |                                                                            ~^~~~
+      |                                                                             0
+1 warning generated.
+[38/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/dialog/halldialog.cpp.o
+[39/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/dialog/generaloverview.cpp.o
+[40/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/dialog/packagingeditor.cpp.o
+[41/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/dialog/scenario-overview.cpp.o
+[42/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/dialog/playercarddialog.cpp.o
+[43/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/dialog/mainwindow.cpp.o
+In file included from /Users/haoranliu/Projects/sanguosha/src/dialog/mainwindow.cpp:3:
+In file included from /Users/haoranliu/Projects/sanguosha/src/ui/roomscene.h:4:
+In file included from /Users/haoranliu/Projects/sanguosha/src/ui/photo.h:8:
+/Users/haoranliu/Projects/sanguosha/src/ui/TimedProgressBar.h:11:77: warning: implicit conversion of NULL constant to 'int' [-Wnull-conversion]
+   11 |     inline TimedProgressBar():m_hasTimer(false), m_autoHide(false), m_timer(NULL), m_step(0), m_max(0), m_val(0)
+      |                                                                            ~^~~~
+      |                                                                             0
+1 warning generated.
+[44/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/package/exppattern.cpp.o
+[45/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/dialog/roleassigndialog.cpp.o
+In file included from /Users/haoranliu/Projects/sanguosha/src/dialog/roleassigndialog.cpp:11:
+In file included from /Users/haoranliu/Projects/sanguosha/src/ui/roomscene.h:4:
+In file included from /Users/haoranliu/Projects/sanguosha/src/ui/photo.h:8:
+/Users/haoranliu/Projects/sanguosha/src/ui/TimedProgressBar.h:11:77: warning: implicit conversion of NULL constant to 'int' [-Wnull-conversion]
+   11 |     inline TimedProgressBar():m_hasTimer(false), m_autoHide(false), m_timer(NULL), m_step(0), m_max(0), m_val(0)
+      |                                                                            ~^~~~
+      |                                                                             0
+1 warning generated.
+[46/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/package/bgm-package.cpp.o
+/Users/haoranliu/Projects/sanguosha/src/package/bgm-package.cpp:1008:20: warning: 'insertMulti' is deprecated: Use insert() instead [-Wdeprecated-declarations]
+ 1008 |     related_skills.insertMulti("dahe", "#dahe");
+      |                    ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qmap.h:1660:5: note: 'insertMulti' has been explicitly marked deprecated here
+ 1660 |     QT_DEPRECATED_VERSION_X_6_0("Use insert() instead")
+      |     ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:143:44: note: expanded from macro 'QT_DEPRECATED_VERSION_X_6_0'
+  143 | # define QT_DEPRECATED_VERSION_X_6_0(text) QT_DEPRECATED_X(text)
+      |                                            ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:31:33: note: expanded from macro 'QT_DEPRECATED_X'
+   31 | #  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+      |                                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qcompilerdetection.h:1018:36: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+ 1018 | #  define Q_DECL_DEPRECATED_X(x) [[deprecated(x)]]
+      |                                    ^
+/Users/haoranliu/Projects/sanguosha/src/package/bgm-package.cpp:1014:20: warning: 'insertMulti' is deprecated: Use insert() instead [-Wdeprecated-declarations]
+ 1014 |     related_skills.insertMulti("mouduan", "#mouduan");
+      |                    ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qmap.h:1660:5: note: 'insertMulti' has been explicitly marked deprecated here
+ 1660 |     QT_DEPRECATED_VERSION_X_6_0("Use insert() instead")
+      |     ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:143:44: note: expanded from macro 'QT_DEPRECATED_VERSION_X_6_0'
+  143 | # define QT_DEPRECATED_VERSION_X_6_0(text) QT_DEPRECATED_X(text)
+      |                                            ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:31:33: note: expanded from macro 'QT_DEPRECATED_X'
+   31 | #  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+      |                                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qcompilerdetection.h:1018:36: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+ 1018 | #  define Q_DECL_DEPRECATED_X(x) [[deprecated(x)]]
+      |                                    ^
+/Users/haoranliu/Projects/sanguosha/src/package/bgm-package.cpp:1020:20: warning: 'insertMulti' is deprecated: Use insert() instead [-Wdeprecated-declarations]
+ 1020 |     related_skills.insertMulti("zhaolie", "#zhaolie");
+      |                    ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qmap.h:1660:5: note: 'insertMulti' has been explicitly marked deprecated here
+ 1660 |     QT_DEPRECATED_VERSION_X_6_0("Use insert() instead")
+      |     ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:143:44: note: expanded from macro 'QT_DEPRECATED_VERSION_X_6_0'
+  143 | # define QT_DEPRECATED_VERSION_X_6_0(text) QT_DEPRECATED_X(text)
+      |                                            ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:31:33: note: expanded from macro 'QT_DEPRECATED_X'
+   31 | #  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+      |                                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qcompilerdetection.h:1018:36: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+ 1018 | #  define Q_DECL_DEPRECATED_X(x) [[deprecated(x)]]
+      |                                    ^
+3 warnings generated.
+[47/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/package/firepackage.cpp.o
+/Users/haoranliu/Projects/sanguosha/src/package/firepackage.cpp:574:20: warning: 'insertMulti' is deprecated: Use insert() instead [-Wdeprecated-declarations]
+  574 |     related_skills.insertMulti("niepan", "#@nirvana-1");
+      |                    ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qmap.h:1660:5: note: 'insertMulti' has been explicitly marked deprecated here
+ 1660 |     QT_DEPRECATED_VERSION_X_6_0("Use insert() instead")
+      |     ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:143:44: note: expanded from macro 'QT_DEPRECATED_VERSION_X_6_0'
+  143 | # define QT_DEPRECATED_VERSION_X_6_0(text) QT_DEPRECATED_X(text)
+      |                                            ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:31:33: note: expanded from macro 'QT_DEPRECATED_X'
+   31 | #  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+      |                                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qcompilerdetection.h:1018:36: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+ 1018 | #  define Q_DECL_DEPRECATED_X(x) [[deprecated(x)]]
+      |                                    ^
+1 warning generated.
+[48/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/package/god.cpp.o
+/Users/haoranliu/Projects/sanguosha/src/package/god.cpp:1327:20: warning: 'insertMulti' is deprecated: Use insert() instead [-Wdeprecated-declarations]
+ 1327 |     related_skills.insertMulti("wuhun", "#wuhun");
+      |                    ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qmap.h:1660:5: note: 'insertMulti' has been explicitly marked deprecated here
+ 1660 |     QT_DEPRECATED_VERSION_X_6_0("Use insert() instead")
+      |     ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:143:44: note: expanded from macro 'QT_DEPRECATED_VERSION_X_6_0'
+  143 | # define QT_DEPRECATED_VERSION_X_6_0(text) QT_DEPRECATED_X(text)
+      |                                            ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:31:33: note: expanded from macro 'QT_DEPRECATED_X'
+   31 | #  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+      |                                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qcompilerdetection.h:1018:36: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+ 1018 | #  define Q_DECL_DEPRECATED_X(x) [[deprecated(x)]]
+      |                                    ^
+/Users/haoranliu/Projects/sanguosha/src/package/god.cpp:1348:20: warning: 'insertMulti' is deprecated: Use insert() instead [-Wdeprecated-declarations]
+ 1348 |     related_skills.insertMulti("qixing", "#qixing");
+      |                    ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qmap.h:1660:5: note: 'insertMulti' has been explicitly marked deprecated here
+ 1660 |     QT_DEPRECATED_VERSION_X_6_0("Use insert() instead")
+      |     ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:143:44: note: expanded from macro 'QT_DEPRECATED_VERSION_X_6_0'
+  143 | # define QT_DEPRECATED_VERSION_X_6_0(text) QT_DEPRECATED_X(text)
+      |                                            ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:31:33: note: expanded from macro 'QT_DEPRECATED_X'
+   31 | #  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+      |                                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qcompilerdetection.h:1018:36: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+ 1018 | #  define Q_DECL_DEPRECATED_X(x) [[deprecated(x)]]
+      |                                    ^
+/Users/haoranliu/Projects/sanguosha/src/package/god.cpp:1349:20: warning: 'insertMulti' is deprecated: Use insert() instead [-Wdeprecated-declarations]
+ 1349 |     related_skills.insertMulti("qixing", "#qixing-ask");
+      |                    ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qmap.h:1660:5: note: 'insertMulti' has been explicitly marked deprecated here
+ 1660 |     QT_DEPRECATED_VERSION_X_6_0("Use insert() instead")
+      |     ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:143:44: note: expanded from macro 'QT_DEPRECATED_VERSION_X_6_0'
+  143 | # define QT_DEPRECATED_VERSION_X_6_0(text) QT_DEPRECATED_X(text)
+      |                                            ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:31:33: note: expanded from macro 'QT_DEPRECATED_X'
+   31 | #  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+      |                                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qcompilerdetection.h:1018:36: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+ 1018 | #  define Q_DECL_DEPRECATED_X(x) [[deprecated(x)]]
+      |                                    ^
+/Users/haoranliu/Projects/sanguosha/src/package/god.cpp:1350:20: warning: 'insertMulti' is deprecated: Use insert() instead [-Wdeprecated-declarations]
+ 1350 |     related_skills.insertMulti("qixing", "#qixing-clear");
+      |                    ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qmap.h:1660:5: note: 'insertMulti' has been explicitly marked deprecated here
+ 1660 |     QT_DEPRECATED_VERSION_X_6_0("Use insert() instead")
+      |     ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:143:44: note: expanded from macro 'QT_DEPRECATED_VERSION_X_6_0'
+  143 | # define QT_DEPRECATED_VERSION_X_6_0(text) QT_DEPRECATED_X(text)
+      |                                            ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:31:33: note: expanded from macro 'QT_DEPRECATED_X'
+   31 | #  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+      |                                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qcompilerdetection.h:1018:36: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+ 1018 | #  define Q_DECL_DEPRECATED_X(x) [[deprecated(x)]]
+      |                                    ^
+/Users/haoranliu/Projects/sanguosha/src/package/god.cpp:1363:20: warning: 'insertMulti' is deprecated: Use insert() instead [-Wdeprecated-declarations]
+ 1363 |     related_skills.insertMulti("kuangbao", "#@wrath-2");
+      |                    ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qmap.h:1660:5: note: 'insertMulti' has been explicitly marked deprecated here
+ 1660 |     QT_DEPRECATED_VERSION_X_6_0("Use insert() instead")
+      |     ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:143:44: note: expanded from macro 'QT_DEPRECATED_VERSION_X_6_0'
+  143 | # define QT_DEPRECATED_VERSION_X_6_0(text) QT_DEPRECATED_X(text)
+      |                                            ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:31:33: note: expanded from macro 'QT_DEPRECATED_X'
+   31 | #  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+      |                                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qcompilerdetection.h:1018:36: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+ 1018 | #  define Q_DECL_DEPRECATED_X(x) [[deprecated(x)]]
+      |                                    ^
+/Users/haoranliu/Projects/sanguosha/src/package/god.cpp:1369:20: warning: 'insertMulti' is deprecated: Use insert() instead [-Wdeprecated-declarations]
+ 1369 |     related_skills.insertMulti("juejing", "#juejing-draw");
+      |                    ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qmap.h:1660:5: note: 'insertMulti' has been explicitly marked deprecated here
+ 1660 |     QT_DEPRECATED_VERSION_X_6_0("Use insert() instead")
+      |     ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:143:44: note: expanded from macro 'QT_DEPRECATED_VERSION_X_6_0'
+  143 | # define QT_DEPRECATED_VERSION_X_6_0(text) QT_DEPRECATED_X(text)
+      |                                            ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:31:33: note: expanded from macro 'QT_DEPRECATED_X'
+   31 | #  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+      |                                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qcompilerdetection.h:1018:36: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+ 1018 | #  define Q_DECL_DEPRECATED_X(x) [[deprecated(x)]]
+      |                                    ^
+/Users/haoranliu/Projects/sanguosha/src/package/god.cpp:1375:20: warning: 'insertMulti' is deprecated: Use insert() instead [-Wdeprecated-declarations]
+ 1375 |     related_skills.insertMulti("jilve", "#jilve-clear");
+      |                    ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qmap.h:1660:5: note: 'insertMulti' has been explicitly marked deprecated here
+ 1660 |     QT_DEPRECATED_VERSION_X_6_0("Use insert() instead")
+      |     ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:143:44: note: expanded from macro 'QT_DEPRECATED_VERSION_X_6_0'
+  143 | # define QT_DEPRECATED_VERSION_X_6_0(text) QT_DEPRECATED_X(text)
+      |                                            ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:31:33: note: expanded from macro 'QT_DEPRECATED_X'
+   31 | #  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+      |                                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qcompilerdetection.h:1018:36: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+ 1018 | #  define Q_DECL_DEPRECATED_X(x) [[deprecated(x)]]
+      |                                    ^
+/Users/haoranliu/Projects/sanguosha/src/package/god.cpp:1379:20: warning: 'insertMulti' is deprecated: Use insert() instead [-Wdeprecated-declarations]
+ 1379 |     related_skills.insertMulti("lianpo", "#lianpo-count");
+      |                    ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qmap.h:1660:5: note: 'insertMulti' has been explicitly marked deprecated here
+ 1660 |     QT_DEPRECATED_VERSION_X_6_0("Use insert() instead")
+      |     ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:143:44: note: expanded from macro 'QT_DEPRECATED_VERSION_X_6_0'
+  143 | # define QT_DEPRECATED_VERSION_X_6_0(text) QT_DEPRECATED_X(text)
+      |                                            ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:31:33: note: expanded from macro 'QT_DEPRECATED_X'
+   31 | #  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+      |                                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qcompilerdetection.h:1018:36: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+ 1018 | #  define Q_DECL_DEPRECATED_X(x) [[deprecated(x)]]
+      |                                    ^
+/Users/haoranliu/Projects/sanguosha/src/package/god.cpp:1380:20: warning: 'insertMulti' is deprecated: Use insert() instead [-Wdeprecated-declarations]
+ 1380 |     related_skills.insertMulti("lianpo", "#lianpo-do");
+      |                    ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qmap.h:1660:5: note: 'insertMulti' has been explicitly marked deprecated here
+ 1660 |     QT_DEPRECATED_VERSION_X_6_0("Use insert() instead")
+      |     ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:143:44: note: expanded from macro 'QT_DEPRECATED_VERSION_X_6_0'
+  143 | # define QT_DEPRECATED_VERSION_X_6_0(text) QT_DEPRECATED_X(text)
+      |                                            ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:31:33: note: expanded from macro 'QT_DEPRECATED_X'
+   31 | #  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+      |                                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qcompilerdetection.h:1018:36: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+ 1018 | #  define Q_DECL_DEPRECATED_X(x) [[deprecated(x)]]
+      |                                    ^
+9 warnings generated.
+[49/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/package/joypackage.cpp.o
+[50/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/package/lingpackage.cpp.o
+[51/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/package/package.cpp.o
+[52/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/package/maneuvering.cpp.o
+[53/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/package/special3v3-package.cpp.o
+/Users/haoranliu/Projects/sanguosha/src/package/special3v3-package.cpp:262:20: warning: 'insertMulti' is deprecated: Use insert() instead [-Wdeprecated-declarations]
+  262 |     related_skills.insertMulti("hongyuan", "#hongyuan");
+      |                    ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qmap.h:1660:5: note: 'insertMulti' has been explicitly marked deprecated here
+ 1660 |     QT_DEPRECATED_VERSION_X_6_0("Use insert() instead")
+      |     ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:143:44: note: expanded from macro 'QT_DEPRECATED_VERSION_X_6_0'
+  143 | # define QT_DEPRECATED_VERSION_X_6_0(text) QT_DEPRECATED_X(text)
+      |                                            ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:31:33: note: expanded from macro 'QT_DEPRECATED_X'
+   31 | #  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+      |                                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qcompilerdetection.h:1018:36: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+ 1018 | #  define Q_DECL_DEPRECATED_X(x) [[deprecated(x)]]
+      |                                    ^
+1 warning generated.
+[54/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/package/nostalgia.cpp.o
+[55/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/package/mountainpackage.cpp.o
+/Users/haoranliu/Projects/sanguosha/src/package/mountainpackage.cpp:1296:20: warning: 'insertMulti' is deprecated: Use insert() instead [-Wdeprecated-declarations]
+ 1296 |     related_skills.insertMulti("tuntian", "#tuntian-get");
+      |                    ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qmap.h:1660:5: note: 'insertMulti' has been explicitly marked deprecated here
+ 1660 |     QT_DEPRECATED_VERSION_X_6_0("Use insert() instead")
+      |     ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:143:44: note: expanded from macro 'QT_DEPRECATED_VERSION_X_6_0'
+  143 | # define QT_DEPRECATED_VERSION_X_6_0(text) QT_DEPRECATED_X(text)
+      |                                            ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:31:33: note: expanded from macro 'QT_DEPRECATED_X'
+   31 | #  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+      |                                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qcompilerdetection.h:1018:36: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+ 1018 | #  define Q_DECL_DEPRECATED_X(x) [[deprecated(x)]]
+      |                                    ^
+/Users/haoranliu/Projects/sanguosha/src/package/mountainpackage.cpp:1301:20: warning: 'insertMulti' is deprecated: Use insert() instead [-Wdeprecated-declarations]
+ 1301 |     related_skills.insertMulti("zhiji", "guanxing");
+      |                    ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qmap.h:1660:5: note: 'insertMulti' has been explicitly marked deprecated here
+ 1660 |     QT_DEPRECATED_VERSION_X_6_0("Use insert() instead")
+      |     ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:143:44: note: expanded from macro 'QT_DEPRECATED_VERSION_X_6_0'
+  143 | # define QT_DEPRECATED_VERSION_X_6_0(text) QT_DEPRECATED_X(text)
+      |                                            ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:31:33: note: expanded from macro 'QT_DEPRECATED_X'
+   31 | #  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+      |                                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qcompilerdetection.h:1018:36: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+ 1018 | #  define Q_DECL_DEPRECATED_X(x) [[deprecated(x)]]
+      |                                    ^
+/Users/haoranliu/Projects/sanguosha/src/package/mountainpackage.cpp:1308:20: warning: 'insertMulti' is deprecated: Use insert() instead [-Wdeprecated-declarations]
+ 1308 |     related_skills.insertMulti("fangquan", "#fangquan-give");
+      |                    ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qmap.h:1660:5: note: 'insertMulti' has been explicitly marked deprecated here
+ 1660 |     QT_DEPRECATED_VERSION_X_6_0("Use insert() instead")
+      |     ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:143:44: note: expanded from macro 'QT_DEPRECATED_VERSION_X_6_0'
+  143 | # define QT_DEPRECATED_VERSION_X_6_0(text) QT_DEPRECATED_X(text)
+      |                                            ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:31:33: note: expanded from macro 'QT_DEPRECATED_X'
+   31 | #  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+      |                                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qcompilerdetection.h:1018:36: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+ 1018 | #  define Q_DECL_DEPRECATED_X(x) [[deprecated(x)]]
+      |                                    ^
+/Users/haoranliu/Projects/sanguosha/src/package/mountainpackage.cpp:1314:20: warning: 'insertMulti' is deprecated: Use insert() instead [-Wdeprecated-declarations]
+ 1314 |     related_skills.insertMulti("hunzi", "yinghun");
+      |                    ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qmap.h:1660:5: note: 'insertMulti' has been explicitly marked deprecated here
+ 1660 |     QT_DEPRECATED_VERSION_X_6_0("Use insert() instead")
+      |     ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:143:44: note: expanded from macro 'QT_DEPRECATED_VERSION_X_6_0'
+  143 | # define QT_DEPRECATED_VERSION_X_6_0(text) QT_DEPRECATED_X(text)
+      |                                            ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:31:33: note: expanded from macro 'QT_DEPRECATED_X'
+   31 | #  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+      |                                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qcompilerdetection.h:1018:36: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+ 1018 | #  define Q_DECL_DEPRECATED_X(x) [[deprecated(x)]]
+      |                                    ^
+/Users/haoranliu/Projects/sanguosha/src/package/mountainpackage.cpp:1320:20: warning: 'insertMulti' is deprecated: Use insert() instead [-Wdeprecated-declarations]
+ 1320 |     related_skills.insertMulti("guzheng", "#guzheng-get");
+      |                    ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qmap.h:1660:5: note: 'insertMulti' has been explicitly marked deprecated here
+ 1660 |     QT_DEPRECATED_VERSION_X_6_0("Use insert() instead")
+      |     ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:143:44: note: expanded from macro 'QT_DEPRECATED_VERSION_X_6_0'
+  143 | # define QT_DEPRECATED_VERSION_X_6_0(text) QT_DEPRECATED_X(text)
+      |                                            ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:31:33: note: expanded from macro 'QT_DEPRECATED_X'
+   31 | #  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+      |                                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qcompilerdetection.h:1018:36: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+ 1018 | #  define Q_DECL_DEPRECATED_X(x) [[deprecated(x)]]
+      |                                    ^
+/Users/haoranliu/Projects/sanguosha/src/package/mountainpackage.cpp:1334:20: warning: 'insertMulti' is deprecated: Use insert() instead [-Wdeprecated-declarations]
+ 1334 |     related_skills.insertMulti("huashen", "#huashen-begin");
+      |                    ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qmap.h:1660:5: note: 'insertMulti' has been explicitly marked deprecated here
+ 1660 |     QT_DEPRECATED_VERSION_X_6_0("Use insert() instead")
+      |     ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:143:44: note: expanded from macro 'QT_DEPRECATED_VERSION_X_6_0'
+  143 | # define QT_DEPRECATED_VERSION_X_6_0(text) QT_DEPRECATED_X(text)
+      |                                            ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:31:33: note: expanded from macro 'QT_DEPRECATED_X'
+   31 | #  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+      |                                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qcompilerdetection.h:1018:36: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+ 1018 | #  define Q_DECL_DEPRECATED_X(x) [[deprecated(x)]]
+      |                                    ^
+/Users/haoranliu/Projects/sanguosha/src/package/mountainpackage.cpp:1335:20: warning: 'insertMulti' is deprecated: Use insert() instead [-Wdeprecated-declarations]
+ 1335 |     related_skills.insertMulti("huashen", "#huashen-end");
+      |                    ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qmap.h:1660:5: note: 'insertMulti' has been explicitly marked deprecated here
+ 1660 |     QT_DEPRECATED_VERSION_X_6_0("Use insert() instead")
+      |     ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:143:44: note: expanded from macro 'QT_DEPRECATED_VERSION_X_6_0'
+  143 | # define QT_DEPRECATED_VERSION_X_6_0(text) QT_DEPRECATED_X(text)
+      |                                            ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:31:33: note: expanded from macro 'QT_DEPRECATED_X'
+   31 | #  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+      |                                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qcompilerdetection.h:1018:36: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+ 1018 | #  define Q_DECL_DEPRECATED_X(x) [[deprecated(x)]]
+      |                                    ^
+7 warnings generated.
+[56/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/package/sp-package.cpp.o
+/Users/haoranliu/Projects/sanguosha/src/package/sp-package.cpp:469:20: warning: 'insertMulti' is deprecated: Use insert() instead [-Wdeprecated-declarations]
+  469 |     related_skills.insertMulti("jilei", "#jilei-clear");
+      |                    ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qmap.h:1660:5: note: 'insertMulti' has been explicitly marked deprecated here
+ 1660 |     QT_DEPRECATED_VERSION_X_6_0("Use insert() instead")
+      |     ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:143:44: note: expanded from macro 'QT_DEPRECATED_VERSION_X_6_0'
+  143 | # define QT_DEPRECATED_VERSION_X_6_0(text) QT_DEPRECATED_X(text)
+      |                                            ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:31:33: note: expanded from macro 'QT_DEPRECATED_X'
+   31 | #  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+      |                                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qcompilerdetection.h:1018:36: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+ 1018 | #  define Q_DECL_DEPRECATED_X(x) [[deprecated(x)]]
+      |                                    ^
+/Users/haoranliu/Projects/sanguosha/src/package/sp-package.cpp:505:20: warning: 'insertMulti' is deprecated: Use insert() instead [-Wdeprecated-declarations]
+  505 |     related_skills.insertMulti("shenwei", "#shenwei-draw");
+      |                    ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qmap.h:1660:5: note: 'insertMulti' has been explicitly marked deprecated here
+ 1660 |     QT_DEPRECATED_VERSION_X_6_0("Use insert() instead")
+      |     ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:143:44: note: expanded from macro 'QT_DEPRECATED_VERSION_X_6_0'
+  143 | # define QT_DEPRECATED_VERSION_X_6_0(text) QT_DEPRECATED_X(text)
+      |                                            ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:31:33: note: expanded from macro 'QT_DEPRECATED_X'
+   31 | #  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+      |                                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qcompilerdetection.h:1018:36: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+ 1018 | #  define Q_DECL_DEPRECATED_X(x) [[deprecated(x)]]
+      |                                    ^
+2 warnings generated.
+[57/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/package/standard-cards.cpp.o
+[58/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/package/standard-generals.cpp.o
+/Users/haoranliu/Projects/sanguosha/src/package/standard-generals.cpp:1286:20: warning: 'insertMulti' is deprecated: Use insert() instead [-Wdeprecated-declarations]
+ 1286 |     related_skills.insertMulti("luoyi", "#luoyi");
+      |                    ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qmap.h:1660:5: note: 'insertMulti' has been explicitly marked deprecated here
+ 1660 |     QT_DEPRECATED_VERSION_X_6_0("Use insert() instead")
+      |     ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:143:44: note: expanded from macro 'QT_DEPRECATED_VERSION_X_6_0'
+  143 | # define QT_DEPRECATED_VERSION_X_6_0(text) QT_DEPRECATED_X(text)
+      |                                            ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:31:33: note: expanded from macro 'QT_DEPRECATED_X'
+   31 | #  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+      |                                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qcompilerdetection.h:1018:36: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+ 1018 | #  define Q_DECL_DEPRECATED_X(x) [[deprecated(x)]]
+      |                                    ^
+/Users/haoranliu/Projects/sanguosha/src/package/standard-generals.cpp:1311:20: warning: 'insertMulti' is deprecated: Use insert() instead [-Wdeprecated-declarations]
+ 1311 |     related_skills.insertMulti("kongcheng", "#kongcheng-effect");
+      |                    ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qmap.h:1660:5: note: 'insertMulti' has been explicitly marked deprecated here
+ 1660 |     QT_DEPRECATED_VERSION_X_6_0("Use insert() instead")
+      |     ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:143:44: note: expanded from macro 'QT_DEPRECATED_VERSION_X_6_0'
+  143 | # define QT_DEPRECATED_VERSION_X_6_0(text) QT_DEPRECATED_X(text)
+      |                                            ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:31:33: note: expanded from macro 'QT_DEPRECATED_X'
+   31 | #  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+      |                                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qcompilerdetection.h:1018:36: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+ 1018 | #  define Q_DECL_DEPRECATED_X(x) [[deprecated(x)]]
+      |                                    ^
+/Users/haoranliu/Projects/sanguosha/src/package/standard-generals.cpp:1336:20: warning: 'insertMulti' is deprecated: Use insert() instead [-Wdeprecated-declarations]
+ 1336 |     related_skills.insertMulti("keji", "#keji-skip");
+      |                    ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qmap.h:1660:5: note: 'insertMulti' has been explicitly marked deprecated here
+ 1660 |     QT_DEPRECATED_VERSION_X_6_0("Use insert() instead")
+      |     ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:143:44: note: expanded from macro 'QT_DEPRECATED_VERSION_X_6_0'
+  143 | # define QT_DEPRECATED_VERSION_X_6_0(text) QT_DEPRECATED_X(text)
+      |                                            ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:31:33: note: expanded from macro 'QT_DEPRECATED_X'
+   31 | #  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+      |                                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qcompilerdetection.h:1018:36: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+ 1018 | #  define Q_DECL_DEPRECATED_X(x) [[deprecated(x)]]
+      |                                    ^
+3 warnings generated.
+[59/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/package/standard-skillcards.cpp.o
+[60/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/package/standard.cpp.o
+[61/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/package/thicket.cpp.o
+/Users/haoranliu/Projects/sanguosha/src/package/thicket.cpp:908:20: warning: 'insertMulti' is deprecated: Use insert() instead [-Wdeprecated-declarations]
+  908 |     related_skills.insertMulti("huoshou", "#sa_avoid_huoshou");
+      |                    ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qmap.h:1660:5: note: 'insertMulti' has been explicitly marked deprecated here
+ 1660 |     QT_DEPRECATED_VERSION_X_6_0("Use insert() instead")
+      |     ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:143:44: note: expanded from macro 'QT_DEPRECATED_VERSION_X_6_0'
+  143 | # define QT_DEPRECATED_VERSION_X_6_0(text) QT_DEPRECATED_X(text)
+      |                                            ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:31:33: note: expanded from macro 'QT_DEPRECATED_X'
+   31 | #  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+      |                                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qcompilerdetection.h:1018:36: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+ 1018 | #  define Q_DECL_DEPRECATED_X(x) [[deprecated(x)]]
+      |                                    ^
+/Users/haoranliu/Projects/sanguosha/src/package/thicket.cpp:914:20: warning: 'insertMulti' is deprecated: Use insert() instead [-Wdeprecated-declarations]
+  914 |     related_skills.insertMulti("juxiang", "#sa_avoid_juxiang");
+      |                    ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qmap.h:1660:5: note: 'insertMulti' has been explicitly marked deprecated here
+ 1660 |     QT_DEPRECATED_VERSION_X_6_0("Use insert() instead")
+      |     ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:143:44: note: expanded from macro 'QT_DEPRECATED_VERSION_X_6_0'
+  143 | # define QT_DEPRECATED_VERSION_X_6_0(text) QT_DEPRECATED_X(text)
+      |                                            ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:31:33: note: expanded from macro 'QT_DEPRECATED_X'
+   31 | #  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+      |                                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qcompilerdetection.h:1018:36: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+ 1018 | #  define Q_DECL_DEPRECATED_X(x) [[deprecated(x)]]
+      |                                    ^
+/Users/haoranliu/Projects/sanguosha/src/package/thicket.cpp:924:20: warning: 'insertMulti' is deprecated: Use insert() instead [-Wdeprecated-declarations]
+  924 |     related_skills.insertMulti("haoshi", "#haoshi");
+      |                    ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qmap.h:1660:5: note: 'insertMulti' has been explicitly marked deprecated here
+ 1660 |     QT_DEPRECATED_VERSION_X_6_0("Use insert() instead")
+      |     ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:143:44: note: expanded from macro 'QT_DEPRECATED_VERSION_X_6_0'
+  143 | # define QT_DEPRECATED_VERSION_X_6_0(text) QT_DEPRECATED_X(text)
+      |                                            ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:31:33: note: expanded from macro 'QT_DEPRECATED_X'
+   31 | #  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+      |                                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qcompilerdetection.h:1018:36: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+ 1018 | #  define Q_DECL_DEPRECATED_X(x) [[deprecated(x)]]
+      |                                    ^
+/Users/haoranliu/Projects/sanguosha/src/package/thicket.cpp:925:20: warning: 'insertMulti' is deprecated: Use insert() instead [-Wdeprecated-declarations]
+  925 |     related_skills.insertMulti("haoshi", "#haoshi-give");
+      |                    ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qmap.h:1660:5: note: 'insertMulti' has been explicitly marked deprecated here
+ 1660 |     QT_DEPRECATED_VERSION_X_6_0("Use insert() instead")
+      |     ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:143:44: note: expanded from macro 'QT_DEPRECATED_VERSION_X_6_0'
+  143 | # define QT_DEPRECATED_VERSION_X_6_0(text) QT_DEPRECATED_X(text)
+      |                                            ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:31:33: note: expanded from macro 'QT_DEPRECATED_X'
+   31 | #  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+      |                                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qcompilerdetection.h:1018:36: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+ 1018 | #  define Q_DECL_DEPRECATED_X(x) [[deprecated(x)]]
+      |                                    ^
+/Users/haoranliu/Projects/sanguosha/src/package/thicket.cpp:939:20: warning: 'insertMulti' is deprecated: Use insert() instead [-Wdeprecated-declarations]
+  939 |     related_skills.insertMulti("luanwu", "#@chaos-1");
+      |                    ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qmap.h:1660:5: note: 'insertMulti' has been explicitly marked deprecated here
+ 1660 |     QT_DEPRECATED_VERSION_X_6_0("Use insert() instead")
+      |     ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:143:44: note: expanded from macro 'QT_DEPRECATED_VERSION_X_6_0'
+  143 | # define QT_DEPRECATED_VERSION_X_6_0(text) QT_DEPRECATED_X(text)
+      |                                            ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:31:33: note: expanded from macro 'QT_DEPRECATED_X'
+   31 | #  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+      |                                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qcompilerdetection.h:1018:36: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+ 1018 | #  define Q_DECL_DEPRECATED_X(x) [[deprecated(x)]]
+      |                                    ^
+5 warnings generated.
+[62/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/package/wisdompackage.cpp.o
+[63/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/package/wind.cpp.o
+/Users/haoranliu/Projects/sanguosha/src/package/wind.cpp:1082:20: warning: 'insertMulti' is deprecated: Use insert() instead [-Wdeprecated-declarations]
+ 1082 |     related_skills.insertMulti("hongyan", "#hongyan-retrial");
+      |                    ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qmap.h:1660:5: note: 'insertMulti' has been explicitly marked deprecated here
+ 1660 |     QT_DEPRECATED_VERSION_X_6_0("Use insert() instead")
+      |     ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:143:44: note: expanded from macro 'QT_DEPRECATED_VERSION_X_6_0'
+  143 | # define QT_DEPRECATED_VERSION_X_6_0(text) QT_DEPRECATED_X(text)
+      |                                            ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:31:33: note: expanded from macro 'QT_DEPRECATED_X'
+   31 | #  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+      |                                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qcompilerdetection.h:1018:36: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+ 1018 | #  define Q_DECL_DEPRECATED_X(x) [[deprecated(x)]]
+      |                                    ^
+/Users/haoranliu/Projects/sanguosha/src/package/wind.cpp:1087:20: warning: 'insertMulti' is deprecated: Use insert() instead [-Wdeprecated-declarations]
+ 1087 |     related_skills.insertMulti("buqu", "#buqu-remove");
+      |                    ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qmap.h:1660:5: note: 'insertMulti' has been explicitly marked deprecated here
+ 1660 |     QT_DEPRECATED_VERSION_X_6_0("Use insert() instead")
+      |     ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:143:44: note: expanded from macro 'QT_DEPRECATED_VERSION_X_6_0'
+  143 | # define QT_DEPRECATED_VERSION_X_6_0(text) QT_DEPRECATED_X(text)
+      |                                            ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:31:33: note: expanded from macro 'QT_DEPRECATED_X'
+   31 | #  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+      |                                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qcompilerdetection.h:1018:36: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+ 1018 | #  define Q_DECL_DEPRECATED_X(x) [[deprecated(x)]]
+      |                                    ^
+2 warnings generated.
+[64/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/package/yitianpackage.cpp.o
+/Users/haoranliu/Projects/sanguosha/src/package/yitianpackage.cpp:1851:20: warning: 'insertMulti' is deprecated: Use insert() instead [-Wdeprecated-declarations]
+ 1851 |     related_skills.insertMulti("jueji", "#jueji-get");
+      |                    ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qmap.h:1660:5: note: 'insertMulti' has been explicitly marked deprecated here
+ 1660 |     QT_DEPRECATED_VERSION_X_6_0("Use insert() instead")
+      |     ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:143:44: note: expanded from macro 'QT_DEPRECATED_VERSION_X_6_0'
+  143 | # define QT_DEPRECATED_VERSION_X_6_0(text) QT_DEPRECATED_X(text)
+      |                                            ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:31:33: note: expanded from macro 'QT_DEPRECATED_X'
+   31 | #  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+      |                                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qcompilerdetection.h:1018:36: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+ 1018 | #  define Q_DECL_DEPRECATED_X(x) [[deprecated(x)]]
+      |                                    ^
+/Users/haoranliu/Projects/sanguosha/src/package/yitianpackage.cpp:1862:20: warning: 'insertMulti' is deprecated: Use insert() instead [-Wdeprecated-declarations]
+ 1862 |     related_skills.insertMulti("wuling", "#wuling-effect");
+      |                    ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qmap.h:1660:5: note: 'insertMulti' has been explicitly marked deprecated here
+ 1660 |     QT_DEPRECATED_VERSION_X_6_0("Use insert() instead")
+      |     ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:143:44: note: expanded from macro 'QT_DEPRECATED_VERSION_X_6_0'
+  143 | # define QT_DEPRECATED_VERSION_X_6_0(text) QT_DEPRECATED_X(text)
+      |                                            ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:31:33: note: expanded from macro 'QT_DEPRECATED_X'
+   31 | #  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+      |                                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qcompilerdetection.h:1018:36: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+ 1018 | #  define Q_DECL_DEPRECATED_X(x) [[deprecated(x)]]
+      |                                    ^
+/Users/haoranliu/Projects/sanguosha/src/package/yitianpackage.cpp:1863:20: warning: 'insertMulti' is deprecated: Use insert() instead [-Wdeprecated-declarations]
+ 1863 |     related_skills.insertMulti("wuling", "#wuling-ex-effect");
+      |                    ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qmap.h:1660:5: note: 'insertMulti' has been explicitly marked deprecated here
+ 1660 |     QT_DEPRECATED_VERSION_X_6_0("Use insert() instead")
+      |     ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:143:44: note: expanded from macro 'QT_DEPRECATED_VERSION_X_6_0'
+  143 | # define QT_DEPRECATED_VERSION_X_6_0(text) QT_DEPRECATED_X(text)
+      |                                            ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:31:33: note: expanded from macro 'QT_DEPRECATED_X'
+   31 | #  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+      |                                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qcompilerdetection.h:1018:36: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+ 1018 | #  define Q_DECL_DEPRECATED_X(x) [[deprecated(x)]]
+      |                                    ^
+/Users/haoranliu/Projects/sanguosha/src/package/yitianpackage.cpp:1874:20: warning: 'insertMulti' is deprecated: Use insert() instead [-Wdeprecated-declarations]
+ 1874 |     related_skills.insertMulti("lianli", "#lianli-start");
+      |                    ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qmap.h:1660:5: note: 'insertMulti' has been explicitly marked deprecated here
+ 1660 |     QT_DEPRECATED_VERSION_X_6_0("Use insert() instead")
+      |     ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:143:44: note: expanded from macro 'QT_DEPRECATED_VERSION_X_6_0'
+  143 | # define QT_DEPRECATED_VERSION_X_6_0(text) QT_DEPRECATED_X(text)
+      |                                            ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:31:33: note: expanded from macro 'QT_DEPRECATED_X'
+   31 | #  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+      |                                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qcompilerdetection.h:1018:36: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+ 1018 | #  define Q_DECL_DEPRECATED_X(x) [[deprecated(x)]]
+      |                                    ^
+/Users/haoranliu/Projects/sanguosha/src/package/yitianpackage.cpp:1875:20: warning: 'insertMulti' is deprecated: Use insert() instead [-Wdeprecated-declarations]
+ 1875 |     related_skills.insertMulti("lianli", "#lianli-slash");
+      |                    ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qmap.h:1660:5: note: 'insertMulti' has been explicitly marked deprecated here
+ 1660 |     QT_DEPRECATED_VERSION_X_6_0("Use insert() instead")
+      |     ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:143:44: note: expanded from macro 'QT_DEPRECATED_VERSION_X_6_0'
+  143 | # define QT_DEPRECATED_VERSION_X_6_0(text) QT_DEPRECATED_X(text)
+      |                                            ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:31:33: note: expanded from macro 'QT_DEPRECATED_X'
+   31 | #  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+      |                                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qcompilerdetection.h:1018:36: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+ 1018 | #  define Q_DECL_DEPRECATED_X(x) [[deprecated(x)]]
+      |                                    ^
+/Users/haoranliu/Projects/sanguosha/src/package/yitianpackage.cpp:1876:20: warning: 'insertMulti' is deprecated: Use insert() instead [-Wdeprecated-declarations]
+ 1876 |     related_skills.insertMulti("lianli", "#lianli-jink");
+      |                    ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qmap.h:1660:5: note: 'insertMulti' has been explicitly marked deprecated here
+ 1660 |     QT_DEPRECATED_VERSION_X_6_0("Use insert() instead")
+      |     ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:143:44: note: expanded from macro 'QT_DEPRECATED_VERSION_X_6_0'
+  143 | # define QT_DEPRECATED_VERSION_X_6_0(text) QT_DEPRECATED_X(text)
+      |                                            ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:31:33: note: expanded from macro 'QT_DEPRECATED_X'
+   31 | #  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+      |                                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qcompilerdetection.h:1018:36: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+ 1018 | #  define Q_DECL_DEPRECATED_X(x) [[deprecated(x)]]
+      |                                    ^
+/Users/haoranliu/Projects/sanguosha/src/package/yitianpackage.cpp:1877:20: warning: 'insertMulti' is deprecated: Use insert() instead [-Wdeprecated-declarations]
+ 1877 |     related_skills.insertMulti("lianli", "#lianli-clear");
+      |                    ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qmap.h:1660:5: note: 'insertMulti' has been explicitly marked deprecated here
+ 1660 |     QT_DEPRECATED_VERSION_X_6_0("Use insert() instead")
+      |     ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:143:44: note: expanded from macro 'QT_DEPRECATED_VERSION_X_6_0'
+  143 | # define QT_DEPRECATED_VERSION_X_6_0(text) QT_DEPRECATED_X(text)
+      |                                            ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:31:33: note: expanded from macro 'QT_DEPRECATED_X'
+   31 | #  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+      |                                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qcompilerdetection.h:1018:36: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+ 1018 | #  define Q_DECL_DEPRECATED_X(x) [[deprecated(x)]]
+      |                                    ^
+/Users/haoranliu/Projects/sanguosha/src/package/yitianpackage.cpp:1897:20: warning: 'insertMulti' is deprecated: Use insert() instead [-Wdeprecated-declarations]
+ 1897 |     related_skills.insertMulti("gongmou", "#gongmou-exchange");
+      |                    ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qmap.h:1660:5: note: 'insertMulti' has been explicitly marked deprecated here
+ 1660 |     QT_DEPRECATED_VERSION_X_6_0("Use insert() instead")
+      |     ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:143:44: note: expanded from macro 'QT_DEPRECATED_VERSION_X_6_0'
+  143 | # define QT_DEPRECATED_VERSION_X_6_0(text) QT_DEPRECATED_X(text)
+      |                                            ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:31:33: note: expanded from macro 'QT_DEPRECATED_X'
+   31 | #  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+      |                                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qcompilerdetection.h:1018:36: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+ 1018 | #  define Q_DECL_DEPRECATED_X(x) [[deprecated(x)]]
+      |                                    ^
+8 warnings generated.
+[65/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/scenario/boss-mode-scenario.cpp.o
+[66/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/scenario/couple-scenario.cpp.o
+[67/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/scenario/fancheng-scenario.cpp.o
+[68/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/package/yjcm2012-package.cpp.o
+/Users/haoranliu/Projects/sanguosha/src/package/yjcm2012-package.cpp:855:20: warning: 'insertMulti' is deprecated: Use insert() instead [-Wdeprecated-declarations]
+  855 |     related_skills.insertMulti("jiangchi", "#jiangchi-clear");
+      |                    ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qmap.h:1660:5: note: 'insertMulti' has been explicitly marked deprecated here
+ 1660 |     QT_DEPRECATED_VERSION_X_6_0("Use insert() instead")
+      |     ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:143:44: note: expanded from macro 'QT_DEPRECATED_VERSION_X_6_0'
+  143 | # define QT_DEPRECATED_VERSION_X_6_0(text) QT_DEPRECATED_X(text)
+      |                                            ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:31:33: note: expanded from macro 'QT_DEPRECATED_X'
+   31 | #  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+      |                                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qcompilerdetection.h:1018:36: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+ 1018 | #  define Q_DECL_DEPRECATED_X(x) [[deprecated(x)]]
+      |                                    ^
+1 warning generated.
+[69/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/package/yjcm-package.cpp.o
+/Users/haoranliu/Projects/sanguosha/src/package/yjcm-package.cpp:1224:20: warning: 'insertMulti' is deprecated: Use insert() instead [-Wdeprecated-declarations]
+ 1224 |     related_skills.insertMulti("jiushi", "#jiushi-flip");
+      |                    ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qmap.h:1660:5: note: 'insertMulti' has been explicitly marked deprecated here
+ 1660 |     QT_DEPRECATED_VERSION_X_6_0("Use insert() instead")
+      |     ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:143:44: note: expanded from macro 'QT_DEPRECATED_VERSION_X_6_0'
+  143 | # define QT_DEPRECATED_VERSION_X_6_0(text) QT_DEPRECATED_X(text)
+      |                                            ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:31:33: note: expanded from macro 'QT_DEPRECATED_X'
+   31 | #  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+      |                                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qcompilerdetection.h:1018:36: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+ 1018 | #  define Q_DECL_DEPRECATED_X(x) [[deprecated(x)]]
+      |                                    ^
+/Users/haoranliu/Projects/sanguosha/src/package/yjcm-package.cpp:1230:20: warning: 'insertMulti' is deprecated: Use insert() instead [-Wdeprecated-declarations]
+ 1230 |     related_skills.insertMulti("zhichi", "#zhichi-clear");
+      |                    ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qmap.h:1660:5: note: 'insertMulti' has been explicitly marked deprecated here
+ 1660 |     QT_DEPRECATED_VERSION_X_6_0("Use insert() instead")
+      |     ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:143:44: note: expanded from macro 'QT_DEPRECATED_VERSION_X_6_0'
+  143 | # define QT_DEPRECATED_VERSION_X_6_0(text) QT_DEPRECATED_X(text)
+      |                                            ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:31:33: note: expanded from macro 'QT_DEPRECATED_X'
+   31 | #  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+      |                                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qcompilerdetection.h:1018:36: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+ 1018 | #  define Q_DECL_DEPRECATED_X(x) [[deprecated(x)]]
+      |                                    ^
+/Users/haoranliu/Projects/sanguosha/src/package/yjcm-package.cpp:1267:20: warning: 'insertMulti' is deprecated: Use insert() instead [-Wdeprecated-declarations]
+ 1267 |     related_skills.insertMulti("quanji", "#quanji");
+      |                    ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qmap.h:1660:5: note: 'insertMulti' has been explicitly marked deprecated here
+ 1660 |     QT_DEPRECATED_VERSION_X_6_0("Use insert() instead")
+      |     ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:143:44: note: expanded from macro 'QT_DEPRECATED_VERSION_X_6_0'
+  143 | # define QT_DEPRECATED_VERSION_X_6_0(text) QT_DEPRECATED_X(text)
+      |                                            ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:31:33: note: expanded from macro 'QT_DEPRECATED_X'
+   31 | #  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+      |                                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qcompilerdetection.h:1018:36: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+ 1018 | #  define Q_DECL_DEPRECATED_X(x) [[deprecated(x)]]
+      |                                    ^
+3 warnings generated.
+[70/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/scenario/guandu-scenario.cpp.o
+[71/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/scenario/miniscenarios.cpp.o
+[72/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/scenario/scenario.cpp.o
+[73/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/scenario/scenerule.cpp.o
+[74/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/scenario/zombie-mode-scenario.cpp.o
+[75/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/server/contestdb.cpp.o
+[76/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/server/ai.cpp.o
+[77/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/server/generalselector.cpp.o
+[78/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/server/roomthread.cpp.o
+[79/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/server/roomthread1v1.cpp.o
+[80/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/server/gamerule.cpp.o
+[81/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/server/roomthread3v3.cpp.o
+[82/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/server/room.cpp.o
+/Users/haoranliu/Projects/sanguosha/src/server/room.cpp:712:17: warning: 'type' is deprecated: Use typeId() or metaType(). [-Wdeprecated-declarations]
+  712 |         if(data.type() == QVariant::String)
+      |                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qvariant.h:601:5: note: 'type' has been explicitly marked deprecated here
+  601 |     QT_DEPRECATED_VERSION_X_6_0("Use typeId() or metaType().")
+      |     ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:143:44: note: expanded from macro 'QT_DEPRECATED_VERSION_X_6_0'
+  143 | # define QT_DEPRECATED_VERSION_X_6_0(text) QT_DEPRECATED_X(text)
+      |                                            ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:31:33: note: expanded from macro 'QT_DEPRECATED_X'
+   31 | #  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+      |                                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qcompilerdetection.h:1018:36: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+ 1018 | #  define Q_DECL_DEPRECATED_X(x) [[deprecated(x)]]
+      |                                    ^
+/Users/haoranliu/Projects/sanguosha/src/server/room.cpp:712:37: warning: 'String' is deprecated: Use QMetaType::Type instead. [-Wdeprecated-declarations]
+  712 |         if(data.type() == QVariant::String)
+      |                                     ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qvariant.h:149:10: note: 'Type' has been explicitly marked deprecated here
+  149 |     enum QT_DEPRECATED_VERSION_X_6_0("Use QMetaType::Type instead.") Type
+      |          ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:143:44: note: expanded from macro 'QT_DEPRECATED_VERSION_X_6_0'
+  143 | # define QT_DEPRECATED_VERSION_X_6_0(text) QT_DEPRECATED_X(text)
+      |                                            ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:31:33: note: expanded from macro 'QT_DEPRECATED_X'
+   31 | #  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+      |                                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qcompilerdetection.h:1018:36: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+ 1018 | #  define Q_DECL_DEPRECATED_X(x) [[deprecated(x)]]
+      |                                    ^
+2 warnings generated.
+[83/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/ui/TimedProgressBar.cpp.o
+In file included from /Users/haoranliu/Projects/sanguosha/src/ui/TimedProgressBar.cpp:1:
+/Users/haoranliu/Projects/sanguosha/src/ui/TimedProgressBar.h:11:77: warning: implicit conversion of NULL constant to 'int' [-Wnull-conversion]
+   11 |     inline TimedProgressBar():m_hasTimer(false), m_autoHide(false), m_timer(NULL), m_step(0), m_max(0), m_val(0)
+      |                                                                            ~^~~~
+      |                                                                             0
+/Users/haoranliu/Projects/sanguosha/src/ui/TimedProgressBar.cpp:17:19: warning: implicit conversion of NULL constant to 'int' [-Wnull-conversion]
+   17 |         m_timer = NULL;
+      |                 ~ ^~~~
+      |                   0
+/Users/haoranliu/Projects/sanguosha/src/ui/TimedProgressBar.cpp:31:23: warning: implicit conversion of NULL constant to 'int' [-Wnull-conversion]
+   31 |             m_timer = NULL;
+      |                     ~ ^~~~
+      |                       0
+3 warnings generated.
+[84/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/server/server.cpp.o
+In file included from /Users/haoranliu/Projects/sanguosha/src/server/server.cpp:9:
+In file included from /Users/haoranliu/Projects/sanguosha/src/dialog/choosegeneraldialog.h:6:
+/Users/haoranliu/Projects/sanguosha/src/ui/TimedProgressBar.h:11:77: warning: implicit conversion of NULL constant to 'int' [-Wnull-conversion]
+   11 |     inline TimedProgressBar():m_hasTimer(false), m_autoHide(false), m_timer(NULL), m_step(0), m_max(0), m_val(0)
+      |                                                                            ~^~~~
+      |                                                                             0
+/Users/haoranliu/Projects/sanguosha/src/server/server.cpp:369:16: warning: assigning field to itself [-Wself-assign-field]
+  369 |     this->list = list;
+      |                ^
+2 warnings generated.
+[85/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/server/serverplayer.cpp.o
+[86/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/ui/button.cpp.o
+[87/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/ui/carditem.cpp.o
+[88/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/ui/cardcontainer.cpp.o
+[89/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/ui/chatwidget.cpp.o
+[90/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/ui/indicatoritem.cpp.o
+[91/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/ui/clientlogbox.cpp.o
+In file included from /Users/haoranliu/Projects/sanguosha/src/ui/clientlogbox.cpp:6:
+In file included from /Users/haoranliu/Projects/sanguosha/src/ui/roomscene.h:4:
+In file included from /Users/haoranliu/Projects/sanguosha/src/ui/photo.h:8:
+/Users/haoranliu/Projects/sanguosha/src/ui/TimedProgressBar.h:11:77: warning: implicit conversion of NULL constant to 'int' [-Wnull-conversion]
+   11 |     inline TimedProgressBar():m_hasTimer(false), m_autoHide(false), m_timer(NULL), m_step(0), m_max(0), m_val(0)
+      |                                                                            ~^~~~
+      |                                                                             0
+1 warning generated.
+[92/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/ui/irregularbutton.cpp.o
+[93/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/ui/dashboard.cpp.o
+In file included from /Users/haoranliu/Projects/sanguosha/src/ui/dashboard.cpp:1:
+In file included from /Users/haoranliu/Projects/sanguosha/src/ui/dashboard.h:10:
+/Users/haoranliu/Projects/sanguosha/src/ui/TimedProgressBar.h:11:77: warning: implicit conversion of NULL constant to 'int' [-Wnull-conversion]
+   11 |     inline TimedProgressBar():m_hasTimer(false), m_autoHide(false), m_timer(NULL), m_step(0), m_max(0), m_val(0)
+      |                                                                            ~^~~~
+      |                                                                             0
+1 warning generated.
+[94/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/ui/pixmap.cpp.o
+[95/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/ui/pixmapanimation.cpp.o
+[96/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/ui/photo.cpp.o
+In file included from /Users/haoranliu/Projects/sanguosha/src/ui/photo.cpp:1:
+In file included from /Users/haoranliu/Projects/sanguosha/src/ui/photo.h:8:
+/Users/haoranliu/Projects/sanguosha/src/ui/TimedProgressBar.h:11:77: warning: implicit conversion of NULL constant to 'int' [-Wnull-conversion]
+   11 |     inline TimedProgressBar():m_hasTimer(false), m_autoHide(false), m_timer(NULL), m_step(0), m_max(0), m_val(0)
+      |                                                                            ~^~~~
+      |                                                                             0
+1 warning generated.
+[97/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/ui/rolecombobox.cpp.o
+In file included from /Users/haoranliu/Projects/sanguosha/src/ui/rolecombobox.cpp:2:
+In file included from /Users/haoranliu/Projects/sanguosha/src/ui/photo.h:8:
+/Users/haoranliu/Projects/sanguosha/src/ui/TimedProgressBar.h:11:77: warning: implicit conversion of NULL constant to 'int' [-Wnull-conversion]
+   11 |     inline TimedProgressBar():m_hasTimer(false), m_autoHide(false), m_timer(NULL), m_step(0), m_max(0), m_val(0)
+      |                                                                            ~^~~~
+      |                                                                             0
+1 warning generated.
+[98/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/ui/sprite.cpp.o
+[99/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/ui/window.cpp.o
+[100/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/ui/startscene.cpp.o
+[101/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/util/detector.cpp.o
+[102/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/util/nativesocket.cpp.o
+[103/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/jsoncpp/src/json_reader.cpp.o
+/Users/haoranliu/Projects/sanguosha/src/jsoncpp/src/json_reader.cpp:872:4: warning: 'sprintf' is deprecated: This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead. [-Wdeprecated-declarations]
+  872 |    sprintf( buffer, "Line %d, Column %d", line, column );
+      |    ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h:278:1: note: 'sprintf' has been explicitly marked deprecated here
+  278 | __deprecated_msg("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead.")
+      | ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h:227:48: note: expanded from macro '__deprecated_msg'
+  227 |         #define __deprecated_msg(_msg) __attribute__((__deprecated__(_msg)))
+      |                                                       ^
+1 warning generated.
+[104/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/ui/roomscene.cpp.o
+In file included from /Users/haoranliu/Projects/sanguosha/src/ui/roomscene.cpp:1:
+In file included from /Users/haoranliu/Projects/sanguosha/src/ui/roomscene.h:4:
+In file included from /Users/haoranliu/Projects/sanguosha/src/ui/photo.h:8:
+/Users/haoranliu/Projects/sanguosha/src/ui/TimedProgressBar.h:11:77: warning: implicit conversion of NULL constant to 'int' [-Wnull-conversion]
+   11 |     inline TimedProgressBar():m_hasTimer(false), m_autoHide(false), m_timer(NULL), m_step(0), m_max(0), m_val(0)
+      |                                                                            ~^~~~
+      |                                                                             0
+1 warning generated.
+[105/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/util/recorder.cpp.o
+[106/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/jsoncpp/src/json_value.cpp.o
+[107/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/jsoncpp/src/json_writer.cpp.o
+/Users/haoranliu/Projects/sanguosha/src/jsoncpp/src/json_writer.cpp:80:4: warning: 'sprintf' is deprecated: This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead. [-Wdeprecated-declarations]
+   80 |    sprintf(buffer, "%#.16g", value); 
+      |    ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h:278:1: note: 'sprintf' has been explicitly marked deprecated here
+  278 | __deprecated_msg("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead.")
+      | ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h:227:48: note: expanded from macro '__deprecated_msg'
+  227 |         #define __deprecated_msg(_msg) __attribute__((__deprecated__(_msg)))
+      |                                                       ^
+1 warning generated.
+[108/116] Building CXX object CMakeFiles/qs_legacy_objects.dir/sanguosha_wrap.cxx.o
+/Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug/sanguosha_wrap.cxx:3117:15: warning: 'type' is deprecated: Use typeId() or metaType(). [-Wdeprecated-declarations]
+ 3117 |         switch(value.type()){
+      |                      ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qvariant.h:601:5: note: 'type' has been explicitly marked deprecated here
+  601 |     QT_DEPRECATED_VERSION_X_6_0("Use typeId() or metaType().")
+      |     ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:143:44: note: expanded from macro 'QT_DEPRECATED_VERSION_X_6_0'
+  143 | # define QT_DEPRECATED_VERSION_X_6_0(text) QT_DEPRECATED_X(text)
+      |                                            ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:31:33: note: expanded from macro 'QT_DEPRECATED_X'
+   31 | #  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+      |                                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qcompilerdetection.h:1018:36: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+ 1018 | #  define Q_DECL_DEPRECATED_X(x) [[deprecated(x)]]
+      |                                    ^
+/Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug/sanguosha_wrap.cxx:3128:7: warning: comparison of different enumeration types in switch statement ('Type' and 'QMetaType::Type') [-Wenum-compare-switch]
+ 3117 |         switch(value.type()){
+      |                ~~~~~~~~~~~~
+ 3118 |         case QMetaType::Int:{
+ 3119 |                         lua_pushinteger(lua, value.toInt());
+ 3120 |                         break;
+ 3121 |                 }
+ 3122 | 
+ 3123 |         case QMetaType::Bool:{
+ 3124 |                         lua_pushboolean(lua, value.toBool());
+ 3125 |                         break;
+ 3126 |                 }
+ 3127 | 
+ 3128 |         case QMetaType::QString:{
+      |              ^~~~~~~~~~~~~~~~~~
+/Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug/sanguosha_wrap.cxx:3123:7: warning: comparison of different enumeration types in switch statement ('Type' and 'QMetaType::Type') [-Wenum-compare-switch]
+ 3117 |         switch(value.type()){
+      |                ~~~~~~~~~~~~
+ 3118 |         case QMetaType::Int:{
+ 3119 |                         lua_pushinteger(lua, value.toInt());
+ 3120 |                         break;
+ 3121 |                 }
+ 3122 | 
+ 3123 |         case QMetaType::Bool:{
+      |              ^~~~~~~~~~~~~~~
+/Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug/sanguosha_wrap.cxx:3118:7: warning: comparison of different enumeration types in switch statement ('Type' and 'QMetaType::Type') [-Wenum-compare-switch]
+ 3117 |         switch(value.type()){
+      |                ~~~~~~~~~~~~
+ 3118 |         case QMetaType::Int:{
+      |              ^~~~~~~~~~~~~~
+4 warnings generated.
+[109/116] Automatic MOC for target QSanguosha
+[110/116] Building CXX object CMakeFiles/QSanguosha.dir/QSanguosha_autogen/mocs_compilation.cpp.o
+[111/116] Building CXX object CMakeFiles/QSanguosha.dir/src/core/audio.cpp.o
+[112/116] Building CXX object CMakeFiles/QSanguosha.dir/src/main.cpp.o
+/Users/haoranliu/Projects/sanguosha/src/main.cpp:33:5: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   33 |     qt_translator.load("qt_zh_CN.qm");
+      |     ^~~~~~~~~~~~~~~~~~
+/Users/haoranliu/Projects/sanguosha/src/main.cpp:34:5: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   34 |     translator.load("sanguosha.qm");
+      |     ^~~~~~~~~~~~~~~
+2 warnings generated.
+[113/116] Linking CXX executable QSanguosha.app/Contents/MacOS/QSanguosha

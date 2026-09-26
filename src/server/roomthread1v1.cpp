@@ -17,7 +17,7 @@ void RoomThread1v1::run(){
     // initialize the random seed for this thread
     qsrand(QTime(0,0,0).secsTo(QTime::currentTime()));
 
-    QSet<QString> banset = Config.value("Banlist/1v1").toStringList().toSet();
+    QSet<QString> banset = qToSet(Config.value("Banlist/1v1").toStringList());
     general_names = Sanguosha->getRandomGenerals(10, banset);
 
     QStringList known_list = general_names.mid(0, 6);
@@ -35,13 +35,14 @@ void RoomThread1v1::run(){
     ServerPlayer *first = room->getPlayers().at(0), *next = room->getPlayers().at(1);
     askForTakeGeneral(first);
 
-    while(general_names.length() > 1){
+    while(general_names.length() > 1 && !room->isFinished()){
         qSwap(first, next);
 
         askForTakeGeneral(first);
         askForTakeGeneral(first);
     }
 
+    if(room->isFinished()) return;
     askForTakeGeneral(next);
 
     startArrange(first);
@@ -51,6 +52,7 @@ void RoomThread1v1::run(){
 }
 
 void RoomThread1v1::askForTakeGeneral(ServerPlayer *player){
+    if(room->isFinished()) return;
     QString name;
     if(general_names.length() == 1)
         name = general_names.first();
@@ -63,6 +65,7 @@ void RoomThread1v1::askForTakeGeneral(ServerPlayer *player){
         player->invoke("askForGeneral1v1");
     }else{
         msleep(1000);
+        if(room->isFinished()) return;
         takeGeneral(player, name);
     }
 

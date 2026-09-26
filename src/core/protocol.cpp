@@ -7,7 +7,7 @@ using namespace std;
 using namespace QSanProtocol;
 
 unsigned int QSanProtocol::QSanGeneralPacket::_m_globalSerial = 0;
-const unsigned int QSanProtocol::QSanGeneralPacket::S_MAX_PACKET_SIZE = 1000;
+const unsigned int QSanProtocol::QSanGeneralPacket::S_MAX_PACKET_SIZE = 1024 * 1024;
 const string QSanProtocol::Countdown::S_COUNTDOWN_MAGIC = "MG_COUNTDOWN";
 
 bool QSanProtocol::Countdown::tryParse(Json::Value val)
@@ -109,12 +109,8 @@ string QSanProtocol::QSanGeneralPacket::toString() const
     if (body != Json::nullValue)
         result[4] = body;
     
-    string msg = result.toStyledString();
-    msg.erase(remove_if(msg.begin(), msg.end(), (int(*)(int))isspace), msg.end());
-    //truncate too long messages
-    if (msg.length() > S_MAX_PACKET_SIZE)
-    {
-        return msg.substr(0, S_MAX_PACKET_SIZE);
-    }
-    return msg;
+    Json::FastWriter writer;
+    string msg=writer.write(result);
+    if(!msg.empty() && msg.back()=='\n') msg.pop_back();
+    return msg; // Transport rejects oversize frames; never truncate JSON.
 }

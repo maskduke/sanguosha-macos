@@ -1,0 +1,14 @@
+[
+  {
+    "test": "--smoke-test",
+    "mode": "02p",
+    "exit": 0,
+    "pass": true
+  },
+  {
+    "test": "--shutdown-smoke",
+    "mode": "02p",
+    "exit": 0,
+    "pass": false
+  }
+]

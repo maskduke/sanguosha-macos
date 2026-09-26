@@ -1,0 +1,74 @@
+[0/2] Re-checking globbed directories...
+[1/52] Generating qt_values_wrap.cxx
+[2/52] Automatic MOC for target qs_protocol
+[3/51] Automatic MOC for target qs_legacy_protocol
+[4/50] Automatic MOC for target test_lua_runtime
+[5/48] Automatic MOC for target qs_audio
+[6/48] Automatic MOC for target qs_paths
+[7/48] Building CXX object CMakeFiles/qs_audio.dir/qs_audio_autogen/mocs_compilation.cpp.o
+[8/48] Building CXX object CMakeFiles/qs_legacy_protocol.dir/src/core/protocol.cpp.o
+[9/48] Building CXX object CMakeFiles/qs_paths.dir/qs_paths_autogen/mocs_compilation.cpp.o
+[10/48] Automatic MOC for target test_qt_compat
+[11/48] Automatic MOC for target test_qt_values
+[12/47] Building CXX object CMakeFiles/qs_protocol.dir/src/platform/network/line_framer.cpp.o
+[13/47] Linking CXX static library libqs_protocol.a
+[14/47] Building CXX object CMakeFiles/qs_legacy_protocol.dir/src/core/jsonutils.cpp.o
+[15/47] Linking CXX static library libqs_legacy_protocol.a
+[16/47] Automatic MOC for target test_line_framer
+[17/46] Building CXX object CMakeFiles/qs_audio.dir/src/platform/audio/audio_backend.cpp.o
+[18/46] Automatic MOC for target test_legacy_protocol
+[19/45] Building CXX object CMakeFiles/qs_paths.dir/src/platform/paths/paths.cpp.o
+[20/45] Linking CXX static library libqs_paths.a
+[21/45] Building CXX object CMakeFiles/test_qt_values.dir/qt_values_wrap.cxx.o
+[22/45] Building CXX object CMakeFiles/test_qt_compat.dir/test_qt_compat_autogen/mocs_compilation.cpp.o
+[23/45] Automatic MOC for target test_replay
+AutoMoc warning
+---------------
+"SRC:/tests/replay/test_replay.cpp"
+includes the moc file "test_replay.moc", but does not contain a Q_OBJECT, Q_GADGET, Q_NAMESPACE, Q_NAMESPACE_EXPORT, Q_GADGET_EXPORT or Q_ENUM_NS macro.
+
+[24/45] Automatic MOC for target test_paths
+AutoMoc warning
+---------------
+"SRC:/tests/platform/test_paths.cpp"
+includes the moc file "test_paths.moc", but does not contain a Q_OBJECT, Q_GADGET, Q_NAMESPACE, Q_NAMESPACE_EXPORT, Q_GADGET_EXPORT or Q_ENUM_NS macro.
+
+[25/45] Building C object CMakeFiles/qs_audio.dir/src/platform/audio/miniaudio_impl.c.o
+[26/45] Linking CXX static library libqs_audio.a
+[27/45] Automatic MOC for target test_audio_backend
+[28/45] Building CXX object CMakeFiles/test_line_framer.dir/tests/protocol/test_line_framer.cpp.o
+[29/45] Building CXX object CMakeFiles/test_audio_backend.dir/test_audio_backend_autogen/mocs_compilation.cpp.o
+[30/45] Building CXX object CMakeFiles/test_legacy_protocol.dir/tests/protocol/test_legacy_protocol.cpp.o
+[31/45] Building CXX object CMakeFiles/test_paths.dir/test_paths_autogen/mocs_compilation.cpp.o
+[32/45] Building CXX object CMakeFiles/test_replay.dir/test_replay_autogen/mocs_compilation.cpp.o
+[33/45] Linking CXX executable test_line_framer
+[34/45] Building CXX object CMakeFiles/test_qt_compat.dir/tests/platform/test_qt_compat.cpp.o
+[35/45] Linking CXX executable test_qt_values
+[36/45] Linking CXX executable test_legacy_protocol
+[37/45] Linking CXX executable test_qt_compat
+[38/45] Building CXX object CMakeFiles/test_audio_backend.dir/tests/audio/test_audio_backend.cpp.o
+[39/45] Building CXX object CMakeFiles/test_replay.dir/tests/replay/test_replay.cpp.o
+[40/45] Linking CXX executable test_audio_backend
+[41/45] Building CXX object CMakeFiles/test_paths.dir/tests/platform/test_paths.cpp.o
+/Users/haoranliu/Projects/sanguosha/tests/platform/test_paths.cpp:8:27: warning: 'useVerifyThrowsException' is deprecated: Don't use QVERIFY_EXCEPTION_THROWN(expr, type) anymore, use QVERIFY_THROWS_EXCEPTION(type, expr...) instead [-Wdeprecated-declarations]
+    8 |  void traversalRejected(){QVERIFY_EXCEPTION_THROWN(qs::userPath("../outside"),std::invalid_argument);}
+      |                           ^
+/opt/homebrew/opt/qtbase/lib/QtTest.framework/Headers/qtestcase.h:128:52: note: expanded from macro 'QVERIFY_EXCEPTION_THROWN'
+  128 |     QVERIFY_THROWS_EXCEPTION(exceptiontype, QTest::useVerifyThrowsException(); expression)
+      |                                                    ^
+/opt/homebrew/opt/qtbase/lib/QtTest.framework/Headers/qtestcase.h:123:1: note: 'useVerifyThrowsException' has been explicitly marked deprecated here
+  123 | QT_DEPRECATED_VERSION_X_6_3("Don't use QVERIFY_EXCEPTION_THROWN(expr, type) anymore, "
+      | ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:167:44: note: expanded from macro 'QT_DEPRECATED_VERSION_X_6_3'
+  167 | # define QT_DEPRECATED_VERSION_X_6_3(text) QT_DEPRECATED_X(text)
+      |                                            ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:31:33: note: expanded from macro 'QT_DEPRECATED_X'
+   31 | #  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+      |                                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qcompilerdetection.h:1018:36: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+ 1018 | #  define Q_DECL_DEPRECATED_X(x) [[deprecated(x)]]
+      |                                    ^
+1 warning generated.
+[42/45] Linking CXX executable test_paths
+[43/45] Building CXX object CMakeFiles/test_replay.dir/src/util/recorder.cpp.o
+[44/45] Linking CXX executable test_replay

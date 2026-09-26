@@ -139,7 +139,7 @@ class RoomScene : public QGraphicsScene{
 public:
     RoomScene(QMainWindow *main_window);
     void changeTextEditBackground();
-    void adjustItems(QMatrix transform = QMatrix());
+    void adjustItems(QTransform transform = QTransform());
     void showIndicator(const QString &from, const QString &to);
 
     static void FillPlayerNames(QComboBox *combobox, bool add_none);
@@ -297,8 +297,8 @@ private:
 
     //re-layout attempts
     bool game_started;
-    QMatrix view_transform;
-    void reLayout(QMatrix matrix = QMatrix());
+    QTransform view_transform;
+    void reLayout(QTransform matrix = QTransform());
     void alignTo(Pixmap *object, QPoint pos, const QString &flags);
     void alignTo(QWidget *object, QPoint pos, const QString &flags);
     void alignTo(QGraphicsItem *object, QPoint pos, const QString &flags);

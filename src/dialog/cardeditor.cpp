@@ -32,7 +32,7 @@ QRectF BlackEdgeTextItem::boundingRect() const{
     QFontMetrics metric(font);
 
     QRectF rect;
-    rect.setWidth(metric.width(text.at(0)));
+    rect.setWidth(metric.horizontalAdvance(text.at(0)));
     rect.setHeight(text.length() * (metric.height() - metric.descent() + skip) + 10);
     return rect;
 }
@@ -57,7 +57,7 @@ void BlackEdgeTextItem::toCenter(const QRectF &rect){
         return;
 
     QFontMetrics metric(font);
-    setX((rect.width() - metric.width(text.at(0)))/2);
+    setX((rect.width() - metric.horizontalAdvance(text.at(0)))/2);
 
     int total_height = (metric.height() - metric.descent()) * text.length();
     setY((rect.height() - total_height)/2);
@@ -485,7 +485,8 @@ CardScene::CardScene()
 
     resetPhoto();
 
-    QGraphicsItemGroup *magatama_group = new QGraphicsItemGroup(NULL, this);
+    QGraphicsItemGroup *magatama_group = new QGraphicsItemGroup;
+    addItem(magatama_group);
 
     int i;
     for(i=0; i<10; i++){
@@ -713,7 +714,7 @@ void CardScene::resetPhoto(){
 }
 
 void CardScene::contextMenuEvent(QGraphicsSceneContextMenuEvent *event){
-    QGraphicsItem *item = itemAt(event->scenePos());
+    QGraphicsItem *item = itemAt(event->scenePos(), views().isEmpty() ? QTransform() : views().first()->viewportTransform());
     if(item){
         if(item->parentItem() == skill_box){
             QGraphicsScene::contextMenuEvent(event);
@@ -743,7 +744,7 @@ CardEditor::CardEditor(QWidget *parent) :
 
     view->setRenderHints(QPainter::Antialiasing | QPainter::TextAntialiasing |
                         QPainter::SmoothPixmapTransform	|
-                        QPainter::HighQualityAntialiasing
+                        QPainter::Antialiasing
                         );
 
     card_scene = new CardScene;
@@ -859,7 +860,7 @@ void CardEditor::saveAvatar(const QRectF &rect){
         QImage image(rect.width(), rect.height(), QImage::Format_ARGB32);
         QPainter painter(&image);
 
-        QPixmap pixmap = QPixmap::grabWidget(card_scene->views().first());
+        QPixmap pixmap = card_scene->views().first()->grab();
         pixmap = pixmap.copy(rect.toRect());
 
         QBitmap mask("diy/mask.png");
@@ -1081,7 +1082,7 @@ void CardEditor::saveImage(){
 
     if(!filename.isEmpty()){
         card_scene->clearFocus();
-        QPixmap::grabWidget(card_scene->views().first()).save(filename);
+        card_scene->views().first()->grab().save(filename);
         Config.setValue("CardEditor/ExportPath", QFileInfo(filename).absolutePath());
     }
 }
@@ -1091,7 +1092,7 @@ void CardEditor::saveImage(){
 void CardEditor::copyPhoto(){
     card_scene->clearFocus();
 
-    QPixmap pixmap = QPixmap::grabWidget(card_scene->views().first());
+    QPixmap pixmap = card_scene->views().first()->grab();
     qApp->clipboard()->setPixmap(pixmap);
 }
 

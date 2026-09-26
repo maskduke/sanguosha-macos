@@ -1,0 +1,9 @@
+[0/2] Re-checking globbed directories...
+[1/5] Automatic MOC for target test_replay
+AutoMoc warning
+---------------
+"SRC:/tests/replay/test_replay.cpp"
+includes the moc file "test_replay.moc", but does not contain a Q_OBJECT, Q_GADGET, Q_NAMESPACE, Q_NAMESPACE_EXPORT, Q_GADGET_EXPORT or Q_ENUM_NS macro.
+
+[2/4] Building CXX object CMakeFiles/test_replay.dir/src/util/recorder.cpp.o
+[3/4] Linking CXX executable test_replay

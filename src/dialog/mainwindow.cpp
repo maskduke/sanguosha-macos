@@ -41,11 +41,11 @@ protected:
         if(Config.FitInView)
             fitInView(sceneRect(), Qt::KeepAspectRatio);
 
-        if(matrix().m11()>1)setMatrix(QMatrix());
+        if(transform().m11()>1)setTransform(QTransform());
 
         if(scene()->inherits("RoomScene")){
             RoomScene *room_scene = qobject_cast<RoomScene *>(scene());
-            room_scene->adjustItems(matrix());
+            room_scene->adjustItems(transform());
         }
 
         MainWindow *main_window = qobject_cast<MainWindow *>(parentWidget());
@@ -222,7 +222,7 @@ void MainWindow::startConnection(){
 
 void MainWindow::on_actionReplay_triggered()
 {
-    QString location = QDesktopServices::storageLocation(QDesktopServices::HomeLocation);
+    QString location = QStandardPaths::writableLocation(QStandardPaths::HomeLocation);
     QString last_dir = Config.value("LastReplayDir").toString();
     if(!last_dir.isEmpty())
         location = last_dir;
@@ -437,8 +437,8 @@ void MainWindow::setBackgroundBrush(){
         QBrush brush(pixmap);
 
         if(pixmap.width() > 100 && pixmap.height() > 100){
-            qreal _width = width()/view->matrix().m11();
-            qreal _height= height()/view->matrix().m22();
+            qreal _width = width()/view->transform().m11();
+            qreal _height= height()/view->transform().m22();
 
             qreal dx = -_width/2.0;
             qreal dy = -_height/2.0;
@@ -616,7 +616,7 @@ void MainWindow::on_actionPC_Console_Start_triggered()
         return;
 
     Server *server = new Server(this);
-    if(! server->listen()){
+    if(! server->listen(true)){
         QMessageBox::warning(this, tr("Warning"), tr("Can not start server!"));
 
         return;
@@ -765,7 +765,7 @@ void MeleeDialog::startTest(){
         server->gamesOver();
     }else{
         server = new Server(this->parentWidget());
-        server->listen();
+        server->listen(true);
         connect(server, SIGNAL(server_message(QString)), server_log,SLOT(append(QString)));
     }
     Config.AIDelay = 0;
@@ -890,18 +890,25 @@ void MeleeDialog::setGeneral(const QString &general_name){
     }
 }
 
-AcknowledgementScene::AcknowledgementScene(QObject *parent) :
-    QGraphicsScene(parent)
+class AcknowledgementBackItem : public QGraphicsPixmapItem {
+public:
+    std::function<void()> clicked;
+    using QGraphicsPixmapItem::QGraphicsPixmapItem;
+protected:
+    void mousePressEvent(QGraphicsSceneMouseEvent *event) override {
+        if (event->button() == Qt::LeftButton) { clicked(); event->accept(); }
+        else QGraphicsPixmapItem::mousePressEvent(event);
+    }
+};
+AcknowledgementScene::AcknowledgementScene(QObject *parent) : QGraphicsScene(parent)
 {
-    view = new QDeclarativeView;
-    view->setSource(QUrl::fromLocalFile("acknowledgement/main.qml"));
-    addWidget(view);
-    view->move( - width()/2, - height()/2);
-    view->setStyleSheet(QString("background: transparent"));
-
-    QObject *item = view->rootObject();
-
-    connect(item,SIGNAL(go_back()),this,SIGNAL(go_back()));
+    setSceneRect(-500,-330,1000,660);
+    auto *list = addPixmap(QPixmap("acknowledgement/list.png"));
+    list->setPos(-500,-330);
+    auto *back = new AcknowledgementBackItem(QPixmap("acknowledgement/back.png"), list);
+    back->setPos(834,531);
+    back->setCursor(Qt::PointingHandCursor);
+    back->clicked = [this] { emit go_back(); };
 }
 
 

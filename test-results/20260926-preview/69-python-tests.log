@@ -1,0 +1,18 @@
+test_detects_modified_missing_and_added_entries (test_baseline.BaselineTests) ... ok
+test_detects_permission_change (test_baseline.BaselineTests) ... ok
+test_preserves_internal_symlink_without_hashing_target_twice (test_baseline.BaselineTests) ... ok
+test_records_content_empty_directory_and_executable_mode (test_baseline.BaselineTests) ... ok
+test_refuses_overwriting_existing_destination (test_baseline.BaselineTests) ... ok
+test_refuses_snapshot_inside_source (test_baseline.BaselineTests) ... ok
+test_rejects_links_outside_bundle_before_copying (test_baseline.BaselineTests) ... ok
+test_same_content_in_different_location_has_same_manifest (test_baseline.BaselineTests) ... ok
+test_identical_name_does_not_count_as_content_match (test_source_match.SourceMatchTests) ... ok
+test_parses_nul_terminated_paths_without_splitting_spaces_or_tabs (test_source_match.SourceMatchTests) ... ok
+test_rejects_symlinks_in_resource_comparison_instead_of_reading_outside (test_source_match.SourceMatchTests) ... ok
+test_rejects_tree_without_complete_record (test_source_match.SourceMatchTests) ... ok
+test_reports_all_four_categories_without_discarding_extra_files (test_source_match.SourceMatchTests) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.025s
+
+OK

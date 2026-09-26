@@ -1,0 +1,32 @@
+UpdateCTestConfiguration  from :/Users/haoranliu/Projects/sanguosha/DartConfiguration.tcl
+Test project /Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug
+Constructing a list of tests
+Done constructing a list of tests
+Updating test list for fixtures
+Added 0 tests to meet fixture requirements
+Checking test dependency graph...
+Checking test dependency graph end
+test 7
+    Start 7: audio.backend
+
+7: Test command: /Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug/test_audio_backend
+7: Working Directory: /Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug
+7: Test timeout computed to be: 10000000
+7: ********* Start testing of AudioTest *********
+7: Config: Using QtTest library 6.11.1, Qt 6.11.1 (arm64-little_endian-lp64 shared (dynamic) release build; by Apple LLVM 21.0.0 (clang-2100.0.123.102)), macos 26.6.2
+7: PASS   : AudioTest::initTestCase()
+7: PASS   : AudioTest::decodeMixAndLifetime()
+7: QWARN  : AudioTest::missingAndCancelled() /nonexistent/qs-audio.ogg: cannot open Vorbis stream
+7: PASS   : AudioTest::missingAndCancelled()
+7: PASS   : AudioTest::bgmLoopAndStop()
+7: PASS   : AudioTest::cleanupTestCase()
+7: Totals: 5 passed, 0 failed, 0 skipped, 0 blacklisted, 91ms
+7: ********* Finished testing of AudioTest *********
+1/1 Test #7: audio.backend ....................   Passed    0.92 sec
+
+The following tests passed:
+	audio.backend
+
+100% tests passed, 0 tests failed out of 1
+
+Total Test time (real) =   0.92 sec

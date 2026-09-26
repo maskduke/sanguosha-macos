@@ -1,0 +1,17 @@
+[0/2] Re-checking globbed directories...
+[1/2] Re-running CMake...
+-- Could NOT find WrapVulkanHeaders (missing: Vulkan_INCLUDE_DIR) 
+-- Configuring done (0.3s)
+-- Generating done (0.1s)
+-- Build files have been written to: /Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug
+[0/4] Re-checking globbed directories...
+[1/7] Automatic MOC for target test_qt_compat
+[2/7] Building CXX object CMakeFiles/test_qt_compat.dir/test_qt_compat_autogen/mocs_compilation.cpp.o
+[3/7] Building CXX object CMakeFiles/test_qt_compat.dir/tests/platform/test_qt_compat.cpp.o
+FAILED: [code=1] CMakeFiles/test_qt_compat.dir/tests/platform/test_qt_compat.cpp.o 
+/usr/bin/c++ -DQT_CORE5COMPAT_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_TESTCASE_BUILDDIR=\"/Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug\" -DQT_TESTCASE_SOURCEDIR=\"/Users/haoranliu/Projects/sanguosha\" -DQT_TESTLIB_LIB -DQT_WIDGETS_LIB -I/Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug/test_qt_compat_autogen/include -I/Users/haoranliu/Projects/sanguosha/src -isystem /opt/homebrew/opt/qtbase/lib/QtTest.framework/Headers -iframework /opt/homebrew/opt/qtbase/lib -isystem /opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers -isystem /opt/homebrew/opt/qtbase/share/qt/mkspecs/macx-clang -isystem /opt/homebrew/opt/qtbase/include -isystem /opt/homebrew/opt/qtbase/lib/QtWidgets.framework/Headers -isystem /opt/homebrew/opt/qtbase/lib/QtGui.framework/Headers -isystem /opt/homebrew/opt/qt5compat/lib/QtCore5Compat.framework/Headers -iframework /opt/homebrew/opt/qt5compat/lib -g -std=c++17 -arch arm64 -mmacosx-version-min=26.0 -MD -MT CMakeFiles/test_qt_compat.dir/tests/platform/test_qt_compat.cpp.o -MF CMakeFiles/test_qt_compat.dir/tests/platform/test_qt_compat.cpp.o.d -o CMakeFiles/test_qt_compat.dir/tests/platform/test_qt_compat.cpp.o -c /Users/haoranliu/Projects/sanguosha/tests/platform/test_qt_compat.cpp
+/Users/haoranliu/Projects/sanguosha/tests/platform/test_qt_compat.cpp:2:10: fatal error: 'platform/qt_compat.h' file not found
+    2 | #include "platform/qt_compat.h"
+      |          ^~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+ninja: build stopped: subcommand failed.

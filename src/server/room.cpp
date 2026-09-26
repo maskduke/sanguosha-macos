@@ -31,7 +31,7 @@ Room::Room(QObject *parent, const QString &mode)
     :QThread(parent), mode(mode), current(NULL), pile1(Sanguosha->getRandomCards()),
     draw_pile(&pile1), discard_pile(&pile2),
     game_started(false), game_finished(false), L(NULL), thread(NULL),
-    thread_3v3(NULL), sem(new QSemaphore), _m_semRaceRequest(0), _m_semRoomMutex(1),
+    thread_3v3(NULL), thread_1v1(NULL), sem(new QSemaphore), _m_semRaceRequest(0), _m_semRoomMutex(1),
     _m_raceStarted(false), provided(NULL), has_provided(false),
     m_surrenderRequestReceived(false), _virtual(false)
 {       
@@ -44,6 +44,21 @@ Room::Room(QObject *parent, const QString &mode)
     QStringList scripts;
     scripts << "lua/sanguosha.lua" << "lua/ai/smart-ai.lua";
     DoLuaScripts(L, scripts);
+}
+
+bool Room::shutdown(){
+    game_finished=true;
+    auto wake=[this] {
+        sem->release(64);
+        _m_semRaceRequest.release(64);
+        for(auto player:m_players) player->releaseLock(ServerPlayer::SEMA_COMMAND_INTERACTIVE);
+    };
+    wake();
+    if(!wait(5000)) return false; // Room setup may create the selection/game thread.
+    wake();
+    for(QThread *worker:{static_cast<QThread *>(thread_3v3),static_cast<QThread *>(thread_1v1),static_cast<QThread *>(thread)})
+        if(worker && !worker->wait(5000)) return false;
+    return true;
 }
 
 void Room::initCallbacks(){
@@ -514,6 +529,7 @@ bool Room::doRequest(ServerPlayer* player, QSanProtocol::CommandType command, co
 
 bool Room::doRequest(ServerPlayer* player, QSanProtocol::CommandType command, const Json::Value &arg, time_t timeOut, bool wait)
 {
+    if(game_finished) return false;
     QSanGeneralPacket packet(S_SERVER_REQUEST, command);
     packet.setMessageBody(arg);
     player->acquireLock(ServerPlayer::SEMA_MUTEX);    
@@ -546,7 +562,7 @@ bool Room::doBroadcastRequest(QList<ServerPlayer*> &players, QSanProtocol::Comma
     {
         doRequest(player, command, player->m_commandArgs, timeOut, false);
     }    
-    QTime timer;    
+    QElapsedTimer timer;    
     time_t remainTime = timeOut;
     timer.start();    
     foreach (ServerPlayer* player, players)
@@ -576,7 +592,7 @@ ServerPlayer* Room::doBroadcastRaceRequest(QList<ServerPlayer*> &players, QSanPr
 ServerPlayer* Room::getRaceResult(QList<ServerPlayer*> &players, QSanProtocol::CommandType , time_t timeOut,
     ResponseVerifyFunction validateFunc, void* funcArg)
 {    
-    QTime timer;
+    QElapsedTimer timer;
     timer.start();
     bool validResult = false;
     for (int i = 0; i < players.size(); i++)
@@ -1581,7 +1597,7 @@ void Room::prepareForStart(){
         return;
     }else if(mode == "02_1v1"){
         if(qrand() % 2 == 0)
-            m_players.swap(0, 1);
+            m_players.swapItemsAt(0, 1);
 
         m_players.at(0)->setRole("lord");
         m_players.at(1)->setRole("renegade");
@@ -1644,7 +1660,7 @@ void Room::prepareForStart(){
                     ServerPlayer *player = findChild<ServerPlayer *>(name);
                     setPlayerProperty(player, "role", role);
 
-                    m_players.swap(i, m_players.indexOf(player));
+                    m_players.swapItemsAt(i, m_players.indexOf(player));
                 }
             }
         }else
@@ -1842,7 +1858,7 @@ bool Room::processRequestSurrender(ServerPlayer *player, const QSanProtocol::QSa
         return false;
     }
     _m_isFirstSurrenderRequest = false;
-    _m_timeSinceLastSurrenderRequest.restart();
+    _m_timeSinceLastSurrenderRequest.start();
     m_surrenderRequestReceived = true;
     player->releaseLock(ServerPlayer::SEMA_COMMAND_INTERACTIVE);    
     return true;
@@ -1851,7 +1867,7 @@ bool Room::processRequestSurrender(ServerPlayer *player, const QSanProtocol::QSa
 void Room::processClientPacket(const QString &request){
     QSanGeneralPacket packet;
     //@todo: remove this thing after the new protocol is fully deployed
-    if (packet.parse(request.toAscii().constData()))
+    if (packet.parse(request.toUtf8().constData()))
     {    
         ServerPlayer *player = qobject_cast<ServerPlayer*>(sender());
         if (packet.getPacketType() == S_CLIENT_REPLY)
@@ -2166,6 +2182,7 @@ void Room::run(){
         player->releaseLock(ServerPlayer::SEMA_MUTEX);
     }
 
+    if(game_finished) return;
     prepareForStart();
 
     bool using_countdown = true;
@@ -2177,7 +2194,7 @@ void Room::run(){
 #endif
 
     if(using_countdown){
-        for(int i=Config.CountDownSeconds; i>=0; i--){
+        for(int i=Config.CountDownSeconds; i>=0 && !game_finished; i--){
             broadcastInvoke("startInXs", QString::number(i));
             sleep(1);
         }
@@ -2185,6 +2202,7 @@ void Room::run(){
         broadcastInvoke("startInXs", "0");
 
 
+    if(game_finished) return;
     if(scenario && !scenario->generalSelection())
         startGame();
     else if(mode == "06_3v3"){
@@ -2255,7 +2273,7 @@ void Room::swapSeat(ServerPlayer *a, ServerPlayer *b){
     int seat1 = m_players.indexOf(a);
     int seat2 = m_players.indexOf(b);
 
-    m_players.swap(seat1, seat2);
+    m_players.swapItemsAt(seat1, seat2);
 
     QStringList player_circle;
     foreach(ServerPlayer *player, m_players)
@@ -2283,7 +2301,7 @@ void Room::adjustSeats(){
     int i;
     for(i=0; i<m_players.length(); i++){
         if(m_players.at(i)->getRoleEnum() == Player::Lord){
-            m_players.swap(0, i);
+            m_players.swapItemsAt(0, i);
             break;
         }
     }
@@ -2699,6 +2717,7 @@ void Room::marshal(ServerPlayer *player){
 }
 
 void Room::startGame(){
+    if(game_finished) return;
     if(Config.ContestMode)
         tag.insert("StartTime", QDateTime::currentDateTime());
 
@@ -3393,7 +3412,7 @@ void Room::askForGuanxing(ServerPlayer *zhuge, const QList<int> &cards, bool up_
 
 
     bool length_equal = top_cards.length() + bottom_cards.length() == cards.length();
-    bool result_equal = top_cards.toSet() + bottom_cards.toSet() == cards.toSet();
+    bool result_equal = qToSet(top_cards) + qToSet(bottom_cards) == qToSet(cards);
     if(!length_equal || !result_equal){
         top_cards = cards;
         bottom_cards.clear();
@@ -3921,7 +3940,7 @@ QString Room::askForOrder(ServerPlayer *player){
 
 QString Room::askForRole(ServerPlayer *player, const QStringList &roles, const QString &scheme){
     notifyMoveFocus(player, S_COMMAND_CHOOSE_ROLE_3V3);
-    QStringList squeezed = roles.toSet().toList();
+    QStringList squeezed = qToSet(roles).values();
     Json::Value arg(Json::arrayValue);
     arg[0] = toJsonString(scheme);
     arg[1] = toJsonArray(squeezed);

@@ -4,6 +4,7 @@
 #include "ai.h"
 #include "settings.h"
 #include "scenario.h"
+#include "miniscenarios.h"
 #include "lua.hpp"
 #include "banpair.h"
 #include "audio.h"
@@ -113,6 +114,12 @@ QStringList Engine::getScenarioNames() const{
 }
 
 void Engine::addScenario(Scenario *scenario){
+    // ScenarioAdder constructs these before main, when the resource directory is unknown.
+    if(auto mini = qobject_cast<MiniScene *>(scenario)) {
+        QString file = mini->objectName();
+        if(file.startsWith("_mini_")) file.remove(0,6);
+        mini->setupCustom(file);
+    }
     scenarios.insert(scenario->objectName(), scenario);
 
     addPackage(scenario);
@@ -125,7 +132,7 @@ const Scenario *Engine::getScenario(const QString &name) const{
 void Engine::addSkills(const QList<const Skill *> &all_skills){
     foreach(const Skill *skill, all_skills){
         if(skills.contains(skill->objectName()))
-            QMessageBox::warning(NULL, "", tr("Duplicated skill : %1").arg(skill->objectName()));
+            qWarning().noquote() << "Historical duplicate skill registration:" << skill->objectName();
 
         skills.insert(skill->objectName(), skill);
 
@@ -184,7 +191,7 @@ void Engine::addPackage(Package *package){
     foreach(const QMetaObject *meta, metas)
         metaobjects.insert(meta->className(), meta);
 
-    patterns.unite(package->getPatterns());
+    patterns.insert(package->getPatterns());
     related_skills.unite(package->getRelatedSkills());
 }
 
@@ -196,7 +203,7 @@ QStringList Engine::getBanPackages() const{
     if(qApp->arguments().contains("-server"))
         return Config.BanPackages;
     else
-        return ban_package.toList();
+        return ban_package.values();
 }
 
 QString Engine::translate(const QString &to_translate) const{
@@ -338,7 +345,7 @@ QColor Engine::getKingdomColor(const QString &kingdom) const{
     static QMap<QString, QColor> color_map;
     if(color_map.isEmpty()){
         foreach(QString k, getKingdoms()){
-            QString color_str = GetConfigFromLuaState(lua,  ("color_" + k).toAscii()).toString();
+            QString color_str = GetConfigFromLuaState(lua,  ("color_" + k).toLatin1()).toString();
             QRegExp rx("#?([0-9A-F]{2})([0-9A-F]{2})([0-9A-F]{2})");
             if(rx.exactMatch(color_str)){
                 QStringList results = rx.capturedTexts();
@@ -584,20 +591,20 @@ QStringList Engine::getLimitedGeneralNames() const{
 
 QStringList Engine::getRandomGenerals(int count, const QSet<QString> &ban_set) const{
     QStringList all_generals = getLimitedGeneralNames();
-    QSet<QString> general_set = all_generals.toSet();
+    QSet<QString> general_set = qToSet(all_generals);
 
     Q_ASSERT(all_generals.count() >= count);
 
     if(Config.EnableBasara) general_set =
-            general_set.subtract(Config.value("Banlist/Basara", "").toStringList().toSet());
+            general_set.subtract(qToSet(Config.value("Banlist/Basara", "").toStringList()));
     if(Config.EnableHegemony) general_set =
-            general_set.subtract(Config.value("Banlist/Hegemony", "").toStringList().toSet());
+            general_set.subtract(qToSet(Config.value("Banlist/Hegemony", "").toStringList()));
 
     if(ServerInfo.GameMode.endsWith("p") ||
                       ServerInfo.GameMode.endsWith("pd"))
-        general_set.subtract(Config.value("Banlist/Roles","").toStringList().toSet());
+        general_set.subtract(qToSet(Config.value("Banlist/Roles","").toStringList()));
 
-    all_generals = general_set.subtract(ban_set).toList();
+    all_generals = general_set.subtract(ban_set).values();
 
     // shuffle them
     qShuffle(all_generals);

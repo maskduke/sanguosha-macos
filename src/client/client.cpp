@@ -159,8 +159,8 @@ Client::Client(QObject *parent, const QString &filename)
 
         recorder = new Recorder(this);
 
-        connect(socket, SIGNAL(message_got(char*)), recorder, SLOT(record(char*)));
-        connect(socket, SIGNAL(message_got(char*)), this, SLOT(processServerPacket(char*)));
+        connect(socket, SIGNAL(message_got(QByteArray)), recorder, SLOT(record(QByteArray)));
+        connect(socket, SIGNAL(message_got(QByteArray)), this, SLOT(processServerPacket(QByteArray)));
         connect(socket, SIGNAL(error_message(QString)), this, SIGNAL(error_message(QString)));
         socket->connectToHost();
 
@@ -183,7 +183,7 @@ void Client::signup(){
         QString signup_str = QString("%1 %2:%3").arg(command).arg(base64).arg(Config.UserAvatar);
         QString password = Config.Password;
         if(!password.isEmpty()){
-            password = QCryptographicHash::hash(password.toAscii(), QCryptographicHash::Md5).toHex();
+            password = QCryptographicHash::hash(password.toLatin1(), QCryptographicHash::Md5).toHex();
             signup_str.append(":" + password);
         }
         request(signup_str);
@@ -254,13 +254,13 @@ void Client::disconnectFromHost(){
 typedef char buffer_t[1024];
 
 void Client::processServerPacket(const QString &cmd){
-    processServerPacket(cmd.toAscii().data());
+    processServerPacket(cmd.toUtf8());
 }
 
-void Client::processServerPacket(char *cmd){
+void Client::processServerPacket(QByteArray cmd){
     if (m_isGameOver) return;
     QSanGeneralPacket packet;
-    if (packet.parse(cmd))
+    if (packet.parse(cmd.toStdString()))
     {
         if (packet.getPacketType() == S_SERVER_NOTIFICATION)
         {
@@ -296,51 +296,20 @@ bool Client::processServerRequest(const QSanGeneralPacket& packet)
     return true;
 }
 
-void Client::processReply(char *reply){    
-    if(strlen(reply) <= 2)
-        return;
-
-    static char self_prefix = '.';
-    static char other_prefix = '#';
-
-    if(reply[0] == self_prefix){
-        // client it Self
-        if(Self){
-            buffer_t property, value;
-            sscanf(reply, ".%s %s", property, value);
-            Self->setProperty(property, value);
-        }
-    }else if(reply[0] == other_prefix){
-        // others
-        buffer_t object_name, property, value;
-        sscanf(reply, "#%s %s %s", object_name, property, value);
-        ClientPlayer *player = getPlayer(object_name);
-        if(player){
-            player->setProperty(property, value);
-        }else
-            QMessageBox::warning(NULL, tr("Warning"), tr("There is no player named %1").arg(object_name));
-
-    }else{
-        // invoke methods
-        buffer_t method_name, arg;
-        sscanf(reply, "%s %s", method_name, arg);
-        QString method = method_name;
-
-        if(replayer && (method.startsWith("askFor") || method.startsWith("do") || method == "activate"))
-            return;
-
-        static QSet<QString> deprecated;
-        if(deprecated.isEmpty()){
-            deprecated << "increaseSlashCount" // replaced by addHistory
-                    << "addProhibitSkill"; // add all prohibit skill at game start
-        }
-
-        Callback callback = callbacks.value(method, NULL);
-        if(callback){
-            QString arg_str = arg;
-            (this->*callback)(arg_str);
-        }else if(!deprecated.contains(method))
-            QMessageBox::information(NULL, tr("Warning"), tr("No such invokable method named \"%1\"").arg(method_name));
+void Client::processReply(const QByteArray &reply){
+    const QStringList parts=QString::fromUtf8(reply).trimmed().split(QRegularExpression("\\s+"),Qt::SkipEmptyParts);
+    if(parts.size()<2) return;
+    const QString head=parts[0];
+    if(head.startsWith('.')) {
+        if(Self) Self->setProperty(head.mid(1).toUtf8().constData(),parts[1]);
+    } else if(head.startsWith('#')) {
+        if(parts.size()!=3) return;
+        if(ClientPlayer *player=getPlayer(head.mid(1)))
+            player->setProperty(parts[1].toUtf8().constData(),parts[2]);
+    } else {
+        if(replayer && (head.startsWith("askFor") || head.startsWith("do") || head=="activate")) return;
+        if(Callback callback=callbacks.value(head,nullptr)) (this->*callback)(parts[1]);
+        else qWarning() << "Unknown legacy method:" << head;
     }
 }
 
@@ -348,7 +317,7 @@ void Client::addPlayer(const QString &player_info){
     QStringList texts = player_info.split(":");
     QString name = texts.at(0);
     QString base64 = texts.at(1);
-    QByteArray data = QByteArray::fromBase64(base64.toAscii());
+    QByteArray data = QByteArray::fromBase64(base64.toLatin1());
     QString screen_name = QString::fromUtf8(data);
     QString avatar = texts.at(2);
 
@@ -1153,7 +1122,7 @@ void Client::gameOver(const Json::Value &arg){
         return;
     }
 
-    QSet<QString> winners = winner.split("+").toSet();
+    QSet<QString> winners = qToSet(winner.split("+"));
     foreach(const ClientPlayer *player, players){
         QString role = player->getRole();
         bool win = winners.contains(player->objectName()) || winners.contains(role);
@@ -1593,7 +1562,7 @@ void Client::speak(const QString &speak_data){
     QString who = words.at(0);
     QString base64 = words.at(1);
 
-    QByteArray data = QByteArray::fromBase64(base64.toAscii());
+    QByteArray data = QByteArray::fromBase64(base64.toLatin1());
     QString text = QString::fromUtf8(data);
     emit text_spoken(text);
 
@@ -1684,7 +1653,7 @@ void Client::setScreenName(const QString &set_str){
     QStringList words = set_str.split(":");
     ClientPlayer *player = getPlayer(words.first());
     QString base64 = words.at(1);
-    QString screen_name = QString::fromUtf8(QByteArray::fromBase64(base64.toAscii()));
+    QString screen_name = QString::fromUtf8(QByteArray::fromBase64(base64.toLatin1()));
     player->setScreenName(screen_name);
 }
 

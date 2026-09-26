@@ -150,7 +150,7 @@ public:
     }
 
     void setPlayerNames(const QStringList &names){
-        set = names.toSet();
+        set = qToSet(names);
     }
 
     virtual bool targetFilter(const QList<const Player *> &targets, const Player *to_select, const Player *) const{

@@ -2,6 +2,7 @@
 #define NATIVESOCKET_H
 
 #include "socket.h"
+#include "platform/network/line_framer.h"
 
 class QUdpSocket;
 
@@ -11,7 +12,7 @@ class NativeServerSocket: public ServerSocket{
 public:
     NativeServerSocket();
 
-    virtual bool listen();
+    virtual bool listen(bool localOnly = false);
     virtual void daemonize();
 
 private slots:
@@ -45,7 +46,10 @@ private slots:
 private:
     QTcpSocket * const socket;
 
+    qs::LineFramer framer;
+    bool compatible=false;
     void init();
+    void sendHello();
 };
 
 #endif // NATIVESOCKET_H

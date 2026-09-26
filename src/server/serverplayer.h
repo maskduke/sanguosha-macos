@@ -158,7 +158,7 @@ private:
     Json::Value _m_clientResponse;    
 
 private slots:
-    void getMessage(char *message);
+    void getMessage(QByteArray message);
     void castMessage(const QString &message);
 
 signals:

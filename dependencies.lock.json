@@ -1,0 +1,354 @@
+{
+  "schema": 1,
+  "scope": "Local preview dependency snapshot; source hashes quoted from installed Homebrew formulae, receipts verified locally. Not a hermetic toolchain download lock.",
+  "target": "arm64-macos26",
+  "dependencies": [
+    {
+      "name": "qtbase",
+      "version": "6.11.1",
+      "source_url": null,
+      "upstream_sha256_from_formula": null,
+      "receipt_sha256": "eb1b5987ca382299938582bd0c14498eb4889fdb84005b9748c619aa93c47435",
+      "license_declaration": null
+    },
+    {
+      "name": "qt5compat",
+      "version": "6.11.1",
+      "source_url": null,
+      "upstream_sha256_from_formula": null,
+      "receipt_sha256": "ecf355752adaf04c6ded3033e545f74c6ac4ac885214e219e9c49984f368edd4",
+      "license_declaration": null
+    },
+    {
+      "name": "libvorbis",
+      "version": "1.3.7",
+      "source_url": null,
+      "upstream_sha256_from_formula": null,
+      "receipt_sha256": "818615a0dafaf50459bc8438ff244ae7cd4fd84c27b6c2e9fc7681d70270d9d0",
+      "license_declaration": null
+    },
+    {
+      "name": "libogg",
+      "version": "1.3.6",
+      "source_url": null,
+      "upstream_sha256_from_formula": null,
+      "receipt_sha256": "fb2d02a79d679bc333c3c9cdef88a02b9e598b92d3c092e6b6213df7a4edff90",
+      "license_declaration": null
+    },
+    {
+      "name": "swig",
+      "version": "4.4.1",
+      "source_url": null,
+      "upstream_sha256_from_formula": null,
+      "receipt_sha256": "2f3ed3651aed76b83117113efb70ab3f326882b1e0dbbc32aff67752df2f0476",
+      "license_declaration": null
+    },
+    {
+      "name": "cmake",
+      "version": "4.3.3",
+      "source_url": null,
+      "upstream_sha256_from_formula": null,
+      "receipt_sha256": "60fda99075df1dc02fe8e96794472c21b4a6c283ed5610e18eec3234bb39579e",
+      "license_declaration": null
+    },
+    {
+      "name": "ninja",
+      "version": "1.13.2",
+      "source_url": null,
+      "upstream_sha256_from_formula": null,
+      "receipt_sha256": "fc520ecfdfc9a68cca0b419f875a82e1beced02864849a912ba771749b77300c",
+      "license_declaration": null
+    },
+    {
+      "name": "brotli",
+      "version": "1.2.0",
+      "source_url": null,
+      "upstream_sha256_from_formula": null,
+      "receipt_sha256": "7f35677526b07dee0b9c63df5cc162e01f507b09724962a2b763bb8ebc24e504",
+      "license_declaration": null
+    },
+    {
+      "name": "dbus",
+      "version": "1.16.2_1",
+      "source_url": null,
+      "upstream_sha256_from_formula": null,
+      "receipt_sha256": "ec36344dc854165ba8c583acdac4afe283914d4c935e804221fe7d02788b2eeb",
+      "license_declaration": null
+    },
+    {
+      "name": "double-conversion",
+      "version": "3.4.0",
+      "source_url": null,
+      "upstream_sha256_from_formula": null,
+      "receipt_sha256": "aa5ff759c86f7697869372b4c3ccdb22a9c74926d877a40a725a8362410e8cc0",
+      "license_declaration": null
+    },
+    {
+      "name": "libpng",
+      "version": "1.6.58",
+      "source_url": null,
+      "upstream_sha256_from_formula": null,
+      "receipt_sha256": "35b54f5de31f2cb02b3ec8864999164c63d23bedcf5367c5a8e227333f8db193",
+      "license_declaration": null
+    },
+    {
+      "name": "freetype",
+      "version": "2.14.3",
+      "source_url": null,
+      "upstream_sha256_from_formula": null,
+      "receipt_sha256": "8722ed89ab7062809088191d410906ced410a12c51b38a5e66effc4b1a686052",
+      "license_declaration": null
+    },
+    {
+      "name": "pcre2",
+      "version": "10.47_1",
+      "source_url": null,
+      "upstream_sha256_from_formula": null,
+      "receipt_sha256": "bfe134542a7c095f22fc6d5dc9f6bfc865b31bad00cc6a6d313b50c2c3381954",
+      "license_declaration": null
+    },
+    {
+      "name": "libunistring",
+      "version": "1.4.2",
+      "source_url": null,
+      "upstream_sha256_from_formula": null,
+      "receipt_sha256": "1bee16cc1d43eb5c9c410a54b31d483423c6a4e49f76fd5ce76d45223ff3b009",
+      "license_declaration": null
+    },
+    {
+      "name": "gettext",
+      "version": "1.0",
+      "source_url": null,
+      "upstream_sha256_from_formula": null,
+      "receipt_sha256": "1112a5391ddfdf857998dc7cc58ce4fa5ecc96e712a71d62d19e71ad073e2f4d",
+      "license_declaration": null
+    },
+    {
+      "name": "glib",
+      "version": "2.88.1",
+      "source_url": null,
+      "upstream_sha256_from_formula": null,
+      "receipt_sha256": "7799fc44e03da49f84978b83740083b241da71a816a9bc816baaf4095718d17d",
+      "license_declaration": null
+    },
+    {
+      "name": "fontconfig",
+      "version": "2.18.1",
+      "source_url": null,
+      "upstream_sha256_from_formula": null,
+      "receipt_sha256": "05bccd0e864c4b2f1d656b03a0a952fe100dbd2ada6a50fa93d3f6480efa3e55",
+      "license_declaration": null
+    },
+    {
+      "name": "xorgproto",
+      "version": "2025.1",
+      "source_url": null,
+      "upstream_sha256_from_formula": null,
+      "receipt_sha256": "78049bb07c3e300c714eb9816bcbe5a43e8876e74043be8ff8b705cfe56bc69b",
+      "license_declaration": null
+    },
+    {
+      "name": "libxau",
+      "version": "1.0.12",
+      "source_url": null,
+      "upstream_sha256_from_formula": null,
+      "receipt_sha256": "1ab18effaae3be98bead716ed0a969a1c99d83c40d92b09f959c84236c5998fd",
+      "license_declaration": null
+    },
+    {
+      "name": "libxdmcp",
+      "version": "1.1.5",
+      "source_url": null,
+      "upstream_sha256_from_formula": null,
+      "receipt_sha256": "aa01b28657c27ff673bd5e12e58683d37035e638fb31e39cfcfdec02d8fbe2c6",
+      "license_declaration": null
+    },
+    {
+      "name": "libxcb",
+      "version": "1.17.0",
+      "source_url": null,
+      "upstream_sha256_from_formula": null,
+      "receipt_sha256": "3a1666d7f38d9ebc3e9a64d20edccc723a89ae81ff532649ad2dd0c63d4af0da",
+      "license_declaration": null
+    },
+    {
+      "name": "libx11",
+      "version": "1.8.13",
+      "source_url": null,
+      "upstream_sha256_from_formula": null,
+      "receipt_sha256": "c113512b1e4bc165b2ee3ec863895edc6359965680fb9bd53df59f25c6b84e61",
+      "license_declaration": null
+    },
+    {
+      "name": "libxext",
+      "version": "1.3.7",
+      "source_url": null,
+      "upstream_sha256_from_formula": null,
+      "receipt_sha256": "715ee3a8442290c398001ae109bc83a3dd88ea195648c3d701b55a9092deb397",
+      "license_declaration": null
+    },
+    {
+      "name": "libxrender",
+      "version": "0.9.12",
+      "source_url": null,
+      "upstream_sha256_from_formula": null,
+      "receipt_sha256": "15e76abd207bcce3f310ec3fbec0a7796fcc293fac68f4f07ef4c0fdb7d793b7",
+      "license_declaration": null
+    },
+    {
+      "name": "lzo",
+      "version": "2.10",
+      "source_url": null,
+      "upstream_sha256_from_formula": null,
+      "receipt_sha256": "8f8fad162965e61a55b39fdf51717fd9b67ea8578e679d63dc4a0382d890047a",
+      "license_declaration": null
+    },
+    {
+      "name": "pixman",
+      "version": "0.46.4",
+      "source_url": null,
+      "upstream_sha256_from_formula": null,
+      "receipt_sha256": "4097de44cfbc549bad884275fdc7d05464486486ca20ea6c1eff516091f441cb",
+      "license_declaration": null
+    },
+    {
+      "name": "cairo",
+      "version": "1.18.4",
+      "source_url": null,
+      "upstream_sha256_from_formula": null,
+      "receipt_sha256": "e3859b926827c0ebf77fa36a213fdb8d4be1bbf14484e28012ba066c7e4ac936",
+      "license_declaration": null
+    },
+    {
+      "name": "graphite2",
+      "version": "1.3.15",
+      "source_url": null,
+      "upstream_sha256_from_formula": null,
+      "receipt_sha256": "af9da7bb27bda87b88059a9d3c5b83b4730395498fb3610ef597eb0bc8fce96b",
+      "license_declaration": null
+    },
+    {
+      "name": "icu4c@78",
+      "version": "78.3",
+      "source_url": null,
+      "upstream_sha256_from_formula": null,
+      "receipt_sha256": "d3f4e374ea5e15f7b410e103badc016e65a4611fc2124b3145f93184a353eb04",
+      "license_declaration": null
+    },
+    {
+      "name": "harfbuzz",
+      "version": "14.2.1",
+      "source_url": null,
+      "upstream_sha256_from_formula": null,
+      "receipt_sha256": "09a9e436adfa830c257cc9097183fd09b97a37daac8b0f4492d385df112148be",
+      "license_declaration": null
+    },
+    {
+      "name": "jpeg-turbo",
+      "version": "3.1.4.1",
+      "source_url": null,
+      "upstream_sha256_from_formula": null,
+      "receipt_sha256": "02e8c6bf2428ee6557426d076bc04deb1e3a7fe302d1299363b2700f6e67e0d2",
+      "license_declaration": null
+    },
+    {
+      "name": "libb2",
+      "version": "0.98.1",
+      "source_url": null,
+      "upstream_sha256_from_formula": null,
+      "receipt_sha256": "9bddaabd60824fcec12f1fed0eadae1c9e945d2a9443266d2834dce40fdd0c05",
+      "license_declaration": null
+    },
+    {
+      "name": "md4c",
+      "version": "0.5.3",
+      "source_url": null,
+      "upstream_sha256_from_formula": null,
+      "receipt_sha256": "b695793230d85d1af2cf8cd4bf811d91f5adee444040823f1314aba975cd156f",
+      "license_declaration": null
+    },
+    {
+      "name": "ca-certificates",
+      "version": "2026-05-14",
+      "source_url": null,
+      "upstream_sha256_from_formula": null,
+      "receipt_sha256": "5b9b4bf1ec7e2bed78b3144cacd1234a4cc4b3785ca21fc59dd8f890cec0c1b5",
+      "license_declaration": null
+    },
+    {
+      "name": "openssl@3",
+      "version": "3.6.2",
+      "source_url": null,
+      "upstream_sha256_from_formula": null,
+      "receipt_sha256": "64df150f65818f316f4a453ae26b93031892825b98b475a48297d92a2f1e3ec6",
+      "license_declaration": null
+    },
+    {
+      "name": "lz4",
+      "version": "1.10.0",
+      "source_url": null,
+      "upstream_sha256_from_formula": null,
+      "receipt_sha256": "63ea69e6cfee6f920e4e3f3b1ec88c29cbbba50f4216b2363b3151c54f155589",
+      "license_declaration": null
+    },
+    {
+      "name": "xz",
+      "version": "5.8.3",
+      "source_url": null,
+      "upstream_sha256_from_formula": null,
+      "receipt_sha256": "4b03aa8a8ce06d3ce412e5f606bba6fc7251cf9483526505027aac1b7cc15053",
+      "license_declaration": null
+    },
+    {
+      "name": "zstd",
+      "version": "1.5.7_1",
+      "source_url": null,
+      "upstream_sha256_from_formula": null,
+      "receipt_sha256": "749123cab521e8f56e3e5190a5ac8a0e90caf13b43c7bd27bcd87b8aab870ee8",
+      "license_declaration": null
+    },
+    {
+      "name": "qtsvg",
+      "version": "6.11.1",
+      "source_url": null,
+      "upstream_sha256_from_formula": null,
+      "receipt_sha256": "c1ca1bfed39591bee897553e9d0ba97887cc24dbd55b0b54061e1fa2cd9bea8d",
+      "license_declaration": null
+    },
+    {
+      "name": "qtdeclarative",
+      "version": "6.11.1",
+      "source_url": null,
+      "upstream_sha256_from_formula": null,
+      "receipt_sha256": "5a974215c20c68bf6fecdcf3d7cef1c9bce7d644a07d1427d0af62ed1f095251",
+      "license_declaration": null
+    },
+    {
+      "name": "qtshadertools",
+      "version": "6.11.1",
+      "source_url": null,
+      "upstream_sha256_from_formula": null,
+      "receipt_sha256": "ae74367c39e8b06c29bf2405a1302926e917eff0c8c1c1fe252d967823a0ce3b",
+      "license_declaration": null
+    },
+    {
+      "name": "qtsvg",
+      "version": "6.11.1",
+      "source_url": null,
+      "upstream_sha256_from_formula": null,
+      "receipt_sha256": "c1ca1bfed39591bee897553e9d0ba97887cc24dbd55b0b54061e1fa2cd9bea8d",
+      "license_declaration": null
+    }
+  ],
+  "miniaudio": {
+    "version": "0.11.21",
+    "source": "https://codeload.github.com/mackron/miniaudio/tar.gz/refs/tags/0.11.21",
+    "header_sha256": "6b2029714f8634c4d7c70cc042f45074e0565766113fc064f20cd27c986be9c9",
+    "license": "MIT or Unlicense"
+  },
+  "lua": {
+    "version": "5.1.4",
+    "source": "matched QSanguosha baseline src/lua",
+    "license": "MIT"
+  }
+}

@@ -59,7 +59,7 @@ void GeneralOverview::fillGenerals(const QList<const General *> &generals){
         nickname_item->setTextAlignment(Qt::AlignCenter);
 
         if(general->isHidden())
-            nickname_item->setBackgroundColor(Qt::gray);
+            nickname_item->setBackground(Qt::gray);
 
         QTableWidgetItem *name_item = new QTableWidgetItem(name);
         name_item->setTextAlignment(Qt::AlignCenter);
@@ -70,7 +70,7 @@ void GeneralOverview::fillGenerals(const QList<const General *> &generals){
         }
 
         if(general->isHidden())
-            name_item->setBackgroundColor(Qt::gray);
+            name_item->setBackground(Qt::gray);
 
         QTableWidgetItem *kingdom_item = new QTableWidgetItem(kingdom);
         kingdom_item->setTextAlignment(Qt::AlignCenter);

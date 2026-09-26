@@ -1081,7 +1081,7 @@ public:
     }
 
     static QStringList GetAvailableGenerals(ServerPlayer *zuoci){
-        QSet<QString> all = Sanguosha->getLimitedGeneralNames().toSet();
+        QSet<QString> all = qToSet(Sanguosha->getLimitedGeneralNames());
         QSet<QString> huashen_set, room_set;
         QVariantList huashens = zuoci->tag["Huashens"].toList();
         foreach(QVariant huashen, huashens)
@@ -1100,7 +1100,7 @@ public:
                    << "jiangboyue" << "shenzhugeliang" << "shenlvbu" << "huaxiong" << "zhugejin";
         }
 
-        return (all - banned - huashen_set - room_set).toList();
+        return (all - banned - huashen_set - room_set).values();
     }
 
     static QString SelectSkill(ServerPlayer *zuoci, bool acquire_instant = true){

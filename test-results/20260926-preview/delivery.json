@@ -1,0 +1,262 @@
+{
+  "build": "0.1.0-preview.1",
+  "baseline": "323f112658b5ea0c081b02e240afb92af7a379c1",
+  "zip": "dist/QSanguosha-Nirvana-arm64.zip",
+  "zip_sha256": "7f4190f1ac15aa3e4e8c0647bb21636321f5712cdb25ac802e58300bcd378003",
+  "rules_fingerprint": "f0a91f77b4834ed352f850ba4f91102d814a7b1af7e917a37d52db4332fd5e72",
+  "packaged_checks": [
+    {
+      "test": "--smoke-test",
+      "mode": "02p",
+      "exit": 0,
+      "duration_seconds": 0.31,
+      "pass": true
+    },
+    {
+      "test": "--shutdown-smoke",
+      "mode": "02p",
+      "exit": 0,
+      "duration_seconds": 0.7,
+      "pass": true
+    },
+    {
+      "test": "--shutdown-smoke",
+      "mode": "06_3v3",
+      "exit": 0,
+      "duration_seconds": 1.24,
+      "pass": true
+    },
+    {
+      "test": "--shutdown-smoke",
+      "mode": "02_1v1",
+      "exit": 0,
+      "duration_seconds": 1.22,
+      "pass": true
+    },
+    {
+      "test": "--shutdown-smoke",
+      "mode": "04_1v3",
+      "exit": 0,
+      "duration_seconds": 0.71,
+      "pass": true
+    },
+    {
+      "test": "--ai-smoke",
+      "mode": "02p",
+      "exit": 0,
+      "duration_seconds": 0.27,
+      "pass": true
+    },
+    {
+      "test": "--ai-smoke",
+      "mode": "04p",
+      "exit": 0,
+      "duration_seconds": 0.48,
+      "pass": true
+    },
+    {
+      "test": "--ai-smoke",
+      "mode": "08p",
+      "exit": 0,
+      "duration_seconds": 4.08,
+      "pass": true
+    },
+    {
+      "test": "--ai-smoke",
+      "mode": "06_3v3",
+      "exit": 0,
+      "duration_seconds": 17.28,
+      "pass": true
+    },
+    {
+      "test": "--ai-smoke",
+      "mode": "02_1v1",
+      "exit": 0,
+      "duration_seconds": 10.54,
+      "pass": true
+    },
+    {
+      "test": "--ai-smoke",
+      "mode": "02p",
+      "exit": 0,
+      "duration_seconds": 0.26,
+      "pass": true
+    },
+    {
+      "test": "--ai-smoke",
+      "mode": "04p",
+      "exit": 0,
+      "duration_seconds": 0.55,
+      "pass": true
+    },
+    {
+      "test": "--ai-smoke",
+      "mode": "08p",
+      "exit": 0,
+      "duration_seconds": 2.9,
+      "pass": true
+    },
+    {
+      "test": "--ai-smoke",
+      "mode": "06_3v3",
+      "exit": 0,
+      "duration_seconds": 17.26,
+      "pass": true
+    },
+    {
+      "test": "--ai-smoke",
+      "mode": "02_1v1",
+      "exit": 0,
+      "duration_seconds": 10.55,
+      "pass": true
+    },
+    {
+      "test": "--ai-smoke",
+      "mode": "02p",
+      "exit": 0,
+      "duration_seconds": 0.37,
+      "pass": true
+    },
+    {
+      "test": "--ai-smoke",
+      "mode": "04p",
+      "exit": 0,
+      "duration_seconds": 0.7,
+      "pass": true
+    },
+    {
+      "test": "--ai-smoke",
+      "mode": "08p",
+      "exit": 0,
+      "duration_seconds": 1.75,
+      "pass": true
+    },
+    {
+      "test": "--ai-smoke",
+      "mode": "06_3v3",
+      "exit": 0,
+      "duration_seconds": 16.71,
+      "pass": true
+    },
+    {
+      "test": "--ai-smoke",
+      "mode": "02_1v1",
+      "exit": 0,
+      "duration_seconds": 10.75,
+      "pass": true
+    },
+    {
+      "test": "--ai-smoke",
+      "mode": "02p",
+      "exit": 0,
+      "duration_seconds": 0.24,
+      "pass": true
+    },
+    {
+      "test": "--ai-smoke",
+      "mode": "04p",
+      "exit": 0,
+      "duration_seconds": 0.81,
+      "pass": true
+    },
+    {
+      "test": "--ai-smoke",
+      "mode": "08p",
+      "exit": 0,
+      "duration_seconds": 3.56,
+      "pass": true
+    },
+    {
+      "test": "--ai-smoke",
+      "mode": "06_3v3",
+      "exit": 0,
+      "duration_seconds": 16.88,
+      "pass": true
+    },
+    {
+      "test": "--ai-smoke",
+      "mode": "02_1v1",
+      "exit": 0,
+      "duration_seconds": 10.58,
+      "pass": true
+    }
+  ],
+  "asan_checks": [
+    {
+      "test": "--smoke-test",
+      "mode": "02p",
+      "exit": 0,
+      "duration_seconds": 0.76,
+      "pass": true
+    },
+    {
+      "test": "--shutdown-smoke",
+      "mode": "02p",
+      "exit": 0,
+      "duration_seconds": 0.91,
+      "pass": true
+    },
+    {
+      "test": "--shutdown-smoke",
+      "mode": "06_3v3",
+      "exit": 0,
+      "duration_seconds": 1.54,
+      "pass": true
+    },
+    {
+      "test": "--shutdown-smoke",
+      "mode": "02_1v1",
+      "exit": 0,
+      "duration_seconds": 1.51,
+      "pass": true
+    },
+    {
+      "test": "--shutdown-smoke",
+      "mode": "04_1v3",
+      "exit": 0,
+      "duration_seconds": 0.97,
+      "pass": true
+    },
+    {
+      "test": "--ai-smoke",
+      "mode": "02p",
+      "exit": 0,
+      "duration_seconds": 1.22,
+      "pass": true
+    },
+    {
+      "test": "--ai-smoke",
+      "mode": "04p",
+      "exit": 0,
+      "duration_seconds": 9.03,
+      "pass": true
+    },
+    {
+      "test": "--ai-smoke",
+      "mode": "08p",
+      "exit": 1,
+      "duration_seconds": 180.94,
+      "pass": false
+    }
+  ],
+  "known_failures": [
+    "assets.original_audio: original tianyi.ogg length mismatch",
+    "ASan complete 8-player game exceeded 180-second test limit; no memory error report"
+  ],
+  "signature": "local ad-hoc; verified deep and strict",
+  "notarized": false,
+  "asan_additional_checks": [
+    {
+      "mode": "06_3v3",
+      "exit": 0,
+      "duration_seconds": 22.54,
+      "pass": true
+    },
+    {
+      "mode": "02_1v1",
+      "exit": 0,
+      "duration_seconds": 12.96,
+      "pass": true
+    }
+  ]
+}

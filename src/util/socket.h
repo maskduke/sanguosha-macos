@@ -11,7 +11,7 @@ class ServerSocket: public QObject{
     Q_OBJECT
 
 public:
-    virtual bool listen() = 0;
+    virtual bool listen(bool localOnly = false) = 0;
     virtual void daemonize() = 0;
 
 signals:
@@ -30,7 +30,7 @@ public:
     virtual QString peerAddress() const = 0;
 
 signals:
-    void message_got(char *msg);
+    void message_got(QByteArray msg);
     void error_message(const QString &msg);
     void disconnected();
     void connected();

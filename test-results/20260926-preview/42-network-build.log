@@ -1,0 +1,47 @@
+[0/2] Re-checking globbed directories...
+[1/2] Re-running CMake...
+-- Could NOT find WrapVulkanHeaders (missing: Vulkan_INCLUDE_DIR) 
+-- Configuring done (0.5s)
+-- Generating done (0.1s)
+-- Build files have been written to: /Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug
+[0/4] Re-checking globbed directories...
+[1/54] Automatic MOC for target qs_protocol
+[2/52] Automatic MOC for target qs_paths
+[3/50] Automatic MOC for target qs_legacy_protocol
+[4/48] Automatic MOC for target qs_audio
+[5/46] Automatic MOC for target test_lua_runtime
+[6/44] Automatic MOC for target test_line_framer
+[7/42] Automatic MOC for target test_original_audio
+[8/40] Automatic MOC for target test_legacy_protocol
+[9/38] Automatic MOC for target test_qt_values
+[10/36] Automatic MOC for target test_qt_compat
+[11/34] Automatic MOC for target test_paths
+AutoMoc warning
+---------------
+"SRC:/tests/platform/test_paths.cpp"
+includes the moc file "test_paths.moc", but does not contain a Q_OBJECT, Q_GADGET, Q_NAMESPACE, Q_NAMESPACE_EXPORT, Q_GADGET_EXPORT or Q_ENUM_NS macro.
+
+[12/32] Automatic MOC for target test_audio_backend
+[13/30] Automatic MOC for target test_replay
+AutoMoc warning
+---------------
+"SRC:/tests/replay/test_replay.cpp"
+includes the moc file "test_replay.moc", but does not contain a Q_OBJECT, Q_GADGET, Q_NAMESPACE, Q_NAMESPACE_EXPORT, Q_GADGET_EXPORT or Q_ENUM_NS macro.
+
+[14/28] Automatic MOC and UIC for target qs_legacy_objects
+[15/27] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/util/nativesocket.cpp.o
+[16/27] Automatic MOC for target QSanguosha
+[17/26] Automatic MOC for target test_native_socket
+[18/26] Building CXX object CMakeFiles/test_native_socket.dir/test_native_socket_autogen/mocs_compilation.cpp.o
+[19/26] Building CXX object CMakeFiles/QSanguosha.dir/src/main.cpp.o
+/Users/haoranliu/Projects/sanguosha/src/main.cpp:37:5: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   37 |     qt_translator.load("qt_zh_CN.qm");
+      |     ^~~~~~~~~~~~~~~~~~
+/Users/haoranliu/Projects/sanguosha/src/main.cpp:38:5: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   38 |     translator.load("sanguosha.qm");
+      |     ^~~~~~~~~~~~~~~
+2 warnings generated.
+[20/26] Building CXX object CMakeFiles/test_native_socket.dir/src/core/audio.cpp.o
+[21/26] Building CXX object CMakeFiles/test_native_socket.dir/tests/protocol/test_native_socket.cpp.o
+[22/26] Linking CXX executable test_native_socket
+[23/26] Linking CXX executable QSanguosha.app/Contents/MacOS/QSanguosha

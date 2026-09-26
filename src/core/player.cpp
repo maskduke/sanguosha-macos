@@ -666,7 +666,7 @@ QSet<const TriggerSkill *> Player::getTriggerSkills() const{
 }
 
 QSet<const Skill *> Player::getVisibleSkills() const{
-    return getVisibleSkillList().toSet();
+    return qToSet(getVisibleSkillList());
 }
 
 QList<const Skill *> Player::getVisibleSkillList() const{
@@ -727,7 +727,7 @@ bool Player::isJilei(const Card *card) const{
 
         foreach(int card_id, card->getSubcards()){
             const Card *c = Sanguosha->getCard(card_id);
-            foreach(QString pattern, jilei_set.toList()){
+            foreach(QString pattern, jilei_set.values()){
                 ExpPattern p(pattern);
                 if(p.match(this,c) && !hasEquip(c)) return true;
             }
@@ -735,14 +735,14 @@ bool Player::isJilei(const Card *card) const{
     }
     else{
         if(card->getSubcards().isEmpty())
-            foreach(QString pattern, jilei_set.toList()){
+            foreach(QString pattern, jilei_set.values()){
                 ExpPattern p(pattern);
                 if(p.match(this,card)) return true;
             }
         else{
             foreach(int card_id, card->getSubcards()){
                 const Card *c = Sanguosha->getCard(card_id);
-                foreach(QString pattern, jilei_set.toList()){
+                foreach(QString pattern, jilei_set.values()){
                     ExpPattern p(pattern);
                     if(p.match(this,card) && !hasEquip(c)) return true;
                 }

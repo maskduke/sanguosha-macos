@@ -252,9 +252,9 @@ private:
 
 private slots:
     void processServerPacket(const QString &cmd);
-    void processServerPacket(char *cmd);
+    void processServerPacket(QByteArray cmd);
     bool processServerRequest(const QSanProtocol::QSanGeneralPacket& packet);
-    void processReply(char *reply);
+    void processReply(const QByteArray &reply);
     void notifyRoleChange(const QString &new_role);
     void onPlayerChooseSuit();
     void onPlayerChooseKingdom();

@@ -70,7 +70,7 @@ void GameRule::onPhaseChange(ServerPlayer *player) const{
     case Player::Play: {
             player->clearHistory();
 
-            while(player->isAlive()){
+            while(player->isAlive() && !room->isFinished()){
                 CardUseStruct card_use;
                 room->activate(player, card_use);
                 if(card_use.isValid()){
@@ -98,7 +98,7 @@ void GameRule::onPhaseChange(ServerPlayer *player) const{
                         room->showAllCards(player);
 
                         DummyCard *dummy_card = new DummyCard;
-                        foreach(const Card *card, handcards.toSet() - jilei_cards){
+                        foreach(const Card *card, qToSet(handcards) - jilei_cards){
                             dummy_card->addSubcard(card);
                         }
                         room->throwCard(dummy_card, player);

@@ -4,7 +4,7 @@
 #include "protocol.h"
 
 #include <QObject>
-#include <QTime>
+#include <QElapsedTimer>
 #include <QThread>
 #include <QMutex>
 #include <QSemaphore>
@@ -21,10 +21,10 @@ public:
     void recordLine(const QString &line);
 
 public slots:
-    void record(char *line);
+    void record(QByteArray line);
 
 private:
-    QTime watch;
+    QElapsedTimer watch;
     QByteArray data;
 };
 

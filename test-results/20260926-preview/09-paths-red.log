@@ -1,0 +1,22 @@
+[0/2] Re-checking globbed directories...
+[1/2] Re-running CMake...
+-- Could NOT find WrapVulkanHeaders (missing: Vulkan_INCLUDE_DIR) 
+-- Configuring done (0.2s)
+-- Generating done (0.1s)
+-- Build files have been written to: /Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug
+[0/4] Re-checking globbed directories...
+[1/7] Automatic MOC for target test_paths
+AutoMoc warning
+---------------
+"SRC:/tests/platform/test_paths.cpp"
+includes the moc file "test_paths.moc", but does not contain a Q_OBJECT, Q_GADGET, Q_NAMESPACE, Q_NAMESPACE_EXPORT, Q_GADGET_EXPORT or Q_ENUM_NS macro.
+
+[2/7] Building CXX object CMakeFiles/test_paths.dir/test_paths_autogen/mocs_compilation.cpp.o
+[3/7] Building CXX object CMakeFiles/test_paths.dir/tests/platform/test_paths.cpp.o
+FAILED: [code=1] CMakeFiles/test_paths.dir/tests/platform/test_paths.cpp.o 
+/usr/bin/c++ -DQT_CORE_LIB -DQT_TESTCASE_BUILDDIR=\"/Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug\" -DQT_TESTCASE_SOURCEDIR=\"/Users/haoranliu/Projects/sanguosha\" -DQT_TESTLIB_LIB -I/Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug/test_paths_autogen/include -I/Users/haoranliu/Projects/sanguosha/src -isystem /opt/homebrew/opt/qtbase/lib/QtTest.framework/Headers -iframework /opt/homebrew/opt/qtbase/lib -isystem /opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers -isystem /opt/homebrew/opt/qtbase/share/qt/mkspecs/macx-clang -isystem /opt/homebrew/opt/qtbase/include -g -std=c++17 -arch arm64 -mmacosx-version-min=26.0 -MD -MT CMakeFiles/test_paths.dir/tests/platform/test_paths.cpp.o -MF CMakeFiles/test_paths.dir/tests/platform/test_paths.cpp.o.d -o CMakeFiles/test_paths.dir/tests/platform/test_paths.cpp.o -c /Users/haoranliu/Projects/sanguosha/tests/platform/test_paths.cpp
+/Users/haoranliu/Projects/sanguosha/tests/platform/test_paths.cpp:4:10: fatal error: 'platform/paths/paths.h' file not found
+    4 | #include "platform/paths/paths.h"
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+ninja: build stopped: subcommand failed.

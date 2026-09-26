@@ -2,6 +2,8 @@
 #include "settings.h"
 
 #include <QTcpSocket>
+#include <QTimer>
+#include "qs_build_identity.h"
 #include <QRegExp>
 #include <QStringList>
 #include <QUdpSocket>
@@ -14,8 +16,8 @@ NativeServerSocket::NativeServerSocket()
     connect(server, SIGNAL(newConnection()), this, SLOT(processNewConnection()));
 }
 
-bool NativeServerSocket::listen(){
-    return server->listen(QHostAddress::Any, Config.ServerPort);
+bool NativeServerSocket::listen(bool localOnly){
+    return server->listen(localOnly ? QHostAddress::LocalHost : QHostAddress::Any, Config.ServerPort);
 }
 
 void NativeServerSocket::daemonize(){
@@ -61,9 +63,11 @@ NativeClientSocket::NativeClientSocket(QTcpSocket *socket)
 void NativeClientSocket::init(){
     connect(socket, SIGNAL(disconnected()), this, SIGNAL(disconnected()));
     connect(socket, SIGNAL(readyRead()), this, SLOT(getMessage()));
-    connect(socket, SIGNAL(error(QAbstractSocket::SocketError)),
+    connect(socket, SIGNAL(errorOccurred(QAbstractSocket::SocketError)),
             this, SLOT(raiseError(QAbstractSocket::SocketError)));
-    connect(socket, SIGNAL(connected()), this, SIGNAL(connected()));
+    connect(socket, &QTcpSocket::connected, this, [this]{sendHello();emit connected();});
+    if(socket->state()==QAbstractSocket::ConnectedState) sendHello();
+    QTimer::singleShot(5000,this,[this]{if(!compatible && socket->state()!=QAbstractSocket::UnconnectedState){emit error_message(tr("新版连接校验超时，请使用相同版本。"));socket->abort();}});
 }
 
 void NativeClientSocket::connectToHost(){
@@ -83,12 +87,21 @@ void NativeClientSocket::connectToHost(){
     socket->connectToHost(address, port);
 }
 
+static QByteArray hello(){return QByteArray("qs-modern/1 323f112658b5ea0c081b02e240afb92af7a379c1 ")+QS_RULES_FINGERPRINT;}
+void NativeClientSocket::sendHello(){socket->write(hello()+"\n");}
 void NativeClientSocket::getMessage(){
-    while(socket->canReadLine()){
-        buffer_t msg;
-        socket->readLine(msg, sizeof(msg));        
-
-        emit message_got(msg);
+    while(socket->bytesAvailable()){
+        const auto frames=framer.feed(socket->read(64*1024));
+        if(framer.error()!=qs::LineFramer::Error::None){emit error_message(tr("网络消息超过 1 MiB 上限。"));socket->abort();return;}
+        for(const QByteArray &frame:frames){
+            if(!compatible){
+                if(frame!=hello()){emit error_message(tr("客户端协议或规则不一致，请使用同一个新版安装包。"));socket->abort();return;}
+                compatible=true;
+            }else{
+                if(frame.contains('\0')){socket->abort();return;}
+                emit message_got(frame+"\n");
+            }
+        }
     }
 }
 
@@ -97,8 +110,11 @@ void NativeClientSocket::disconnectFromHost(){
 }
 
 void NativeClientSocket::send(const QString &message){
-    socket->write(message.toAscii());
-    socket->write("\n");
+    const QByteArray bytes=message.toUtf8();
+    if(bytes.size()>qs::LineFramer::MaxPayload || bytes.contains('\n') || bytes.contains('\0')){
+        emit error_message(tr("无法发送无效或过长的网络消息。"));socket->abort();return;
+    }
+    socket->write(bytes+"\n");
 }
 
 bool NativeClientSocket::isConnected() const{

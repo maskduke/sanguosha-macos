@@ -15,6 +15,7 @@ struct LogMessage;
 #include "roomthread.h"
 #include "protocol.h"
 #include <qmutex.h>
+#include <atomic>
 
 class Room : public QThread{
     Q_OBJECT
@@ -33,6 +34,7 @@ public:
     inline int getId() const { return _m_Id; } 
     bool isFull() const;
     bool isFinished() const;
+    bool shutdown();
     int getLack() const;
     QString getMode() const;
     const Scenario *getScenario() const;
@@ -281,7 +283,7 @@ private:
     QList<int> table_cards;
     QList<int> *draw_pile, *discard_pile;
     bool game_started;
-    bool game_finished;
+    std::atomic<bool> game_finished;
     lua_State *L;
     QList<AI *> ais;
 
@@ -299,7 +301,7 @@ private:
     QHash<QSanProtocol::CommandType, QSanProtocol::CommandType> m_requestResponsePair; 
         // Stores the expected client response for each server request, any unmatched client response will be discarded.
 
-    QTime _m_timeSinceLastSurrenderRequest; // Timer used to ensure that surrender polls are not initiated too frequently
+    QElapsedTimer _m_timeSinceLastSurrenderRequest; // Timer used to ensure that surrender polls are not initiated too frequently
     bool _m_isFirstSurrenderRequest; // We allow the first surrender poll to go through regardless of the timer.
     
     //helper variables for race request function

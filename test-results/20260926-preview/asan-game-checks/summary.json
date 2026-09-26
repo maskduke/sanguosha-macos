@@ -1,0 +1,50 @@
+[
+  {
+    "test": "--smoke-test",
+    "mode": "02p",
+    "exit": 0,
+    "pass": true
+  },
+  {
+    "test": "--shutdown-smoke",
+    "mode": "02p",
+    "exit": 0,
+    "pass": true
+  },
+  {
+    "test": "--shutdown-smoke",
+    "mode": "06_3v3",
+    "exit": 0,
+    "pass": true
+  },
+  {
+    "test": "--shutdown-smoke",
+    "mode": "02_1v1",
+    "exit": 0,
+    "pass": true
+  },
+  {
+    "test": "--shutdown-smoke",
+    "mode": "04_1v3",
+    "exit": 0,
+    "pass": true
+  },
+  {
+    "test": "--ai-smoke",
+    "mode": "02p",
+    "exit": 0,
+    "pass": true
+  },
+  {
+    "test": "--ai-smoke",
+    "mode": "04p",
+    "exit": 0,
+    "pass": true
+  },
+  {
+    "test": "--ai-smoke",
+    "mode": "08p",
+    "exit": 1,
+    "pass": false
+  }
+]

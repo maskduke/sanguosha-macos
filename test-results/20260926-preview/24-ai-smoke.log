@@ -1,0 +1,14 @@
+QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+lua/ai/joy-ai.lua:34: Assignment not possible. No setter/member with this name. For custom assignments implement __setitem method.
+activate
+stack traceback:
+	lua/ai/smart-ai.lua:122: in function <lua/ai/smart-ai.lua:102>
+Event stack:
+End of Event Stack
+lua/ai/joy-ai.lua:34: Assignment not possible. No setter/member with this name. For custom assignments implement __setitem method.
+activate
+stack traceback:
+	lua/ai/smart-ai.lua:122: in function <lua/ai/smart-ai.lua:102>
+Event stack:
+End of Event Stack
+NIRVANA_AI_COMPLETE "02p" "rebel"

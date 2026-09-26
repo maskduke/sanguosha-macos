@@ -4,8 +4,9 @@
 #include <QDir>
 
 PixmapAnimation::PixmapAnimation(QGraphicsScene *scene) :
-    QGraphicsItem(0,scene)
+    QGraphicsItem(nullptr)
 {
+    if (scene) scene->addItem(this);
 }
 
 void PixmapAnimation::advance(int phase)

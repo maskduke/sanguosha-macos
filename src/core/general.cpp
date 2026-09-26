@@ -116,7 +116,7 @@ QSet<const Skill *> General::getVisibleSkills() const{
 }
 
 QSet<const TriggerSkill *> General::getTriggerSkills() const{
-    QSet<const TriggerSkill *> skills = findChildren<const TriggerSkill *>().toSet();
+    QSet<const TriggerSkill *> skills = qToSet(findChildren<const TriggerSkill *>());
 
     foreach(QString skill_name, extra_set){
         const TriggerSkill *skill = Sanguosha->getTriggerSkill(skill_name);

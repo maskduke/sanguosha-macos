@@ -81,7 +81,7 @@ void RoleCombobox::onItemClicked(){
         items.first()->setPos(b);
 
         int i = items.indexOf(item);
-        items.swap(i, 0);
+        items.swapItemsAt(i, 0);
 
         for(i=1; i<items.length(); i++)
             items.at(i)->hide();

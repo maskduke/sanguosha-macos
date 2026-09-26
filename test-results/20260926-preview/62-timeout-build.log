@@ -1,0 +1,11 @@
+[0/2] Re-checking globbed directories...
+[1/5] Automatic MOC for target QSanguosha
+[2/4] Building CXX object CMakeFiles/QSanguosha.dir/src/main.cpp.o
+/Users/haoranliu/Projects/sanguosha/src/main.cpp:37:5: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   37 |     qt_translator.load("qt_zh_CN.qm");
+      |     ^~~~~~~~~~~~~~~~~~
+/Users/haoranliu/Projects/sanguosha/src/main.cpp:38:5: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   38 |     translator.load("sanguosha.qm");
+      |     ^~~~~~~~~~~~~~~
+2 warnings generated.
+[3/4] Linking CXX executable QSanguosha.app/Contents/MacOS/QSanguosha

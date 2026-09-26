@@ -31,14 +31,14 @@ private slots:
             QVERIFY2(!packet.parse(wire), wire);
         }
     }
-    void historicalPacketLimit() {
-        // Historical source protocol.cpp: cap is 1000 bytes, independent of new framing.
-        for (int size : {999, 1000, 1001}) {
+    void modernPacketLimit() {
+        // New peers use the same 1 MiB bound in JSON and transport framing.
+        for (int size : {1024*1024-1, 1024*1024, 1024*1024+1}) {
             const std::string prefix = "[1,2,3,4,\"";
             const std::string suffix = "\"]";
             const auto wire = prefix + std::string(size - prefix.size() - suffix.size(), 'x') + suffix;
             QSanGeneralPacket packet;
-            QCOMPARE(packet.parse(wire), size <= 1000);
+            QCOMPARE(packet.parse(wire), size <= 1024*1024);
         }
     }
     void integerArrayRejectsWithoutPartialAppend() {
@@ -59,16 +59,14 @@ private slots:
         QVERIFY(!Utils::tryParse(bad, result));
         QCOMPARE(result, expected);
     }
-    void historicalLatin1Boundary() {
-        // Qt4 default codec + unchanged jsonutils source: preserve the old byte boundary.
-        const QString text = QString::fromLatin1("caf\xe9");
-        QCOMPARE(Utils::toJsonString(text).asString(), std::string("caf\xe9"));
-        QCOMPARE(Utils::toQString(Json::Value("caf\xe9")), text);
-        QStringList decoded;
-        Json::Value array(Json::arrayValue); array.append("caf\xe9");
-        QVERIFY(Utils::tryParse(array, decoded));
-        QCOMPARE(decoded, QStringList{text});
-        QCOMPARE(Utils::toJsonString(QStringLiteral("刘备")).asString(), std::string("??"));
+    void utf8AndWhitespaceRoundTrip() {
+        const QString text=QStringLiteral("刘备 café 空 格\t保留");
+        QCOMPARE(Utils::toQString(Utils::toJsonString(text)),text);
+        QSanGeneralPacket packet;
+        packet.setMessageBody(Utils::toJsonString(text));
+        QSanGeneralPacket read;
+        QVERIFY(read.parse(packet.toString()));
+        QCOMPARE(Utils::toQString(read.getMessageBody()),text);
     }
     void smallArrayOverloads() {
         const auto two = Utils::toJsonArray(QStringLiteral("slash"), QStringLiteral("jink"));

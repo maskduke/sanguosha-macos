@@ -1,0 +1,23 @@
+[0/2] Re-checking globbed directories...
+[1/2] Re-running CMake...
+-- Could NOT find WrapVulkanHeaders (missing: Vulkan_INCLUDE_DIR) 
+-- Configuring done (0.5s)
+-- Generating done (0.1s)
+-- Build files have been written to: /Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug
+[0/4] Re-checking globbed directories...
+[1/20] Automatic MOC for target qs_protocol
+[2/18] Automatic MOC for target qs_paths
+[3/16] Automatic MOC for target qs_audio
+[4/14] Automatic MOC and UIC for target qs_legacy_objects
+[5/13] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/server/roomthread.cpp.o
+[6/13] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/server/serverplayer.cpp.o
+[7/13] Automatic MOC for target QSanguosha
+[8/12] Building CXX object CMakeFiles/QSanguosha.dir/src/main.cpp.o
+/Users/haoranliu/Projects/sanguosha/src/main.cpp:37:5: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   37 |     qt_translator.load("qt_zh_CN.qm");
+      |     ^~~~~~~~~~~~~~~~~~
+/Users/haoranliu/Projects/sanguosha/src/main.cpp:38:5: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   38 |     translator.load("sanguosha.qm");
+      |     ^~~~~~~~~~~~~~~
+2 warnings generated.
+[9/12] Linking CXX executable QSanguosha.app/Contents/MacOS/QSanguosha

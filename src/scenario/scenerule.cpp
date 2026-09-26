@@ -303,7 +303,7 @@ bool SceneRule::trigger(TriggerEvent event, Room* room, ServerPlayer *player, QV
 
                         if(maxCardPlayer != i) {
                             room->swapSeat(players.at(maxCardPlayer), players.at(i));
-                            judgeCards.swap(maxCardPlayer, i);
+                            judgeCards.swapItemsAt(maxCardPlayer, i);
                         }
                     }
                     break;

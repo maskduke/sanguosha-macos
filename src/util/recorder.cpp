@@ -1,5 +1,5 @@
 #include "recorder.h"
-#include "client.h"
+
 
 #include <cstdlib>
 #include <cmath>
@@ -7,6 +7,8 @@
 #include <QFile>
 #include <QBuffer>
 #include <QMessageBox>
+#include <QImageReader>
+#include <QtEndian>
 using namespace QSanProtocol;
 
 Recorder::Recorder(QObject *parent)
@@ -15,17 +17,17 @@ Recorder::Recorder(QObject *parent)
     watch.start();
 }
 
-void Recorder::record(char *line)
+void Recorder::record(QByteArray line)
 {
-    recordLine(line);
+    recordLine(QString::fromUtf8(line));
 }
 
 void Recorder::recordLine(const QString &line){
     int elapsed = watch.elapsed();
     if(line.endsWith("\n"))
-        data.append(QString("%1 %2").arg(elapsed).arg(line));
+        data.append(QString("%1 %2").arg(elapsed).arg(line).toUtf8());
     else
-        data.append(QString("%1 %2\n").arg(elapsed).arg(line));
+        data.append(QString("%1 %2\n").arg(elapsed).arg(line).toUtf8());
 }
 
 bool Recorder::save(const QString &filename) const{
@@ -42,20 +44,15 @@ bool Recorder::save(const QString &filename) const{
 }
 
 QImage Recorder::TXT2PNG(QByteArray txtData){
-    QByteArray data = qCompress(txtData, 9);
-    qint32 actual_size = data.size();
-    data.prepend((const char *)&actual_size, sizeof(qint32));
-
-    // actual data = width * height - padding
-    int width = ceil(sqrt((double)data.size()));
-    int height = width;
-    int padding = width * height - data.size();
-    QByteArray paddingData;
-    paddingData.fill('\0', padding);
-    data.append(paddingData);
-
-    QImage image((const uchar *)data.constData(), width, height, QImage::Format_ARGB32);
-    return image;
+    if(txtData.size()>64*1024*1024) return {};
+    QByteArray data=qCompress(txtData,9);
+    const quint32 length=qToLittleEndian(quint32(data.size()));
+    data.prepend(reinterpret_cast<const char *>(&length),4);
+    const int width=int(std::ceil(std::sqrt(double((data.size()+3)/4))));
+    QImage image(width,width,QImage::Format_ARGB32);
+    image.fill(0);
+    memcpy(image.bits(),data.constData(),size_t(data.size()));
+    return image; // Own the pixels; never reference a destroyed QByteArray.
 }
 
 Replayer::Replayer(QObject *parent, const QString &filename)
@@ -64,8 +61,8 @@ Replayer::Replayer(QObject *parent, const QString &filename)
 {
     QIODevice *device = NULL;
     if(filename.endsWith(".png")){
-        QByteArray *data = new QByteArray(PNG2TXT(filename));
-        QBuffer *buffer = new QBuffer(data);
+        QBuffer *buffer = new QBuffer;
+        buffer->setData(PNG2TXT(filename));
         device = buffer;
     }else if(filename.endsWith(".txt")){
         QFile *file = new QFile(filename);
@@ -82,17 +79,13 @@ Replayer::Replayer(QObject *parent, const QString &filename)
 
     initCommandPair();
     while(!device->atEnd()){
-        buffer_t line;
-        memset(line, 0, sizeof(buffer_t));
-        device->readLine(line, sizeof(buffer_t));
-
-        char *space = strchr(line, ' ');
-        if(space == NULL)
-            continue;
-
-        *space = '\0';
-        QString cmd = space + 1;
-        int elapsed = atoi(line);
+        const QByteArray line=device->readLine(1024*1024+32);
+        const int space=line.indexOf(' ');
+        if(space<0 || line.size()>1024*1024+16) continue;
+        bool ok=false;
+        int elapsed=line.left(space).toInt(&ok);
+        if(!ok || elapsed<0) continue;
+        QString cmd=QString::fromUtf8(line.mid(space+1));
 
         //@todo: There is a serious problem that the old protocol didn't has
         //any tag or type definition for the sent messages, and if the old protocol
@@ -115,14 +108,17 @@ Replayer::Replayer(QObject *parent, const QString &filename)
 }
 
 QByteArray Replayer::PNG2TXT(const QString filename){
-    QImage image(filename);
-    image = image.convertToFormat(QImage::Format_ARGB32);
-    const uchar *imageData = image.bits();
-    qint32 actual_size = *(const qint32 *)imageData;
-    QByteArray data((const char *)(imageData+4), actual_size);
-    data = qUncompress(data);
-
-    return data;
+    QImageReader reader(filename);
+    const QSize size=reader.size();
+    if(!size.isValid() || qint64(size.width())*size.height()>16*1024*1024) return {};
+    QImage image=reader.read().convertToFormat(QImage::Format_ARGB32);
+    if(image.isNull() || image.sizeInBytes()<8) return {};
+    const uchar *bytes=image.constBits();
+    const quint32 length=qFromLittleEndian<quint32>(bytes);
+    if(length<4 || length>quint64(image.sizeInBytes()-4)) return {};
+    const quint32 expanded=qFromBigEndian<quint32>(bytes+4);
+    if(expanded>64*1024*1024) return {};
+    return qUncompress(bytes+4,length);
 }
 
 QString &Replayer::commandProceed(QString &cmd){
@@ -261,7 +257,7 @@ void Replayer::initCommandPair(){
 }
 
 int Replayer::getDuration() const{
-    return pairs.last().elapsed / 1000.0;
+    return pairs.isEmpty() ? 0 : pairs.last().elapsed / 1000;
 }
 
 qreal Replayer::getSpeed() {

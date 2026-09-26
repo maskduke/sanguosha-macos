@@ -1,0 +1,27 @@
+[0/2] Re-checking globbed directories...
+[1/2] Re-running CMake...
+-- Could NOT find WrapVulkanHeaders (missing: Vulkan_INCLUDE_DIR) 
+-- Configuring done (0.6s)
+-- Generating done (0.1s)
+-- Build files have been written to: /Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug
+[0/4] Re-checking globbed directories...
+[1/11] Automatic MOC for target qs_legacy_protocol
+[2/9] Automatic MOC for target test_replay
+AutoMoc warning
+---------------
+"SRC:/tests/replay/test_replay.cpp"
+includes the moc file "test_replay.moc", but does not contain a Q_OBJECT, Q_GADGET, Q_NAMESPACE, Q_NAMESPACE_EXPORT, Q_GADGET_EXPORT or Q_ENUM_NS macro.
+
+[3/9] Building CXX object CMakeFiles/test_replay.dir/src/util/recorder.cpp.o
+FAILED: [code=1] CMakeFiles/test_replay.dir/src/util/recorder.cpp.o 
+/usr/bin/c++ -DQT_CORE5COMPAT_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_TESTCASE_BUILDDIR=\"/Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug\" -DQT_TESTCASE_SOURCEDIR=\"/Users/haoranliu/Projects/sanguosha\" -DQT_TESTLIB_LIB -DQT_WIDGETS_LIB -I/Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug/test_replay_autogen/include -I/Users/haoranliu/Projects/sanguosha/src/client -I/Users/haoranliu/Projects/sanguosha/src/core -I/Users/haoranliu/Projects/sanguosha/src/dialog -I/Users/haoranliu/Projects/sanguosha/src/package -I/Users/haoranliu/Projects/sanguosha/src/scenario -I/Users/haoranliu/Projects/sanguosha/src/server -I/Users/haoranliu/Projects/sanguosha/src/ui -I/Users/haoranliu/Projects/sanguosha/src/util -I/Users/haoranliu/Projects/sanguosha/src -I/Users/haoranliu/Projects/sanguosha/src/jsoncpp/include -isystem /opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers -iframework /opt/homebrew/opt/qtbase/lib -isystem /opt/homebrew/opt/qtbase/share/qt/mkspecs/macx-clang -isystem /opt/homebrew/opt/qtbase/include -isystem /opt/homebrew/opt/qtbase/lib/QtTest.framework/Headers -isystem /opt/homebrew/opt/qtbase/lib/QtWidgets.framework/Headers -isystem /opt/homebrew/opt/qtbase/lib/QtGui.framework/Headers -isystem /opt/homebrew/opt/qt5compat/lib/QtCore5Compat.framework/Headers -iframework /opt/homebrew/opt/qt5compat/lib -g -std=c++17 -arch arm64 -mmacosx-version-min=26.0 -include/Users/haoranliu/Projects/sanguosha/src/platform/qt_compat.h -MD -MT CMakeFiles/test_replay.dir/src/util/recorder.cpp.o -MF CMakeFiles/test_replay.dir/src/util/recorder.cpp.o.d -o CMakeFiles/test_replay.dir/src/util/recorder.cpp.o -c /Users/haoranliu/Projects/sanguosha/src/util/recorder.cpp
+In file included from /Users/haoranliu/Projects/sanguosha/src/util/recorder.cpp:2:
+In file included from /Users/haoranliu/Projects/sanguosha/src/client/client.h:4:
+In file included from /Users/haoranliu/Projects/sanguosha/src/client/clientplayer.h:4:
+/Users/haoranliu/Projects/sanguosha/src/core/player.h:9:10: fatal error: 'QTcpSocket' file not found
+    9 | #include <QTcpSocket>
+      |          ^~~~~~~~~~~~
+1 error generated.
+[4/9] Building CXX object CMakeFiles/test_replay.dir/test_replay_autogen/mocs_compilation.cpp.o
+[5/9] Building CXX object CMakeFiles/test_replay.dir/tests/replay/test_replay.cpp.o
+ninja: build stopped: subcommand failed.

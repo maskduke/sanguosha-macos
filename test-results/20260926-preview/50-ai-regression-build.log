@@ -1,0 +1,11 @@
+[0/2] Re-checking globbed directories...
+[1/2] Re-running CMake...
+-- Could NOT find WrapVulkanHeaders (missing: Vulkan_INCLUDE_DIR) 
+-- Configuring done (0.6s)
+-- Generating done (0.2s)
+-- Build files have been written to: /Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug
+[0/4] Re-checking globbed directories...
+[1/7] Automatic MOC for target test_lua_runtime
+[2/7] Building CXX object CMakeFiles/test_lua_runtime.dir/test_lua_runtime_autogen/mocs_compilation.cpp.o
+[3/7] Building CXX object CMakeFiles/test_lua_runtime.dir/tests/bindings/test_lua_runtime.cpp.o
+[4/7] Linking CXX executable test_lua_runtime

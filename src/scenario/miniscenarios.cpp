@@ -1,3 +1,4 @@
+#include "platform/paths/paths.h"
 #include "miniscenarios.h"
 
 #include <QMessageBox>
@@ -30,7 +31,7 @@ QStringList MiniSceneRule::existedGenerals() const
         if(name == "select")name = "sujiang";
         names << name;
         name = sp["general2"];
-        if(name == NULL )continue;
+        if(name == QString() )continue;
         if(name == "select")name = "sujiang";
         names << name;
     }
@@ -62,7 +63,7 @@ bool MiniSceneRule::trigger(TriggerEvent event, Room* room, ServerPlayer *player
             }
         }
 
-        if(player->getPhase()==Player::Start && this->players.first()["beforeNext"] != NULL
+        if(player->getPhase()==Player::Start && this->players.first()["beforeNext"] != QString()
                 )
         {
             if(player->tag["playerHasPlayed"].toBool())
@@ -71,7 +72,7 @@ bool MiniSceneRule::trigger(TriggerEvent event, Room* room, ServerPlayer *player
         }
 
         if(player->getPhase() != Player::NotActive)return false;
-        if(player->getState() == "robot" || this->players.first()["singleTurn"] == NULL)
+        if(player->getState() == "robot" || this->players.first()["singleTurn"] == QString())
             return false;
         room->gameOver(this->players.first()["singleTurn"]);
     }
@@ -159,16 +160,16 @@ bool MiniSceneRule::trigger(TriggerEvent event, Room* room, ServerPlayer *player
         room->setPlayerProperty(sp,"kingdom",sp->getGeneral()->getKingdom());
 
         QString str = this->players.at(i)["maxhp"];
-        if (str == NULL) str = QString::number(sp->getGeneralMaxHp());
+        if (str == QString()) str = QString::number(sp->getGeneralMaxHp());
         room->setPlayerProperty(sp,"maxhp",str.toInt());
 
         str = this->players.at(i)["hpadj"];
-        if(str != NULL)
+        if(str != QString())
             room->setPlayerProperty(sp,"maxhp",sp->getMaxHp()+str.toInt());
         str=QString::number(sp->getMaxHp());
 
         QString str2 = this->players.at(i)["hp"];
-        if(str2 != NULL)str = str2;
+        if(str2 != QString())str = str2;
         room->setPlayerProperty(sp,"hp",str.toInt());
 
         str = this->players.at(i)["equip"];
@@ -182,7 +183,7 @@ bool MiniSceneRule::trigger(TriggerEvent event, Room* room, ServerPlayer *player
         }
 
         str = this->players.at(i)["judge"];
-        if(str != NULL)
+        if(str != QString())
         {
             QStringList judges = str.split(",");
             foreach(QString judge,judges)
@@ -192,7 +193,7 @@ bool MiniSceneRule::trigger(TriggerEvent event, Room* room, ServerPlayer *player
         }
 
         str = this->players.at(i)["hand"];
-        if(str !=NULL)
+        if(str !=QString())
         {
             QStringList hands = str.split(",");
             foreach(QString hand,hands)
@@ -213,12 +214,12 @@ bool MiniSceneRule::trigger(TriggerEvent event, Room* room, ServerPlayer *player
         }
 
         QString skills = this->players.at(i)["acquireSkills"];
-        if(skills != NULL){
+        if(skills != QString()){
             foreach(QString skill_name, skills.split(","))
                 room->acquireSkill(sp, skill_name);
         }
 
-        if(this->players.at(i)["chained"] != NULL){
+        if(this->players.at(i)["chained"] != QString()){
             sp->setChained(true);
             room->broadcastProperty(sp, "chained");
             room->setEmotion(sp, "chain");
@@ -227,19 +228,19 @@ bool MiniSceneRule::trigger(TriggerEvent event, Room* room, ServerPlayer *player
             if(sp->faceUp())
                 sp->turnOver();
         }
-        if(this->players.at(i)["starter"] != NULL){
+        if(this->players.at(i)["starter"] != QString()){
             room->setCurrent(sp);
             QVariant data = QVariant::fromValue(sp);
             room->setTag("Starter", data);
         }
-        if(this->players.at(i)["nationality"] != NULL){
+        if(this->players.at(i)["nationality"] != QString()){
             room->setPlayerProperty(sp, "kingdom", this->players.at(i)["nationality"]);
         }
 
         str = this->players.at(i)["draw"];
-        if(str == NULL)str = "4";
+        if(str == QString())str = "4";
         room->drawCards(sp,str.toInt());
-        if(this->players.at(i)["marks"] != NULL)
+        if(this->players.at(i)["marks"] != QString())
         {
             QStringList marks = this->players.at(i)["marks"].split(",");
             foreach(QString qs,marks)
@@ -284,7 +285,7 @@ void MiniSceneRule::setOptions(QStringList option){
 
 void MiniSceneRule::loadSetting(QString path)
 {
-    QFile file(path);
+    QFile file(qs::readOverride(path));
     if(file.open(QIODevice::ReadOnly)){
         players.clear();
         setup.clear();
@@ -319,7 +320,7 @@ MiniScene::MiniScene(const QString &name)
 
 void MiniScene::setupCustom(QString name) const
 {
-    if(name == NULL)name = "custom_scenario";
+    if(name == QString())name = "custom_scenario";
     name.prepend("etc/customScenes/");
     name.append(".txt");
 

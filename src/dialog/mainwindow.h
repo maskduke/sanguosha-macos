@@ -11,8 +11,6 @@
 #include <QCheckBox>
 #include <QSpinBox>
 
-#include <QtDeclarative/QDeclarativeView>
-#include <QtDeclarative/QDeclarativeContext>
 
 namespace Ui {
     class MainWindow;
@@ -82,9 +80,7 @@ public:
 signals:
     void go_back();
 private:
-    QDeclarativeView *view;
-    QDeclarativeContext *ctxt;
-    QList<QObject*> tokens,equipped,loaded;
+
 };
 
 class MainWindow : public QMainWindow {

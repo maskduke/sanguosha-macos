@@ -441,7 +441,7 @@ RoomScene::RoomScene(QMainWindow *main_window)
 
     animations = new EffectAnimation();
     drawPile = NULL;
-    view_transform = QMatrix();
+    view_transform = QTransform();
 }
 
 void RoomScene::createControlButtons(){
@@ -559,8 +559,8 @@ void RoomScene::createReplayControlBar(){
     new ReplayerControlBar(dashboard);
 }
 
-void RoomScene::adjustItems(QMatrix matrix){
-    if(matrix.m11()>1)matrix.setMatrix(1,0,0,1,matrix.dx(),matrix.dy());
+void RoomScene::adjustItems(QTransform matrix){
+    if(matrix.m11()>1)matrix = QTransform(1,0,0,1,matrix.dx(),matrix.dy());
 
     qreal dashboard_width = dashboard->boundingRect().width();
     qreal x = - dashboard_width/2;
@@ -723,7 +723,7 @@ void RoomScene::arrangeSeats(const QList<const ClientPlayer*> &seats){
         const Player *player = seats.at(i);
         for(j=0; j<photos.length(); j++){
             if(photos.at(j)->getPlayer() == player){
-                photos.swap(i, j);
+                photos.swapItemsAt(i, j);
                 break;
             }
         }
@@ -946,7 +946,7 @@ void RoomScene::keyReleaseEvent(QKeyEvent *event){
 void RoomScene::contextMenuEvent(QGraphicsSceneContextMenuEvent *event){
     QGraphicsScene::contextMenuEvent(event);
 
-    QGraphicsItem *item = itemAt(event->scenePos());
+    QGraphicsItem *item = itemAt(event->scenePos(), views().isEmpty() ? QTransform() : views().first()->viewportTransform());
     if(!item)
         return;
 
@@ -1672,7 +1672,8 @@ void RoomScene::removeWidgetFromSkillDock(QWidget *widget){
 
 void RoomScene::acquireSkill(const ClientPlayer *player, const QString &skill_name){
     QGraphicsObject *dest = getAnimationObject(player->objectName());
-    QGraphicsTextItem *item = new QGraphicsTextItem(Sanguosha->translate(skill_name), NULL, this);
+    QGraphicsTextItem *item = new QGraphicsTextItem(Sanguosha->translate(skill_name));
+    addItem(item);
     item->setFont(Config.BigFont);
 
     QGraphicsDropShadowEffect *drop = new QGraphicsDropShadowEffect;
@@ -2814,7 +2815,7 @@ void RoomScene::addRestartButton(QDialog *dialog){
 }
 
 void RoomScene::saveReplayRecord(){
-    QString location = QDesktopServices::storageLocation(QDesktopServices::HomeLocation);
+    QString location = QStandardPaths::writableLocation(QStandardPaths::HomeLocation);
     QString filename = QFileDialog::getSaveFileName(main_window,
                                                     tr("Save replay record"),
                                                     location,
@@ -2858,7 +2859,7 @@ void ScriptExecutor::doScript(){
         return;
 
     QString script = box->toPlainText();
-    QByteArray data = script.toAscii();
+    QByteArray data = script.toLatin1();
     data = qCompress(data);
     script = data.toBase64();
 
@@ -3478,7 +3479,7 @@ void RoomScene::onGameStart(){
         memory->lock();
 
         char *username = static_cast<char *>(memory->data());
-        const char *my_username = Config.UserName.toAscii();
+        const char *my_username = Config.UserName.toLatin1();
         play_music = qstrcmp(username, my_username) == 0;
 
         memory->unlock();
@@ -3486,7 +3487,7 @@ void RoomScene::onGameStart(){
         memory->lock();
 
         void *data = memory->data();
-        const char *username = Config.UserName.toAscii();
+        const char *username = Config.UserName.toLatin1();
         memcpy(data, username, qstrlen(username));
 
         play_music = true;
@@ -4273,11 +4274,11 @@ void RoomScene::adjustPrompt()
     //else text_item->setFont(QFont("SimHei",10));
 }
 
-void RoomScene::reLayout(QMatrix matrix)
+void RoomScene::reLayout(QTransform matrix)
 {
     return;
 
-    if(matrix.m11()>1)matrix.setMatrix(1,0,0,1,matrix.dx(),matrix.dy());
+    if(matrix.m11()>1)matrix = QTransform(1,0,0,1,matrix.dx(),matrix.dy());
     view_transform = matrix;
     //if(!Config.value("circularView",false).toBool())
     //    if(!game_started)return;

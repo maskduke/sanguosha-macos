@@ -1,0 +1,5 @@
+[0/2] Re-checking globbed directories...
+[1/8] Automatic MOC for target qs_legacy_protocol
+[2/6] Automatic MOC for target test_legacy_protocol
+[3/5] Building CXX object CMakeFiles/test_legacy_protocol.dir/tests/protocol/test_legacy_protocol.cpp.o
+[4/5] Linking CXX executable test_legacy_protocol

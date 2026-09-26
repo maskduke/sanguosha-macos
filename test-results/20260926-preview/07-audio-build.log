@@ -1,0 +1,15 @@
+[0/2] Re-checking globbed directories...
+[1/2] Re-running CMake...
+-- Could NOT find WrapVulkanHeaders (missing: Vulkan_INCLUDE_DIR) 
+-- Configuring done (0.2s)
+-- Generating done (0.1s)
+-- Build files have been written to: /Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug
+[0/4] Re-checking globbed directories...
+[1/12] Automatic MOC for target qs_audio
+[2/12] Building CXX object CMakeFiles/qs_audio.dir/qs_audio_autogen/mocs_compilation.cpp.o
+[3/12] Building CXX object CMakeFiles/qs_audio.dir/src/platform/audio/audio_backend.cpp.o
+[4/12] Building C object CMakeFiles/qs_audio.dir/src/platform/audio/miniaudio_impl.c.o
+[5/12] Linking CXX static library libqs_audio.a
+[6/12] Automatic MOC for target test_audio_backend
+[7/11] Building CXX object CMakeFiles/test_audio_backend.dir/tests/audio/test_audio_backend.cpp.o
+[8/11] Linking CXX executable test_audio_backend

@@ -151,7 +151,7 @@ bool CardUseStruct::tryParse(const Json::Value &usage, Room *room){
 }
 
 void CardUseStruct::parse(const QString &str, Room *room){
-    QStringList words = str.split("->", QString::KeepEmptyParts);
+    QStringList words = str.split("->", Qt::KeepEmptyParts);
     
     Q_ASSERT(words.length() == 1 || words.length() == 2);
 
@@ -234,7 +234,7 @@ void RoomThread::run3v3(){
 
     action3v3(first->first());
 
-    forever{
+    while(!room->isFinished()){
         qSwap(first, second);
 
         QList<ServerPlayer *> targets;
@@ -246,6 +246,7 @@ void RoomThread::run3v3(){
         ServerPlayer *to_action = room->askForPlayerChosen(first->first(), targets, "3v3-action");
         if(to_action){
             action3v3(to_action);
+            if(room->isFinished()) return;
 
             if(to_action != first->first()){
                 ServerPlayer *another;
@@ -301,7 +302,7 @@ void RoomThread::run(){
             QList<ServerPlayer *> league = room->getPlayers();
             league.removeOne(shenlvbu);
 
-            forever{
+            while(!room->isFinished()){
                 foreach(ServerPlayer *player, league){
                     if(player->hasFlag("actioned"))
                         room->setPlayerFlag(player, "-actioned");
@@ -348,7 +349,7 @@ void RoomThread::run(){
 
                 room->setCurrent(shenlvbu);
 
-                forever{
+                while(!room->isFinished()){
                     trigger(TurnStart, room, room->getCurrent());
                     room->setCurrent(room->getCurrent()->getNext());
                 }
@@ -357,7 +358,7 @@ void RoomThread::run(){
             if(room->getMode() == "02_1v1")
                 room->setCurrent(room->getPlayers().at(1));
 
-            forever {
+            while(!room->isFinished()) {
                 trigger(TurnStart, room, room->getCurrent());
                 if (room->isFinished()) break;
                 room->setCurrent(room->getCurrent()->getNextAlive());
@@ -370,6 +371,7 @@ static bool CompareByPriority(const TriggerSkill *a, const TriggerSkill *b){
 }
 
 bool RoomThread::trigger(TriggerEvent event, Room* room, ServerPlayer *target, QVariant &data){
+    if(room->isFinished()) return false;
     // Q_ASSERT(QThread::currentThread() == this);
 
     // push it to event stack

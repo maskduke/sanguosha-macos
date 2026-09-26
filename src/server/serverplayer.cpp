@@ -181,7 +181,7 @@ int ServerPlayer::getHandcardNum() const{
 void ServerPlayer::setSocket(ClientSocket *socket){
     if(socket){
         connect(socket, SIGNAL(disconnected()), this, SIGNAL(disconnected()));
-        connect(socket, SIGNAL(message_got(char*)), this, SLOT(getMessage(char*)));
+        connect(socket, SIGNAL(message_got(QByteArray)), this, SLOT(getMessage(QByteArray)));
 
         connect(this, SIGNAL(message_cast(QString)), this, SLOT(castMessage(QString)));
     }else{
@@ -198,8 +198,8 @@ void ServerPlayer::setSocket(ClientSocket *socket){
     this->socket = socket;
 }
 
-void ServerPlayer::getMessage(char *message){
-    QString request = message;
+void ServerPlayer::getMessage(QByteArray message){
+    QString request = QString::fromUtf8(message);
     if(request.endsWith("\n"))
         request.chop(1);
 
@@ -586,7 +586,7 @@ void ServerPlayer::play(QList<Player::Phase> set_phases){
                 << Discard << Finish << NotActive;
 
     phases = set_phases;
-    while(!phases.isEmpty()){
+    while(!phases.isEmpty() && !room->isFinished()){
         PhaseChangeStruct phase_change;
 
         Phase phase = phases.takeFirst();

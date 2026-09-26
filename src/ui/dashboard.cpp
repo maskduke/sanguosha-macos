@@ -800,7 +800,7 @@ void Dashboard::reverseSelection(){
     if(view_as_skill == NULL)
         return;
 
-    QSet<CardItem *> selected_set = pendings.toSet();
+    QSet<CardItem *> selected_set = qToSet(pendings);
     unselectAll();
 
     foreach(CardItem *item, card_items)

@@ -1,0 +1,5 @@
+
+External dependency: /Users/haoranliu/Projects/sanguosha/dist/preview-4/QSanguosha-Nirvana.app/Contents/Frameworks/libbrotlicommon.1.dylib:
+	/opt/homebrew/opt/brotli/lib/libbrotlicommon.1.dylib (compatibility version 1.0.0, current version 1.2.0)
+	/usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1356.0.0)
+

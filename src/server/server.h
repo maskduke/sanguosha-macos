@@ -123,7 +123,7 @@ private:
 private slots:
     void onOkButtonClicked();
     void onDetectButtonClicked();
-    void onHttpDone(bool error);
+    void onHttpDone();
     void select3v3Generals();
     void edit1v1Banlist();
     void updateButtonEnablility(QAbstractButton* button);
@@ -140,9 +140,11 @@ class Server : public QObject{
 
 public:
     explicit Server(QObject *parent);
+    ~Server() override;
+    static bool shutdownAll();
 
     void broadcast(const QString &msg);
-    bool listen();
+    bool listen(bool localOnly = false);
     void daemonize();
     Room *createNewRoom();
     void signupPlayer(ServerPlayer *player);
@@ -158,7 +160,7 @@ private:
 
 private slots:
     void processNewConnection(ClientSocket *socket);
-    void processRequest(char *request);
+    void processRequest(QByteArray request);
     void cleanup();
     void gameOver();
 

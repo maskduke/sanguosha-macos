@@ -1,0 +1,58 @@
+Test project /Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug
+    Start 1: protocol.line_framer
+1/9 Test #1: protocol.line_framer .............   Passed    0.02 sec
+    Start 2: bindings.lua_runtime
+2/9 Test #2: bindings.lua_runtime .............   Passed    0.02 sec
+    Start 3: bindings.qt_values
+3/9 Test #3: bindings.qt_values ...............   Passed    0.05 sec
+    Start 4: protocol.legacy_json
+4/9 Test #4: protocol.legacy_json .............   Passed    0.94 sec
+    Start 5: platform.qt_compat
+5/9 Test #5: platform.qt_compat ...............   Passed    0.03 sec
+    Start 6: audio.backend
+6/9 Test #6: audio.backend ....................   Passed    0.10 sec
+    Start 7: platform.paths
+7/9 Test #7: platform.paths ...................   Passed    0.02 sec
+    Start 8: replay.roundtrip
+8/9 Test #8: replay.roundtrip .................   Passed    0.47 sec
+    Start 9: network.native_socket
+Could not find executable /Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug/test_native_socket
+Looked in the following places:
+/Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug/test_native_socket
+/Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug/test_native_socket
+/Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug/Release/test_native_socket
+/Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug/Release/test_native_socket
+/Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug/Debug/test_native_socket
+/Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug/Debug/test_native_socket
+/Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug/MinSizeRel/test_native_socket
+/Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug/MinSizeRel/test_native_socket
+/Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug/RelWithDebInfo/test_native_socket
+/Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug/RelWithDebInfo/test_native_socket
+/Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug/Deployment/test_native_socket
+/Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug/Deployment/test_native_socket
+/Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug/Development/test_native_socket
+/Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug/Development/test_native_socket
+Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug/test_native_socket
+Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug/test_native_socket
+Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug/Release/test_native_socket
+Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug/Release/test_native_socket
+Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug/Debug/test_native_socket
+Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug/Debug/test_native_socket
+Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug/MinSizeRel/test_native_socket
+Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug/MinSizeRel/test_native_socket
+Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug/RelWithDebInfo/test_native_socket
+Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug/RelWithDebInfo/test_native_socket
+Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug/Deployment/test_native_socket
+Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug/Deployment/test_native_socket
+Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug/Development/test_native_socket
+Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug/Development/test_native_socket
+Unable to find executable: /Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug/test_native_socket
+9/9 Test #9: network.native_socket ............***Not Run   0.00 sec
+
+89% tests passed, 1 tests failed out of 9
+
+Total Test time (real) =   1.67 sec
+
+The following tests FAILED:
+	  9 - network.native_socket (Not Run)
+Errors while running CTest

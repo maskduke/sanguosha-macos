@@ -1,0 +1,242 @@
+qt.qpa.fonts: Populating font family aliases took 103 ms. Replace uses of missing font family "SimHei" with one that exists to avoid this cost. 
+sgs1: .objectName sgs1
+sgs1: #sgs1 owner true
+sgs1: speak sgs1:PGZvbnQgY29sb3I9I0VFQjQyMj7njqnlrrYgPGI+aGFvcmFubGl1PC9iPiDliqDlhaXkuobmuLjmiI88L2ZvbnQ+
+sgs1: networkDelayTest .
+sgs1: #sgs1 ready true
+sgs1: speak sgs1:PGZvbnQgY29sb3I9I0VFQjQyMj7njqnlrrYgPGI+aGFvcmFubGl1PC9iPiDnmoTnvZHnu5zlu7bov5/kuLogMjgg5q+r56eSPC9mb250Pg==
+sgs1: addPlayer sgs2:5aSq6Ziz56We55qE6Ium5bel:jinxuandi
+sgs1: #sgs2 ready true
+sgs1: #sgs1 ready false
+sgs1: #sgs2 ready false
+sgs1: speak sgs2:5aSn5a625aW977yM5oiR5piv5LiA5Liq5py65Zmo5Lq6
+sgs1: #sgs2 state robot
+sgs1: .role rebel
+sgs1: #sgs2 role lord
+sgs1: arrangeSeats sgs2+sgs1
+sgs1: startInXs 0
+sgs1: [14,0,3,10,["sgs2",11]]
+sgs1: #sgs2 general caocao
+sgs1: [15,0,1,11,["jiangwei","huangzhong","lusu","zhangjiao","caiwenji","caocao(lord)"]]
+qt.qpa.window: Window position QRect(-6,-25 143x15) outside any known screen, using primary screen
+qt.core.qobject.connect: QObject::connect: No such signal QSignalMapper::mapped(QString) in /Users/haoranliu/Projects/sanguosha/src/dialog/choosegeneraldialog.cpp:163
+sgs1: .general huangzhong
+sgs1: #sgs1 general huangzhong
+sgs1: #sgs2 maxhp 4
+sgs1: #sgs2 hp 4
+QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+sgs1: #sgs1 maxhp 4
+sgs1: #sgs1 hp 4
+sgs1: startGame .
+sgs1: setPileNumber 160
+sgs1: drawNCards sgs2:4
+sgs1: drawCards 66+49+114+116
+sgs1: #sgs2 phase round_start
+sgs1: #sgs2 phase start
+sgs1: #sgs2 phase judge
+sgs1: #sgs2 phase draw
+sgs1: drawNCards sgs2:2
+sgs1: #sgs2 phase play
+sgs1: [33,0,3,10,["sgs2",2]]
+sgs1: addHistory pushPile
+sgs1: log #UseCard:sgs2->sgs1:100::
+sgs1: playCardEffect indulgence:M
+sgs1: moveCard 100:sgs2@hand->sgs1@judging
+sgs1: setCardFlag 100:.
+sgs1: [48,0,3,10,["sgs2",2]]
+sgs1: addHistory pushPile
+sgs1: log #UseCard:sgs2->sgs1:76::
+sgs1: moveCard 76:sgs2@hand->_@_
+sgs1: playCardEffect archery_attack:M
+sgs1: [56,0,3,10,["sgs1",4]]
+sgs1: [57,0,1,4,["jink","archery-attack-jink:sgs2"]]
+sgs1: #sgs1 state trust
+sgs1: log #Damage:sgs2->sgs1::1:normal_nature
+sgs1: #sgs1 hp 3
+sgs1: hpChange sgs1:-1
+sgs1: setCardFlag 76:.
+sgs1: [68,0,3,10,["sgs2",2]]
+sgs1: addHistory pushPile
+sgs1: log #UseCard:sgs2->sgs1:143::
+sgs1: moveCard 143:sgs2@hand->_@_
+sgs1: playCardEffect fire_slash:M
+sgs1: setEmotion sgs2:fire_slash
+sgs1: setEmotion sgs1:victim
+sgs1: [74,0,3,10,["sgs1",4]]
+sgs1: log #Damage:sgs2->sgs1::1:fire_nature
+sgs1: #sgs1 hp 2
+sgs1: hpChange sgs1:-1F
+sgs1: setCardFlag 143:.
+sgs1: [78,0,3,10,["sgs2",2]]
+sgs1: #sgs2 phase discard
+sgs1: #sgs2 phase finish
+sgs1: #sgs2 phase not_active
+sgs1: #sgs1 phase round_start
+sgs1: #sgs1 phase start
+sgs1: #sgs1 phase judge
+sgs1: moveCard 100:sgs1@judging->_@_
+sgs1: log #DelayedTrick:sgs1->::indulgence:
+sgs1: moveCard 24:_@=->_@special
+sgs1: log $InitialJudge:sgs1->:24::
+sgs1: judgeResult sgs1:bad
+sgs1: moveCard 24:_@special->_@_
+sgs1: log $JudgeResult:sgs1->:24::
+sgs1: judgeResult sgs1:bad
+sgs1: log #SkipPhase:sgs1->::play:
+sgs1: #sgs1 phase draw
+sgs1: drawCards 134+26
+sgs1: #sgs1 phase discard
+sgs1: [90,0,3,10,["sgs1",8]]
+sgs1: setCardFlag 134:visible
+sgs1: setCardFlag 49:visible
+sgs1: setCardFlag 116:visible
+sgs1: setCardFlag 66:visible
+sgs1: log $DiscardCard:sgs1->:134+49+116+66::
+sgs1: moveCard 134:sgs1@hand->_@_
+sgs1: moveCard 49:sgs1@hand->_@_
+sgs1: moveCard 116:sgs1@hand->_@_
+sgs1: moveCard 66:sgs1@hand->_@_
+sgs1: #sgs1 phase finish
+sgs1: #sgs1 phase not_active
+sgs1: #sgs2 phase round_start
+sgs1: #sgs2 phase start
+sgs1: #sgs2 phase judge
+sgs1: #sgs2 phase draw
+sgs1: drawNCards sgs2:2
+sgs1: #sgs2 phase play
+sgs1: [92,0,3,10,["sgs2",2]]
+sgs1: addHistory pushPile
+sgs1: playCardEffect renwang_shield:M
+sgs1: log $Install:sgs2->:105::
+sgs1: moveCard 105:sgs2@hand->sgs2@equip
+sgs1: setCardFlag 105:.
+sgs1: [131,0,3,10,["sgs2",2]]
+sgs1: addHistory pushPile
+sgs1: log #UseCard:sgs2->sgs1:125::
+sgs1: moveCard 125:sgs2@hand->_@_
+sgs1: playCardEffect thunder_slash:M
+sgs1: setEmotion sgs2:thunder_slash
+sgs1: setEmotion sgs1:victim
+sgs1: [141,0,3,10,["sgs1",4]]
+sgs1: log #Damage:sgs2->sgs1::1:thunder_nature
+sgs1: #sgs1 hp 1
+sgs1: hpChange sgs1:-1T
+sgs1: setCardFlag 125:.
+sgs1: [144,0,3,10,["sgs2",2]]
+sgs1: #sgs2 phase discard
+sgs1: #sgs2 phase finish
+sgs1: #sgs2 phase not_active
+sgs1: #sgs1 phase round_start
+sgs1: #sgs1 phase start
+sgs1: #sgs1 phase judge
+sgs1: #sgs1 phase draw
+sgs1: drawCards 13+148
+sgs1: #sgs1 phase play
+sgs1: [157,0,3,10,["sgs1",2]]
+sgs1: addHistory Peach
+sgs1: addHistory pushPile
+sgs1: log #UseCard:sgs1->:148::
+sgs1: moveCard 148:sgs1@hand->_@_
+sgs1: playCardEffect peach:M
+sgs1: animate peach:sgs1:sgs1
+sgs1: setStatistics recover:1
+sgs1: #sgs1 hp 2
+sgs1: hpChange sgs1:1
+sgs1: setCardFlag 148:.
+sgs1: [170,0,3,10,["sgs1",2]]
+sgs1: #sgs1 phase discard
+sgs1: [181,0,3,10,["sgs1",8]]
+sgs1: setCardFlag 114:visible
+sgs1: log $DiscardCard:sgs1->:114::
+sgs1: moveCard 114:sgs1@hand->_@_
+sgs1: #sgs1 phase finish
+sgs1: #sgs1 phase not_active
+sgs1: #sgs2 phase round_start
+sgs1: #sgs2 phase start
+sgs1: #sgs2 phase judge
+sgs1: #sgs2 phase draw
+sgs1: drawNCards sgs2:2
+sgs1: #sgs2 phase play
+sgs1: [186,0,3,10,["sgs2",2]]
+sgs1: addHistory pushPile
+sgs1: playCardEffect spear:M
+sgs1: log $Install:sgs2->:58::
+sgs1: moveCard 58:sgs2@hand->sgs2@equip
+sgs1: setCardFlag 58:.
+sgs1: [198,0,3,10,["sgs2",2]]
+sgs1: addHistory pushPile
+sgs1: log #UseCard:sgs2->sgs1:151::
+sgs1: moveCard 151:sgs2@hand->_@_
+sgs1: playCardEffect fire_slash:M
+sgs1: setEmotion sgs2:fire_slash
+sgs1: setEmotion sgs1:victim
+sgs1: [208,0,3,10,["sgs1",4]]
+sgs1: log #Damage:sgs2->sgs1::1:fire_nature
+sgs1: #sgs1 hp 1
+sgs1: hpChange sgs1:-1F
+sgs1: setCardFlag 151:.
+sgs1: [210,0,3,10,["sgs2",2]]
+sgs1: #sgs2 phase discard
+sgs1: #sgs2 phase finish
+sgs1: #sgs2 phase not_active
+sgs1: #sgs1 phase round_start
+sgs1: #sgs1 phase start
+sgs1: #sgs1 phase judge
+sgs1: #sgs1 phase draw
+sgs1: drawCards 133+106
+sgs1: #sgs1 phase play
+sgs1: [225,0,3,10,["sgs1",2]]
+sgs1: #sgs1 phase discard
+sgs1: [234,0,3,10,["sgs1",8]]
+sgs1: setCardFlag 26:visible
+sgs1: setCardFlag 13:visible
+sgs1: setCardFlag 106:visible
+sgs1: log $DiscardCard:sgs1->:26+13+106::
+sgs1: moveCard 26:sgs1@hand->_@_
+sgs1: moveCard 13:sgs1@hand->_@_
+sgs1: moveCard 106:sgs1@hand->_@_
+sgs1: #sgs1 phase finish
+sgs1: #sgs1 phase not_active
+sgs1: #sgs2 phase round_start
+sgs1: #sgs2 phase start
+sgs1: #sgs2 phase judge
+sgs1: #sgs2 phase draw
+sgs1: drawNCards sgs2:2
+sgs1: #sgs2 phase play
+sgs1: [243,0,3,10,["sgs2",2]]
+sgs1: addHistory pushPile
+sgs1: playCardEffect dilu:M
+sgs1: log $Install:sgs2->:65::
+sgs1: moveCard 65:sgs2@hand->sgs2@equip
+sgs1: setCardFlag 65:.
+sgs1: [256,0,3,10,["sgs2",2]]
+sgs1: addHistory pushPile
+sgs1: log #UseCard:sgs2->sgs1:7::
+sgs1: moveCard 7:sgs2@hand->_@_
+sgs1: playCardEffect slash:M
+sgs1: setEmotion sgs2:slash_black
+sgs1: setEmotion sgs1:victim
+sgs1: [266,0,3,10,["sgs1",4]]
+sgs1: log #Damage:sgs2->sgs1::1:normal_nature
+sgs1: #sgs1 hp 0
+sgs1: hpChange sgs1:-1
+sgs1: playAudio male-sos
+sgs1: log #AskForPeaches:sgs1->sgs2+sgs1::1:
+sgs1: [268,0,3,10,["sgs2",19]]
+sgs1: [270,0,3,10,["sgs1",19]]
+sgs1: updateStateItem Zf
+sgs1: log #Murder:sgs2->sgs1::rebel:
+sgs1: #sgs1 alive false
+sgs1: #sgs1 role rebel
+sgs1: killPlayer sgs1
+sgs1: setCardFlag 133:visible
+sgs1: log $DiscardCard:sgs1->:133::
+sgs1: moveCard 133:sgs1@hand->_@_
+sgs1: cardLock .
+sgs1: [272,0,3,35,["lord+loyalist",["lord","rebel"]]]
+sgs1: setCardFlag 7:.
+sgs1: [275,0,3,10,["sgs2",2]]
+QFile::open: File (audio/death/huangzhong.ogg) already open
+sgs1: #sgs2 phase discard
+sgs1: #sgs2 phase finish
+sgs1: #sgs2 phase not_active

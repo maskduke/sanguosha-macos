@@ -71,7 +71,7 @@ public:
 
     virtual const Card *viewAs(const QList<CardItem *> &cards) const{
         if(cards.length() != 2)
-            return false;
+            return nullptr;
 
         DujiangCard *card = new DujiangCard;
         card->addSubcards(cards);

@@ -64,6 +64,7 @@ struct CardUseStruct{
     void parse(const QString &str, Room *room);
     bool tryParse(const Json::Value&, Room *room);
 
+    bool broken = false; // Original Lua AI scratch flag; not serialized.
     const Card *card;
     ServerPlayer *from;
     QList<ServerPlayer *> to;
