@@ -4,7 +4,7 @@
 
 项目目录：`/Users/haoranliu/Projects/sanguosha`。
 
-依据：[Design Spec 0.1](DESIGN_SPEC.md)、[用户决策](DESIGN_DECISIONS.md)、[可行性分析](FEASIBILITY.md)。本文细化 Design Spec 的 A01–A12，不新增平台或产品兼容承诺。本文件定义验收约定；已落地测试入口和实测结果见 [TDD 执行报告](docs/validation/20260926-tdd-progress.md)，不能将设计用例数量当成已通过数量。
+依据：[Design Spec 0.1](DESIGN_SPEC.md)、[用户决策](DESIGN_DECISIONS.md)、[可行性分析](FEASIBILITY.md)。本文细化 Design Spec 的 A01–A12，不新增平台或产品兼容承诺。本文件定义验收约定；已落地测试入口和实测结果见 [TDD 执行报告](docs/validation/20260926-qt6-bindings.md)，不能将设计用例数量当成已通过数量。
 
 ## 1. 验证目标与范围
 

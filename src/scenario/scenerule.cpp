@@ -585,3 +585,5 @@ bool SceneRule::trigger(TriggerEvent event, Room* room, ServerPlayer *player, QV
 
     return GameRule::trigger(event, room, player, data);
 }
+
+#include "scenerule.moc"

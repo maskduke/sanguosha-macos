@@ -1,0 +1,16 @@
+[0/2] Re-checking globbed directories...
+[1/98] Generating sanguosha_wrap.cxx
+/Users/haoranliu/Projects/sanguosha/swig/sanguosha.i:774: Warning 314: 'end' is a Lua keyword, renaming to 'c_end'
+[2/98] Automatic MOC and UIC for target qs_legacy_objects
+FAILED: [code=1] qs_legacy_objects_autogen/timestamp qs_legacy_objects_autogen/mocs_compilation.cpp /Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug/qs_legacy_objects_autogen/timestamp /Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug/qs_legacy_objects_autogen/mocs_compilation.cpp 
+cd /Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug && /opt/homebrew/bin/cmake -E cmake_autogen /Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug/CMakeFiles/qs_legacy_objects_autogen.dir/AutogenInfo.json Debug && /opt/homebrew/bin/cmake -E touch /Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug/qs_legacy_objects_autogen/timestamp && /opt/homebrew/bin/cmake -E cmake_transform_depfile Ninja gccdepfile /Users/haoranliu/Projects/sanguosha /Users/haoranliu/Projects/sanguosha /Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug /Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug /Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug/qs_legacy_objects_autogen/deps /Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug/CMakeFiles/d/3f89a46149cbce5afdd205d1b9c8d89131d949a52a9bc07d725e14d4b08421b6.d
+
+AutoMoc error
+-------------
+"SRC:/src/scenario/scenerule.cpp"
+contains a "Q_OBJECT" macro, but does not include "scenerule.moc"!
+Consider to
+  - add #include "scenerule.moc"
+  - enable SKIP_AUTOMOC for this file
+
+ninja: build stopped: cannot make progress due to previous errors.

@@ -3,24 +3,24 @@
 Json::Value QSanProtocol::Utils::toJsonArray(const QString& s1, const QString& s2)
 {
     Json::Value val(Json::arrayValue);
-    val[0] = s1.toAscii().constData();
-    val[1] = s2.toAscii().constData();
+    val[0] = s1.toLatin1().constData();
+    val[1] = s2.toLatin1().constData();
     return val;
 }
 
 Json::Value QSanProtocol::Utils::toJsonArray(const QString& s1, const QString& s2, const QString& s3)
 {
     Json::Value val(Json::arrayValue);
-    val[0] = s1.toAscii().constData();
-    val[1] = s2.toAscii().constData();
-    val[2] = s3.toAscii().constData();
+    val[0] = s1.toLatin1().constData();
+    val[1] = s2.toLatin1().constData();
+    val[2] = s3.toLatin1().constData();
     return val;
 }
 
 Json::Value QSanProtocol::Utils::toJsonArray(const QString& s1, const Json::Value& s2)
 {
     Json::Value val(Json::arrayValue);
-    val[0] = s1.toAscii().constData();
+    val[0] = s1.toLatin1().constData();
     val[1] = s2;
     return val;
 }
@@ -47,14 +47,6 @@ bool QSanProtocol::Utils::tryParse(const Json::Value& arg, QList<int>& result)
     return true;
 }
 
-Json::Value QSanProtocol::Utils:: toJsonArray(const QList<QString>& arg)
-{
-    Json::Value val(Json::arrayValue);
-    foreach(QString s, arg)
-        val.append(toJsonString(s));
-    return val;
-}
-
 Json::Value QSanProtocol::Utils:: toJsonArray(const QStringList& arg)
 {
     Json::Value val(Json::arrayValue);
@@ -72,7 +64,7 @@ bool QSanProtocol::Utils::tryParse(const Json::Value& arg, QStringList& result)
     }
     for (unsigned int i = 0; i< arg.size(); i++)
     {
-        result.append(arg[i].asCString());        
+        result.append(QString::fromLatin1(arg[i].asCString()));
     }    
     return true;
 }

@@ -1,0 +1,15 @@
+[0/2] Re-checking globbed directories...
+-- GLOB mismatch!
+The following files were added:
+  +/Users/haoranliu/Projects/sanguosha/swig/qvariant_core.i
+[1/2] Re-running CMake...
+-- Could NOT find WrapVulkanHeaders (missing: Vulkan_INCLUDE_DIR) 
+-- Configuring done (0.3s)
+-- Generating done (0.1s)
+-- Build files have been written to: /Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug
+[0/4] Re-checking globbed directories...
+[1/9] Generating qt_values_wrap.cxx
+[2/9] Automatic MOC for target test_qt_values
+[3/8] Building CXX object CMakeFiles/test_qt_values.dir/qt_values_wrap.cxx.o
+[4/8] Building CXX object CMakeFiles/test_qt_values.dir/tests/bindings/test_qt_values.cpp.o
+[5/8] Linking CXX executable test_qt_values

@@ -44,3 +44,27 @@ if(BUILD_TESTING)
   set_tests_properties(protocol.line_framer bindings.lua_runtime PROPERTIES TIMEOUT 30)
   set_tests_properties(assets.original_audio PROPERTIES TIMEOUT 180)
 endif()
+
+include(cmake/LegacyCompileProbe.cmake)
+if(BUILD_TESTING)
+  add_custom_command(OUTPUT "${CMAKE_CURRENT_BINARY_DIR}/qt_values_wrap.cxx"
+    COMMAND ${SWIG_EXECUTABLE} -c++ -lua -I${PROJECT_SOURCE_DIR}/swig
+      -o "${CMAKE_CURRENT_BINARY_DIR}/qt_values_wrap.cxx" "${PROJECT_SOURCE_DIR}/tests/bindings/qt_values.i"
+    DEPENDS tests/bindings/qt_values.i swig/naturalvar.i swig/qvariant_core.i VERBATIM)
+  add_executable(test_qt_values tests/bindings/test_qt_values.cpp "${CMAKE_CURRENT_BINARY_DIR}/qt_values_wrap.cxx")
+  target_link_libraries(test_qt_values PRIVATE qs_lua Qt6::Test)
+  add_test(NAME bindings.qt_values COMMAND test_qt_values)
+  set_tests_properties(bindings.qt_values PROPERTIES TIMEOUT 30)
+endif()
+
+# The historical JSON layer remains separate from the new transport framing.
+file(GLOB LEGACY_JSON_SOURCES CONFIGURE_DEPENDS src/jsoncpp/src/*.cpp)
+add_library(qs_legacy_protocol STATIC src/core/jsonutils.cpp src/core/protocol.cpp ${LEGACY_JSON_SOURCES})
+target_include_directories(qs_legacy_protocol PUBLIC src/core src/jsoncpp/include)
+target_link_libraries(qs_legacy_protocol PUBLIC Qt6::Core)
+if(BUILD_TESTING)
+  add_executable(test_legacy_protocol tests/protocol/test_legacy_protocol.cpp)
+  target_link_libraries(test_legacy_protocol PRIVATE qs_legacy_protocol Qt6::Test)
+  add_test(NAME protocol.legacy_json COMMAND test_legacy_protocol)
+  set_tests_properties(protocol.legacy_json PROPERTIES TIMEOUT 30)
+endif()

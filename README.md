@@ -2,16 +2,16 @@
 
 本地项目：`/Users/haoranliu/Projects/sanguosha`。目标为 macOS 26 / arm64，保留 20120715 原装内容、单机 AI 及新版之间 LAN／直接 IP 对战。
 
-**目前是 M0/M1 工程阶段，尚无可试玩的新版 APP。** 已保存匹配历史源码，并建立基线工具、原生 Lua、协议分帧和原装音频解码测试。玩法、UI、SWIG 完整绑定、音频输出和打包尚未贯通。
+**目前是 M0/M1 工程阶段，尚无可试玩的新版 APP。** 已保存匹配历史源码，并建立基线工具、原生 Lua、实际 SWIG 基础值转换、原 JSON 协议、分帧和原装音频解码测试。玩法、UI、SWIG 完整绑定、音频输出和打包尚未贯通。
 
 - [设计](DESIGN_SPEC.md) · [测试设计](TEST_SPEC.md) · [用户决策](DESIGN_DECISIONS.md)
-- [当前实施报告](docs/validation/20260926-tdd-progress.md)
+- [当前实施报告](docs/validation/20260926-qt6-bindings.md)
 - [源码与资源来源](docs/baseline/source-provenance.md)
 - [已发现原装音频问题](docs/known-issues/LEGACY-AUDIO-001.md)
 
 ## 本机运行测试
 
-当前已验证工具：Apple Clang 21、CMake 4.3.3、Ninja 1.13.2、Qt 6.11.1、libvorbis 1.3.7／libogg 1.3.6；Lua 使用仓库中的历史 5.1.4 源码。预设暂指向本机 Homebrew 路径，最终依赖锁及独立 APP 打包仍待完成。
+当前已验证工具：Apple Clang 21、CMake 4.3.3、Ninja 1.13.2、Qt 6.11.1、libvorbis 1.3.7／libogg 1.3.6；Lua 使用仓库中的历史 5.1.4 源码，SWIG 4.4.1。预设暂指向本机 Homebrew 路径，最终依赖锁及独立 APP 打包仍待完成。
 
 ```sh
 cd /Users/haoranliu/Projects/sanguosha
@@ -44,3 +44,5 @@ ctest --preset macos-arm64-asan --verbose
 `test-results/20260926-m0-tdd/` 保留 Python 工具的 RED/GREEN 日志；`test-results/20260926-m1-tdd/` 保留原生分帧 RED/GREEN、Debug／ASan 全量结果、环境和原应用未修改的复核记录。测试通过只覆盖所列组件，不代替 Test Spec 的游戏验收。
 
 原项目采用 GPL-3.0，见 [LICENSE](LICENSE) 及各历史文件中的署名／许可。资源仅用于用户授权的本地移植，尚未公开发布。
+
+完整历史代码的编译探针可用 `cmake --build --preset macos-arm64-debug --target qs_legacy_objects -- -k 0 -j 6` 执行，当前仍失败。它不在默认测试构建中；剩余诊断见最新报告。

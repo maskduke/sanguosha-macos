@@ -1,0 +1,7 @@
+-- Found OpenGL: /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/OpenGL.framework
+-- Found WrapOpenGL: TRUE
+-- Could NOT find WrapVulkanHeaders (missing: Vulkan_INCLUDE_DIR) 
+-- Found SWIG: /opt/homebrew/bin/swig (found suitable exact version "4.4.1")
+-- Configuring done (0.4s)
+-- Generating done (0.1s)
+-- Build files have been written to: /Users/haoranliu/Projects/sanguosha/build/macos-arm64-asan

@@ -1,0 +1,109 @@
+UpdateCTestConfiguration  from :/Users/haoranliu/Projects/sanguosha/DartConfiguration.tcl
+Test project /Users/haoranliu/Projects/sanguosha/build/macos-arm64-asan
+Constructing a list of tests
+Done constructing a list of tests
+Updating test list for fixtures
+Added 0 tests to meet fixture requirements
+Checking test dependency graph...
+Checking test dependency graph end
+test 1
+    Start 1: protocol.line_framer
+
+1: Test command: /Users/haoranliu/Projects/sanguosha/build/macos-arm64-asan/test_line_framer
+1: Working Directory: /Users/haoranliu/Projects/sanguosha/build/macos-arm64-asan
+1: Test timeout computed to be: 30
+1: ********* Start testing of FramingTest *********
+1: Config: Using QtTest library 6.11.1, Qt 6.11.1 (arm64-little_endian-lp64 shared (dynamic) release build; by Apple LLVM 21.0.0 (clang-2100.0.123.102)), macos 26.6.2
+1: PASS   : FramingTest::initTestCase()
+1: PASS   : FramingTest::everySplitPreservesBytes()
+1: PASS   : FramingTest::concatenationAndTail()
+1: PASS   : FramingTest::oneByteAtATime()
+1: PASS   : FramingTest::limits(L-1)
+1: PASS   : FramingTest::limits(L)
+1: PASS   : FramingTest::oversized(no-LF)
+1: PASS   : FramingTest::oversized(with-LF)
+1: PASS   : FramingTest::oversizedAcrossChunks()
+1: PASS   : FramingTest::earlierValidFramesSurviveBadTail()
+1: PASS   : FramingTest::disconnectDoesNotInventFrame()
+1: PASS   : FramingTest::cleanupTestCase()
+1: Totals: 12 passed, 0 failed, 0 skipped, 0 blacklisted, 3ms
+1: ********* Finished testing of FramingTest *********
+1/4 Test #1: protocol.line_framer .............   Passed    0.05 sec
+test 2
+    Start 2: bindings.lua_runtime
+
+2: Test command: /Users/haoranliu/Projects/sanguosha/build/macos-arm64-asan/test_lua_runtime
+2: Working Directory: /Users/haoranliu/Projects/sanguosha/build/macos-arm64-asan
+2: Test timeout computed to be: 30
+2: ********* Start testing of LuaRuntimeTest *********
+2: Config: Using QtTest library 6.11.1, Qt 6.11.1 (arm64-little_endian-lp64 shared (dynamic) release build; by Apple LLVM 21.0.0 (clang-2100.0.123.102)), macos 26.6.2
+2: PASS   : LuaRuntimeTest::initTestCase()
+2: PASS   : LuaRuntimeTest::historicalRuntimeAndConfiguration()
+2: PASS   : LuaRuntimeTest::errorAndGarbageCollection()
+2: PASS   : LuaRuntimeTest::cleanupTestCase()
+2: Totals: 4 passed, 0 failed, 0 skipped, 0 blacklisted, 11ms
+2: ********* Finished testing of LuaRuntimeTest *********
+2/4 Test #2: bindings.lua_runtime .............   Passed    0.69 sec
+test 4
+    Start 4: bindings.qt_values
+
+4: Test command: /Users/haoranliu/Projects/sanguosha/build/macos-arm64-asan/test_qt_values
+4: Working Directory: /Users/haoranliu/Projects/sanguosha/build/macos-arm64-asan
+4: Test timeout computed to be: 30
+4: ********* Start testing of QtValuesTest *********
+4: Config: Using QtTest library 6.11.1, Qt 6.11.1 (arm64-little_endian-lp64 shared (dynamic) release build; by Apple LLVM 21.0.0 (clang-2100.0.123.102)), macos 26.6.2
+4: PASS   : QtValuesTest::initTestCase()
+4: PASS   : QtValuesTest::boundary(chinese-roundtrip)
+4: PASS   : QtValuesTest::boundary(cpp-to-lua-chinese)
+4: PASS   : QtValuesTest::boundary(empty-string)
+4: PASS   : QtValuesTest::boundary(list-order-and-empty)
+4: PASS   : QtValuesTest::boundary(empty-list)
+4: PASS   : QtValuesTest::boundary(nil-rejected)
+4: PASS   : QtValuesTest::boundary(bool-rejected)
+4: PASS   : QtValuesTest::boundary(invalid-list-element)
+4: PASS   : QtValuesTest::boundary(variant-empty)
+4: PASS   : QtValuesTest::boundary(variant-integer)
+4: PASS   : QtValuesTest::boundary(variant-negative)
+4: PASS   : QtValuesTest::boundary(variant-true)
+4: PASS   : QtValuesTest::boundary(variant-false)
+4: PASS   : QtValuesTest::boundary(variant-chinese)
+4: PASS   : QtValuesTest::boundary(variant-gc)
+4: PASS   : QtValuesTest::boundary(numeric-coercion)
+4: PASS   : QtValuesTest::boundary(historical-nul-boundary)
+4: PASS   : QtValuesTest::boundary(gc-and-repeated-roundtrip)
+4: PASS   : QtValuesTest::cleanupTestCase()
+4: Totals: 20 passed, 0 failed, 0 skipped, 0 blacklisted, 76ms
+4: ********* Finished testing of QtValuesTest *********
+3/4 Test #4: bindings.qt_values ...............   Passed    0.54 sec
+test 5
+    Start 5: protocol.legacy_json
+
+5: Test command: /Users/haoranliu/Projects/sanguosha/build/macos-arm64-asan/test_legacy_protocol
+5: Working Directory: /Users/haoranliu/Projects/sanguosha/build/macos-arm64-asan
+5: Test timeout computed to be: 30
+5: ********* Start testing of LegacyProtocolTest *********
+5: Config: Using QtTest library 6.11.1, Qt 6.11.1 (arm64-little_endian-lp64 shared (dynamic) release build; by Apple LLVM 21.0.0 (clang-2100.0.123.102)), macos 26.6.2
+5: PASS   : LegacyProtocolTest::initTestCase()
+5: PASS   : LegacyProtocolTest::streamReader()
+5: PASS   : LegacyProtocolTest::packetGoldenSample()
+5: PASS   : LegacyProtocolTest::rejectsMalformedPacket()
+5: PASS   : LegacyProtocolTest::historicalPacketLimit()
+5: PASS   : LegacyProtocolTest::integerArrayRejectsWithoutPartialAppend()
+5: PASS   : LegacyProtocolTest::stringArrayOrderAndRejection()
+5: PASS   : LegacyProtocolTest::historicalLatin1Boundary()
+5: PASS   : LegacyProtocolTest::smallArrayOverloads()
+5: PASS   : LegacyProtocolTest::countdownGoldenSamples()
+5: PASS   : LegacyProtocolTest::cleanupTestCase()
+5: Totals: 11 passed, 0 failed, 0 skipped, 0 blacklisted, 2ms
+5: ********* Finished testing of LegacyProtocolTest *********
+4/4 Test #5: protocol.legacy_json .............   Passed    0.46 sec
+
+The following tests passed:
+	protocol.line_framer
+	bindings.lua_runtime
+	bindings.qt_values
+	protocol.legacy_json
+
+100% tests passed, 0 tests failed out of 4
+
+Total Test time (real) =   1.74 sec

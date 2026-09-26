@@ -1,0 +1,34 @@
+[0/2] Re-checking globbed directories...
+[1/2] Re-running CMake...
+-- Could NOT find WrapVulkanHeaders (missing: Vulkan_INCLUDE_DIR) 
+-- Could NOT find Qt6Core5Compat (missing: Qt6Core5Compat_DIR)
+CMake Error at cmake/LegacyCompileProbe.cmake:3 (find_package):
+  Found package configuration file:
+
+    /opt/homebrew/opt/qtbase/lib/cmake/Qt6/Qt6Config.cmake
+
+  but it set Qt6_FOUND to FALSE so package "Qt6" is considered to be NOT
+  FOUND.  Reason given by package:
+
+  Failed to find required Qt component "Core5Compat".
+
+  Expected Config file at
+  "/opt/homebrew/opt/qtbase/lib/cmake/Qt6Core5Compat/Qt6Core5CompatConfig.cmake"
+  does NOT exist
+
+
+
+  Configuring with --debug-find-pkg=Qt6Core5Compat might reveal details why
+  the package was not found.
+
+  Configuring with -DQT_DEBUG_FIND_PACKAGE=ON will print the values of some
+  of the path variables that find_package uses to try and find the package.
+
+Call Stack (most recent call first):
+  CMakeLists.txt:48 (include)
+
+
+-- Configuring incomplete, errors occurred!
+FAILED: [code=1] build.ninja /Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug/cmake_install.cmake /Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug/CTestTestfile.cmake 
+/opt/homebrew/bin/cmake --regenerate-during-build -S/Users/haoranliu/Projects/sanguosha -B/Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug
+ninja: error: rebuilding 'build.ninja': cannot make progress due to previous errors

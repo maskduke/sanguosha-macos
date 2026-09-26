@@ -1,0 +1,16 @@
+[0/2] Re-checking globbed directories...
+[1/9] Automatic MOC for target qs_legacy_protocol
+[2/8] Building CXX object CMakeFiles/qs_legacy_protocol.dir/src/core/jsonutils.cpp.o
+[3/8] Linking CXX static library libqs_legacy_protocol.a
+[4/8] Automatic MOC for target test_legacy_protocol
+[5/8] Building CXX object CMakeFiles/test_legacy_protocol.dir/test_legacy_protocol_autogen/mocs_compilation.cpp.o
+[6/8] Building CXX object CMakeFiles/test_legacy_protocol.dir/tests/protocol/test_legacy_protocol.cpp.o
+[7/8] Linking CXX executable test_legacy_protocol
+FAILED: [code=1] test_legacy_protocol 
+: && /usr/bin/c++ -g -arch arm64 -mmacosx-version-min=26.0 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/test_legacy_protocol.dir/test_legacy_protocol_autogen/mocs_compilation.cpp.o CMakeFiles/test_legacy_protocol.dir/tests/protocol/test_legacy_protocol.cpp.o -o test_legacy_protocol -F/opt/homebrew/opt/qtbase/lib -Wl,-rpath,/opt/homebrew/opt/qtbase/lib  libqs_legacy_protocol.a  /opt/homebrew/opt/qtbase/lib/QtTest.framework/Versions/A/QtTest  /opt/homebrew/opt/qtbase/lib/QtCore.framework/Versions/A/QtCore  -framework DiskArbitration  -framework UniformTypeIdentifiers  -framework Security  -framework AppKit  -framework ApplicationServices  -framework Foundation  -framework IOKit && :
+Undefined symbols for architecture arm64:
+  "std::__1::basic_istream<char, std::__1::char_traits<char>>& std::__1::getline[abi:nqe220106]<char, std::__1::char_traits<char>, std::__1::allocator<char>>(std::__1::basic_istream<char, std::__1::char_traits<char>>&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>&, char)", referenced from:
+      Json::Reader::parse(std::__1::basic_istream<char, std::__1::char_traits<char>>&, Json::Value&, bool) in libqs_legacy_protocol.a[5](json_reader.cpp.o)
+ld: symbol(s) not found for architecture arm64
+clang++: error: linker command failed with exit code 1 (use -v to see invocation)
+ninja: build stopped: subcommand failed.

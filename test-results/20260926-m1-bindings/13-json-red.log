@@ -1,0 +1,66 @@
+[0/2] Re-checking globbed directories...
+[1/2] Re-running CMake...
+-- Could NOT find WrapVulkanHeaders (missing: Vulkan_INCLUDE_DIR) 
+-- Configuring done (0.3s)
+-- Generating done (0.1s)
+-- Build files have been written to: /Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug
+[0/4] Re-checking globbed directories...
+[1/15] Automatic MOC for target qs_legacy_protocol
+[2/15] Building CXX object CMakeFiles/qs_legacy_protocol.dir/qs_legacy_protocol_autogen/mocs_compilation.cpp.o
+[3/15] Building CXX object CMakeFiles/qs_legacy_protocol.dir/src/core/protocol.cpp.o
+[4/15] Building CXX object CMakeFiles/qs_legacy_protocol.dir/src/jsoncpp/src/json_writer.cpp.o
+/Users/haoranliu/Projects/sanguosha/src/jsoncpp/src/json_writer.cpp:80:4: warning: 'sprintf' is deprecated: This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead. [-Wdeprecated-declarations]
+   80 |    sprintf(buffer, "%#.16g", value); 
+      |    ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h:278:1: note: 'sprintf' has been explicitly marked deprecated here
+  278 | __deprecated_msg("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead.")
+      | ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h:227:48: note: expanded from macro '__deprecated_msg'
+  227 |         #define __deprecated_msg(_msg) __attribute__((__deprecated__(_msg)))
+      |                                                       ^
+1 warning generated.
+[5/15] Building CXX object CMakeFiles/qs_legacy_protocol.dir/src/jsoncpp/src/json_reader.cpp.o
+/Users/haoranliu/Projects/sanguosha/src/jsoncpp/src/json_reader.cpp:871:4: warning: 'sprintf' is deprecated: This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead. [-Wdeprecated-declarations]
+  871 |    sprintf( buffer, "Line %d, Column %d", line, column );
+      |    ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h:278:1: note: 'sprintf' has been explicitly marked deprecated here
+  278 | __deprecated_msg("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead.")
+      | ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h:227:48: note: expanded from macro '__deprecated_msg'
+  227 |         #define __deprecated_msg(_msg) __attribute__((__deprecated__(_msg)))
+      |                                                       ^
+1 warning generated.
+[6/15] Building CXX object CMakeFiles/qs_legacy_protocol.dir/src/jsoncpp/src/json_value.cpp.o
+[7/15] Building CXX object CMakeFiles/qs_legacy_protocol.dir/src/core/jsonutils.cpp.o
+FAILED: [code=1] CMakeFiles/qs_legacy_protocol.dir/src/core/jsonutils.cpp.o 
+/usr/bin/c++ -DQT_CORE_LIB -I/Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug/qs_legacy_protocol_autogen/include -I/Users/haoranliu/Projects/sanguosha/src/core -I/Users/haoranliu/Projects/sanguosha/src/jsoncpp/include -isystem /opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers -iframework /opt/homebrew/opt/qtbase/lib -isystem /opt/homebrew/opt/qtbase/share/qt/mkspecs/macx-clang -isystem /opt/homebrew/opt/qtbase/include -g -std=c++17 -arch arm64 -mmacosx-version-min=26.0 -MD -MT CMakeFiles/qs_legacy_protocol.dir/src/core/jsonutils.cpp.o -MF CMakeFiles/qs_legacy_protocol.dir/src/core/jsonutils.cpp.o.d -o CMakeFiles/qs_legacy_protocol.dir/src/core/jsonutils.cpp.o -c /Users/haoranliu/Projects/sanguosha/src/core/jsonutils.cpp
+In file included from /Users/haoranliu/Projects/sanguosha/src/core/jsonutils.cpp:1:
+/Users/haoranliu/Projects/sanguosha/src/core/jsonutils.h:22:34: error: no member named 'toAscii' in 'QString'
+   22 |             return Json::Value(s.toAscii().constData());
+      |                                ~ ^
+/Users/haoranliu/Projects/sanguosha/src/core/jsonutils.cpp:6:17: error: no member named 'toAscii' in 'QString'
+    6 |     val[0] = s1.toAscii().constData();
+      |              ~~ ^
+/Users/haoranliu/Projects/sanguosha/src/core/jsonutils.cpp:7:17: error: no member named 'toAscii' in 'QString'
+    7 |     val[1] = s2.toAscii().constData();
+      |              ~~ ^
+/Users/haoranliu/Projects/sanguosha/src/core/jsonutils.cpp:14:17: error: no member named 'toAscii' in 'QString'
+   14 |     val[0] = s1.toAscii().constData();
+      |              ~~ ^
+/Users/haoranliu/Projects/sanguosha/src/core/jsonutils.cpp:15:17: error: no member named 'toAscii' in 'QString'
+   15 |     val[1] = s2.toAscii().constData();
+      |              ~~ ^
+/Users/haoranliu/Projects/sanguosha/src/core/jsonutils.cpp:16:17: error: no member named 'toAscii' in 'QString'
+   16 |     val[2] = s3.toAscii().constData();
+      |              ~~ ^
+/Users/haoranliu/Projects/sanguosha/src/core/jsonutils.cpp:23:17: error: no member named 'toAscii' in 'QString'
+   23 |     val[0] = s1.toAscii().constData();
+      |              ~~ ^
+/Users/haoranliu/Projects/sanguosha/src/core/jsonutils.cpp:58:35: error: redefinition of 'toJsonArray'
+   58 | Json::Value QSanProtocol::Utils:: toJsonArray(const QStringList& arg)
+      |                                   ^
+/Users/haoranliu/Projects/sanguosha/src/core/jsonutils.cpp:50:35: note: previous definition is here
+   50 | Json::Value QSanProtocol::Utils:: toJsonArray(const QList<QString>& arg)
+      |                                   ^
+8 errors generated.
+ninja: build stopped: subcommand failed.

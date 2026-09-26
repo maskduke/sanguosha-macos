@@ -1,0 +1,34 @@
+[0/2] Re-checking globbed directories...
+[1/7] Generating qt_values_wrap.cxx
+[2/7] Automatic MOC for target test_qt_values
+[3/7] Building CXX object CMakeFiles/test_qt_values.dir/test_qt_values_autogen/mocs_compilation.cpp.o
+[4/7] Building CXX object CMakeFiles/test_qt_values.dir/qt_values_wrap.cxx.o
+FAILED: [code=1] CMakeFiles/test_qt_values.dir/qt_values_wrap.cxx.o 
+/usr/bin/c++ -DQT_CORE_LIB -DQT_TESTCASE_BUILDDIR=\"/Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug\" -DQT_TESTCASE_SOURCEDIR=\"/Users/haoranliu/Projects/sanguosha\" -DQT_TESTLIB_LIB -I/Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug/test_qt_values_autogen/include -I/Users/haoranliu/Projects/sanguosha/src/lua -isystem /opt/homebrew/opt/qtbase/lib/QtTest.framework/Headers -iframework /opt/homebrew/opt/qtbase/lib -isystem /opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers -isystem /opt/homebrew/opt/qtbase/share/qt/mkspecs/macx-clang -isystem /opt/homebrew/opt/qtbase/include -g -std=c++17 -arch arm64 -mmacosx-version-min=26.0 -MD -MT CMakeFiles/test_qt_values.dir/qt_values_wrap.cxx.o -MF CMakeFiles/test_qt_values.dir/qt_values_wrap.cxx.o.d -o CMakeFiles/test_qt_values.dir/qt_values_wrap.cxx.o -c /Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug/qt_values_wrap.cxx
+/Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug/qt_values_wrap.cxx:2967:9: error: redefinition of 'i'
+ 2967 |     int i;
+      |         ^
+/Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug/qt_values_wrap.cxx:2954:9: note: previous definition is here
+ 2954 |     int i;
+      |         ^
+/Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug/qt_values_wrap.cxx:2950:27: error: cannot jump from this goto statement to its label
+ 2950 |     if(!lua_istable(L,1)) SWIG_fail_arg("echoList",1,"QStringList");
+      |                           ^
+/Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug/qt_values_wrap.cxx:1198:3: note: expanded from macro 'SWIG_fail_arg'
+ 1198 |   goto fail;}
+      |   ^
+/Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug/qt_values_wrap.cxx:2952:12: note: jump bypasses variable initialization
+ 2952 |     size_t len = lua_objlen(L, 1);
+      |            ^
+/Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug/qt_values_wrap.cxx:2949:5: error: cannot jump from this goto statement to its label
+ 2949 |     SWIG_check_num_args("echoList",1,1)
+      |     ^
+/Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug/qt_values_wrap.cxx:1204:3: note: expanded from macro 'SWIG_check_num_args'
+ 1204 |   goto fail;}
+      |   ^
+/Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug/qt_values_wrap.cxx:2952:12: note: jump bypasses variable initialization
+ 2952 |     size_t len = lua_objlen(L, 1);
+      |            ^
+3 errors generated.
+[5/7] Building CXX object CMakeFiles/test_qt_values.dir/tests/bindings/test_qt_values.cpp.o
+ninja: build stopped: subcommand failed.

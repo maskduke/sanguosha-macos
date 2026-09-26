@@ -9,8 +9,10 @@ class Slash;
 class GameRule;
 
 #include "player.h"
+#include "serverplayer.h"
 
 #include <QVariant>
+#include <QRegExp>
 #include <json/json.h>
 
 struct DamageStruct{

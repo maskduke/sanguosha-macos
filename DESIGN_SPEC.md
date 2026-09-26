@@ -2,7 +2,7 @@
 
 版本：0.1 · 日期：2026-09-26 · 状态：已按用户指示开始 TDD；M0/M1 进行中，完整游戏尚未编译。
 
-依据：[可行性调研](FEASIBILITY.md)。用户已批准源码移植方向，本轮确认的产品范围见 [决策记录](DESIGN_DECISIONS.md)。本文定义实施目标；实际完成范围与证据见 [TDD 执行报告](docs/validation/20260926-tdd-progress.md)，不能将设计要求当作已通过结果。
+依据：[可行性调研](FEASIBILITY.md)。用户已批准源码移植方向，本轮确认的产品范围见 [决策记录](DESIGN_DECISIONS.md)。本文定义实施目标；实际完成范围与证据见 [TDD 执行报告](docs/validation/20260926-qt6-bindings.md)，不能将设计要求当作已通过结果。
 
 ## 1. 目标与首版边界
 

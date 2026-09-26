@@ -1,0 +1,45 @@
+[0/2] Re-checking globbed directories...
+[1/32] Generating qt_values_wrap.cxx
+[2/32] Automatic MOC for target qs_protocol
+[3/30] Automatic MOC for target test_original_audio
+[4/28] Automatic MOC for target qs_legacy_protocol
+[5/28] Automatic MOC for target test_line_framer
+[6/26] Building CXX object CMakeFiles/qs_legacy_protocol.dir/qs_legacy_protocol_autogen/mocs_compilation.cpp.o
+[7/26] Automatic MOC for target test_lua_runtime
+[8/25] Automatic MOC for target test_qt_values
+[9/25] Building CXX object CMakeFiles/qs_legacy_protocol.dir/src/core/protocol.cpp.o
+[10/25] Building CXX object CMakeFiles/test_qt_values.dir/test_qt_values_autogen/mocs_compilation.cpp.o
+[11/25] Building CXX object CMakeFiles/qs_legacy_protocol.dir/src/jsoncpp/src/json_writer.cpp.o
+/Users/haoranliu/Projects/sanguosha/src/jsoncpp/src/json_writer.cpp:80:4: warning: 'sprintf' is deprecated: This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead. [-Wdeprecated-declarations]
+   80 |    sprintf(buffer, "%#.16g", value); 
+      |    ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h:278:1: note: 'sprintf' has been explicitly marked deprecated here
+  278 | __deprecated_msg("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead.")
+      | ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h:227:48: note: expanded from macro '__deprecated_msg'
+  227 |         #define __deprecated_msg(_msg) __attribute__((__deprecated__(_msg)))
+      |                                                       ^
+1 warning generated.
+[12/25] Building CXX object CMakeFiles/qs_legacy_protocol.dir/src/jsoncpp/src/json_reader.cpp.o
+/Users/haoranliu/Projects/sanguosha/src/jsoncpp/src/json_reader.cpp:872:4: warning: 'sprintf' is deprecated: This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead. [-Wdeprecated-declarations]
+  872 |    sprintf( buffer, "Line %d, Column %d", line, column );
+      |    ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h:278:1: note: 'sprintf' has been explicitly marked deprecated here
+  278 | __deprecated_msg("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead.")
+      | ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h:227:48: note: expanded from macro '__deprecated_msg'
+  227 |         #define __deprecated_msg(_msg) __attribute__((__deprecated__(_msg)))
+      |                                                       ^
+1 warning generated.
+[13/25] Building CXX object CMakeFiles/qs_legacy_protocol.dir/src/jsoncpp/src/json_value.cpp.o
+[14/25] Building CXX object CMakeFiles/qs_legacy_protocol.dir/src/core/jsonutils.cpp.o
+[15/25] Linking CXX static library libqs_legacy_protocol.a
+[16/25] Automatic MOC for target test_legacy_protocol
+[17/25] Building CXX object CMakeFiles/test_legacy_protocol.dir/test_legacy_protocol_autogen/mocs_compilation.cpp.o
+[18/25] Building CXX object CMakeFiles/test_qt_values.dir/qt_values_wrap.cxx.o
+[19/25] Building CXX object CMakeFiles/test_lua_runtime.dir/tests/bindings/test_lua_runtime.cpp.o
+[20/25] Building CXX object CMakeFiles/test_qt_values.dir/tests/bindings/test_qt_values.cpp.o
+[21/25] Linking CXX executable test_lua_runtime
+[22/25] Linking CXX executable test_qt_values
+[23/25] Building CXX object CMakeFiles/test_legacy_protocol.dir/tests/protocol/test_legacy_protocol.cpp.o
+[24/25] Linking CXX executable test_legacy_protocol

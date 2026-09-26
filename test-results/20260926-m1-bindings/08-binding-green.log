@@ -1,0 +1,39 @@
+UpdateCTestConfiguration  from :/Users/haoranliu/Projects/sanguosha/DartConfiguration.tcl
+Test project /Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug
+Constructing a list of tests
+Done constructing a list of tests
+Updating test list for fixtures
+Added 0 tests to meet fixture requirements
+Checking test dependency graph...
+Checking test dependency graph end
+test 4
+    Start 4: bindings.qt_values
+
+4: Test command: /Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug/test_qt_values
+4: Working Directory: /Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug
+4: Test timeout computed to be: 30
+4: ********* Start testing of QtValuesTest *********
+4: Config: Using QtTest library 6.11.1, Qt 6.11.1 (arm64-little_endian-lp64 shared (dynamic) release build; by Apple LLVM 21.0.0 (clang-2100.0.123.102)), macos 26.6.2
+4: PASS   : QtValuesTest::initTestCase()
+4: PASS   : QtValuesTest::boundary(chinese-roundtrip)
+4: PASS   : QtValuesTest::boundary(cpp-to-lua-chinese)
+4: PASS   : QtValuesTest::boundary(empty-string)
+4: PASS   : QtValuesTest::boundary(list-order-and-empty)
+4: PASS   : QtValuesTest::boundary(empty-list)
+4: PASS   : QtValuesTest::boundary(nil-rejected)
+4: PASS   : QtValuesTest::boundary(bool-rejected)
+4: PASS   : QtValuesTest::boundary(invalid-list-element)
+4: PASS   : QtValuesTest::boundary(numeric-coercion)
+4: PASS   : QtValuesTest::boundary(historical-nul-boundary)
+4: PASS   : QtValuesTest::boundary(gc-and-repeated-roundtrip)
+4: PASS   : QtValuesTest::cleanupTestCase()
+4: Totals: 13 passed, 0 failed, 0 skipped, 0 blacklisted, 22ms
+4: ********* Finished testing of QtValuesTest *********
+1/1 Test #4: bindings.qt_values ...............   Passed    0.72 sec
+
+The following tests passed:
+	bindings.qt_values
+
+100% tests passed, 0 tests failed out of 1
+
+Total Test time (real) =   0.72 sec

@@ -33,6 +33,7 @@ SWIG_arg ++;
 
 %typemap(in, checkfn="lua_istable") QStringList
 %{
+{
 size_t len = lua_objlen(L, $input);
 
 int i;
@@ -42,11 +43,12 @@ for(i=0; i<len; i++){
 	$1 << elem;
 	lua_pop(L, 1);
 }
-
+}
 %}
 
 %typemap(out) QStringList
 %{
+{
 lua_createtable(L, $1.length(), 0);
 
 int i;
@@ -57,6 +59,7 @@ for(i=0; i<$1.length(); i++){
 }
 
 SWIG_arg++;
+}
 %}
 
 

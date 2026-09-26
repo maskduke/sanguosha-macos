@@ -15,17 +15,16 @@ namespace QSanProtocol
         inline QString toQString(const Json::Value& value)
         {
             Q_ASSERT(value.isString());
-            return QString(value.asCString());
+            return QString::fromLatin1(value.asCString());
         }
         inline Json::Value toJsonString(const QString& s)
         {            
-            return Json::Value(s.toAscii().constData());
+            return Json::Value(s.toLatin1().constData());
         }
         Json::Value toJsonArray(const QString& s1, const QString& s2);
         Json::Value toJsonArray(const QString& s1, const Json::Value& s2);
         Json::Value toJsonArray(const QString& s1, const QString& s2, const QString& s3);
         Json::Value toJsonArray(const QList<int>&);
-        Json::Value toJsonArray(const QList<QString>&);
         Json::Value toJsonArray(const QStringList&);
         bool tryParse(const Json::Value&, QList<int> &);
         bool tryParse(const Json::Value&, QStringList &);

@@ -1,0 +1,13 @@
+Test project /Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug
+    Start 1: protocol.line_framer
+1/4 Test #1: protocol.line_framer .............   Passed    0.02 sec
+    Start 2: bindings.lua_runtime
+2/4 Test #2: bindings.lua_runtime .............   Passed    0.02 sec
+    Start 4: bindings.qt_values
+3/4 Test #4: bindings.qt_values ...............   Passed    0.05 sec
+    Start 5: protocol.legacy_json
+4/4 Test #5: protocol.legacy_json .............   Passed    0.84 sec
+
+100% tests passed, 0 tests failed out of 4
+
+Total Test time (real) =   0.94 sec

@@ -1,0 +1,24 @@
+[0/2] Re-checking globbed directories...
+[1/25] Automatic MOC for target qs_protocol
+[2/23] Automatic MOC for target qs_legacy_protocol
+[3/22] Automatic MOC for target test_qt_values
+[4/20] Automatic MOC for target test_original_audio
+[5/18] Automatic MOC for target test_line_framer
+[6/16] Automatic MOC for target test_lua_runtime
+[7/15] Building CXX object CMakeFiles/qs_legacy_protocol.dir/src/jsoncpp/src/json_reader.cpp.o
+/Users/haoranliu/Projects/sanguosha/src/jsoncpp/src/json_reader.cpp:872:4: warning: 'sprintf' is deprecated: This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead. [-Wdeprecated-declarations]
+  872 |    sprintf( buffer, "Line %d, Column %d", line, column );
+      |    ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h:278:1: note: 'sprintf' has been explicitly marked deprecated here
+  278 | __deprecated_msg("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead.")
+      | ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h:227:48: note: expanded from macro '__deprecated_msg'
+  227 |         #define __deprecated_msg(_msg) __attribute__((__deprecated__(_msg)))
+      |                                                       ^
+1 warning generated.
+[8/15] Linking CXX static library libqs_legacy_protocol.a
+[9/15] Automatic MOC for target test_legacy_protocol
+[10/14] Building CXX object CMakeFiles/test_lua_runtime.dir/tests/bindings/test_lua_runtime.cpp.o
+[11/14] Linking CXX executable test_lua_runtime
+[12/14] Building CXX object CMakeFiles/test_legacy_protocol.dir/tests/protocol/test_legacy_protocol.cpp.o
+[13/14] Linking CXX executable test_legacy_protocol

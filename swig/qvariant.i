@@ -1,14 +1,4 @@
-class QVariant{
-public:
-	QVariant();
-	QVariant(int);
-	QVariant(const char *);
-	QVariant(bool);
-	int toInt() const;
-	QString toString() const;
-	QStringList toStringList() const;
-	bool toBool() const;
-};
+%include "qvariant_core.i"
 
 %extend QVariant {
 

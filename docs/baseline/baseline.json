@@ -24,5 +24,15 @@
   "imported_src_tree_matches": true,
   "known_issues": [
     "LEGACY-AUDIO-001"
+  ],
+  "platform_patch_report": "docs/validation/20260926-qt6-bindings.md",
+  "modified_historical_files": [
+    "swig/naturalvar.i",
+    "swig/qvariant.i",
+    "src/core/jsonutils.cpp",
+    "src/core/jsonutils.h",
+    "src/jsoncpp/src/json_reader.cpp",
+    "src/scenario/scenerule.cpp",
+    "src/server/structs.h"
   ]
 }

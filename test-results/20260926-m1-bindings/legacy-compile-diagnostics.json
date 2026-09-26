@@ -1,0 +1,1156 @@
+{
+  "status": "FAIL",
+  "scope": "complete historical C++/SWIG compile-only target; no game executable",
+  "target": "qs_legacy_objects",
+  "log": "21-legacy-current.log",
+  "unique_diagnostic_locations": 191,
+  "affected_paths": 49,
+  "diagnostics": [
+    {
+      "path": "src/core/util.h",
+      "line": 14,
+      "column": 17,
+      "message": "use of undeclared identifier 'qrand'; did you mean 'rand'?"
+    },
+    {
+      "path": "src/client/aux-skills.cpp",
+      "line": 153,
+      "column": 21,
+      "message": "no member named 'toSet' in 'QList<QString>'"
+    },
+    {
+      "path": "src/core/card.cpp",
+      "line": 484,
+      "column": 9,
+      "message": "use of undeclared identifier 'qSort'"
+    },
+    {
+      "path": "src/client/clientstruct.cpp",
+      "line": 26,
+      "column": 65,
+      "message": "no member named 'toAscii' in 'QString'"
+    },
+    {
+      "path": "src/client/client.cpp",
+      "line": 186,
+      "column": 58,
+      "message": "no member named 'toAscii' in 'QString'"
+    },
+    {
+      "path": "src/client/client.cpp",
+      "line": 257,
+      "column": 29,
+      "message": "no member named 'toAscii' in 'QString'"
+    },
+    {
+      "path": "src/client/client.cpp",
+      "line": 311,
+      "column": 41,
+      "message": "attempt to use a deleted function"
+    },
+    {
+      "path": "src/client/client.cpp",
+      "line": 319,
+      "column": 43,
+      "message": "attempt to use a deleted function"
+    },
+    {
+      "path": "src/client/client.cpp",
+      "line": 351,
+      "column": 53,
+      "message": "no member named 'toAscii' in 'QString'"
+    },
+    {
+      "path": "src/client/client.cpp",
+      "line": 1156,
+      "column": 47,
+      "message": "no member named 'toSet' in 'QList<QString>'"
+    },
+    {
+      "path": "src/client/client.cpp",
+      "line": 1596,
+      "column": 53,
+      "message": "no member named 'toAscii' in 'QString'"
+    },
+    {
+      "path": "src/client/client.cpp",
+      "line": 1687,
+      "column": 75,
+      "message": "no member named 'toAscii' in 'QString'"
+    },
+    {
+      "path": "src/client/client.cpp",
+      "line": 1793,
+      "column": 12,
+      "message": "use of undeclared identifier 'qrand'; did you mean 'rand'?"
+    },
+    {
+      "path": "build/macos-arm64-debug/qs_legacy_objects_autogen/PRMOGMWJPH/../../../../src/core/util.h",
+      "line": 14,
+      "column": 17,
+      "message": "use of undeclared identifier 'qrand'; did you mean 'rand'?"
+    },
+    {
+      "path": "build/macos-arm64-debug/qs_legacy_objects_autogen/LOXWS6PXLU/../../../../src/dialog/mainwindow.h",
+      "line": 14,
+      "column": 10,
+      "message": "'QtDeclarative/QDeclarativeView' file not found"
+    },
+    {
+      "path": "src/core/general.cpp",
+      "line": 119,
+      "column": 78,
+      "message": "no member named 'toSet' in 'QList<const TriggerSkill *>'"
+    },
+    {
+      "path": "src/core/player.cpp",
+      "line": 669,
+      "column": 34,
+      "message": "no member named 'toSet' in 'QList<const Skill *>'"
+    },
+    {
+      "path": "src/core/player.cpp",
+      "line": 730,
+      "column": 48,
+      "message": "no member named 'toList' in 'QSet<QString>'"
+    },
+    {
+      "path": "src/core/player.cpp",
+      "line": 738,
+      "column": 48,
+      "message": "no member named 'toList' in 'QSet<QString>'"
+    },
+    {
+      "path": "src/core/player.cpp",
+      "line": 745,
+      "column": 52,
+      "message": "no member named 'toList' in 'QSet<QString>'"
+    },
+    {
+      "path": "src/core/engine.cpp",
+      "line": 187,
+      "column": 14,
+      "message": "no member named 'unite' in 'QMap<QString, const CardPattern *>'"
+    },
+    {
+      "path": "src/core/engine.cpp",
+      "line": 199,
+      "column": 28,
+      "message": "no member named 'toList' in 'QSet<QString>'"
+    },
+    {
+      "path": "src/core/engine.cpp",
+      "line": 341,
+      "column": 76,
+      "message": "no member named 'toAscii' in 'QString'"
+    },
+    {
+      "path": "src/core/engine.cpp",
+      "line": 587,
+      "column": 46,
+      "message": "no member named 'toSet' in 'QList<QString>'"
+    },
+    {
+      "path": "src/core/engine.cpp",
+      "line": 592,
+      "column": 84,
+      "message": "no member named 'toSet' in 'QList<QString>'"
+    },
+    {
+      "path": "src/core/engine.cpp",
+      "line": 594,
+      "column": 86,
+      "message": "no member named 'toSet' in 'QList<QString>'"
+    },
+    {
+      "path": "src/core/engine.cpp",
+      "line": 598,
+      "column": 78,
+      "message": "no member named 'toSet' in 'QList<QString>'"
+    },
+    {
+      "path": "src/core/engine.cpp",
+      "line": 600,
+      "column": 50,
+      "message": "no member named 'toList' in 'QSet<QString>'"
+    },
+    {
+      "path": "src/core/engine.cpp",
+      "line": 644,
+      "column": 31,
+      "message": "use of undeclared identifier 'qrand'; did you mean 'rand'?"
+    },
+    {
+      "path": "src/core/util.h",
+      "line": 15,
+      "column": 22,
+      "message": "too many arguments to function call, expected single argument 'other', have 2 arguments"
+    },
+    {
+      "path": "src/core/skill.cpp",
+      "line": 94,
+      "column": 21,
+      "message": "use of undeclared identifier 'qrand'; did you mean 'rand'?"
+    },
+    {
+      "path": "src/dialog/mainwindow.h",
+      "line": 14,
+      "column": 10,
+      "message": "'QtDeclarative/QDeclarativeView' file not found"
+    },
+    {
+      "path": "src/dialog/configdialog.cpp",
+      "line": 71,
+      "column": 24,
+      "message": "no member named 'storageLocation' in 'QDesktopServices'; did you mean 'qFlagLocation'?"
+    },
+    {
+      "path": "src/dialog/configdialog.cpp",
+      "line": 71,
+      "column": 76,
+      "message": "no member named 'PicturesLocation' in 'QDesktopServices'"
+    },
+    {
+      "path": "src/dialog/configdialog.cpp",
+      "line": 145,
+      "column": 24,
+      "message": "no member named 'storageLocation' in 'QDesktopServices'; did you mean 'qFlagLocation'?"
+    },
+    {
+      "path": "src/dialog/configdialog.cpp",
+      "line": 145,
+      "column": 76,
+      "message": "no member named 'MusicLocation' in 'QDesktopServices'"
+    },
+    {
+      "path": "src/dialog/customassigndialog.cpp",
+      "line": 392,
+      "column": 36,
+      "message": "no viable overloaded '='"
+    },
+    {
+      "path": "src/dialog/customassigndialog.cpp",
+      "line": 1001,
+      "column": 46,
+      "message": "too many arguments to function call, expected single argument 'other', have 2 arguments"
+    },
+    {
+      "path": "src/dialog/customassigndialog.cpp",
+      "line": 1212,
+      "column": 26,
+      "message": "use of overloaded operator '!=' is ambiguous (with operand types 'QString' and 'long')"
+    },
+    {
+      "path": "src/dialog/customassigndialog.cpp",
+      "line": 1215,
+      "column": 34,
+      "message": "use of overloaded operator '!=' is ambiguous (with operand types 'QString' and 'long')"
+    },
+    {
+      "path": "src/dialog/customassigndialog.cpp",
+      "line": 1218,
+      "column": 35,
+      "message": "use of overloaded operator '!=' is ambiguous (with operand types 'QString' and 'long')"
+    },
+    {
+      "path": "src/dialog/customassigndialog.cpp",
+      "line": 1220,
+      "column": 27,
+      "message": "use of overloaded operator '!=' is ambiguous (with operand types 'QString' and 'long')"
+    },
+    {
+      "path": "src/dialog/customassigndialog.cpp",
+      "line": 1224,
+      "column": 24,
+      "message": "use of overloaded operator '!=' is ambiguous (with operand types 'QString' and 'long')"
+    },
+    {
+      "path": "src/dialog/customassigndialog.cpp",
+      "line": 1225,
+      "column": 26,
+      "message": "use of overloaded operator '!=' is ambiguous (with operand types 'QString' and 'long')"
+    },
+    {
+      "path": "src/dialog/customassigndialog.cpp",
+      "line": 1228,
+      "column": 29,
+      "message": "use of overloaded operator '!=' is ambiguous (with operand types 'QString' and 'long')"
+    },
+    {
+      "path": "src/dialog/customassigndialog.cpp",
+      "line": 1229,
+      "column": 29,
+      "message": "use of overloaded operator '!=' is ambiguous (with operand types 'QString' and 'long')"
+    },
+    {
+      "path": "src/dialog/customassigndialog.cpp",
+      "line": 1230,
+      "column": 28,
+      "message": "use of overloaded operator '!=' is ambiguous (with operand types 'QString' and 'long')"
+    },
+    {
+      "path": "src/dialog/customassigndialog.cpp",
+      "line": 1231,
+      "column": 34,
+      "message": "use of overloaded operator '!=' is ambiguous (with operand types 'QString' and 'long')"
+    },
+    {
+      "path": "src/dialog/customassigndialog.cpp",
+      "line": 1238,
+      "column": 36,
+      "message": "use of overloaded operator '!=' is ambiguous (with operand types 'QString' and 'long')"
+    },
+    {
+      "path": "src/dialog/customassigndialog.cpp",
+      "line": 1245,
+      "column": 33,
+      "message": "use of overloaded operator '!=' is ambiguous (with operand types 'QString' and 'long')"
+    },
+    {
+      "path": "src/dialog/customassigndialog.cpp",
+      "line": 1249,
+      "column": 33,
+      "message": "use of overloaded operator '!=' is ambiguous (with operand types 'QString' and 'long')"
+    },
+    {
+      "path": "src/dialog/customassigndialog.cpp",
+      "line": 1253,
+      "column": 28,
+      "message": "use of overloaded operator '!=' is ambiguous (with operand types 'QString' and 'long')"
+    },
+    {
+      "path": "src/dialog/customassigndialog.cpp",
+      "line": 1262,
+      "column": 26,
+      "message": "use of overloaded operator '!=' is ambiguous (with operand types 'QString' and 'long')"
+    },
+    {
+      "path": "src/dialog/customassigndialog.cpp",
+      "line": 1280,
+      "column": 27,
+      "message": "use of overloaded operator '!=' is ambiguous (with operand types 'QString' and 'long')"
+    },
+    {
+      "path": "src/ui/roomscene.h",
+      "line": 142,
+      "column": 22,
+      "message": "unknown type name 'QMatrix'"
+    },
+    {
+      "path": "src/ui/roomscene.h",
+      "line": 300,
+      "column": 5,
+      "message": "unknown type name 'QMatrix'"
+    },
+    {
+      "path": "src/ui/roomscene.h",
+      "line": 301,
+      "column": 19,
+      "message": "unknown type name 'QMatrix'"
+    },
+    {
+      "path": "src/ui/roomscene.h",
+      "line": 142,
+      "column": 42,
+      "message": "use of undeclared identifier 'QMatrix'"
+    },
+    {
+      "path": "src/ui/roomscene.h",
+      "line": 301,
+      "column": 36,
+      "message": "use of undeclared identifier 'QMatrix'"
+    },
+    {
+      "path": "src/dialog/generaloverview.cpp",
+      "line": 62,
+      "column": 28,
+      "message": "no member named 'setBackgroundColor' in 'QTableWidgetItem'"
+    },
+    {
+      "path": "src/dialog/generaloverview.cpp",
+      "line": 73,
+      "column": 24,
+      "message": "no member named 'setBackgroundColor' in 'QTableWidgetItem'"
+    },
+    {
+      "path": "src/dialog/scenario-overview.cpp",
+      "line": 52,
+      "column": 16,
+      "message": "no member named 'setCodec' in 'QTextStream'"
+    },
+    {
+      "path": "src/package/god.cpp",
+      "line": 132,
+      "column": 9,
+      "message": "use of undeclared identifier 'qSort'"
+    },
+    {
+      "path": "src/package/god.cpp",
+      "line": 240,
+      "column": 5,
+      "message": "use of undeclared identifier 'qSort'"
+    },
+    {
+      "path": "src/package/lingpackage.cpp",
+      "line": 125,
+      "column": 36,
+      "message": "use of undeclared identifier 'qrand'; did you mean 'rand'?"
+    },
+    {
+      "path": "src/package/sp-package.cpp",
+      "line": 255,
+      "column": 57,
+      "message": "no member named 'toSet' in 'QList<const Card *>'"
+    },
+    {
+      "path": "src/package/nostalgia.cpp",
+      "line": 229,
+      "column": 49,
+      "message": "use of undeclared identifier 'qrand'; did you mean 'rand'?"
+    },
+    {
+      "path": "src/package/nostalgia.cpp",
+      "line": 236,
+      "column": 49,
+      "message": "use of undeclared identifier 'qrand'; did you mean 'rand'?"
+    },
+    {
+      "path": "src/package/mountainpackage.cpp",
+      "line": 47,
+      "column": 9,
+      "message": "use of undeclared identifier 'qSort'"
+    },
+    {
+      "path": "src/package/mountainpackage.cpp",
+      "line": 683,
+      "column": 42,
+      "message": "use of undeclared identifier 'qrand'; did you mean 'rand'?"
+    },
+    {
+      "path": "src/package/mountainpackage.cpp",
+      "line": 1050,
+      "column": 17,
+      "message": "use of undeclared identifier 'qrand'; did you mean 'rand'?"
+    },
+    {
+      "path": "src/package/mountainpackage.cpp",
+      "line": 1084,
+      "column": 65,
+      "message": "no member named 'toSet' in 'QList<QString>'"
+    },
+    {
+      "path": "src/package/mountainpackage.cpp",
+      "line": 1103,
+      "column": 56,
+      "message": "no member named 'toList' in 'QSet<QString>'"
+    },
+    {
+      "path": "src/package/standard-generals.cpp",
+      "line": 519,
+      "column": 21,
+      "message": "use of undeclared identifier 'qrand'; did you mean 'rand'?"
+    },
+    {
+      "path": "src/package/standard-skillcards.cpp",
+      "line": 83,
+      "column": 21,
+      "message": "use of undeclared identifier 'qrand'; did you mean 'rand'?"
+    },
+    {
+      "path": "src/package/yitianpackage.cpp",
+      "line": 1243,
+      "column": 24,
+      "message": "cannot initialize return object of type 'const Card *' with an rvalue of type 'bool'"
+    },
+    {
+      "path": "src/package/yjcm-package.cpp",
+      "line": 145,
+      "column": 10,
+      "message": "use of undeclared identifier 'qrand'; did you mean 'rand'?"
+    },
+    {
+      "path": "src/package/yjcm-package.cpp",
+      "line": 332,
+      "column": 53,
+      "message": "use of undeclared identifier 'qrand'; did you mean 'rand'?"
+    },
+    {
+      "path": "src/package/yjcm-package.cpp",
+      "line": 343,
+      "column": 61,
+      "message": "use of undeclared identifier 'qrand'; did you mean 'rand'?"
+    },
+    {
+      "path": "src/scenario/boss-mode-scenario.cpp",
+      "line": 267,
+      "column": 9,
+      "message": "use of undeclared identifier 'qsrand'; did you mean 'srand'?"
+    },
+    {
+      "path": "src/scenario/boss-mode-scenario.cpp",
+      "line": 279,
+      "column": 28,
+      "message": "use of undeclared identifier 'qrand'; did you mean 'rand'?"
+    },
+    {
+      "path": "src/scenario/boss-mode-scenario.cpp",
+      "line": 306,
+      "column": 25,
+      "message": "use of undeclared identifier 'qrand'; did you mean 'rand'?"
+    },
+    {
+      "path": "src/scenario/boss-mode-scenario.cpp",
+      "line": 365,
+      "column": 13,
+      "message": "use of undeclared identifier 'qsrand'; did you mean 'srand'?"
+    },
+    {
+      "path": "src/scenario/boss-mode-scenario.cpp",
+      "line": 366,
+      "column": 17,
+      "message": "use of undeclared identifier 'qrand'; did you mean 'rand'?"
+    },
+    {
+      "path": "src/scenario/fancheng-scenario.cpp",
+      "line": 74,
+      "column": 20,
+      "message": "cannot initialize return object of type 'const Card *' with an rvalue of type 'bool'"
+    },
+    {
+      "path": "src/scenario/miniscenarios.cpp",
+      "line": 33,
+      "column": 17,
+      "message": "use of overloaded operator '==' is ambiguous (with operand types 'QString' and 'long')"
+    },
+    {
+      "path": "src/scenario/miniscenarios.cpp",
+      "line": 65,
+      "column": 85,
+      "message": "use of overloaded operator '!=' is ambiguous (with operand types 'QString' and 'long')"
+    },
+    {
+      "path": "src/scenario/miniscenarios.cpp",
+      "line": 74,
+      "column": 81,
+      "message": "use of overloaded operator '==' is ambiguous (with operand types 'QString' and 'long')"
+    },
+    {
+      "path": "src/scenario/miniscenarios.cpp",
+      "line": 95,
+      "column": 9,
+      "message": "use of undeclared identifier 'qrand'; did you mean 'rand'?"
+    },
+    {
+      "path": "src/scenario/miniscenarios.cpp",
+      "line": 162,
+      "column": 17,
+      "message": "use of overloaded operator '==' is ambiguous (with operand types 'QString' and 'long')"
+    },
+    {
+      "path": "src/scenario/miniscenarios.cpp",
+      "line": 166,
+      "column": 16,
+      "message": "use of overloaded operator '!=' is ambiguous (with operand types 'QString' and 'long')"
+    },
+    {
+      "path": "src/scenario/miniscenarios.cpp",
+      "line": 171,
+      "column": 17,
+      "message": "use of overloaded operator '!=' is ambiguous (with operand types 'QString' and 'long')"
+    },
+    {
+      "path": "src/scenario/miniscenarios.cpp",
+      "line": 185,
+      "column": 16,
+      "message": "use of overloaded operator '!=' is ambiguous (with operand types 'QString' and 'long')"
+    },
+    {
+      "path": "src/scenario/miniscenarios.cpp",
+      "line": 195,
+      "column": 16,
+      "message": "use of overloaded operator '!=' is ambiguous (with operand types 'QString' and 'long')"
+    },
+    {
+      "path": "src/scenario/miniscenarios.cpp",
+      "line": 216,
+      "column": 19,
+      "message": "use of overloaded operator '!=' is ambiguous (with operand types 'QString' and 'long')"
+    },
+    {
+      "path": "src/scenario/miniscenarios.cpp",
+      "line": 221,
+      "column": 43,
+      "message": "use of overloaded operator '!=' is ambiguous (with operand types 'QString' and 'long')"
+    },
+    {
+      "path": "src/scenario/miniscenarios.cpp",
+      "line": 230,
+      "column": 43,
+      "message": "use of overloaded operator '!=' is ambiguous (with operand types 'QString' and 'long')"
+    },
+    {
+      "path": "src/scenario/miniscenarios.cpp",
+      "line": 235,
+      "column": 47,
+      "message": "use of overloaded operator '!=' is ambiguous (with operand types 'QString' and 'long')"
+    },
+    {
+      "path": "src/scenario/miniscenarios.cpp",
+      "line": 240,
+      "column": 16,
+      "message": "use of overloaded operator '==' is ambiguous (with operand types 'QString' and 'long')"
+    },
+    {
+      "path": "src/scenario/miniscenarios.cpp",
+      "line": 242,
+      "column": 41,
+      "message": "use of overloaded operator '!=' is ambiguous (with operand types 'QString' and 'long')"
+    },
+    {
+      "path": "src/scenario/miniscenarios.cpp",
+      "line": 322,
+      "column": 13,
+      "message": "use of overloaded operator '==' is ambiguous (with operand types 'QString' and 'long')"
+    },
+    {
+      "path": "src/scenario/scenerule.cpp",
+      "line": 113,
+      "column": 5,
+      "message": "use of undeclared identifier 'qsrand'; did you mean 'srand'?"
+    },
+    {
+      "path": "src/scenario/scenerule.cpp",
+      "line": 175,
+      "column": 17,
+      "message": "use of undeclared identifier 'qsrand'; did you mean 'srand'?"
+    },
+    {
+      "path": "src/scenario/scenerule.cpp",
+      "line": 180,
+      "column": 35,
+      "message": "use of undeclared identifier 'qrand'; did you mean 'rand'?"
+    },
+    {
+      "path": "src/scenario/scenerule.cpp",
+      "line": 306,
+      "column": 60,
+      "message": "too many arguments to function call, expected single argument 'other', have 2 arguments"
+    },
+    {
+      "path": "src/server/ai.cpp",
+      "line": 204,
+      "column": 27,
+      "message": "use of undeclared identifier 'qrand'; did you mean 'rand'?"
+    },
+    {
+      "path": "src/server/ai.cpp",
+      "line": 233,
+      "column": 23,
+      "message": "use of undeclared identifier 'qrand'; did you mean 'rand'?"
+    },
+    {
+      "path": "src/server/ai.cpp",
+      "line": 272,
+      "column": 13,
+      "message": "use of undeclared identifier 'qrand'; did you mean 'rand'?"
+    },
+    {
+      "path": "src/server/ai.cpp",
+      "line": 298,
+      "column": 13,
+      "message": "use of undeclared identifier 'qrand'; did you mean 'rand'?"
+    },
+    {
+      "path": "src/server/ai.cpp",
+      "line": 312,
+      "column": 5,
+      "message": "use of undeclared identifier 'qSort'"
+    },
+    {
+      "path": "src/server/ai.cpp",
+      "line": 327,
+      "column": 13,
+      "message": "use of undeclared identifier 'qrand'; did you mean 'rand'?"
+    },
+    {
+      "path": "src/server/ai.cpp",
+      "line": 403,
+      "column": 31,
+      "message": "no member named 'toAscii' in 'QString'"
+    },
+    {
+      "path": "src/server/ai.cpp",
+      "line": 404,
+      "column": 30,
+      "message": "no member named 'toAscii' in 'QString'"
+    },
+    {
+      "path": "src/server/ai.cpp",
+      "line": 423,
+      "column": 30,
+      "message": "no member named 'toAscii' in 'QString'"
+    },
+    {
+      "path": "src/server/ai.cpp",
+      "line": 468,
+      "column": 30,
+      "message": "no member named 'toAscii' in 'QString'"
+    },
+    {
+      "path": "src/server/contestdb.cpp",
+      "line": 80,
+      "column": 58,
+      "message": "no member named 'toAscii' in 'QString'"
+    },
+    {
+      "path": "src/server/contestdb.cpp",
+      "line": 211,
+      "column": 34,
+      "message": "no member named 'toAscii' in 'QString'"
+    },
+    {
+      "path": "src/server/gamerule.cpp",
+      "line": 101,
+      "column": 61,
+      "message": "no member named 'toSet' in 'QList<const Card *>'"
+    },
+    {
+      "path": "src/server/gamerule.cpp",
+      "line": 211,
+      "column": 21,
+      "message": "use of undeclared identifier 'qSort'"
+    },
+    {
+      "path": "src/server/generalselector.cpp",
+      "line": 132,
+      "column": 5,
+      "message": "use of undeclared identifier 'qSort'"
+    },
+    {
+      "path": "src/server/generalselector.cpp",
+      "line": 133,
+      "column": 22,
+      "message": "too many arguments to function call, expected single argument 'other', have 2 arguments"
+    },
+    {
+      "path": "src/server/generalselector.cpp",
+      "line": 151,
+      "column": 5,
+      "message": "use of undeclared identifier 'qSort'"
+    },
+    {
+      "path": "src/server/roomthread.cpp",
+      "line": 154,
+      "column": 41,
+      "message": "no member named 'KeepEmptyParts' in 'QString'; did you mean 'Qt::KeepEmptyParts'?"
+    },
+    {
+      "path": "src/server/roomthread.cpp",
+      "line": 285,
+      "column": 5,
+      "message": "use of undeclared identifier 'qsrand'; did you mean 'srand'?"
+    },
+    {
+      "path": "src/server/roomthread.cpp",
+      "line": 420,
+      "column": 9,
+      "message": "use of undeclared identifier 'qStableSort'"
+    },
+    {
+      "path": "src/server/room.cpp",
+      "line": 173,
+      "column": 17,
+      "message": "use of undeclared identifier 'qrand'; did you mean 'rand'?"
+    },
+    {
+      "path": "src/server/room.cpp",
+      "line": 219,
+      "column": 5,
+      "message": "use of undeclared identifier 'qSort'"
+    },
+    {
+      "path": "src/server/room.cpp",
+      "line": 551,
+      "column": 11,
+      "message": "no member named 'start' in 'QTime'"
+    },
+    {
+      "path": "src/server/room.cpp",
+      "line": 554,
+      "column": 38,
+      "message": "no member named 'elapsed' in 'QTime'"
+    },
+    {
+      "path": "src/server/room.cpp",
+      "line": 580,
+      "column": 11,
+      "message": "no member named 'start' in 'QTime'"
+    },
+    {
+      "path": "src/server/room.cpp",
+      "line": 584,
+      "column": 45,
+      "message": "no member named 'elapsed' in 'QTime'"
+    },
+    {
+      "path": "src/server/room.cpp",
+      "line": 915,
+      "column": 21,
+      "message": "use of undeclared identifier 'qrand'; did you mean 'rand'?"
+    },
+    {
+      "path": "src/server/room.cpp",
+      "line": 1583,
+      "column": 12,
+      "message": "use of undeclared identifier 'qrand'; did you mean 'rand'?"
+    },
+    {
+      "path": "src/server/room.cpp",
+      "line": 1584,
+      "column": 31,
+      "message": "too many arguments to function call, expected single argument 'other', have 2 arguments"
+    },
+    {
+      "path": "src/server/room.cpp",
+      "line": 1594,
+      "column": 43,
+      "message": "use of undeclared identifier 'qrand'; did you mean 'rand'?"
+    },
+    {
+      "path": "src/server/room.cpp",
+      "line": 1647,
+      "column": 39,
+      "message": "too many arguments to function call, expected single argument 'other', have 2 arguments"
+    },
+    {
+      "path": "src/server/room.cpp",
+      "line": 1839,
+      "column": 45,
+      "message": "no member named 'elapsed' in 'QTime'"
+    },
+    {
+      "path": "src/server/room.cpp",
+      "line": 1845,
+      "column": 38,
+      "message": "no member named 'restart' in 'QTime'"
+    },
+    {
+      "path": "src/server/room.cpp",
+      "line": 1854,
+      "column": 30,
+      "message": "no member named 'toAscii' in 'QString'"
+    },
+    {
+      "path": "src/server/room.cpp",
+      "line": 1928,
+      "column": 71,
+      "message": "use of undeclared identifier 'qrand'; did you mean 'rand'?"
+    },
+    {
+      "path": "src/server/room.cpp",
+      "line": 2093,
+      "column": 16,
+      "message": "use of undeclared identifier 'qrand'; did you mean 'rand'?"
+    },
+    {
+      "path": "src/server/room.cpp",
+      "line": 2161,
+      "column": 5,
+      "message": "use of undeclared identifier 'qsrand'; did you mean 'srand'?"
+    },
+    {
+      "path": "src/server/room.cpp",
+      "line": 2258,
+      "column": 27,
+      "message": "too many arguments to function call, expected single argument 'other', have 2 arguments"
+    },
+    {
+      "path": "src/server/roomthread1v1.cpp",
+      "line": 18,
+      "column": 5,
+      "message": "use of undeclared identifier 'qsrand'; did you mean 'srand'?"
+    },
+    {
+      "path": "src/server/roomthread1v1.cpp",
+      "line": 20,
+      "column": 71,
+      "message": "no member named 'toSet' in 'QList<QString>'"
+    },
+    {
+      "path": "src/server/roomthread3v3.cpp",
+      "line": 57,
+      "column": 5,
+      "message": "use of undeclared identifier 'qsrand'; did you mean 'srand'?"
+    },
+    {
+      "path": "src/server/roomthread3v3.cpp",
+      "line": 234,
+      "column": 12,
+      "message": "use of undeclared identifier 'qrand'; did you mean 'rand'?"
+    },
+    {
+      "path": "src/server/roomthread3v3.cpp",
+      "line": 245,
+      "column": 37,
+      "message": "too many arguments to function call, expected single argument 'other', have 2 arguments"
+    },
+    {
+      "path": "src/server/roomthread3v3.cpp",
+      "line": 246,
+      "column": 37,
+      "message": "too many arguments to function call, expected single argument 'other', have 2 arguments"
+    },
+    {
+      "path": "src/server/roomthread3v3.cpp",
+      "line": 247,
+      "column": 37,
+      "message": "too many arguments to function call, expected single argument 'other', have 2 arguments"
+    },
+    {
+      "path": "src/server/server.cpp",
+      "line": 23,
+      "column": 10,
+      "message": "'QHttp' file not found"
+    },
+    {
+      "path": "src/server/serverplayer.cpp",
+      "line": 66,
+      "column": 17,
+      "message": "use of undeclared identifier 'qrand'; did you mean 'rand'?"
+    },
+    {
+      "path": "src/ui/irregularbutton.cpp",
+      "line": 23,
+      "column": 5,
+      "message": "use of undeclared identifier 'setAcceptsHoverEvents'; did you mean 'setAcceptHoverEvents'?"
+    },
+    {
+      "path": "src/ui/dashboard.cpp",
+      "line": 794,
+      "column": 9,
+      "message": "use of undeclared identifier 'qSort'"
+    },
+    {
+      "path": "src/ui/dashboard.cpp",
+      "line": 803,
+      "column": 46,
+      "message": "no member named 'toSet' in 'QList<CardItem *>'"
+    },
+    {
+      "path": "src/ui/photo.cpp",
+      "line": 556,
+      "column": 9,
+      "message": "use of undeclared identifier 'qSort'"
+    },
+    {
+      "path": "src/ui/pixmapanimation.cpp",
+      "line": 7,
+      "column": 5,
+      "message": "no matching constructor for initialization of 'QGraphicsItem'"
+    },
+    {
+      "path": "src/util/nativesocket.cpp",
+      "line": 100,
+      "column": 27,
+      "message": "no member named 'toAscii' in 'QString'"
+    },
+    {
+      "path": "src/ui/rolecombobox.cpp",
+      "line": 84,
+      "column": 23,
+      "message": "too many arguments to function call, expected single argument 'other', have 2 arguments"
+    },
+    {
+      "path": "src/ui/roomscene.cpp",
+      "line": 125,
+      "column": 9,
+      "message": "cannot initialize object parameter of type 'QGraphicsScene' with an expression of type 'RoomScene'"
+    },
+    {
+      "path": "src/ui/roomscene.cpp",
+      "line": 146,
+      "column": 9,
+      "message": "cannot initialize object parameter of type 'QGraphicsScene' with an expression of type 'RoomScene'"
+    },
+    {
+      "path": "src/ui/roomscene.cpp",
+      "line": 152,
+      "column": 9,
+      "message": "no matching member function for call to 'connect'"
+    },
+    {
+      "path": "src/ui/roomscene.cpp",
+      "line": 153,
+      "column": 9,
+      "message": "no matching member function for call to 'connect'"
+    },
+    {
+      "path": "src/ui/roomscene.cpp",
+      "line": 166,
+      "column": 5,
+      "message": "no matching member function for call to 'connect'"
+    },
+    {
+      "path": "src/ui/roomscene.cpp",
+      "line": 172,
+      "column": 5,
+      "message": "no matching member function for call to 'connect'"
+    },
+    {
+      "path": "src/ui/roomscene.cpp",
+      "line": 191,
+      "column": 9,
+      "message": "no matching member function for call to 'connect'"
+    },
+    {
+      "path": "src/ui/roomscene.cpp",
+      "line": 199,
+      "column": 5,
+      "message": "no matching member function for call to 'connect'"
+    },
+    {
+      "path": "src/ui/roomscene.cpp",
+      "line": 200,
+      "column": 5,
+      "message": "no matching member function for call to 'connect'"
+    },
+    {
+      "path": "src/ui/roomscene.cpp",
+      "line": 201,
+      "column": 5,
+      "message": "no matching member function for call to 'connect'"
+    },
+    {
+      "path": "src/ui/roomscene.cpp",
+      "line": 202,
+      "column": 5,
+      "message": "no matching member function for call to 'connect'"
+    },
+    {
+      "path": "src/ui/roomscene.cpp",
+      "line": 203,
+      "column": 5,
+      "message": "no matching member function for call to 'connect'"
+    },
+    {
+      "path": "src/ui/roomscene.cpp",
+      "line": 204,
+      "column": 5,
+      "message": "no matching member function for call to 'connect'"
+    },
+    {
+      "path": "src/util/recorder.cpp",
+      "line": 15,
+      "column": 11,
+      "message": "no member named 'start' in 'QTime'"
+    },
+    {
+      "path": "src/util/recorder.cpp",
+      "line": 24,
+      "column": 25,
+      "message": "no member named 'elapsed' in 'QTime'"
+    },
+    {
+      "path": "src/util/recorder.cpp",
+      "line": 26,
+      "column": 14,
+      "message": "no matching member function for call to 'append'"
+    },
+    {
+      "path": "src/util/recorder.cpp",
+      "line": 28,
+      "column": 14,
+      "message": "no matching member function for call to 'append'"
+    },
+    {
+      "path": "build/macos-arm64-debug/sanguosha_wrap.cxx",
+      "line": 3019,
+      "column": 39,
+      "message": "no member named 'toAscii' in 'QString'"
+    },
+    {
+      "path": "build/macos-arm64-debug/sanguosha_wrap.cxx",
+      "line": 3302,
+      "column": 29,
+      "message": "no member named 'toAscii' in 'QString'"
+    },
+    {
+      "path": "build/macos-arm64-debug/sanguosha_wrap.cxx",
+      "line": 3453,
+      "column": 10,
+      "message": "cannot initialize return object of type 'const Card *' with an rvalue of type 'bool'"
+    },
+    {
+      "path": "build/macos-arm64-debug/sanguosha_wrap.cxx",
+      "line": 3589,
+      "column": 28,
+      "message": "no member named 'toAscii' in 'QString'"
+    },
+    {
+      "path": "build/macos-arm64-debug/sanguosha_wrap.cxx",
+      "line": 3770,
+      "column": 34,
+      "message": "no member named 'toAscii' in 'QString'"
+    },
+    {
+      "path": "build/macos-arm64-debug/sanguosha_wrap.cxx",
+      "line": 3793,
+      "column": 33,
+      "message": "no member named 'toAscii' in 'QString'"
+    },
+    {
+      "path": "build/macos-arm64-debug/sanguosha_wrap.cxx",
+      "line": 3794,
+      "column": 30,
+      "message": "no member named 'toAscii' in 'QString'"
+    },
+    {
+      "path": "build/macos-arm64-debug/sanguosha_wrap.cxx",
+      "line": 3913,
+      "column": 31,
+      "message": "no member named 'toAscii' in 'QString'"
+    },
+    {
+      "path": "build/macos-arm64-debug/sanguosha_wrap.cxx",
+      "line": 3914,
+      "column": 30,
+      "message": "no member named 'toAscii' in 'QString'"
+    },
+    {
+      "path": "build/macos-arm64-debug/sanguosha_wrap.cxx",
+      "line": 3936,
+      "column": 29,
+      "message": "no member named 'toAscii' in 'QString'"
+    },
+    {
+      "path": "build/macos-arm64-debug/sanguosha_wrap.cxx",
+      "line": 3937,
+      "column": 30,
+      "message": "no member named 'toAscii' in 'QString'"
+    },
+    {
+      "path": "build/macos-arm64-debug/sanguosha_wrap.cxx",
+      "line": 3964,
+      "column": 30,
+      "message": "no member named 'toAscii' in 'QString'"
+    },
+    {
+      "path": "build/macos-arm64-debug/sanguosha_wrap.cxx",
+      "line": 4017,
+      "column": 30,
+      "message": "no member named 'toAscii' in 'QString'"
+    },
+    {
+      "path": "build/macos-arm64-debug/sanguosha_wrap.cxx",
+      "line": 4063,
+      "column": 30,
+      "message": "no member named 'toAscii' in 'QString'"
+    },
+    {
+      "path": "build/macos-arm64-debug/sanguosha_wrap.cxx",
+      "line": 4087,
+      "column": 30,
+      "message": "no member named 'toAscii' in 'QString'"
+    }
+  ]
+}

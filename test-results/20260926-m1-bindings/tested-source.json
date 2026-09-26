@@ -1,0 +1,36 @@
+{
+  "source_set_sha256": "ae7346a0fc20e8175cf2f17e9aa58390d277705aea174e0652bb693f8929e10c",
+  "hashes": {
+    "CMakeLists.txt": "b3a120c5be40c5e5fbe7bba050c36d58b143e0237880ba8a8dbea36a1e8c5415",
+    "cmake/LegacyCompileProbe.cmake": "679c28a4a56c564bf7ae407b2ab2e1fa97d95a5abaa4d2dd40baa5d513d4b5f9",
+    "swig/native.i": "ed19b3f40de0b3ab019a65347fe069953e8f29cba3c11cfd4165f7255fc98deb",
+    "swig/card.i": "bf16e13b4677f30880e2c8053694326de8d614f668596ec6675821a1d93e1d8c",
+    "swig/naturalvar.i": "80db222c7c3426c5a0b63ea39f45a25528afd67a7a179f809484ef71e2ce8aa2",
+    "swig/qvariant_core.i": "3353c96e889238dec13034d92b3f31b14357fafe2a809ceba57280767f657b4c",
+    "swig/list.i": "c8fb80d981c56e2e99403d70ef83ed45c8ddcf09e73cf80376a8b7aa671747f1",
+    "swig/qvariant.i": "b662dc69148ed17adddf125fd5b328f01b89b3affb6627fcbdfecf302f5d78a8",
+    "swig/ai.i": "9c98780305ed168d567b6a6d224e4ff45b9748dd8815f969d50feba8a07d074d",
+    "swig/sanguosha.i": "42084567f9d2e0941f44c2bea78b3b0a87d35a982b163531912e5e8246297d38",
+    "swig/luaskills.i": "2bd05becbdda412f1d346142adcef019cbf00e3fcc37c34ecc029d1b88af2c0a",
+    "tests/bindings/qt_values.i": "9cd5387cfb199f0dd3adf358202563f2f09cc70e678ba9888abecea2468aeea3",
+    "tests/bindings/test_qt_values.cpp": "9db1ee2d425737f5f2543528ad367f3689424f44afff1b80e1addd3378a2493a",
+    "tests/bindings/test_lua_runtime.cpp": "0a930f026f83fe644a6f88f79b98addd3f463dd2621e2fbddaa5aebf57703e5e",
+    "tests/protocol/test_line_framer.cpp": "ffef8159d8a694e5fc515a0ce98646b678b19969ebfc9a2e61c5ed374bbea017",
+    "tests/protocol/test_legacy_protocol.cpp": "3eb6986fbbe155bbaf3e296718f552b6453de3df22b24a67b029812de8e70ed6",
+    "src/core/jsonutils.h": "e14477902843c8d38613770734d79cfda685d7d561bd769a82e33d49eec5e998",
+    "src/core/jsonutils.cpp": "c1af116236f40ab4d1a29001295cd0759c57804c2e57dbdbc1b8bfcee403eae7",
+    "src/core/protocol.cpp": "9ff7da951c03fed0b126dc2b5bc602aeaa491b4cd551dda993e394a7858f75b0",
+    "src/core/protocol.h": "cdbb54d5cf9472d7b648198ba15462a045b33340642c9507d486558d17f66de2",
+    "src/jsoncpp/src/json_writer.cpp": "ddfbeac70de54f2dea7dd36022cbb141041056bf560fdb22e839b1153210ea68",
+    "src/jsoncpp/src/json_reader.cpp": "1e54e7a697c8a6dcc7b0dc89e90f2d777b97c3584271300173489d7a44a50321",
+    "src/jsoncpp/src/json_value.cpp": "64877d93b3789deb9cc46a38ad384a95ce2c87316a706454274ae8607e6d3342"
+  },
+  "scope": "selected boundary tests, not a complete release source manifest",
+  "baseline": "323f112658b5ea0c081b02e240afb92af7a379c1",
+  "tool_versions": {
+    "Qt": "6.11.1",
+    "SWIG": "4.4.1",
+    "Lua": "5.1.4",
+    "libvorbis": "1.3.7"
+  }
+}

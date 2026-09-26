@@ -10,6 +10,7 @@
 # include "json_tool.h"
 #endif // if !defined(JSON_IS_AMALGAMATION)
 #include <utility>
+#include <istream>
 #include <cstdio>
 #include <cassert>
 #include <cstring>

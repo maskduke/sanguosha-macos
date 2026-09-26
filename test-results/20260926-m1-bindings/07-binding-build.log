@@ -1,0 +1,5 @@
+[0/2] Re-checking globbed directories...
+[1/6] Generating qt_values_wrap.cxx
+[2/6] Automatic MOC for target test_qt_values
+[3/5] Building CXX object CMakeFiles/test_qt_values.dir/qt_values_wrap.cxx.o
+[4/5] Linking CXX executable test_qt_values
