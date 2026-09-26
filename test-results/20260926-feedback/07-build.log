@@ -1,0 +1,6 @@
+[0/2] Re-checking globbed directories...
+[1/8] Automatic MOC and UIC for target qs_legacy_objects
+[2/7] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/ui/sprite.cpp.o
+[3/7] Automatic MOC for target test_feedback
+[4/6] Building CXX object CMakeFiles/test_feedback.dir/tests/feedback/test_feedback.cpp.o
+[5/6] Linking CXX executable test_feedback

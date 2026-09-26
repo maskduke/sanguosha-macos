@@ -1,0 +1,80 @@
+{
+  "version": "0.1.1",
+  "build": 2,
+  "app": "dist/0.1.1/QSanguosha-Nirvana.app",
+  "sha256": "631836197815e1b3736f27ffe3df84c10d3abb07fd4c0286e9d26b7dbbb0c7fb",
+  "rules_fingerprint": "7423f5432df78f3252b6f459bf264f1d47478d331e4bcc7a0ad0a5709bbf01ea",
+  "uuid": "8B39CD43-158E-3EB7-A77F-88C85AFE65E2",
+  "checks": [
+    {
+      "test": "--smoke-test",
+      "mode": "02p",
+      "exit": 0,
+      "duration_seconds": 1.65,
+      "pass": true
+    },
+    {
+      "test": "--shutdown-smoke",
+      "mode": "02p",
+      "exit": 0,
+      "duration_seconds": 0.71,
+      "pass": true
+    },
+    {
+      "test": "--shutdown-smoke",
+      "mode": "06_3v3",
+      "exit": 0,
+      "duration_seconds": 1.23,
+      "pass": true
+    },
+    {
+      "test": "--shutdown-smoke",
+      "mode": "02_1v1",
+      "exit": 0,
+      "duration_seconds": 1.23,
+      "pass": true
+    },
+    {
+      "test": "--shutdown-smoke",
+      "mode": "04_1v3",
+      "exit": 0,
+      "duration_seconds": 0.71,
+      "pass": true
+    },
+    {
+      "test": "--ai-smoke",
+      "mode": "02p",
+      "exit": 0,
+      "duration_seconds": 0.26,
+      "pass": true
+    },
+    {
+      "test": "--ai-smoke",
+      "mode": "04p",
+      "exit": 0,
+      "duration_seconds": 0.67,
+      "pass": true
+    },
+    {
+      "test": "--ai-smoke",
+      "mode": "08p",
+      "exit": 0,
+      "duration_seconds": 4.02,
+      "pass": true
+    },
+    {
+      "test": "--ai-smoke",
+      "mode": "06_3v3",
+      "exit": 0,
+      "duration_seconds": 16.94,
+      "pass": true
+    },
+    {
+      "test": "--ai-smoke",
+      "mode": "02_1v1",
+      "exit": 0,
+      "duration_seconds": 10.77,
+      "pass": true
+    }
+  ]
+}

@@ -106,7 +106,7 @@ add_executable(QSanguosha MACOSX_BUNDLE src/main.cpp src/core/audio.cpp resource
 set_source_files_properties(resource/icon/sgs.icns PROPERTIES MACOSX_PACKAGE_LOCATION Resources)
 set_target_properties(QSanguosha PROPERTIES MACOSX_BUNDLE_GUI_IDENTIFIER org.qsanguosha.nirvana.modern
  MACOSX_BUNDLE_BUNDLE_NAME "QSanguosha Nirvana" MACOSX_BUNDLE_ICON_FILE sgs.icns
- MACOSX_BUNDLE_SHORT_VERSION_STRING "0.1.0" MACOSX_BUNDLE_BUNDLE_VERSION "1")
+ MACOSX_BUNDLE_SHORT_VERSION_STRING "0.1.1" MACOSX_BUNDLE_BUNDLE_VERSION "2")
 target_compile_definitions(QSanguosha PRIVATE AUDIO_SUPPORT)
 target_include_directories(QSanguosha PRIVATE ${LEGACY_INCLUDES} src src/jsoncpp/include)
 target_compile_options(QSanguosha PRIVATE "-include${PROJECT_SOURCE_DIR}/src/platform/qt_compat.h")
@@ -148,4 +148,14 @@ endif()
 set_property(TARGET QSanguosha APPEND PROPERTY LINK_DEPENDS "${PROJECT_SOURCE_DIR}/tools/prepare_app_assets.py" "${PROJECT_SOURCE_DIR}/patches/runtime-lua.json")
 if(BUILD_TESTING)
  add_dependencies(test_lua_runtime QSanguosha)
+endif()
+
+if(BUILD_TESTING)
+ add_executable(test_feedback tests/feedback/test_feedback.cpp src/core/audio.cpp)
+ target_compile_definitions(test_feedback PRIVATE AUDIO_SUPPORT QS_ASSET_ROOT="${PROJECT_SOURCE_DIR}/assets/game")
+ target_include_directories(test_feedback PRIVATE ${LEGACY_INCLUDES} src src/jsoncpp/include)
+ target_compile_options(test_feedback PRIVATE "-include${PROJECT_SOURCE_DIR}/src/platform/qt_compat.h")
+ target_link_libraries(test_feedback PRIVATE qs_legacy_objects qs_lua qs_audio qs_paths qs_protocol Qt6::Test Qt6::Widgets Qt6::Network Qt6::Sql Qt6::Core5Compat)
+ add_test(NAME feedback.visual_and_shien COMMAND test_feedback)
+ set_tests_properties(feedback.visual_and_shien PROPERTIES TIMEOUT 30 ENVIRONMENT "QS_DATA_DIR=/private/tmp/qs-feedback-test;QT_QPA_PLATFORM=offscreen")
 endif()

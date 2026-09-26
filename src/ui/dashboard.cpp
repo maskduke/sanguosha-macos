@@ -182,7 +182,7 @@ void Dashboard::addCardItem(CardItem *card_item){
     card_item->setParentItem(this);
     card_item->setRotation(0.0);
     card_item->setFlags(ItemIsFocusable);
-    card_item->setZValue(0.1);
+    card_item->setHandZValue(0.1);
     card_items << card_item;
 
     connect(card_item, SIGNAL(clicked()), this, SLOT(onCardItemClicked()));
@@ -646,7 +646,7 @@ void Dashboard::adjustCards(){
 
         // reset Z value
         for(i=0; i<n; i++)
-            all_items.at(i)->setZValue(2.0 + 0.0001 * i);
+            all_items.at(i)->setHandZValue(2.0 + 0.0001 * i);
     }else{
         adjustCards(card_items, CardItem::NormalY);
 
@@ -676,7 +676,7 @@ void Dashboard::adjustCards(const QList<CardItem *> &list, int y){
     int i;
     for(i=0; i<n; i++){
         if(card_items.length() <= Config.MaxCards)
-            list[i]->setZValue(2.0 + 0.0001 * i);
+            list[i]->setHandZValue(2.0 + 0.0001 * i);
 
         QPointF home_pos(start_x + i * card_skip, y);
         list[i]->setHomePos(home_pos);
@@ -747,6 +747,8 @@ CardItem *Dashboard::takeCardItem(int card_id, Player::Place place){
     }
 
     if(card_item){
+        card_item->clearHoverRaised();
+        animations->effectOut(card_item);
         card_item->disconnect(this);
         update();
         return card_item;

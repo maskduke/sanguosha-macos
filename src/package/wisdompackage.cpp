@@ -812,7 +812,8 @@ public:
     }
 
     virtual bool triggerable(const ServerPlayer *target) const{
-        return target != NULL && !target->hasSkill(objectName());
+        return target != NULL && !target->hasSkill(objectName())
+                && target->getRoom()->findPlayerBySkillName(objectName()) != NULL;
     }
 
     virtual bool trigger(TriggerEvent event, Room* room, ServerPlayer *player, QVariant &data) const{
@@ -826,9 +827,9 @@ public:
         }else if(event == CardResponsed)
             card = data.value<CardStar>();
 
-        if(card->isNDTrick()){
+        if(card && card->isNDTrick()){
             ServerPlayer *shuijing = room->findPlayerBySkillName(objectName());
-            if(shuijing->isAlive()){
+            if(shuijing && shuijing->isAlive()){
                 if(room->askForSkillInvoke(player, objectName(), QVariant::fromValue(shuijing)))
                     shuijing->drawCards(1);
                 else{

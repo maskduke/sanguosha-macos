@@ -229,6 +229,20 @@ CardItem *CardItem::FindItem(const QList<CardItem *> &items, int card_id){
     return NULL;
 }
 
+void CardItem::setHandZValue(qreal value)
+{
+    resting_z = value;
+    setZValue(hover_raised ? 10.0 : value);
+}
+
+void CardItem::clearHoverRaised()
+{
+    if(hover_raised) {
+        hover_raised = false;
+        setZValue(resting_z);
+    }
+}
+
 void CardItem::reduceZ()
 {
     if(this->zValue()>0)this->setZValue(this->zValue()-0.8);
@@ -284,11 +298,17 @@ void CardItem::mouseDoubleClickEvent(QGraphicsSceneMouseEvent *event){
 
 void CardItem::hoverEnterEvent(QGraphicsSceneHoverEvent *)
 {
+    if(flags().testFlag(ItemIsFocusable) && !hover_raised) {
+        resting_z = zValue();
+        hover_raised = true;
+        setZValue(10.0);
+    }
     emit enter_hover();
 }
 
 void CardItem::hoverLeaveEvent(QGraphicsSceneHoverEvent *)
 {
+    clearHoverRaised();
     emit leave_hover();
 }
 

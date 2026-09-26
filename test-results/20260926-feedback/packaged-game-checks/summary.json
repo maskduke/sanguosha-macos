@@ -1,0 +1,72 @@
+[
+  {
+    "test": "--smoke-test",
+    "mode": "02p",
+    "exit": 0,
+    "duration_seconds": 1.65,
+    "pass": true
+  },
+  {
+    "test": "--shutdown-smoke",
+    "mode": "02p",
+    "exit": 0,
+    "duration_seconds": 0.71,
+    "pass": true
+  },
+  {
+    "test": "--shutdown-smoke",
+    "mode": "06_3v3",
+    "exit": 0,
+    "duration_seconds": 1.23,
+    "pass": true
+  },
+  {
+    "test": "--shutdown-smoke",
+    "mode": "02_1v1",
+    "exit": 0,
+    "duration_seconds": 1.23,
+    "pass": true
+  },
+  {
+    "test": "--shutdown-smoke",
+    "mode": "04_1v3",
+    "exit": 0,
+    "duration_seconds": 0.71,
+    "pass": true
+  },
+  {
+    "test": "--ai-smoke",
+    "mode": "02p",
+    "exit": 0,
+    "duration_seconds": 0.26,
+    "pass": true
+  },
+  {
+    "test": "--ai-smoke",
+    "mode": "04p",
+    "exit": 0,
+    "duration_seconds": 0.67,
+    "pass": true
+  },
+  {
+    "test": "--ai-smoke",
+    "mode": "08p",
+    "exit": 0,
+    "duration_seconds": 4.02,
+    "pass": true
+  },
+  {
+    "test": "--ai-smoke",
+    "mode": "06_3v3",
+    "exit": 0,
+    "duration_seconds": 16.94,
+    "pass": true
+  },
+  {
+    "test": "--ai-smoke",
+    "mode": "02_1v1",
+    "exit": 0,
+    "duration_seconds": 10.77,
+    "pass": true
+  }
+]

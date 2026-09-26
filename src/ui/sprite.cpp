@@ -215,30 +215,17 @@ EmphasizeEffect::EmphasizeEffect(bool stay,QObject *parent)
 
 void EmphasizeEffect::draw(QPainter *painter){
 
-    QSizeF s = this->sourceBoundingRect().size();
-
-    qreal scale = ( - qAbs(index - 50) + 50 )/1000.0;
-    scale = 0.1 - scale;
-
     QPoint offset;
-
-    QPixmap pixmap = sourcePixmap(Qt::LogicalCoordinates, &offset);
-
-    const QRectF target = boundingRect().adjusted(
-                  s.width()*scale-1,
-                  s.height()*scale,
-                  -s.width()*scale,
-                  -s.height()*scale
-                );
-
-    const QRectF source(s.width()*0.1,
-                        s.height()*0.1,
-                        s.width(),
-                        s.height());
-
-
+    const QPixmap pixmap = sourcePixmap(Qt::LogicalCoordinates, &offset, NoPad);
+    const QPointF center = sourceBoundingRect().center();
+    const qreal scale = 1.0 + 2.0 * (-qAbs(index - 50) + 50) / 1000.0;
+    painter->save();
     painter->setRenderHint(QPainter::SmoothPixmapTransform);
-    painter->drawPixmap(target, pixmap, source);
+    painter->translate(center);
+    painter->scale(scale, scale);
+    painter->translate(-center);
+    painter->drawPixmap(offset, pixmap);
+    painter->restore();
 }
 
 QRectF EmphasizeEffect::boundingRectFor(const QRectF &sourceRect) const
@@ -272,7 +259,6 @@ void QAnimatedEffect::setStay(bool stay)
 
 SentbackEffect::SentbackEffect(bool stay, QObject *parent)
 {
-    grayed = 0;
     this->setObjectName("backsender");
     index = 0;
     this->stay = stay;
@@ -301,31 +287,22 @@ void SentbackEffect::draw(QPainter *painter)
 
     QPixmap pixmap = sourcePixmap(Qt::LogicalCoordinates, &offset);
 
-    if(!grayed)
-    {
-        grayed = new QImage(pixmap.size(),QImage::Format_ARGB32);
-
-        QImage image = pixmap.toImage();
-        int width = image.width();
-        int height = image.height();
-        int gray;
-
-        QRgb col;
-
-        for (int i = 0; i < width; ++i)
-        {
-            for (int j = 0; j < height; ++j)
-            {
-                col = image.pixel(i, j);
-                gray = qGray(col) >> 1;
-                grayed->setPixel(i, j, qRgba(gray,gray,gray,qAlpha(col)));
-            }
+    // Preserve physical pixel density and refresh when the source/monitor changes.
+    QImage grayed = pixmap.toImage().convertToFormat(QImage::Format_ARGB32);
+    for (int y = 0; y < grayed.height(); ++y) {
+        QRgb *line = reinterpret_cast<QRgb *>(grayed.scanLine(y));
+        for (int x = 0; x < grayed.width(); ++x) {
+            const QRgb col = line[x];
+            const int gray = qGray(col) >> 1;
+            line[x] = qRgba(gray, gray, gray, qAlpha(col));
         }
     }
-
-    painter->drawPixmap(offset,pixmap);
-    painter->setOpacity((40 - qAbs(index - 40))/80.0);
-    painter->drawImage(offset,*grayed);
+    grayed.setDevicePixelRatio(pixmap.devicePixelRatio());
+    painter->save();
+    painter->drawPixmap(offset, pixmap);
+    painter->setOpacity(painter->opacity() * (40 - qAbs(index - 40))/80.0);
+    painter->drawImage(offset, grayed);
+    painter->restore();
 
     return;
 }

@@ -1,0 +1,17 @@
+[0/2] Re-checking globbed directories...
+[1/2] Re-running CMake...
+-- Could NOT find WrapVulkanHeaders (missing: Vulkan_INCLUDE_DIR) 
+-- Configuring done (0.6s)
+-- Generating done (0.2s)
+-- Build files have been written to: /Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug
+[0/4] Re-checking globbed directories...
+[1/20] Automatic MOC for target qs_protocol
+[2/18] Automatic MOC for target qs_audio
+[3/16] Automatic MOC for target qs_paths
+[4/14] Automatic MOC and UIC for target qs_legacy_objects
+[5/13] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/util/nativesocket.cpp.o
+[6/13] Automatic MOC for target test_feedback
+[7/13] Building CXX object CMakeFiles/test_feedback.dir/test_feedback_autogen/mocs_compilation.cpp.o
+[8/13] Building CXX object CMakeFiles/test_feedback.dir/src/core/audio.cpp.o
+[9/13] Building CXX object CMakeFiles/test_feedback.dir/tests/feedback/test_feedback.cpp.o
+[10/13] Linking CXX executable test_feedback

@@ -112,8 +112,6 @@ protected:
     virtual void draw(QPainter *painter);
     virtual QRectF boundingRectFor(const QRectF &sourceRect) const;
 
-private:
-    QImage *grayed;
 };
 
 class FadeEffect : public QAnimatedEffect

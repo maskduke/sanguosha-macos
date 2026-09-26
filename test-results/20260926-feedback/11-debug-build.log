@@ -1,0 +1,92 @@
+[0/2] Re-checking globbed directories...
+[1/50] Automatic MOC for target qs_legacy_protocol
+[2/48] Automatic MOC for target test_paths
+AutoMoc warning
+---------------
+"SRC:/tests/platform/test_paths.cpp"
+includes the moc file "test_paths.moc", but does not contain a Q_OBJECT, Q_GADGET, Q_NAMESPACE, Q_NAMESPACE_EXPORT, Q_GADGET_EXPORT or Q_ENUM_NS macro.
+
+[3/46] Automatic MOC for target test_line_framer
+[4/44] Automatic MOC for target test_original_audio
+[5/42] Automatic MOC for target test_qt_values
+[6/40] Automatic MOC for target test_qt_compat
+[7/38] Automatic MOC for target test_audio_backend
+[8/36] Automatic MOC for target test_legacy_protocol
+[9/34] Automatic MOC for target test_replay
+AutoMoc warning
+---------------
+"SRC:/tests/replay/test_replay.cpp"
+includes the moc file "test_replay.moc", but does not contain a Q_OBJECT, Q_GADGET, Q_NAMESPACE, Q_NAMESPACE_EXPORT, Q_GADGET_EXPORT or Q_ENUM_NS macro.
+
+[10/32] Automatic MOC and UIC for target qs_legacy_objects
+[11/32] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/ui/sprite.cpp.o
+[12/32] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/dialog/distanceviewdialog.cpp.o
+In file included from /Users/haoranliu/Projects/sanguosha/src/dialog/distanceviewdialog.cpp:6:
+In file included from /Users/haoranliu/Projects/sanguosha/src/ui/roomscene.h:4:
+In file included from /Users/haoranliu/Projects/sanguosha/src/ui/photo.h:8:
+/Users/haoranliu/Projects/sanguosha/src/ui/TimedProgressBar.h:11:77: warning: implicit conversion of NULL constant to 'int' [-Wnull-conversion]
+   11 |     inline TimedProgressBar():m_hasTimer(false), m_autoHide(false), m_timer(NULL), m_step(0), m_max(0), m_val(0)
+      |                                                                            ~^~~~
+      |                                                                             0
+1 warning generated.
+[13/32] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/ui/clientlogbox.cpp.o
+In file included from /Users/haoranliu/Projects/sanguosha/src/ui/clientlogbox.cpp:6:
+In file included from /Users/haoranliu/Projects/sanguosha/src/ui/roomscene.h:4:
+In file included from /Users/haoranliu/Projects/sanguosha/src/ui/photo.h:8:
+/Users/haoranliu/Projects/sanguosha/src/ui/TimedProgressBar.h:11:77: warning: implicit conversion of NULL constant to 'int' [-Wnull-conversion]
+   11 |     inline TimedProgressBar():m_hasTimer(false), m_autoHide(false), m_timer(NULL), m_step(0), m_max(0), m_val(0)
+      |                                                                            ~^~~~
+      |                                                                             0
+1 warning generated.
+[14/32] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/ui/dashboard.cpp.o
+In file included from /Users/haoranliu/Projects/sanguosha/src/ui/dashboard.cpp:1:
+In file included from /Users/haoranliu/Projects/sanguosha/src/ui/dashboard.h:10:
+/Users/haoranliu/Projects/sanguosha/src/ui/TimedProgressBar.h:11:77: warning: implicit conversion of NULL constant to 'int' [-Wnull-conversion]
+   11 |     inline TimedProgressBar():m_hasTimer(false), m_autoHide(false), m_timer(NULL), m_step(0), m_max(0), m_val(0)
+      |                                                                            ~^~~~
+      |                                                                             0
+1 warning generated.
+[15/32] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/dialog/roleassigndialog.cpp.o
+In file included from /Users/haoranliu/Projects/sanguosha/src/dialog/roleassigndialog.cpp:11:
+In file included from /Users/haoranliu/Projects/sanguosha/src/ui/roomscene.h:4:
+In file included from /Users/haoranliu/Projects/sanguosha/src/ui/photo.h:8:
+/Users/haoranliu/Projects/sanguosha/src/ui/TimedProgressBar.h:11:77: warning: implicit conversion of NULL constant to 'int' [-Wnull-conversion]
+   11 |     inline TimedProgressBar():m_hasTimer(false), m_autoHide(false), m_timer(NULL), m_step(0), m_max(0), m_val(0)
+      |                                                                            ~^~~~
+      |                                                                             0
+1 warning generated.
+[16/32] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/dialog/mainwindow.cpp.o
+In file included from /Users/haoranliu/Projects/sanguosha/src/dialog/mainwindow.cpp:3:
+In file included from /Users/haoranliu/Projects/sanguosha/src/ui/roomscene.h:4:
+In file included from /Users/haoranliu/Projects/sanguosha/src/ui/photo.h:8:
+/Users/haoranliu/Projects/sanguosha/src/ui/TimedProgressBar.h:11:77: warning: implicit conversion of NULL constant to 'int' [-Wnull-conversion]
+   11 |     inline TimedProgressBar():m_hasTimer(false), m_autoHide(false), m_timer(NULL), m_step(0), m_max(0), m_val(0)
+      |                                                                            ~^~~~
+      |                                                                             0
+1 warning generated.
+[17/32] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/ui/roomscene.cpp.o
+In file included from /Users/haoranliu/Projects/sanguosha/src/ui/roomscene.cpp:1:
+In file included from /Users/haoranliu/Projects/sanguosha/src/ui/roomscene.h:4:
+In file included from /Users/haoranliu/Projects/sanguosha/src/ui/photo.h:8:
+/Users/haoranliu/Projects/sanguosha/src/ui/TimedProgressBar.h:11:77: warning: implicit conversion of NULL constant to 'int' [-Wnull-conversion]
+   11 |     inline TimedProgressBar():m_hasTimer(false), m_autoHide(false), m_timer(NULL), m_step(0), m_max(0), m_val(0)
+      |                                                                            ~^~~~
+      |                                                                             0
+1 warning generated.
+[18/32] Building CXX object CMakeFiles/qs_legacy_objects.dir/qs_legacy_objects_autogen/mocs_compilation.cpp.o
+In file included from /Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug/qs_legacy_objects_autogen/mocs_compilation.cpp:15:
+In file included from /Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug/qs_legacy_objects_autogen/LOXWS6PXLU/moc_choosegeneraldialog.cpp:9:
+In file included from /Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug/qs_legacy_objects_autogen/LOXWS6PXLU/../../../../src/dialog/choosegeneraldialog.h:6:
+/Users/haoranliu/Projects/sanguosha/src/ui/TimedProgressBar.h:11:77: warning: implicit conversion of NULL constant to 'int' [-Wnull-conversion]
+   11 |     inline TimedProgressBar():m_hasTimer(false), m_autoHide(false), m_timer(NULL), m_step(0), m_max(0), m_val(0)
+      |                                                                            ~^~~~
+      |                                                                             0
+1 warning generated.
+[19/32] Automatic MOC for target QSanguosha
+[20/31] Automatic MOC for target test_native_socket
+[21/30] Linking CXX executable test_native_socket
+[22/30] Automatic MOC for target test_feedback
+[23/29] Linking CXX executable QSanguosha.app/Contents/MacOS/QSanguosha
+[24/29] Automatic MOC for target test_lua_runtime
+[25/27] Building CXX object CMakeFiles/test_feedback.dir/tests/feedback/test_feedback.cpp.o
+[26/27] Linking CXX executable test_feedback

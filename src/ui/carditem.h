@@ -49,6 +49,8 @@ public:
     static CardItem *FindItem(const QList<CardItem *> &items, int card_id);
 
 public slots:
+    void setHandZValue(qreal value);
+    void clearHoverRaised();
     void reduceZ();
     void promoteZ();
 
@@ -68,6 +70,8 @@ private:
     QPointF home_pos;
     QGraphicsPixmapItem *frame, *avatar;
     bool auto_back, frozen;
+    bool hover_raised = false;
+    qreal resting_z = 0;
 signals:
     void toggle_discards();
     void clicked();

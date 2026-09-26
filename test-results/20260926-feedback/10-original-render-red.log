@@ -1,0 +1,11 @@
+********* Start testing of FeedbackTest *********
+Config: Using QtTest library 6.11.1, Qt 6.11.1 (arm64-little_endian-lp64 shared (dynamic) release build; by Apple LLVM 21.0.0 (clang-2100.0.123.102)), macos 26.6.2
+PASS   : FeedbackTest::initTestCase()
+PASS   : FeedbackTest::sentbackStaysInsidePhoto(standard)
+FAIL!  : FeedbackTest::sentbackStaysInsidePhoto(retina) Compared values are not the same
+   Actual   (image.pixelColor(80*dpr,100*dpr)): #ff969696
+   Expected (QColor(Qt::white))               : #ffffffff
+   Loc: [/Users/haoranliu/Projects/sanguosha/tests/feedback/test_feedback.cpp(59)]
+PASS   : FeedbackTest::cleanupTestCase()
+Totals: 3 passed, 1 failed, 0 skipped, 0 blacklisted, 24ms
+********* Finished testing of FeedbackTest *********

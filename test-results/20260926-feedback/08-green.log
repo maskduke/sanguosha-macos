@@ -1,0 +1,10 @@
+********* Start testing of FeedbackTest *********
+Config: Using QtTest library 6.11.1, Qt 6.11.1 (arm64-little_endian-lp64 shared (dynamic) release build; by Apple LLVM 21.0.0 (clang-2100.0.123.102)), macos 26.6.2
+PASS   : FeedbackTest::initTestCase()
+PASS   : FeedbackTest::hoveredCardAboveNeighbours()
+PASS   : FeedbackTest::sentbackStaysInsidePhoto(standard)
+PASS   : FeedbackTest::sentbackStaysInsidePhoto(retina)
+PASS   : FeedbackTest::shienWithoutLivingOwner()
+PASS   : FeedbackTest::cleanupTestCase()
+Totals: 6 passed, 0 failed, 0 skipped, 0 blacklisted, 45ms
+********* Finished testing of FeedbackTest *********
