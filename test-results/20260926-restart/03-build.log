@@ -1,0 +1,353 @@
+[0/2] Re-checking globbed directories...
+[1/2] Re-running CMake...
+-- Could NOT find WrapVulkanHeaders (missing: Vulkan_INCLUDE_DIR) 
+-- Configuring done (0.5s)
+-- Generating done (0.2s)
+-- Build files have been written to: /Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug
+[0/4] Re-checking globbed directories...
+[1/27] Automatic MOC for target qs_audio
+[2/25] Automatic MOC for target qs_protocol
+[3/23] Automatic MOC for target qs_paths
+[4/21] Automatic MOC and UIC for target qs_legacy_objects
+[5/21] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/util/nativesocket.cpp.o
+[6/21] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/ui/startscene.cpp.o
+[7/21] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/dialog/packagingeditor.cpp.o
+[8/21] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/dialog/halldialog.cpp.o
+[9/21] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/package/special3v3-package.cpp.o
+/Users/haoranliu/Projects/sanguosha/src/package/special3v3-package.cpp:262:20: warning: 'insertMulti' is deprecated: Use insert() instead [-Wdeprecated-declarations]
+  262 |     related_skills.insertMulti("hongyuan", "#hongyuan");
+      |                    ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qmap.h:1660:5: note: 'insertMulti' has been explicitly marked deprecated here
+ 1660 |     QT_DEPRECATED_VERSION_X_6_0("Use insert() instead")
+      |     ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:143:44: note: expanded from macro 'QT_DEPRECATED_VERSION_X_6_0'
+  143 | # define QT_DEPRECATED_VERSION_X_6_0(text) QT_DEPRECATED_X(text)
+      |                                            ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:31:33: note: expanded from macro 'QT_DEPRECATED_X'
+   31 | #  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+      |                                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qcompilerdetection.h:1018:36: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+ 1018 | #  define Q_DECL_DEPRECATED_X(x) [[deprecated(x)]]
+      |                                    ^
+1 warning generated.
+[10/21] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/dialog/cardeditor.cpp.o
+/Users/haoranliu/Projects/sanguosha/src/dialog/cardeditor.cpp:427:55: warning: field 'name_box' is uninitialized when used here [-Wuninitialized]
+  427 |     :QGraphicsRectItem(0, 0, width, height), name_box(name_box)
+      |                                                       ^
+/Users/haoranliu/Projects/sanguosha/src/dialog/cardeditor.cpp:769:34: warning: 'operator+' is deprecated: Use operator| instead [-Wdeprecated-declarations]
+  769 |     import->setShortcut(Qt::CTRL + Qt::Key_O);
+      |                                  ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qnamespace.h:2016:1: note: 'operator+' has been explicitly marked deprecated here
+ 2016 | QT_DEPRECATED_VERSION_X(6, 0, "Use operator| instead")
+      | ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:279:53: note: expanded from macro 'QT_DEPRECATED_VERSION_X'
+  279 | #define QT_DEPRECATED_VERSION_X(major, minor, text) QT_DEPRECATED_VERSION_X_##major##_##minor(text)
+      |                                                     ^
+<scratch space>:157:1: note: expanded from here
+  157 | QT_DEPRECATED_VERSION_X_6_0
+      | ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:143:44: note: expanded from macro 'QT_DEPRECATED_VERSION_X_6_0'
+  143 | # define QT_DEPRECATED_VERSION_X_6_0(text) QT_DEPRECATED_X(text)
+      |                                            ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:31:33: note: expanded from macro 'QT_DEPRECATED_X'
+   31 | #  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+      |                                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qcompilerdetection.h:1018:36: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+ 1018 | #  define Q_DECL_DEPRECATED_X(x) [[deprecated(x)]]
+      |                                    ^
+/Users/haoranliu/Projects/sanguosha/src/dialog/cardeditor.cpp:771:32: warning: 'operator+' is deprecated: Use operator| instead [-Wdeprecated-declarations]
+  771 |     save->setShortcut(Qt::CTRL + Qt::Key_S);
+      |                                ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qnamespace.h:2016:1: note: 'operator+' has been explicitly marked deprecated here
+ 2016 | QT_DEPRECATED_VERSION_X(6, 0, "Use operator| instead")
+      | ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:279:53: note: expanded from macro 'QT_DEPRECATED_VERSION_X'
+  279 | #define QT_DEPRECATED_VERSION_X(major, minor, text) QT_DEPRECATED_VERSION_X_##major##_##minor(text)
+      |                                                     ^
+<scratch space>:157:1: note: expanded from here
+  157 | QT_DEPRECATED_VERSION_X_6_0
+      | ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:143:44: note: expanded from macro 'QT_DEPRECATED_VERSION_X_6_0'
+  143 | # define QT_DEPRECATED_VERSION_X_6_0(text) QT_DEPRECATED_X(text)
+      |                                            ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:31:33: note: expanded from macro 'QT_DEPRECATED_X'
+   31 | #  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+      |                                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qcompilerdetection.h:1018:36: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+ 1018 | #  define Q_DECL_DEPRECATED_X(x) [[deprecated(x)]]
+      |                                    ^
+/Users/haoranliu/Projects/sanguosha/src/dialog/cardeditor.cpp:773:32: warning: 'operator+' is deprecated: Use operator| instead [-Wdeprecated-declarations]
+  773 |     exit->setShortcut(Qt::CTRL + Qt::Key_Q);
+      |                                ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qnamespace.h:2016:1: note: 'operator+' has been explicitly marked deprecated here
+ 2016 | QT_DEPRECATED_VERSION_X(6, 0, "Use operator| instead")
+      | ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:279:53: note: expanded from macro 'QT_DEPRECATED_VERSION_X'
+  279 | #define QT_DEPRECATED_VERSION_X(major, minor, text) QT_DEPRECATED_VERSION_X_##major##_##minor(text)
+      |                                                     ^
+<scratch space>:157:1: note: expanded from here
+  157 | QT_DEPRECATED_VERSION_X_6_0
+      | ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:143:44: note: expanded from macro 'QT_DEPRECATED_VERSION_X_6_0'
+  143 | # define QT_DEPRECATED_VERSION_X_6_0(text) QT_DEPRECATED_X(text)
+      |                                            ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:31:33: note: expanded from macro 'QT_DEPRECATED_X'
+   31 | #  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+      |                                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qcompilerdetection.h:1018:36: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+ 1018 | #  define Q_DECL_DEPRECATED_X(x) [[deprecated(x)]]
+      |                                    ^
+/Users/haoranliu/Projects/sanguosha/src/dialog/cardeditor.cpp:788:36: warning: 'operator+' is deprecated: Use operator| instead [-Wdeprecated-declarations]
+  788 |     add_skill->setShortcut(Qt::ALT + Qt::Key_S);
+      |                                    ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qnamespace.h:2016:1: note: 'operator+' has been explicitly marked deprecated here
+ 2016 | QT_DEPRECATED_VERSION_X(6, 0, "Use operator| instead")
+      | ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:279:53: note: expanded from macro 'QT_DEPRECATED_VERSION_X'
+  279 | #define QT_DEPRECATED_VERSION_X(major, minor, text) QT_DEPRECATED_VERSION_X_##major##_##minor(text)
+      |                                                     ^
+<scratch space>:157:1: note: expanded from here
+  157 | QT_DEPRECATED_VERSION_X_6_0
+      | ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:143:44: note: expanded from macro 'QT_DEPRECATED_VERSION_X_6_0'
+  143 | # define QT_DEPRECATED_VERSION_X_6_0(text) QT_DEPRECATED_X(text)
+      |                                            ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:31:33: note: expanded from macro 'QT_DEPRECATED_X'
+   31 | #  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+      |                                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qcompilerdetection.h:1018:36: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+ 1018 | #  define Q_DECL_DEPRECATED_X(x) [[deprecated(x)]]
+      |                                    ^
+/Users/haoranliu/Projects/sanguosha/src/dialog/cardeditor.cpp:793:39: warning: 'operator+' is deprecated: Use operator| instead [-Wdeprecated-declarations]
+  793 |     remove_skill->setShortcut(Qt::ALT + Qt::Key_D);
+      |                                       ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qnamespace.h:2016:1: note: 'operator+' has been explicitly marked deprecated here
+ 2016 | QT_DEPRECATED_VERSION_X(6, 0, "Use operator| instead")
+      | ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:279:53: note: expanded from macro 'QT_DEPRECATED_VERSION_X'
+  279 | #define QT_DEPRECATED_VERSION_X(major, minor, text) QT_DEPRECATED_VERSION_X_##major##_##minor(text)
+      |                                                     ^
+<scratch space>:157:1: note: expanded from here
+  157 | QT_DEPRECATED_VERSION_X_6_0
+      | ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:143:44: note: expanded from macro 'QT_DEPRECATED_VERSION_X_6_0'
+  143 | # define QT_DEPRECATED_VERSION_X_6_0(text) QT_DEPRECATED_X(text)
+      |                                            ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:31:33: note: expanded from macro 'QT_DEPRECATED_X'
+   31 | #  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+      |                                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qcompilerdetection.h:1018:36: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+ 1018 | #  define Q_DECL_DEPRECATED_X(x) [[deprecated(x)]]
+      |                                    ^
+/Users/haoranliu/Projects/sanguosha/src/dialog/cardeditor.cpp:798:37: warning: 'operator+' is deprecated: Use operator| instead [-Wdeprecated-declarations]
+  798 |     edit_skill->setShortcut(Qt::ALT + Qt::Key_E);
+      |                                     ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qnamespace.h:2016:1: note: 'operator+' has been explicitly marked deprecated here
+ 2016 | QT_DEPRECATED_VERSION_X(6, 0, "Use operator| instead")
+      | ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:279:53: note: expanded from macro 'QT_DEPRECATED_VERSION_X'
+  279 | #define QT_DEPRECATED_VERSION_X(major, minor, text) QT_DEPRECATED_VERSION_X_##major##_##minor(text)
+      |                                                     ^
+<scratch space>:157:1: note: expanded from here
+  157 | QT_DEPRECATED_VERSION_X_6_0
+      | ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:143:44: note: expanded from macro 'QT_DEPRECATED_VERSION_X_6_0'
+  143 | # define QT_DEPRECATED_VERSION_X_6_0(text) QT_DEPRECATED_X(text)
+      |                                            ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:31:33: note: expanded from macro 'QT_DEPRECATED_X'
+   31 | #  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+      |                                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qcompilerdetection.h:1018:36: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+ 1018 | #  define Q_DECL_DEPRECATED_X(x) [[deprecated(x)]]
+      |                                    ^
+/Users/haoranliu/Projects/sanguosha/src/dialog/cardeditor.cpp:805:37: warning: 'operator+' is deprecated: Use operator| instead [-Wdeprecated-declarations]
+  805 |     making_big->setShortcut(Qt::ALT + Qt::Key_B);
+      |                                     ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qnamespace.h:2016:1: note: 'operator+' has been explicitly marked deprecated here
+ 2016 | QT_DEPRECATED_VERSION_X(6, 0, "Use operator| instead")
+      | ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:279:53: note: expanded from macro 'QT_DEPRECATED_VERSION_X'
+  279 | #define QT_DEPRECATED_VERSION_X(major, minor, text) QT_DEPRECATED_VERSION_X_##major##_##minor(text)
+      |                                                     ^
+<scratch space>:157:1: note: expanded from here
+  157 | QT_DEPRECATED_VERSION_X_6_0
+      | ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:143:44: note: expanded from macro 'QT_DEPRECATED_VERSION_X_6_0'
+  143 | # define QT_DEPRECATED_VERSION_X_6_0(text) QT_DEPRECATED_X(text)
+      |                                            ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:31:33: note: expanded from macro 'QT_DEPRECATED_X'
+   31 | #  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+      |                                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qcompilerdetection.h:1018:36: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+ 1018 | #  define Q_DECL_DEPRECATED_X(x) [[deprecated(x)]]
+      |                                    ^
+/Users/haoranliu/Projects/sanguosha/src/dialog/cardeditor.cpp:810:39: warning: 'operator+' is deprecated: Use operator| instead [-Wdeprecated-declarations]
+  810 |     making_small->setShortcut(Qt::ALT + Qt::Key_M);
+      |                                       ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qnamespace.h:2016:1: note: 'operator+' has been explicitly marked deprecated here
+ 2016 | QT_DEPRECATED_VERSION_X(6, 0, "Use operator| instead")
+      | ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:279:53: note: expanded from macro 'QT_DEPRECATED_VERSION_X'
+  279 | #define QT_DEPRECATED_VERSION_X(major, minor, text) QT_DEPRECATED_VERSION_X_##major##_##minor(text)
+      |                                                     ^
+<scratch space>:157:1: note: expanded from here
+  157 | QT_DEPRECATED_VERSION_X_6_0
+      | ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:143:44: note: expanded from macro 'QT_DEPRECATED_VERSION_X_6_0'
+  143 | # define QT_DEPRECATED_VERSION_X_6_0(text) QT_DEPRECATED_X(text)
+      |                                            ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:31:33: note: expanded from macro 'QT_DEPRECATED_X'
+   31 | #  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+      |                                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qcompilerdetection.h:1018:36: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+ 1018 | #  define Q_DECL_DEPRECATED_X(x) [[deprecated(x)]]
+      |                                    ^
+/Users/haoranliu/Projects/sanguosha/src/dialog/cardeditor.cpp:815:38: warning: 'operator+' is deprecated: Use operator| instead [-Wdeprecated-declarations]
+  815 |     making_tiny->setShortcut(Qt::ALT + Qt::Key_T);
+      |                                      ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qnamespace.h:2016:1: note: 'operator+' has been explicitly marked deprecated here
+ 2016 | QT_DEPRECATED_VERSION_X(6, 0, "Use operator| instead")
+      | ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:279:53: note: expanded from macro 'QT_DEPRECATED_VERSION_X'
+  279 | #define QT_DEPRECATED_VERSION_X(major, minor, text) QT_DEPRECATED_VERSION_X_##major##_##minor(text)
+      |                                                     ^
+<scratch space>:157:1: note: expanded from here
+  157 | QT_DEPRECATED_VERSION_X_6_0
+      | ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:143:44: note: expanded from macro 'QT_DEPRECATED_VERSION_X_6_0'
+  143 | # define QT_DEPRECATED_VERSION_X_6_0(text) QT_DEPRECATED_X(text)
+      |                                            ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:31:33: note: expanded from macro 'QT_DEPRECATED_X'
+   31 | #  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+      |                                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qcompilerdetection.h:1018:36: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+ 1018 | #  define Q_DECL_DEPRECATED_X(x) [[deprecated(x)]]
+      |                                    ^
+/Users/haoranliu/Projects/sanguosha/src/dialog/cardeditor.cpp:820:38: warning: 'operator+' is deprecated: Use operator| instead [-Wdeprecated-declarations]
+  820 |     hiding_rect->setShortcut(Qt::ALT + Qt::Key_H);
+      |                                      ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qnamespace.h:2016:1: note: 'operator+' has been explicitly marked deprecated here
+ 2016 | QT_DEPRECATED_VERSION_X(6, 0, "Use operator| instead")
+      | ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:279:53: note: expanded from macro 'QT_DEPRECATED_VERSION_X'
+  279 | #define QT_DEPRECATED_VERSION_X(major, minor, text) QT_DEPRECATED_VERSION_X_##major##_##minor(text)
+      |                                                     ^
+<scratch space>:157:1: note: expanded from here
+  157 | QT_DEPRECATED_VERSION_X_6_0
+      | ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:143:44: note: expanded from macro 'QT_DEPRECATED_VERSION_X_6_0'
+  143 | # define QT_DEPRECATED_VERSION_X_6_0(text) QT_DEPRECATED_X(text)
+      |                                            ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:31:33: note: expanded from macro 'QT_DEPRECATED_X'
+   31 | #  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+      |                                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qcompilerdetection.h:1018:36: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+ 1018 | #  define Q_DECL_DEPRECATED_X(x) [[deprecated(x)]]
+      |                                    ^
+/Users/haoranliu/Projects/sanguosha/src/dialog/cardeditor.cpp:827:38: warning: 'operator+' is deprecated: Use operator| instead [-Wdeprecated-declarations]
+  827 |     reset_photo->setShortcut(Qt::ALT + Qt::Key_R);
+      |                                      ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qnamespace.h:2016:1: note: 'operator+' has been explicitly marked deprecated here
+ 2016 | QT_DEPRECATED_VERSION_X(6, 0, "Use operator| instead")
+      | ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:279:53: note: expanded from macro 'QT_DEPRECATED_VERSION_X'
+  279 | #define QT_DEPRECATED_VERSION_X(major, minor, text) QT_DEPRECATED_VERSION_X_##major##_##minor(text)
+      |                                                     ^
+<scratch space>:157:1: note: expanded from here
+  157 | QT_DEPRECATED_VERSION_X_6_0
+      | ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:143:44: note: expanded from macro 'QT_DEPRECATED_VERSION_X_6_0'
+  143 | # define QT_DEPRECATED_VERSION_X_6_0(text) QT_DEPRECATED_X(text)
+      |                                            ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:31:33: note: expanded from macro 'QT_DEPRECATED_X'
+   31 | #  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+      |                                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qcompilerdetection.h:1018:36: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+ 1018 | #  define Q_DECL_DEPRECATED_X(x) [[deprecated(x)]]
+      |                                    ^
+/Users/haoranliu/Projects/sanguosha/src/dialog/cardeditor.cpp:832:38: warning: 'operator+' is deprecated: Use operator| instead [-Wdeprecated-declarations]
+  832 |     copy_photo->setShortcut(Qt::CTRL + Qt::Key_C);
+      |                                      ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qnamespace.h:2016:1: note: 'operator+' has been explicitly marked deprecated here
+ 2016 | QT_DEPRECATED_VERSION_X(6, 0, "Use operator| instead")
+      | ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:279:53: note: expanded from macro 'QT_DEPRECATED_VERSION_X'
+  279 | #define QT_DEPRECATED_VERSION_X(major, minor, text) QT_DEPRECATED_VERSION_X_##major##_##minor(text)
+      |                                                     ^
+<scratch space>:157:1: note: expanded from here
+  157 | QT_DEPRECATED_VERSION_X_6_0
+      | ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:143:44: note: expanded from macro 'QT_DEPRECATED_VERSION_X_6_0'
+  143 | # define QT_DEPRECATED_VERSION_X_6_0(text) QT_DEPRECATED_X(text)
+      |                                            ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:31:33: note: expanded from macro 'QT_DEPRECATED_X'
+   31 | #  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+      |                                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qcompilerdetection.h:1018:36: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+ 1018 | #  define Q_DECL_DEPRECATED_X(x) [[deprecated(x)]]
+      |                                    ^
+13 warnings generated.
+[11/21] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/server/server.cpp.o
+In file included from /Users/haoranliu/Projects/sanguosha/src/server/server.cpp:9:
+In file included from /Users/haoranliu/Projects/sanguosha/src/dialog/choosegeneraldialog.h:6:
+/Users/haoranliu/Projects/sanguosha/src/ui/TimedProgressBar.h:11:77: warning: implicit conversion of NULL constant to 'int' [-Wnull-conversion]
+   11 |     inline TimedProgressBar():m_hasTimer(false), m_autoHide(false), m_timer(NULL), m_step(0), m_max(0), m_val(0)
+      |                                                                            ~^~~~
+      |                                                                             0
+/Users/haoranliu/Projects/sanguosha/src/server/server.cpp:369:16: warning: assigning field to itself [-Wself-assign-field]
+  369 |     this->list = list;
+      |                ^
+2 warnings generated.
+[12/21] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/dialog/mainwindow.cpp.o
+In file included from /Users/haoranliu/Projects/sanguosha/src/dialog/mainwindow.cpp:3:
+In file included from /Users/haoranliu/Projects/sanguosha/src/ui/roomscene.h:4:
+In file included from /Users/haoranliu/Projects/sanguosha/src/ui/photo.h:8:
+/Users/haoranliu/Projects/sanguosha/src/ui/TimedProgressBar.h:11:77: warning: implicit conversion of NULL constant to 'int' [-Wnull-conversion]
+   11 |     inline TimedProgressBar():m_hasTimer(false), m_autoHide(false), m_timer(NULL), m_step(0), m_max(0), m_val(0)
+      |                                                                            ~^~~~
+      |                                                                             0
+1 warning generated.
+[13/21] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/server/room.cpp.o
+/Users/haoranliu/Projects/sanguosha/src/server/room.cpp:728:17: warning: 'type' is deprecated: Use typeId() or metaType(). [-Wdeprecated-declarations]
+  728 |         if(data.type() == QVariant::String)
+      |                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qvariant.h:601:5: note: 'type' has been explicitly marked deprecated here
+  601 |     QT_DEPRECATED_VERSION_X_6_0("Use typeId() or metaType().")
+      |     ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:143:44: note: expanded from macro 'QT_DEPRECATED_VERSION_X_6_0'
+  143 | # define QT_DEPRECATED_VERSION_X_6_0(text) QT_DEPRECATED_X(text)
+      |                                            ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:31:33: note: expanded from macro 'QT_DEPRECATED_X'
+   31 | #  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+      |                                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qcompilerdetection.h:1018:36: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+ 1018 | #  define Q_DECL_DEPRECATED_X(x) [[deprecated(x)]]
+      |                                    ^
+/Users/haoranliu/Projects/sanguosha/src/server/room.cpp:728:37: warning: 'String' is deprecated: Use QMetaType::Type instead. [-Wdeprecated-declarations]
+  728 |         if(data.type() == QVariant::String)
+      |                                     ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qvariant.h:149:10: note: 'Type' has been explicitly marked deprecated here
+  149 |     enum QT_DEPRECATED_VERSION_X_6_0("Use QMetaType::Type instead.") Type
+      |          ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:143:44: note: expanded from macro 'QT_DEPRECATED_VERSION_X_6_0'
+  143 | # define QT_DEPRECATED_VERSION_X_6_0(text) QT_DEPRECATED_X(text)
+      |                                            ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:31:33: note: expanded from macro 'QT_DEPRECATED_X'
+   31 | #  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+      |                                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qcompilerdetection.h:1018:36: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+ 1018 | #  define Q_DECL_DEPRECATED_X(x) [[deprecated(x)]]
+      |                                    ^
+2 warnings generated.
+[14/21] Building CXX object CMakeFiles/qs_legacy_objects.dir/qs_legacy_objects_autogen/mocs_compilation.cpp.o
+In file included from /Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug/qs_legacy_objects_autogen/mocs_compilation.cpp:15:
+In file included from /Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug/qs_legacy_objects_autogen/LOXWS6PXLU/moc_choosegeneraldialog.cpp:9:
+In file included from /Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug/qs_legacy_objects_autogen/LOXWS6PXLU/../../../../src/dialog/choosegeneraldialog.h:6:
+/Users/haoranliu/Projects/sanguosha/src/ui/TimedProgressBar.h:11:77: warning: implicit conversion of NULL constant to 'int' [-Wnull-conversion]
+   11 |     inline TimedProgressBar():m_hasTimer(false), m_autoHide(false), m_timer(NULL), m_step(0), m_max(0), m_val(0)
+      |                                                                            ~^~~~
+      |                                                                             0
+1 warning generated.
+[15/21] Automatic MOC for target test_feedback
+[16/20] Building CXX object CMakeFiles/test_feedback.dir/tests/feedback/test_feedback.cpp.o
+[17/20] Linking CXX executable test_feedback

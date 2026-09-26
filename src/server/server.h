@@ -142,6 +142,7 @@ public:
     explicit Server(QObject *parent);
     ~Server() override;
     static bool shutdownAll();
+    bool shutdown();
 
     void broadcast(const QString &msg);
     bool listen(bool localOnly = false);

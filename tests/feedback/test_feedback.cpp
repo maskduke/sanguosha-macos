@@ -10,6 +10,13 @@
 #include "standard.h"
 #include "carditem.h"
 #include "sprite.h"
+#include "mainwindow.h"
+#include "server.h"
+#include "client.h"
+#include "clientplayer.h"
+#include "roomthread.h"
+#include <QTcpServer>
+#include <QPointer>
 
 class HoverCard : public CardItem {
 public:
@@ -24,6 +31,43 @@ private slots:
         QVERIFY(QDir::setCurrent(QS_ASSET_ROOT));
         Sanguosha = new Engine;
         Config.init();
+    }
+    void returnToMenuReleasesLocalServer_data() {
+        QTest::addColumn<bool>("completeGame");
+        QTest::newRow("return-before-game") << false;
+        QTest::newRow("two-completed-games") << true;
+    }
+    void returnToMenuReleasesLocalServer() {
+        QFETCH(bool, completeGame);
+        Config.GameMode="02p";
+        QTcpServer probe;
+        QVERIFY(probe.listen(QHostAddress::LocalHost,0));
+        const quint16 port=probe.serverPort(); probe.close();
+        Config.ServerPort=port;
+        MainWindow window;
+        for(int game=0;game<2;++game) {
+            QTimer::singleShot(0,&window,[&window] {
+                auto dialog=window.findChild<ServerDialog *>();
+                if(dialog) dialog->accept();
+            });
+            QVERIFY(QMetaObject::invokeMethod(&window,"on_actionPC_Console_Start_triggered",Qt::DirectConnection));
+            QPointer<Server> server=window.findChild<Server *>();
+            QVERIFY(server);
+            QVERIFY(!probe.listen(QHostAddress::LocalHost,port));
+            if(completeGame) {
+                // Exercise real game completion without waiting for human input.
+                delete ClientInstance; ClientInstance=nullptr; Self=nullptr;
+                Config.EnableAI=true; Config.AIDelay=0; Config.FreeChoose=false;
+                Room *room=server->findChildren<Room *>().last();
+                QSignalSpy finished(room,&Room::game_over);
+                room->startTest("zhangliao");
+                QTRY_COMPARE_WITH_TIMEOUT(finished.size(),1,20000);
+                QVERIFY(room->getThread()->wait(5000));
+            }
+            QVERIFY(QMetaObject::invokeMethod(&window,"gotoStartScene",Qt::DirectConnection));
+            QVERIFY2(server.isNull(),"Returning to menu must destroy the local server after stopping rooms");
+            QVERIFY(probe.listen(QHostAddress::LocalHost,port)); probe.close();
+        }
     }
     void hoveredCardAboveNeighbours() {
         QGraphicsScene scene;

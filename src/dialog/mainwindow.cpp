@@ -310,7 +310,19 @@ void MainWindow::enterRoom(){
     gotoScene(room_scene);
 }
 
+bool MainWindow::stopLocalServer(){
+    if(!local_server) return true;
+    if(!local_server->shutdown()) {
+        QMessageBox::warning(this, tr("Warning"), QString::fromUtf8("上一局尚未停止，请稍后重试。"));
+        return false;
+    }
+    delete local_server;
+    local_server = nullptr;
+    return true;
+}
+
 void MainWindow::gotoStartScene(){
+    if(!stopLocalServer()) return;
     StartScene *start_scene = new StartScene;
 
     QList<QAction*> actions;
@@ -346,6 +358,8 @@ void MainWindow::gotoStartScene(){
 
     systray = NULL;
     delete ClientInstance;
+    ClientInstance = nullptr;
+    Self = nullptr;
 }
 
 void MainWindow::startGameInAnotherInstance(){
@@ -610,18 +624,20 @@ void MainWindow::on_actionAcknowledgement_triggered()
 
 void MainWindow::on_actionPC_Console_Start_triggered()
 {
-    ServerDialog *dialog = new ServerDialog(this);
-    dialog->ensureEnableAI();
-    if(!dialog->config())
+    ServerDialog dialog(this);
+    dialog.ensureEnableAI();
+    if(!dialog.config())
+        return;
+    if(!stopLocalServer())
         return;
 
     Server *server = new Server(this);
-    if(! server->listen(true)){
+    if(!server->listen(true)){
+        delete server;
         QMessageBox::warning(this, tr("Warning"), tr("Can not start server!"));
-
         return;
     }
-
+    local_server = server;
     server->createNewRoom();
 
     Config.HostAddress = "127.0.0.1";

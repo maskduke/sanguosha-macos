@@ -1,0 +1,36 @@
+[0/2] Re-checking globbed directories...
+[1/42] Automatic MOC for target QSanguosha
+[2/41] Automatic MOC for target qs_legacy_protocol
+[3/39] Automatic MOC for target test_qt_values
+[4/37] Automatic MOC for target test_audio_backend
+[5/35] Automatic MOC for target test_line_framer
+[6/33] Automatic MOC for target test_original_audio
+[7/31] Automatic MOC for target test_qt_compat
+[8/29] Automatic MOC for target test_paths
+AutoMoc warning
+---------------
+"SRC:/tests/platform/test_paths.cpp"
+includes the moc file "test_paths.moc", but does not contain a Q_OBJECT, Q_GADGET, Q_NAMESPACE, Q_NAMESPACE_EXPORT, Q_GADGET_EXPORT or Q_ENUM_NS macro.
+
+[9/27] Automatic MOC for target test_native_socket
+[10/26] Automatic MOC for target test_legacy_protocol
+[11/24] Automatic MOC for target test_replay
+AutoMoc warning
+---------------
+"SRC:/tests/replay/test_replay.cpp"
+includes the moc file "test_replay.moc", but does not contain a Q_OBJECT, Q_GADGET, Q_NAMESPACE, Q_NAMESPACE_EXPORT, Q_GADGET_EXPORT or Q_ENUM_NS macro.
+
+[12/22] Linking CXX executable test_native_socket
+[13/22] Automatic MOC for target test_feedback
+[14/21] Building CXX object CMakeFiles/QSanguosha.dir/src/main.cpp.o
+/Users/haoranliu/Projects/sanguosha/src/main.cpp:37:5: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   37 |     qt_translator.load("qt_zh_CN.qm");
+      |     ^~~~~~~~~~~~~~~~~~
+/Users/haoranliu/Projects/sanguosha/src/main.cpp:38:5: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   38 |     translator.load("sanguosha.qm");
+      |     ^~~~~~~~~~~~~~~
+2 warnings generated.
+[15/21] Building CXX object CMakeFiles/test_feedback.dir/tests/feedback/test_feedback.cpp.o
+[16/21] Linking CXX executable test_feedback
+[17/21] Linking CXX executable QSanguosha.app/Contents/MacOS/QSanguosha
+[18/21] Automatic MOC for target test_lua_runtime

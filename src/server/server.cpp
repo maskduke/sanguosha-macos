@@ -951,10 +951,14 @@ bool ServerDialog::config(){
 
 static QSet<Server *> liveServers;
 Server::~Server(){ liveServers.remove(this); }
+bool Server::shutdown(){
+    for(Room *room:findChildren<Room *>())
+        if(!room->shutdown()) return false;
+    return true;
+}
 bool Server::shutdownAll(){
     for(Server *server:liveServers)
-        for(Room *room:server->findChildren<Room *>())
-            if(!room->shutdown()) return false;
+        if(!server->shutdown()) return false;
     return true;
 }
 

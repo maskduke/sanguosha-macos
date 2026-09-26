@@ -94,6 +94,8 @@ protected:
     virtual void closeEvent(QCloseEvent *);
 
 private:
+    Server *local_server = nullptr;
+    bool stopLocalServer();
     FitView *view;
     QGraphicsScene *scene;
     Ui::MainWindow *ui;

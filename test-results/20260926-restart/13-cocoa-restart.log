@@ -1,0 +1,56 @@
+********* Start testing of FeedbackTest *********
+Config: Using QtTest library 6.11.1, Qt 6.11.1 (arm64-little_endian-lp64 shared (dynamic) release build; by Apple LLVM 21.0.0 (clang-2100.0.123.102)), macos 26.6.2
+PASS   : FeedbackTest::initTestCase()
+PASS   : FeedbackTest::returnToMenuReleasesLocalServer(return-before-game)
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) zhangliao 80 rebel R30 L30 r30 neutral 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) zhangliao 80 rebel R110 L30 r30 neutral 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) zhangliao 70 rebel R110 L30 r30 neutral 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) zhangliao 70 rebel R180 L30 r30 neutral 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) zhangliao 80 rebel R180 L30 r30 rebel 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) zhangliao 80 rebel R260 L30 r30 rebel 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) zhangliao 80 rebel R260 L30 r30 rebel 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) zhangliao 80 rebel R340 L30 r30 rebel 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) zhangliao 80 rebel R340 L30 r30 rebel 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) zhangliao 80 rebel R420 L30 r30 rebel 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) zhangliao 80 rebel R420 L30 r30 rebel 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) zhangliao 80 rebel R500 L30 r30 rebel 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) zhangliao 0 rebel R30 L30 r30 neutral 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) zhangliao 0 rebel R30 L30 r30 neutral 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) zhangliao 80 rebel R30 L30 r30 neutral 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) zhangliao 80 rebel R110 L30 r30 neutral 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) zhangliao 70 rebel R110 L30 r30 rebel 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) zhangliao 70 rebel R180 L30 r30 rebel 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) zhangliao 120 rebel R180 L30 r30 rebelish 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) zhangliao 120 rebel R300 L30 r30 rebelish 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) zhangliao 80 rebel R300 L30 r30 rebel 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) zhangliao 80 rebel R380 L30 r30 rebel 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) zhangliao 120 rebel R380 L30 r30 rebelish 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) zhangliao 120 rebel R500 L30 r30 rebelish 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) zhangliao 0 rebel R500 L30 r30 rebelish 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) zhangliao 0 rebel R500 L30 r30 rebelish 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) zhangliao 80 rebel R500 L30 r30 rebel 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) zhangliao 80 rebel R580 L30 r30 rebel 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) zhangliao 80 rebel R580 L30 r30 neutral 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) zhangliao 80 rebel R660 L30 r30 neutral 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) zhangliao 70 rebel R660 L30 r30 rebelish 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) zhangliao 70 rebel R730 L30 r30 rebelish 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) zhangliao 80 rebel R730 L30 r30 loyalist 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) zhangliao 80 rebel R810 L30 r30 loyalist 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) zhangliao 70 rebel R810 L30 r30 loyalish 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) zhangliao 70 rebel R880 L30 r30 loyalish 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) zhangliao 80 rebel R880 L30 r30 loyalist 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) zhangliao 80 rebel R960 L30 r30 loyalist 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) zhangliao 70 rebel R960 L30 r30 loyalish 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) zhangliao 70 rebel R1030 L30 r30 loyalish 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) zhangliao 80 rebel R1030 L30 r30 rebel 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) zhangliao 80 rebel R1110 L30 r30 rebel 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) zhangliao 80 rebel R1110 L30 r30 loyalist 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) zhangliao 80 rebel R1190 L30 r30 loyalist 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) zhangliao 70 rebel R1190 L30 r30 loyalist 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) zhangliao 70 rebel R1260 L30 r30 loyalist 010
+PASS   : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games)
+PASS   : FeedbackTest::cleanupTestCase()
+Totals: 4 passed, 0 failed, 0 skipped, 0 blacklisted, 1713ms
+********* Finished testing of FeedbackTest *********

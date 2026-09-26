@@ -2,9 +2,10 @@
 
 本地项目：`/Users/haoranliu/Projects/sanguosha`。目标为 macOS 26 / arm64，保留 20120715 原装内容、单机 AI 及新版之间 LAN／直接 IP 对战。
 
-**已生成 macOS 26 / Apple Silicon 原生试玩版。** 打开 [QSanguosha-Nirvana.app 0.1.1](dist/0.1.1/QSanguosha-Nirvana.app)，或使用同目录的 ZIP。详见 [手动验收说明](MANUAL_ACCEPTANCE.md)。原版资源和规则主体保留，完整正式验收仍在进行。
+**已生成 macOS 26 / Apple Silicon 原生试玩版。** 打开 [QSanguosha-Nirvana.app 0.1.2](dist/0.1.2/QSanguosha-Nirvana.app)，或使用同目录的 ZIP。详见 [手动验收说明](MANUAL_ACCEPTANCE.md)。原版资源和规则主体保留，完整正式验收仍在进行。
 
 - [设计](DESIGN_SPEC.md) · [测试设计](TEST_SPEC.md) · [用户决策](DESIGN_DECISIONS.md)
+- [0.1.2 重复开局修复](docs/validation/20260926-restart-fix.md)
 - [0.1.1 用户反馈修复](docs/validation/20260926-feedback-fixes.md)
 - [首版实施报告](docs/validation/20260926-native-preview.md)
 - [源码与资源来源](docs/baseline/source-provenance.md)
