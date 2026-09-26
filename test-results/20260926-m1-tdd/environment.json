@@ -1,0 +1,32 @@
+{
+  "cmake": "cmake version 4.3.3\n\nCMake suite maintained and supported by Kitware (kitware.com/cmake).",
+  "ninja": "1.13.2",
+  "swig": "SWIG Version 4.4.1\n\nCompiled with clang++ [aarch64-apple-darwin25.2.0]\n\nConfigured options: +pcre\n\nPlease see https://www.swig.org for reporting bugs and further information",
+  "clang": "Apple clang version 21.0.0 (clang-2100.3.34.2)\nTarget: arm64-apple-darwin25.6.0\nThread model: posix\nInstalledDir: /Library/Developer/CommandLineTools/usr/bin",
+  "macos": "ProductName:\t\tmacOS\nProductVersion:\t\t26.6.2\nBuildVersion:\t\t25G83",
+  "architecture": "arm64",
+  "python": "3.9.6",
+  "qtbase": "6.11.1",
+  "qt5compat": "6.11.1",
+  "libvorbis": "1.3.7",
+  "libogg": "1.3.6",
+  "lua": "5.1.4 (historical source)",
+  "status": "observed local dependencies; not the final reproducible dependency lock",
+  "source_baseline_commit": "323f112658b5ea0c081b02e240afb92af7a379c1",
+  "pristine_import_commit": "a456ddd86e30941f2e0a92444d7afaa7218ff142",
+  "imported_src_tree": "7507d501f70dcef8ac17d8a21b531ba05473d54f",
+  "probes": {
+    "test_line_framer": {
+      "sha256": "383974ce6843682fd1fed1e8647708000053bd074054c4677615713099287f36",
+      "file": "build/macos-arm64-debug/test_line_framer: Mach-O 64-bit executable arm64"
+    },
+    "test_lua_runtime": {
+      "sha256": "66d174c225ea8ff435fbbfa8e0c91c5dc2f209f28bd7acd9ff21ef59e375f450",
+      "file": "build/macos-arm64-debug/test_lua_runtime: Mach-O 64-bit executable arm64"
+    },
+    "test_original_audio": {
+      "sha256": "2878eb6ed7eed3e10e13ba631d122125da3b474fa91bab541234e919a5c1d19b",
+      "file": "build/macos-arm64-debug/test_original_audio: Mach-O 64-bit executable arm64"
+    }
+  }
+}

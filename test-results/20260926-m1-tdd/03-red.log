@@ -1,0 +1,58 @@
+Test project /Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug
+    Start 1: protocol.line_framer
+1/2 Test #1: protocol.line_framer .............***Failed    2.99 sec
+********* Start testing of FramingTest *********
+Config: Using QtTest library 6.11.1, Qt 6.11.1 (arm64-little_endian-lp64 shared (dynamic) release build; by Apple LLVM 21.0.0 (clang-2100.0.123.102)), macos 26.6.2
+PASS   : FramingTest::initTestCase()
+FAIL!  : FramingTest::everySplitPreservesBytes() Compared lists have different sizes.
+   Actual   (frames) size: 0
+   Expected (QList<QByteArray>{payload}) size: 1
+   Loc: [/Users/haoranliu/Projects/sanguosha/tests/protocol/test_line_framer.cpp(15)]
+FAIL!  : FramingTest::concatenationAndTail() Compared lists have different sizes.
+   Actual   (parser.feed("first\n\nthird\r\ntail")) size: 0
+   Expected (expected) size: 3
+   Loc: [/Users/haoranliu/Projects/sanguosha/tests/protocol/test_line_framer.cpp(22)]
+FAIL!  : FramingTest::oneByteAtATime() Compared lists have different sizes.
+   Actual   (frames) size: 0
+   Expected (expected) size: 3
+   Loc: [/Users/haoranliu/Projects/sanguosha/tests/protocol/test_line_framer.cpp(33)]
+FAIL!  : FramingTest::limits(L-1) Compared values are not the same
+   Actual   (parser.bufferedBytes()): 0
+   Expected (size)                  : 1048575
+   Loc: [/Users/haoranliu/Projects/sanguosha/tests/protocol/test_line_framer.cpp(45)]
+FAIL!  : FramingTest::limits(L) Compared values are not the same
+   Actual   (parser.bufferedBytes()): 0
+   Expected (size)                  : 1048576
+   Loc: [/Users/haoranliu/Projects/sanguosha/tests/protocol/test_line_framer.cpp(45)]
+FAIL!  : FramingTest::oversized(no-LF) Compared values are not the same
+   Actual   (parser.error())             : 0
+   Expected (LineFramer::Error::TooLarge): 1
+   Loc: [/Users/haoranliu/Projects/sanguosha/tests/protocol/test_line_framer.cpp(60)]
+FAIL!  : FramingTest::oversized(with-LF) Compared values are not the same
+   Actual   (parser.error())             : 0
+   Expected (LineFramer::Error::TooLarge): 1
+   Loc: [/Users/haoranliu/Projects/sanguosha/tests/protocol/test_line_framer.cpp(60)]
+FAIL!  : FramingTest::oversizedAcrossChunks() Compared values are not the same
+   Actual   (parser.error())             : 0
+   Expected (LineFramer::Error::TooLarge): 1
+   Loc: [/Users/haoranliu/Projects/sanguosha/tests/protocol/test_line_framer.cpp(71)]
+FAIL!  : FramingTest::earlierValidFramesSurviveBadTail() Compared lists have different sizes.
+   Actual   (parser.feed("valid\n" + QByteArray(LineFramer::MaxPayload + 1, 'x'))) size: 0
+   Expected (QList<QByteArray>{"valid"}) size: 1
+   Loc: [/Users/haoranliu/Projects/sanguosha/tests/protocol/test_line_framer.cpp(77)]
+FAIL!  : FramingTest::disconnectDoesNotInventFrame() '!parser.finish()' returned FALSE. ()
+   Loc: [/Users/haoranliu/Projects/sanguosha/tests/protocol/test_line_framer.cpp(84)]
+PASS   : FramingTest::cleanupTestCase()
+Totals: 2 passed, 10 failed, 0 skipped, 0 blacklisted, 2ms
+********* Finished testing of FramingTest *********
+
+    Start 2: bindings.lua_runtime
+2/2 Test #2: bindings.lua_runtime .............   Passed    0.46 sec
+
+50% tests passed, 1 tests failed out of 2
+
+Total Test time (real) =   3.45 sec
+
+The following tests FAILED:
+	  1 - protocol.line_framer (Failed)
+Errors while running CTest

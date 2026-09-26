@@ -1,0 +1,5 @@
+[0/2] Re-checking globbed directories...
+[1/6] Automatic MOC for target qs_protocol
+[2/5] Building CXX object CMakeFiles/qs_protocol.dir/src/platform/network/line_framer.cpp.o
+[3/5] Linking CXX static library libqs_protocol.a
+[4/5] Linking CXX executable test_line_framer

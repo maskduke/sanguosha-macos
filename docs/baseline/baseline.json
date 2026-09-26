@@ -19,5 +19,10 @@
     "sanguosha.qm": "compiled translation; use original for initial visual comparison",
     "font/FONT.TTF": "byte-identical to FONT.TTF inside source font/font.7z",
     "**/.DS_Store": "Finder metadata; omitted from new assets"
-  }
+  },
+  "pristine_import_commit": "a456ddd",
+  "imported_src_tree_matches": true,
+  "known_issues": [
+    "LEGACY-AUDIO-001"
+  ]
 }

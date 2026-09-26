@@ -114,3 +114,8 @@
 本地主程序 SHA-256：`94e648da8f805438ff6c42ad761504bf89d80e2a8c6c0c3e9e294e00732cea82`
 
 本地 `lua/config.lua` SHA-256：`6340e9ea286fd025caf8d5926c20ef1d1f6e92d25a3e6741d52728dde789900c`
+
+
+## 实施取证更新（2026-09-26）
+
+后续在历史 fork 找到涅槃版来源，2,372 个同路径资源完全匹配，原样导入的 src tree 与历史 tree 一致。前文候选版本的不确定性属于当时调研状态，现以 [源码来源报告](docs/baseline/source-provenance.md) 为准；完整运行对照仍未完成。当前 TDD 实施进展见 [执行报告](docs/validation/20260926-tdd-progress.md)。

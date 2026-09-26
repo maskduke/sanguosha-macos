@@ -1,0 +1,50 @@
+UpdateCTestConfiguration  from :/Users/haoranliu/Projects/sanguosha/DartConfiguration.tcl
+Test project /Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug
+Constructing a list of tests
+Done constructing a list of tests
+Updating test list for fixtures
+Added 0 tests to meet fixture requirements
+Checking test dependency graph...
+Checking test dependency graph end
+test 1
+    Start 1: protocol.line_framer
+
+1: Test command: /Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug/test_line_framer
+1: Working Directory: /Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug
+1: Test timeout computed to be: 10000000
+1: ********* Start testing of FramingTest *********
+1: Config: Using QtTest library 6.11.1, Qt 6.11.1 (arm64-little_endian-lp64 shared (dynamic) release build; by Apple LLVM 21.0.0 (clang-2100.0.123.102)), macos 26.6.2
+1: PASS   : FramingTest::initTestCase()
+1: PASS   : FramingTest::everySplitPreservesBytes()
+1: PASS   : FramingTest::concatenationAndTail()
+1: PASS   : FramingTest::oneByteAtATime()
+1: PASS   : FramingTest::limits(L-1)
+1: PASS   : FramingTest::limits(L)
+1: PASS   : FramingTest::oversized(no-LF)
+1: PASS   : FramingTest::oversized(with-LF)
+1: PASS   : FramingTest::oversizedAcrossChunks()
+1: PASS   : FramingTest::earlierValidFramesSurviveBadTail()
+1: PASS   : FramingTest::disconnectDoesNotInventFrame()
+1: PASS   : FramingTest::cleanupTestCase()
+1: Totals: 12 passed, 0 failed, 0 skipped, 0 blacklisted, 2ms
+1: ********* Finished testing of FramingTest *********
+1/2 Test #1: protocol.line_framer .............   Passed    0.70 sec
+test 2
+    Start 2: bindings.lua_runtime
+
+2: Test command: /Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug/test_lua_runtime
+2: Working Directory: /Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug
+2: Test timeout computed to be: 10000000
+2: ********* Start testing of LuaRuntimeTest *********
+2: Config: Using QtTest library 6.11.1, Qt 6.11.1 (arm64-little_endian-lp64 shared (dynamic) release build; by Apple LLVM 21.0.0 (clang-2100.0.123.102)), macos 26.6.2
+2: PASS   : LuaRuntimeTest::initTestCase()
+2: PASS   : LuaRuntimeTest::historicalRuntimeAndConfiguration()
+2: PASS   : LuaRuntimeTest::errorAndGarbageCollection()
+2: PASS   : LuaRuntimeTest::cleanupTestCase()
+2: Totals: 4 passed, 0 failed, 0 skipped, 0 blacklisted, 4ms
+2: ********* Finished testing of LuaRuntimeTest *********
+2/2 Test #2: bindings.lua_runtime .............   Passed    0.03 sec
+
+100% tests passed, 0 tests failed out of 2
+
+Total Test time (real) =   0.73 sec

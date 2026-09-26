@@ -1,0 +1,13 @@
+[0/2] Re-checking globbed directories...
+[1/2] Re-running CMake...
+-- Configuring done (0.4s)
+-- Generating done (0.0s)
+-- Build files have been written to: /Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug
+[0/4] Re-checking globbed directories...
+[1/16] Automatic MOC for target qs_protocol
+[2/14] Automatic MOC for target test_lua_runtime
+[3/12] Automatic MOC for target test_line_framer
+[4/10] Automatic MOC for target test_original_audio
+[5/10] Building CXX object CMakeFiles/test_original_audio.dir/test_original_audio_autogen/mocs_compilation.cpp.o
+[6/10] Building CXX object CMakeFiles/test_original_audio.dir/tests/assets/test_original_audio.cpp.o
+[7/10] Linking CXX executable test_original_audio

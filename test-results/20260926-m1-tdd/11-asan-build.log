@@ -1,0 +1,122 @@
+[0/2] Re-checking globbed directories...
+[1/48] Building C object CMakeFiles/qs_lua.dir/src/lua/ldblib.c.o
+[2/48] Building C object CMakeFiles/qs_lua.dir/src/lua/ldump.c.o
+[3/48] Building C object CMakeFiles/qs_lua.dir/src/lua/linit.c.o
+[4/48] Building C object CMakeFiles/qs_lua.dir/src/lua/lbaselib.c.o
+[5/48] Building C object CMakeFiles/qs_lua.dir/src/lua/ldo.c.o
+[6/48] Building C object CMakeFiles/qs_lua.dir/src/lua/lapi.c.o
+[7/48] Building C object CMakeFiles/qs_lua.dir/src/lua/lauxlib.c.o
+/Users/haoranliu/Projects/sanguosha/src/lua/lauxlib.c:577:61: warning: while loop has empty body [-Wempty-body]
+  577 |    while ((c = getc(lf.f)) != EOF && c != LUA_SIGNATURE[0]) ;
+      |                                                             ^
+/Users/haoranliu/Projects/sanguosha/src/lua/lauxlib.c:577:61: note: put the semicolon on a separate line to silence this warning
+1 warning generated.
+[8/48] Building C object CMakeFiles/qs_lua.dir/src/lua/lfunc.c.o
+[9/48] Automatic MOC for target qs_protocol
+[10/48] Building C object CMakeFiles/qs_lua.dir/src/lua/lgc.c.o
+[11/48] Building C object CMakeFiles/qs_lua.dir/src/lua/ldebug.c.o
+[12/48] Building C object CMakeFiles/qs_lua.dir/src/lua/lcode.c.o
+[13/48] Building C object CMakeFiles/qs_lua.dir/src/lua/lmem.c.o
+[14/48] Building C object CMakeFiles/qs_lua.dir/src/lua/lopcodes.c.o
+[15/48] Building C object CMakeFiles/qs_lua.dir/src/lua/lmathlib.c.o
+[16/48] Building C object CMakeFiles/qs_lua.dir/src/lua/liolib.c.o
+[17/48] Building C object CMakeFiles/qs_lua.dir/src/lua/lobject.c.o
+/Users/haoranliu/Projects/sanguosha/src/lua/lobject.c:145:9: warning: 'sprintf' is deprecated: This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead. [-Wdeprecated-declarations]
+  145 |         sprintf(buff, "%p", va_arg(argp, void *));
+      |         ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h:278:1: note: 'sprintf' has been explicitly marked deprecated here
+  278 | __deprecated_msg("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead.")
+      | ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h:227:48: note: expanded from macro '__deprecated_msg'
+  227 |         #define __deprecated_msg(_msg) __attribute__((__deprecated__(_msg)))
+      |                                                       ^
+1 warning generated.
+[18/48] Building C object CMakeFiles/qs_lua.dir/src/lua/loslib.c.o
+[19/48] Building C object CMakeFiles/qs_lua.dir/src/lua/lstate.c.o
+[20/48] Building C object CMakeFiles/qs_lua.dir/src/lua/lstring.c.o
+[21/48] Building C object CMakeFiles/qs_lua.dir/src/lua/llex.c.o
+[22/48] Building C object CMakeFiles/qs_lua.dir/src/lua/loadlib.c.o
+[23/48] Building C object CMakeFiles/qs_lua.dir/src/lua/lparser.c.o
+[24/48] Building C object CMakeFiles/qs_lua.dir/src/lua/ltablib.c.o
+[25/48] Building C object CMakeFiles/qs_lua.dir/src/lua/ltm.c.o
+[26/48] Building C object CMakeFiles/qs_lua.dir/src/lua/lstrlib.c.o
+/Users/haoranliu/Projects/sanguosha/src/lua/lstrlib.c:775:11: warning: 'sprintf' is deprecated: This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead. [-Wdeprecated-declarations]
+  775 |           sprintf(buff, form, (int)luaL_checknumber(L, arg));
+      |           ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h:278:1: note: 'sprintf' has been explicitly marked deprecated here
+  278 | __deprecated_msg("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead.")
+      | ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h:227:48: note: expanded from macro '__deprecated_msg'
+  227 |         #define __deprecated_msg(_msg) __attribute__((__deprecated__(_msg)))
+      |                                                       ^
+/Users/haoranliu/Projects/sanguosha/src/lua/lstrlib.c:780:11: warning: 'sprintf' is deprecated: This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead. [-Wdeprecated-declarations]
+  780 |           sprintf(buff, form, (LUA_INTFRM_T)luaL_checknumber(L, arg));
+      |           ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h:278:1: note: 'sprintf' has been explicitly marked deprecated here
+  278 | __deprecated_msg("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead.")
+      | ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h:227:48: note: expanded from macro '__deprecated_msg'
+  227 |         #define __deprecated_msg(_msg) __attribute__((__deprecated__(_msg)))
+      |                                                       ^
+/Users/haoranliu/Projects/sanguosha/src/lua/lstrlib.c:785:11: warning: 'sprintf' is deprecated: This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead. [-Wdeprecated-declarations]
+  785 |           sprintf(buff, form, (unsigned LUA_INTFRM_T)luaL_checknumber(L, arg));
+      |           ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h:278:1: note: 'sprintf' has been explicitly marked deprecated here
+  278 | __deprecated_msg("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead.")
+      | ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h:227:48: note: expanded from macro '__deprecated_msg'
+  227 |         #define __deprecated_msg(_msg) __attribute__((__deprecated__(_msg)))
+      |                                                       ^
+/Users/haoranliu/Projects/sanguosha/src/lua/lstrlib.c:790:11: warning: 'sprintf' is deprecated: This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead. [-Wdeprecated-declarations]
+  790 |           sprintf(buff, form, (double)luaL_checknumber(L, arg));
+      |           ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h:278:1: note: 'sprintf' has been explicitly marked deprecated here
+  278 | __deprecated_msg("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead.")
+      | ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h:227:48: note: expanded from macro '__deprecated_msg'
+  227 |         #define __deprecated_msg(_msg) __attribute__((__deprecated__(_msg)))
+      |                                                       ^
+/Users/haoranliu/Projects/sanguosha/src/lua/lstrlib.c:808:13: warning: 'sprintf' is deprecated: This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead. [-Wdeprecated-declarations]
+  808 |             sprintf(buff, form, s);
+      |             ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h:278:1: note: 'sprintf' has been explicitly marked deprecated here
+  278 | __deprecated_msg("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead.")
+      | ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h:227:48: note: expanded from macro '__deprecated_msg'
+  227 |         #define __deprecated_msg(_msg) __attribute__((__deprecated__(_msg)))
+      |                                                       ^
+5 warnings generated.
+[27/48] Building CXX object CMakeFiles/qs_protocol.dir/qs_protocol_autogen/mocs_compilation.cpp.o
+[28/48] Building C object CMakeFiles/qs_lua.dir/src/lua/lzio.c.o
+[29/48] Building C object CMakeFiles/qs_lua.dir/src/lua/ltable.c.o
+[30/48] Building C object CMakeFiles/qs_lua.dir/src/lua/lundump.c.o
+[31/48] Building C object CMakeFiles/qs_lua.dir/src/lua/print.c.o
+[32/48] Building C object CMakeFiles/qs_lua.dir/src/lua/lvm.c.o
+/Users/haoranliu/Projects/sanguosha/src/lua/lvm.c:53:5: warning: 'sprintf' is deprecated: This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead. [-Wdeprecated-declarations]
+   53 |     lua_number2str(s, n);
+      |     ^
+/Users/haoranliu/Projects/sanguosha/src/lua/luaconf.h:523:29: note: expanded from macro 'lua_number2str'
+  523 | #define lua_number2str(s,n)     sprintf((s), LUA_NUMBER_FMT, (n))
+      |                                 ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h:278:1: note: 'sprintf' has been explicitly marked deprecated here
+  278 | __deprecated_msg("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead.")
+      | ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h:227:48: note: expanded from macro '__deprecated_msg'
+  227 |         #define __deprecated_msg(_msg) __attribute__((__deprecated__(_msg)))
+      |                                                       ^
+1 warning generated.
+[33/48] Linking C static library libqs_lua.a
+[34/48] Automatic MOC for target test_original_audio
+[35/48] Building CXX object CMakeFiles/test_original_audio.dir/test_original_audio_autogen/mocs_compilation.cpp.o
+[36/48] Automatic MOC for target test_lua_runtime
+[37/48] Building CXX object CMakeFiles/test_lua_runtime.dir/test_lua_runtime_autogen/mocs_compilation.cpp.o
+[38/48] Building CXX object CMakeFiles/qs_protocol.dir/src/platform/network/line_framer.cpp.o
+[39/48] Linking CXX static library libqs_protocol.a
+[40/48] Automatic MOC for target test_line_framer
+[41/48] Building CXX object CMakeFiles/test_line_framer.dir/test_line_framer_autogen/mocs_compilation.cpp.o
+[42/48] Building CXX object CMakeFiles/test_original_audio.dir/tests/assets/test_original_audio.cpp.o
+[43/48] Building CXX object CMakeFiles/test_lua_runtime.dir/tests/bindings/test_lua_runtime.cpp.o
+[44/48] Linking CXX executable test_original_audio
+[45/48] Linking CXX executable test_lua_runtime
+[46/48] Building CXX object CMakeFiles/test_line_framer.dir/tests/protocol/test_line_framer.cpp.o
+[47/48] Linking CXX executable test_line_framer
