@@ -1,0 +1,9 @@
+********* Start testing of AIDecisionTest *********
+Config: Using QtTest library 6.11.1, Qt 6.11.1 (arm64-little_endian-lp64 shared (dynamic) release build; by Apple LLVM 21.0.0 (clang-2100.0.123.102)), macos 26.6.2
+PASS   : AIDecisionTest::initTestCase()
+PASS   : AIDecisionTest::enyuanBatchSources()
+QWARN  : AIDecisionTest::enyuanRealLuaBinding() QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+PASS   : AIDecisionTest::enyuanRealLuaBinding()
+PASS   : AIDecisionTest::cleanupTestCase()
+Totals: 4 passed, 0 failed, 0 skipped, 0 blacklisted, 1165ms
+********* Finished testing of AIDecisionTest *********

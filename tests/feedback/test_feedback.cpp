@@ -17,6 +17,10 @@
 #include "roomthread.h"
 #include <QTcpServer>
 #include <QPointer>
+#include <QTextEdit>
+#include <QScopeGuard>
+#include "generaloverview.h"
+#include "general.h"
 
 class HoverCard : public CardItem {
 public:
@@ -31,6 +35,33 @@ private slots:
         QVERIFY(QDir::setCurrent(QS_ASSET_ROOT));
         Sanguosha = new Engine;
         Config.init();
+    }
+    void skillDescriptionFollowsPalette() {
+        const auto oldPalette=qApp->palette();const auto oldStyle=qApp->styleSheet();
+        auto restore=qScopeGuard([&]{qApp->setStyleSheet(oldStyle);qApp->setPalette(oldPalette);});
+        QFile file("sanguosha.qss");QVERIFY(file.open(QIODevice::ReadOnly));qApp->setStyleSheet(QString::fromUtf8(file.readAll()));
+        GeneralOverview dialog;auto edit=dialog.findChild<QTextEdit *>("skillTextEdit");QVERIFY(edit);
+        dialog.show();
+        for(bool dark:{true,false,true}) {
+            QPalette palette=oldPalette;QColor base=dark?QColor(30,30,30):QColor(250,250,250);QColor text=dark?QColor(235,235,235):QColor(20,20,20);
+            palette.setColor(QPalette::Base,base);palette.setColor(QPalette::Text,text);
+            edit->clear();
+            qApp->setPalette(palette);QCoreApplication::processEvents();
+            const QImage image=edit->viewport()->grab().toImage();
+            QCOMPARE(image.pixelColor(image.width()/2,image.height()/2),base);
+            QCOMPARE(edit->palette().color(QPalette::Text),text);
+            edit->setHtml(Sanguosha->getGeneral("fazheng")->getSkillDescription());
+            QCoreApplication::processEvents();
+            const QImage rendered=edit->viewport()->grab().toImage();
+            int ink=0;for(int y=0;y<rendered.height();++y)for(int x=0;x<rendered.width();++x) {
+                const QColor c=rendered.pixelColor(x,y);
+                if(dark ? c.lightness()>150 : c.lightness()<100) ++ink;
+            }
+            QVERIFY2(ink>40,"Unselected skill text must be visible against the background");
+            const QString output=qEnvironmentVariable("QS_THEME_CAPTURE_DIR");
+            if(!output.isEmpty()) QVERIFY(rendered.save(output+(dark?"/skills-dark.png":"/skills-light.png")));
+
+        }
     }
     void returnToMenuReleasesLocalServer_data() {
         QTest::addColumn<bool>("completeGame");

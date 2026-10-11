@@ -1,0 +1,11 @@
+********* Start testing of FeedbackTest *********
+Config: Using QtTest library 6.11.1, Qt 6.11.1 (arm64-little_endian-lp64 shared (dynamic) release build; by Apple LLVM 21.0.0 (clang-2100.0.123.102)), macos 26.6.2
+PASS   : FeedbackTest::initTestCase()
+QWARN  : FeedbackTest::skillDescriptionFollowsPalette() qt.qpa.fonts: Populating font family aliases took 104 ms. Replace uses of missing font family "Sans Serif" with one that exists to avoid this cost. 
+FAIL!  : FeedbackTest::skillDescriptionFollowsPalette() Compared values are not the same
+   Actual   (image.pixelColor(image.width()/2,image.height()/2)): #ffffffff
+   Expected (base)                                              : #ff1e1e1e
+   Loc: [/Users/haoranliu/Projects/sanguosha/tests/feedback/test_feedback.cpp(49)]
+PASS   : FeedbackTest::cleanupTestCase()
+Totals: 2 passed, 1 failed, 0 skipped, 0 blacklisted, 225ms
+********* Finished testing of FeedbackTest *********

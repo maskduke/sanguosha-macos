@@ -1,0 +1,8 @@
+********* Start testing of LuaRuntimeTest *********
+Config: Using QtTest library 6.11.1, Qt 6.11.1 (arm64-little_endian-lp64 shared (dynamic) release build; by Apple LLVM 21.0.0 (clang-2100.0.123.102)), macos 26.6.2
+PASS   : LuaRuntimeTest::initTestCase()
+FAIL!  : LuaRuntimeTest::enyuanUsesActualGiver() 'rc==0' returned FALSE. ([string "sgs={ai_skill_invoke={},qlist=function(t)re..."]:28: must not reward enemy despite stale friendly xuanhuo target)
+   Loc: [/Users/haoranliu/Projects/sanguosha/tests/bindings/test_lua_runtime.cpp(27)]
+PASS   : LuaRuntimeTest::cleanupTestCase()
+Totals: 2 passed, 1 failed, 0 skipped, 0 blacklisted, 2ms
+********* Finished testing of LuaRuntimeTest *********

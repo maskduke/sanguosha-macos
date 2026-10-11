@@ -7,6 +7,8 @@
 #include <QGroupBox>
 #include <QCommandLinkButton>
 #include <QClipboard>
+#include <QApplication>
+#include <QEvent>
 
 GeneralOverview::GeneralOverview(QWidget *parent) :
     QDialog(parent),
@@ -21,6 +23,19 @@ GeneralOverview::GeneralOverview(QWidget *parent) :
     group_box->setLayout(button_layout);
     ui->scrollArea->setWidget(group_box);
     ui->skillTextEdit->setProperty("description", true);
+    updateDescriptionPalette();
+}
+
+void GeneralOverview::updateDescriptionPalette(){
+    const QPalette palette = QApplication::palette();
+    ui->skillTextEdit->setStyleSheet(QString("QTextEdit { background-color: %1; color: %2; }")
+        .arg(palette.color(QPalette::Base).name(), palette.color(QPalette::Text).name()));
+}
+
+void GeneralOverview::changeEvent(QEvent *event){
+    QDialog::changeEvent(event);
+    if(event->type() == QEvent::PaletteChange || event->type() == QEvent::ApplicationPaletteChange)
+        updateDescriptionPalette();
 }
 
 void GeneralOverview::fillGenerals(const QList<const General *> &generals){

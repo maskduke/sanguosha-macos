@@ -5,5 +5,12 @@
     "reason": "Original nostalgia/yitian AI callers omit min_num; default it to the required discard count.",
     "old": "function SmartAI:askForDiscard(reason, discard_num, min_num, optional, include_equip)",
     "new": "function SmartAI:askForDiscard(reason, discard_num, min_num, optional, include_equip)\n\tmin_num = min_num or discard_num"
+  },
+  {
+    "id": "LEGACY-AI-002",
+    "file": "lua/ai/yjcm-ai.lua",
+    "reason": "Decide Enyuan benefit using the actual giver passed by C++; never infer it from stale xuanhuo flags or the current turn.",
+    "old": "sgs.ai_skill_invoke.enyuan = function(self, data)\n\tlocal damage = data:toDamage()\n\tlocal from = damage.from\n\tlocal source = self.room:getCurrent()\n\tlocal xuanhuotarget \n\tif from then\n\t\treturn not self:isFriend(from)\n\telse\n\t\tfor _, player in sgs.qlist(self.room:getAlivePlayers()) do\n\t\t\tif player:hasFlag(\"xuanhuo_target\") then\n\t\t\t\txuanhuotarget = player\n\t\t\tend\n\t\tend\n\t\tif xuanhuotarget then\n\t\t\treturn self:isFriend(xuanhuotarget)\n\t\telse\n\t\t\treturn self:isFriend(source)\n\t\tend\n\tend\nend\n",
+    "new": "sgs.ai_skill_invoke.enyuan = function(self, data)\n    local giver = data:toPlayer()\n    if giver then return self:isFriend(giver) end\n    local damage = data:toDamage()\n    return damage.from ~= nil and not self:isFriend(damage.from)\nend\n"
   }
 ]

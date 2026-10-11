@@ -21,7 +21,11 @@ public:
     ~GeneralOverview();
     void fillGenerals(const QList<const General *> &generals);
 
+protected:
+    void changeEvent(QEvent *event) override;
+
 private:
+    void updateDescriptionPalette();
     Ui::GeneralOverview *ui;
     QVBoxLayout *button_layout;
 

@@ -5,6 +5,28 @@ using State = std::unique_ptr<lua_State, decltype(&lua_close)>;
 class LuaRuntimeTest : public QObject {
     Q_OBJECT
 private slots:
+    void enyuanUsesActualGiver() {
+        QFile file(QByteArray(QS_RUNTIME_ASSET_ROOT)+"/lua/ai/yjcm-ai.lua");
+        QVERIFY(file.open(QIODevice::ReadOnly));const auto source=file.readAll();
+        int begin=source.indexOf("sgs.ai_skill_invoke.enyuan = function");
+        int end=source.indexOf("sgs.ai_skill_cardask[\"@enyuan\"]",begin);
+        QVERIFY(begin>=0 && end>begin);
+        State state(luaL_newstate(),lua_close);luaL_openlibs(state.get());
+        QByteArray code=R"(sgs={ai_skill_invoke={},qlist=function(t)return ipairs(t)end}
+local friend={hasFlag=function()return true end}
+local enemy={hasFlag=function()return false end}
+local ai={isFriend=function(self,p)return p==friend end,room={getCurrent=function()return friend end,getAlivePlayers=function()return {enemy,friend} end}}
+)" + source.mid(begin,end-begin) + R"(
+local function data(giver,attacker)return {toPlayer=function()return giver end,toDamage=function()return {from=attacker} end} end
+assert(sgs.ai_skill_invoke.enyuan(ai,data(enemy,nil))==false,'must not reward enemy despite stale friendly xuanhuo target')
+assert(sgs.ai_skill_invoke.enyuan(ai,data(friend,nil))==true,'reward actual friendly giver')
+assert(sgs.ai_skill_invoke.enyuan(ai,data(nil,enemy))==true,'retaliate against enemy')
+assert(sgs.ai_skill_invoke.enyuan(ai,data(nil,friend))==false,'do not retaliate against friend')
+assert(sgs.ai_skill_invoke.enyuan(ai,data(nil,nil))==false,'missing source must not guess current player')
+)";
+        int rc=luaL_dostring(state.get(),code.constData());QVERIFY2(rc==0,rc?lua_tostring(state.get(),-1):"");
+    }
+
     void discardOptionalMinimum() {
         QFile file(QByteArray(QS_RUNTIME_ASSET_ROOT)+"/lua/ai/smart-ai.lua");
         QVERIFY(file.open(QIODevice::ReadOnly));

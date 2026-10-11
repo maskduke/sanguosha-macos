@@ -312,27 +312,27 @@ public:
 
         if(event == CardGot){
             CardMoveStar move = data.value<CardMoveStar>();
-            int old_value = player->getMark("enyuan");
-            int new_value = old_value + 1;
-            room->setPlayerMark(player, "enyuan", new_value);
-            if(move->from)
-                move->from->setFlags("EnyuanTarget");
+            if(move && move->from && move->from != player){
+                QVariantMap sources = player->tag.value("EnyuanSources").toMap();
+                const QString name = move->from->objectName();
+                sources[name] = sources.value(name).toInt() + 1;
+                player->tag["EnyuanSources"] = sources;
+                room->setPlayerMark(player, "enyuan", player->getMark("enyuan") + 1);
+            }
         }
         else if(event == CardGotDone){
-            if(player->getMark("enyuan") >= 2 && room->askForSkillInvoke(player,objectName(),data)){
-                ServerPlayer *target = NULL;
-                foreach(ServerPlayer *other, room->getOtherPlayers(player)){
-                    if(other->hasFlag("EnyuanTarget")){
-                        other->setFlags("-EnyuanTarget");
-                        target = other;
-                        break;
-                    }
-                }
-                room->drawCards(target,1);
-                room->playSkillEffect(objectName(), qrand() % 2 + 1);
-
-            }
+            // Consume the batch before invoking skills/drawing, including declined invocations.
+            const QVariantMap sources = player->tag.take("EnyuanSources").toMap();
             room->setPlayerMark(player, "enyuan", 0);
+            foreach(ServerPlayer *giver, room->getOtherPlayers(player)){
+                if(sources.value(giver->objectName()).toInt() < 2)
+                    continue;
+                QVariant giver_data = QVariant::fromValue(static_cast<PlayerStar>(giver));
+                if(room->askForSkillInvoke(player, objectName(), giver_data)){
+                    room->drawCards(giver, 1);
+                    room->playSkillEffect(objectName(), qrand() % 2 + 1);
+                }
+            }
         }else if(event == Damaged){
             DamageStruct damage = data.value<DamageStruct>();
             ServerPlayer *source = damage.from;

@@ -1,0 +1,111 @@
+Test project /Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug
+      Start  1: protocol.line_framer
+ 1/11 Test  #1: protocol.line_framer .............   Passed    0.03 sec
+      Start  2: bindings.lua_runtime
+ 2/11 Test  #2: bindings.lua_runtime .............   Passed    0.02 sec
+      Start  3: bindings.qt_values
+ 3/11 Test  #3: bindings.qt_values ...............   Passed    0.06 sec
+      Start  4: protocol.legacy_json
+ 4/11 Test  #4: protocol.legacy_json .............   Passed    0.04 sec
+      Start  5: platform.qt_compat
+ 5/11 Test  #5: platform.qt_compat ...............   Passed    0.03 sec
+      Start  6: audio.backend
+ 6/11 Test  #6: audio.backend ....................   Passed    0.11 sec
+      Start  7: platform.paths
+ 7/11 Test  #7: platform.paths ...................   Passed    0.03 sec
+      Start  8: replay.roundtrip
+ 8/11 Test  #8: replay.roundtrip .................   Passed    0.10 sec
+      Start  9: network.native_socket
+ 9/11 Test  #9: network.native_socket ............   Passed    1.38 sec
+      Start 10: feedback.visual_and_shien
+10/11 Test #10: feedback.visual_and_shien ........***Failed    1.57 sec
+********* Start testing of FeedbackTest *********
+Config: Using QtTest library 6.11.1, Qt 6.11.1 (arm64-little_endian-lp64 shared (dynamic) release build; by Apple LLVM 21.0.0 (clang-2100.0.123.102)), macos 26.6.2
+PASS   : FeedbackTest::initTestCase()
+QWARN  : FeedbackTest::skillDescriptionFollowsPalette() qt.qpa.fonts: Populating font family aliases took 100 ms. Replace uses of missing font family "Sans Serif" with one that exists to avoid this cost. 
+FAIL!  : FeedbackTest::skillDescriptionFollowsPalette() Compared values are not the same
+   Actual   (image.pixelColor(image.width()/2,image.height()/2)): #ffffffff
+   Expected (base)                                              : #ff1e1e1e
+   Loc: [/Users/haoranliu/Projects/sanguosha/tests/feedback/test_feedback.cpp(49)]
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(return-before-game) This plugin does not support propagateSizeHints()
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(return-before-game) This plugin does not support propagateSizeHints()
+PASS   : FeedbackTest::returnToMenuReleasesLocalServer(return-before-game)
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) This plugin does not support propagateSizeHints()
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) jiangwei 80 rebel R30 L30 r30 neutral 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) jiangwei 80 rebel R110 L30 r30 neutral 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) jiangwei 80 rebel R110 L30 r30 neutral 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) jiangwei 80 rebel R190 L30 r30 neutral 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) jiangwei 70 rebel R190 L30 r30 neutral 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) jiangwei 70 rebel R260 L30 r30 neutral 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) jiangwei 80 rebel R260 L30 r30 neutral 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) jiangwei 80 rebel R340 L30 r30 neutral 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) jiangwei 80 rebel R340 L30 r30 rebel 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) jiangwei 80 rebel R420 L30 r30 rebel 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) jiangwei 80 rebel R420 L30 r30 neutral 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) jiangwei 80 rebel R500 L30 r30 neutral 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) jiangwei 80 rebel R500 L30 r30 rebel 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) jiangwei 80 rebel R580 L30 r30 rebel 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) jiangwei 80 rebel R580 L30 r30 rebel 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) jiangwei 80 rebel R660 L30 r30 rebel 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) jiangwei 80 rebel R660 L30 r30 rebel 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) jiangwei 80 rebel R740 L30 r30 rebel 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) jiangwei 80 rebel R740 L30 r30 rebel 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) jiangwei 80 rebel R820 L30 r30 rebel 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) This plugin does not support propagateSizeHints()
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) jiangwei 80 rebel R30 L30 r30 loyalish 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) jiangwei 80 rebel R110 L30 r30 loyalish 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) jiangwei 80 rebel R110 L30 r30 neutral 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) jiangwei 80 rebel R190 L30 r30 neutral 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) jiangwei 70 rebel R190 L30 r30 neutral 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) jiangwei 70 rebel R260 L30 r30 neutral 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) jiangwei 80 rebel R260 L30 r30 rebelish 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) jiangwei 80 rebel R340 L30 r30 rebelish 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) jiangwei 80 rebel R340 L30 r30 rebel 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) jiangwei 80 rebel R420 L30 r30 rebel 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) jiangwei 80 rebel R420 L30 r30 rebel 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) jiangwei 80 rebel R500 L30 r30 rebel 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) jiangwei 80 rebel R500 L30 r30 rebel 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) jiangwei 80 rebel R580 L30 r30 rebel 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) jiangwei 80 rebel R580 L30 r30 rebel 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) jiangwei 80 rebel R660 L30 r30 rebel 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) jiangwei 80 rebel R660 L30 r30 rebel 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) jiangwei 80 rebel R740 L30 r30 rebel 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) jiangwei 80 rebel R740 L30 r30 rebel 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) jiangwei 80 rebel R820 L30 r30 rebel 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) jiangwei 70 rebel R820 L30 r30 rebel 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) jiangwei 70 rebel R890 L30 r30 rebel 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) jiangwei 80 rebel R890 L30 r30 rebel 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) jiangwei 80 rebel R970 L30 r30 rebel 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) jiangwei 80 rebel R970 L30 r30 rebel 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) jiangwei 80 rebel R1050 L30 r30 rebel 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) jiangwei 80 rebel R1050 L30 r30 rebel 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) jiangwei 80 rebel R1130 L30 r30 rebel 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) jiangwei 120 rebel R1130 L30 r30 rebel 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) jiangwei 120 rebel R1250 L30 r30 rebel 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) jiangwei 80 rebel R1250 L30 r30 rebel 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) jiangwei 80 rebel R1330 L30 r30 rebel 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) jiangwei 80 rebel R1330 L30 r30 rebel 010
+QWARN  : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games) jiangwei 80 rebel R1410 L30 r30 rebel 010
+PASS   : FeedbackTest::returnToMenuReleasesLocalServer(two-completed-games)
+PASS   : FeedbackTest::hoveredCardAboveNeighbours()
+PASS   : FeedbackTest::sentbackStaysInsidePhoto(standard)
+PASS   : FeedbackTest::sentbackStaysInsidePhoto(retina)
+PASS   : FeedbackTest::emphasizeRetainsWholeCard(standard)
+PASS   : FeedbackTest::emphasizeRetainsWholeCard(retina)
+PASS   : FeedbackTest::shienWithoutLivingOwner()
+PASS   : FeedbackTest::cleanupTestCase()
+Totals: 10 passed, 1 failed, 0 skipped, 0 blacklisted, 928ms
+********* Finished testing of FeedbackTest *********
+
+      Start 11: ai.dual_general
+11/11 Test #11: ai.dual_general ..................   Passed   27.22 sec
+
+91% tests passed, 1 tests failed out of 11
+
+Total Test time (real) =  30.60 sec
+
+The following tests FAILED:
+	 10 - feedback.visual_and_shien (Failed)
+Errors while running CTest

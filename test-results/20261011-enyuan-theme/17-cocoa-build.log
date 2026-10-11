@@ -1,0 +1,4 @@
+[0/2] Re-checking globbed directories...
+[1/5] Automatic MOC for target test_feedback
+[2/4] Building CXX object CMakeFiles/test_feedback.dir/tests/feedback/test_feedback.cpp.o
+[3/4] Linking CXX executable test_feedback

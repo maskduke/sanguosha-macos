@@ -1,0 +1,10 @@
+********* Start testing of AIDecisionTest *********
+Config: Using QtTest library 6.11.1, Qt 6.11.1 (arm64-little_endian-lp64 shared (dynamic) release build; by Apple LLVM 21.0.0 (clang-2100.0.123.102)), macos 26.6.2
+PASS   : AIDecisionTest::initTestCase()
+FAIL!  : AIDecisionTest::enyuanBatchSources() Compared QObject pointers are not the same
+   Actual   (ai->asked.last()): <null>
+   Expected (enemy)           : ServerPlayer/"source0"
+   Loc: [/Users/haoranliu/Projects/sanguosha/tests/ai/test_ai_decision.cpp(30)]
+PASS   : AIDecisionTest::cleanupTestCase()
+Totals: 2 passed, 1 failed, 0 skipped, 0 blacklisted, 46ms
+********* Finished testing of AIDecisionTest *********
