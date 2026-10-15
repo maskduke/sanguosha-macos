@@ -2,9 +2,10 @@
 
 目标为 macOS 26 / arm64，保留 20120715 原装内容、单机 AI 及新版之间 LAN／直接 IP 对战。
 
-**当前代码版本：0.1.5（macOS 26 / Apple Silicon）。** 已在本机生成并验证原生试玩版；本仓库发布源代码，不包含 `dist/` 中的应用或 ZIP。已有本地构建可打开 `dist/0.1.5/QSanguosha-Nirvana.app`。详见 [手动验收说明](MANUAL_ACCEPTANCE.md)。原版资源和规则主体保留，完整正式验收仍在进行。
+**当前代码版本：0.1.6（macOS 26 / Apple Silicon）。** 已在本机生成并验证原生试玩版；本仓库发布源代码，不包含 `dist/` 中的应用或 ZIP。已有本地构建可打开 `dist/0.1.6/QSanguosha-Nirvana.app`。详见 [手动验收说明](MANUAL_ACCEPTANCE.md)。原版资源和规则主体保留，完整正式验收仍在进行。
 
 - [设计](DESIGN_SPEC.md) · [测试设计](TEST_SPEC.md) · [用户决策](DESIGN_DECISIONS.md)
+- [0.1.6 言笑／辅佐修复与早夭调查](docs/validation/20261016-skill-ai.md)
 - [0.1.5 手牌同步根因与旧旋风 AI 修复](docs/validation/20261015-hand-sync.md)
 - [0.1.4 顺手牵羊空手牌崩溃修复](docs/validation/20261015-snatch-crash.md)
 - [0.1.3 恩怨与深色模式修复](docs/validation/20261011-enyuan-theme.md)

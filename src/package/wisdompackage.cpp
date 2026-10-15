@@ -510,10 +510,10 @@ public:
         log.card_str = pindian->to_card->getEffectIdString();
         room->sendLog(log);
 
-        QString choice = room->askForChoice(zhangzhao, objectName(), choices.join("+"));
+        QString choice = room->askForChoice(zhangzhao, objectName(), choices.join("+"), data);
         if(choice == "cancel")
             return false;
-        const Card *intervention = room->askForCard(zhangzhao, ".|.|~7|hand", "@fuzuo_card");
+        const Card *intervention = room->askForCard(zhangzhao, ".|.|~7|hand", "@fuzuo_card", data);
         if(intervention){
             log.type = "$Fuzuo";
             log.to.clear();
@@ -529,6 +529,7 @@ public:
             const Card *pindian_card = target == pindian->from ? pindian->from_card : pindian->to_card;
             int num = pindian_card->getNumber() + intervention->getNumber() / 2;
             Card *use_card = Sanguosha->cloneCard(pindian_card->objectName(), pindian_card->getSuit(), num);
+            use_card->deleteLater();
             use_card->setSkillName(objectName());
             use_card->addSubcard(pindian_card);
             if(target == pindian->from)

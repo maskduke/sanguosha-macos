@@ -1,0 +1,4 @@
+[0/2] Re-checking globbed directories...
+[1/5] Automatic MOC for target test_ai_decision
+[2/4] Building CXX object CMakeFiles/test_ai_decision.dir/tests/ai/test_ai_decision.cpp.o
+[3/4] Linking CXX executable test_ai_decision

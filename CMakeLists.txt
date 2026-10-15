@@ -106,7 +106,7 @@ add_executable(QSanguosha MACOSX_BUNDLE src/main.cpp src/core/audio.cpp resource
 set_source_files_properties(resource/icon/sgs.icns PROPERTIES MACOSX_PACKAGE_LOCATION Resources)
 set_target_properties(QSanguosha PROPERTIES MACOSX_BUNDLE_GUI_IDENTIFIER org.qsanguosha.nirvana.modern
  MACOSX_BUNDLE_BUNDLE_NAME "QSanguosha Nirvana" MACOSX_BUNDLE_ICON_FILE sgs.icns
- MACOSX_BUNDLE_SHORT_VERSION_STRING "0.1.5" MACOSX_BUNDLE_BUNDLE_VERSION "6")
+ MACOSX_BUNDLE_SHORT_VERSION_STRING "0.1.6" MACOSX_BUNDLE_BUNDLE_VERSION "7")
 target_compile_definitions(QSanguosha PRIVATE AUDIO_SUPPORT)
 target_include_directories(QSanguosha PRIVATE ${LEGACY_INCLUDES} src src/jsoncpp/include)
 target_compile_options(QSanguosha PRIVATE "-include${PROJECT_SOURCE_DIR}/src/platform/qt_compat.h")

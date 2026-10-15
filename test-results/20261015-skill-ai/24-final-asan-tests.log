@@ -1,0 +1,50 @@
+********* Start testing of AIDecisionTest *********
+Config: Using QtTest library 6.11.1, Qt 6.11.1 (arm64-little_endian-lp64 shared (dynamic) release build; by Apple LLVM 21.0.0 (clang-2100.0.123.102)), macos 26.6.2
+PASS   : AIDecisionTest::initTestCase()
+PASS   : AIDecisionTest::zaoyaoThreshold(04p-13-order-0)
+PASS   : AIDecisionTest::zaoyaoThreshold(04p-13-order-1)
+PASS   : AIDecisionTest::zaoyaoThreshold(04p-13-order-2)
+PASS   : AIDecisionTest::zaoyaoThreshold(04p-14-order-0)
+PASS   : AIDecisionTest::zaoyaoThreshold(04p-14-order-1)
+PASS   : AIDecisionTest::zaoyaoThreshold(04p-14-order-2)
+PASS   : AIDecisionTest::zaoyaoThreshold(04p-16-order-0)
+PASS   : AIDecisionTest::zaoyaoThreshold(04p-16-order-1)
+PASS   : AIDecisionTest::zaoyaoThreshold(04p-16-order-2)
+PASS   : AIDecisionTest::zaoyaoThreshold(10pz-13-order-0)
+PASS   : AIDecisionTest::zaoyaoThreshold(10pz-13-order-1)
+PASS   : AIDecisionTest::zaoyaoThreshold(10pz-13-order-2)
+PASS   : AIDecisionTest::zaoyaoThreshold(10pz-14-order-0)
+PASS   : AIDecisionTest::zaoyaoThreshold(10pz-14-order-1)
+PASS   : AIDecisionTest::zaoyaoThreshold(10pz-14-order-2)
+PASS   : AIDecisionTest::zaoyaoThreshold(10pz-16-order-0)
+PASS   : AIDecisionTest::zaoyaoThreshold(10pz-16-order-1)
+PASS   : AIDecisionTest::zaoyaoThreshold(10pz-16-order-2)
+QWARN  : AIDecisionTest::yanxiaoHelpsControlledFriend(last-diamond) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+PASS   : AIDecisionTest::yanxiaoHelpsControlledFriend(last-diamond)
+QWARN  : AIDecisionTest::yanxiaoHelpsControlledFriend(two-hand-cards) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+PASS   : AIDecisionTest::yanxiaoHelpsControlledFriend(two-hand-cards)
+QWARN  : AIDecisionTest::yanxiaoHelpsControlledFriend(self-controlled) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+PASS   : AIDecisionTest::yanxiaoHelpsControlledFriend(self-controlled)
+QWARN  : AIDecisionTest::yanxiaoHelpsControlledFriend(no-control) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+PASS   : AIDecisionTest::yanxiaoHelpsControlledFriend(no-control)
+QWARN  : AIDecisionTest::yanxiaoHelpsControlledFriend(already-covered) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+PASS   : AIDecisionTest::yanxiaoHelpsControlledFriend(already-covered)
+QWARN  : AIDecisionTest::fuzuoSupportsFriend(from-can-win) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+PASS   : AIDecisionTest::fuzuoSupportsFriend(from-can-win)
+QWARN  : AIDecisionTest::fuzuoSupportsFriend(from-insufficient) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+PASS   : AIDecisionTest::fuzuoSupportsFriend(from-insufficient)
+QWARN  : AIDecisionTest::fuzuoSupportsFriend(to-tie-is-enough) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+PASS   : AIDecisionTest::fuzuoSupportsFriend(to-tie-is-enough)
+QWARN  : AIDecisionTest::fuzuoSupportsFriend(illegal-eight) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+PASS   : AIDecisionTest::fuzuoSupportsFriend(illegal-eight)
+QWARN  : AIDecisionTest::fuzuoSupportsFriend(from-tie-not-enough) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+PASS   : AIDecisionTest::fuzuoSupportsFriend(from-tie-not-enough)
+QWARN  : AIDecisionTest::fuzuoSupportsFriend(one-adds-zero) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+PASS   : AIDecisionTest::fuzuoSupportsFriend(one-adds-zero)
+QWARN  : AIDecisionTest::fuzuoSupportsFriend(both-friends) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+PASS   : AIDecisionTest::fuzuoSupportsFriend(both-friends)
+QWARN  : AIDecisionTest::fuzuoSupportsFriend(already-committed) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+PASS   : AIDecisionTest::fuzuoSupportsFriend(already-committed)
+PASS   : AIDecisionTest::cleanupTestCase()
+Totals: 33 passed, 0 failed, 0 skipped, 0 blacklisted, 1757ms
+********* Finished testing of AIDecisionTest *********

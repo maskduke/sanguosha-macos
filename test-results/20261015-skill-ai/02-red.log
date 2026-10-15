@@ -1,0 +1,32 @@
+********* Start testing of AIDecisionTest *********
+Config: Using QtTest library 6.11.1, Qt 6.11.1 (arm64-little_endian-lp64 shared (dynamic) release build; by Apple LLVM 21.0.0 (clang-2100.0.123.102)), macos 26.6.2
+PASS   : AIDecisionTest::initTestCase()
+PASS   : AIDecisionTest::zaoyaoThreshold(13-secondary-0)
+PASS   : AIDecisionTest::zaoyaoThreshold(13-secondary-1)
+PASS   : AIDecisionTest::zaoyaoThreshold(14-secondary-0)
+PASS   : AIDecisionTest::zaoyaoThreshold(14-secondary-1)
+PASS   : AIDecisionTest::zaoyaoThreshold(16-secondary-0)
+PASS   : AIDecisionTest::zaoyaoThreshold(16-secondary-1)
+QWARN  : AIDecisionTest::yanxiaoHelpsControlledFriend(last-diamond) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+FAIL!  : AIDecisionTest::yanxiaoHelpsControlledFriend(last-diamond) 'rc==0' returned FALSE. ([string "local ai=sgs.ais.p0; ai.friends_noself={sgs..."]:1: Yanxiao must name the controlled ally, including with the last diamond)
+   Loc: [/Users/haoranliu/Projects/sanguosha/tests/ai/test_ai_decision.cpp(95)]
+QWARN  : AIDecisionTest::yanxiaoHelpsControlledFriend(two-hand-cards) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+FAIL!  : AIDecisionTest::yanxiaoHelpsControlledFriend(two-hand-cards) 'rc==0' returned FALSE. ([string "local ai=sgs.ais.p0; ai.friends_noself={sgs..."]:1: Yanxiao must name the controlled ally, including with the last diamond)
+   Loc: [/Users/haoranliu/Projects/sanguosha/tests/ai/test_ai_decision.cpp(95)]
+QWARN  : AIDecisionTest::fuzuoSupportsFriend(from-can-win) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+FAIL!  : AIDecisionTest::fuzuoSupportsFriend(from-can-win) Compared values are not the same
+   Actual   (zz->getHandcardNum()): 1
+   Expected (shouldHelp?0:1)      : 0
+   Loc: [/Users/haoranliu/Projects/sanguosha/tests/ai/test_ai_decision.cpp(117)]
+QWARN  : AIDecisionTest::fuzuoSupportsFriend(from-insufficient) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+PASS   : AIDecisionTest::fuzuoSupportsFriend(from-insufficient)
+QWARN  : AIDecisionTest::fuzuoSupportsFriend(to-tie-is-enough) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+FAIL!  : AIDecisionTest::fuzuoSupportsFriend(to-tie-is-enough) Compared values are not the same
+   Actual   (zz->getHandcardNum()): 1
+   Expected (shouldHelp?0:1)      : 0
+   Loc: [/Users/haoranliu/Projects/sanguosha/tests/ai/test_ai_decision.cpp(117)]
+QWARN  : AIDecisionTest::fuzuoSupportsFriend(illegal-eight) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+PASS   : AIDecisionTest::fuzuoSupportsFriend(illegal-eight)
+PASS   : AIDecisionTest::cleanupTestCase()
+Totals: 10 passed, 4 failed, 0 skipped, 0 blacklisted, 321ms
+********* Finished testing of AIDecisionTest *********

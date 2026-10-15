@@ -5,6 +5,11 @@
 #include "ai.h"
 #include "jsonutils.h"
 #include "settings.h"
+#include "platform/paths/paths.h"
+#include <QFile>
+#include <QJsonDocument>
+#include <QJsonObject>
+#include <QMutexLocker>
 
 #include <QTime>
 #include <json/json.h>
@@ -370,6 +375,31 @@ static bool CompareByPriority(const TriggerSkill *a, const TriggerSkill *b){
     return a->getPriority() > b->getPriority();
 }
 
+// Local, bounded evidence for the reported intermittent Cao Chong phase issue.
+// Record counts and dispatch only; never record hand-card identities.
+static void recordZaoyaoPhase(const ServerPlayer *player, const QString &stage,
+    bool registered, const QStringList &dispatched, const QString &stoppedBy)
+{
+    static QMutex mutex;
+    QMutexLocker lock(&mutex);
+    try {
+        QFile file(qs::userPath("diagnostics/zaoyao.jsonl"));
+        if(!file.open(QIODevice::WriteOnly | QIODevice::Append)) return;
+        if(file.size() > 1024 * 1024) file.resize(0);
+        QJsonObject row;
+        row["time"] = QDateTime::currentDateTimeUtc().toString(Qt::ISODateWithMs);
+        row["stage"] = stage; row["phase"] = player->getPhaseString();
+        row["general"] = player->getGeneralName(); row["general2"] = player->getGeneral2Name();
+        row["mode"] = player->getGameMode(); row["hand_count"] = player->getHandcardNum();
+        row["hp"] = player->getHp(); row["skill_active"] = player->hasSkill("zaoyao");
+        row["registered"] = registered; row["dispatched"] = dispatched.join(',');
+        row["stopped_by"] = stoppedBy;
+        file.write(QJsonDocument(row).toJson(QJsonDocument::Compact) + '\n');
+    } catch(const std::exception &) {
+        // Diagnostics must never interrupt a game if its data directory is unavailable.
+    }
+}
+
 bool RoomThread::trigger(TriggerEvent event, Room* room, ServerPlayer *target, QVariant &data){
     if(room->isFinished()) return false;
     // Q_ASSERT(QThread::currentThread() == this);
@@ -378,14 +408,25 @@ bool RoomThread::trigger(TriggerEvent event, Room* room, ServerPlayer *target, Q
     EventTriplet triplet(event, room, target, &data);
     event_stack.push_back(triplet);
 
+    const bool traceZaoyao = event == PhaseChange && target
+        && (target->getGeneralName() == "caochong" || target->getGeneral2Name() == "caochong");
+    const bool zaoyaoRegistered = traceZaoyao && skill_table[event].contains(Sanguosha->getTriggerSkill("zaoyao"));
+    QStringList dispatched;
+    QString stoppedBy;
+    if(traceZaoyao) recordZaoyaoPhase(target, "before", zaoyaoRegistered, dispatched, stoppedBy);
     bool broken = false;
     foreach(const TriggerSkill *skill, skill_table[event]){
         if(skill->triggerable(target)){
+            if(traceZaoyao) dispatched << skill->objectName();
             broken = skill->trigger(event, room, target, data);
-            if(broken)
+            if(broken){
+                stoppedBy = skill->objectName();
                 break;
+            }
         }
     }
+
+    if(traceZaoyao) recordZaoyaoPhase(target, "after", zaoyaoRegistered, dispatched, stoppedBy);
 
     if(target){
         foreach(AI *ai, room->ais){

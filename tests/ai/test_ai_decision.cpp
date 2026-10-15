@@ -11,6 +11,7 @@
 #include "client.h"
 #include "socket.h"
 #include "yjcm-package.h"
+#include "gamerule.h"
 #include "playercarddialog.h"
 #include <QCommandLinkButton>
 class EnyuanCaptureAI : public TrustAI {
@@ -64,6 +65,78 @@ class AIDecisionTest : public QObject {
  Q_OBJECT
 private slots:
  void initTestCase() { QVERIFY(QDir::setCurrent(QS_ASSET_ROOT)); Sanguosha=new Engine;Config.init(); }
+ void zaoyaoThreshold_data() {
+  QTest::addColumn<int>("count");QTest::addColumn<int>("order");QTest::addColumn<QString>("mode");
+  for(const QString &mode:QStringList{"04p","10pz"})for(int count:{13,14,16})for(int order:{0,1,2})QTest::newRow(qPrintable(QString("%1-%2-order-%3").arg(mode).arg(count).arg(order)))<<count<<order<<mode;
+ }
+ void zaoyaoThreshold() {
+  QFETCH(int,count);QFETCH(int,order);QFETCH(QString,mode);Config.EnableAI=true;Config.Enable2ndGeneral=order!=0;Config.EnableScene=false;Config.EnableBasara=false;Config.EnableHegemony=false;
+  Room room(nullptr,mode);room.thread=new RoomThread(&room);
+  auto p=room.addSocket(nullptr);p->setObjectName("caochong");p->setGeneralName(order==2?"caocao":"caochong");if(order)p->setGeneral2Name(order==2?"caochong":"caocao");p->setRole("lord");p->setMaxHp(3);p->setHp(3);p->setState("robot");room.revivePlayer(p);room.current=p;
+  for(int i=1;i<(mode=="10pz"?10:4);++i){auto other=room.addSocket(nullptr);other->setObjectName(QString("other%1").arg(i));other->setGeneralName("caocao");other->setRole("rebel");other->setMaxHp(4);other->setHp(4);other->setState("robot");}
+  room.revivePlayer(p);
+  for(int i=0;i<count;++i){p->drawCard(Sanguosha->getCard(i));room.setCardMapping(i,p,Player::Hand);}
+  GameRule rule(nullptr);room.thread->constructTriggerTable(&rule);
+  p->play(QList<Player::Phase>{Player::Discard,Player::Finish});
+  QCOMPARE(p->getHandcardNum(),count>13?0:count);QCOMPARE(p->getHp(),count>13?2:3);
+ }
+ void yanxiaoHelpsControlledFriend_data() {
+  QTest::addColumn<int>("handCount");QTest::addColumn<QString>("scenario");QTest::addColumn<QString>("expected");
+  QTest::newRow("last-diamond")<<1<<QString("friend")<<QString("p1");
+  QTest::newRow("two-hand-cards")<<2<<QString("friend")<<QString("p1");
+  QTest::newRow("self-controlled")<<1<<QString("self")<<QString("p0");
+  QTest::newRow("no-control")<<1<<QString("none")<<QString();
+  QTest::newRow("already-covered")<<1<<QString("covered")<<QString();
+ }
+ void yanxiaoHelpsControlledFriend() {
+  QFETCH(int,handCount);QFETCH(QString,scenario);QFETCH(QString,expected);Config.EnableAI=true;Room room(nullptr,"04p");room.thread=new RoomThread(&room);
+  for(int i=0;i<4;++i){auto p=room.addSocket(nullptr);p->setObjectName(QString("p%1").arg(i));p->setGeneralName(i==0?"bgm_daqiao":"caocao");p->setRole(i==0?"lord":i==1?"loyalist":"rebel");p->setState("robot");p->setMaxHp(4);p->setHp(4);}
+  auto p=room.getPlayers()[0];auto friendly=room.getPlayers()[1];room.revivePlayer(p);room.current=p;
+  const Card *diamond=nullptr,*delay=nullptr;
+  for(int i=0;i<Sanguosha->getCardCount();++i){auto c=Sanguosha->getCard(i);if(!diamond&&c->getSuit()==Card::Diamond&&c->inherits("BasicCard"))diamond=c;if(c->objectName()=="indulgence")delay=c;}
+  QVERIFY(diamond);QVERIFY(delay);p->drawCard(diamond);room.setCardMapping(diamond->getId(),p,Player::Hand);
+  if(handCount>1){p->drawCard(Sanguosha->getCard(0));room.setCardMapping(0,p,Player::Hand);}
+  if(scenario!="none"){
+   auto target=scenario=="self"?p:friendly;target->addDelayedTrick(delay);room.setCardMapping(delay->getId(),target,Player::Judging);
+   if(scenario=="covered"){room.setCardMapping(177,nullptr,Player::DrawPile);target->addToPile("smile",177);}
+  }
+  for(auto player:room.getPlayers())player->setAI(room.cloneAI(player));
+  QString script="assert(type(sgs.ai_skill_invoke.anxian)=='function' and type(sgs.ai_skill_cardask['@anxian-discard'])=='function'); local ai=sgs.ais.p0; ai.friends_noself={sgs.ais.p1.player}; ai.friends={ai.player,sgs.ais.p1.player}; local use={isDummy=true,to=sgs.SPlayerList()}; sgs.ai_skill_use_func.YanxiaoCard(sgs.Card_Parse('@YanxiaoCard=.'),use,ai); ";
+  if(expected.isEmpty())script+="assert(not use.card, 'Do not waste a diamond when nobody needs protection')";
+  else script+=QString("assert(use.card and use.to:length()==1 and use.to:first():objectName()=='%1', 'Yanxiao target must match the ally needing protection')").arg(expected);
+  int rc=luaL_dostring(room.getLuaState(),qPrintable(script));QVERIFY2(rc==0,rc?lua_tostring(room.getLuaState(),-1):"");
+ }
+ void fuzuoSupportsFriend_data() {
+  QTest::addColumn<bool>("helpFrom");QTest::addColumn<int>("aidNumber");QTest::addColumn<bool>("shouldHelp");QTest::addColumn<bool>("bothFriends");QTest::addColumn<bool>("committed");
+  QTest::newRow("from-can-win")<<true<<6<<true<<false<<false;
+  QTest::newRow("from-insufficient")<<true<<2<<false<<false<<false;
+  QTest::newRow("to-tie-is-enough")<<false<<4<<true<<false<<false;
+  QTest::newRow("illegal-eight")<<true<<8<<false<<false<<false;
+  QTest::newRow("from-tie-not-enough")<<true<<4<<false<<false<<false;
+  QTest::newRow("one-adds-zero")<<true<<1<<false<<false<<false;
+  QTest::newRow("both-friends")<<true<<6<<false<<true<<false;
+  QTest::newRow("already-committed")<<true<<7<<false<<false<<true;
+ }
+ void fuzuoSupportsFriend() {
+  QFETCH(bool,helpFrom);QFETCH(int,aidNumber);QFETCH(bool,shouldHelp);QFETCH(bool,bothFriends);QFETCH(bool,committed);
+  Config.EnableAI=true;Config.AIDelay=0;Room room(nullptr,"04p");room.thread=new RoomThread(&room);
+  for(int i=0;i<4;++i){auto p=room.addSocket(nullptr);p->setObjectName(QString("p%1").arg(i));p->setGeneralName(i==0?"wiszhangzhao":i==1?"caocao":"liubei");p->setRole(i==0?"lord":"rebel");p->setState("robot");p->setMaxHp(4);p->setHp(4);}
+  auto zz=room.getPlayers()[0];room.revivePlayer(zz);room.current=zz;
+  const Card *aid=nullptr;for(int i=0;i<Sanguosha->getCardCount();++i)if(Sanguosha->getCard(i)->getNumber()==aidNumber){aid=Sanguosha->getCard(i);break;}QVERIFY(aid);zz->drawCard(aid);room.setCardMapping(aid->getId(),zz,Player::Hand);
+  for(auto p:room.getPlayers())p->setAI(room.cloneAI(p));
+  QString friendly=committed?"p0":helpFrom?"p1":"p2";QString enemy=helpFrom?"p2":"p1";
+  QString script=QString("local ai=sgs.ais.p0; ai.isFriend=function(self,p) return p:objectName()=='%1' end; ai.isEnemy=function(self,p) return p:objectName()=='%2' end").arg(friendly,enemy);
+  if(bothFriends)script+="; ai.isEnemy=function() return false end; ai.isFriend=function() return true end";
+  QCOMPARE(luaL_dostring(room.getLuaState(),qPrintable(script)),0);
+  const Card *from=nullptr,*to=nullptr;
+  for(int i=0;i<Sanguosha->getCardCount();++i){auto c=Sanguosha->getCard(i);if(c->getNumber()==(helpFrom?7:9))from=c;if(c->getNumber()==(helpFrom?9:7))to=c;}
+  QVERIFY(from);QVERIFY(to);if(committed)from=aid;
+  PindianStruct pd;pd.from=committed?zz:room.getPlayers()[1];pd.to=room.getPlayers()[2];pd.from_card=from;pd.to_card=to;pd.reason="test";
+  auto skill=Sanguosha->getTriggerSkill("fuzuo");QVERIFY(skill);QVariant data=QVariant::fromValue(static_cast<PindianStar>(&pd));skill->trigger(Pindian,&room,pd.from,data);
+  QCOMPARE(zz->getHandcardNum(),shouldHelp?0:1);
+  QCOMPARE(helpFrom?pd.isSuccess():!pd.isSuccess(),shouldHelp);
+  if(pd.from_card!=from)delete pd.from_card;if(pd.to_card!=to)delete pd.to_card;
+ }
  void xuanhuoObserverHandCount_data() {
   QTest::addColumn<bool>("shichou");QTest::addColumn<int>("equipmentOrder");
   QTest::newRow("xuanhuo")<<false<<0;
