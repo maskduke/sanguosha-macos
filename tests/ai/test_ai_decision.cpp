@@ -6,6 +6,7 @@
 #include "serverplayer.h"
 #include "ai.h"
 #include "skill.h"
+#include "standard.h"
 #include "lua.hpp"
 class EnyuanCaptureAI : public TrustAI {
 public:
@@ -13,10 +14,82 @@ public:
  QList<ServerPlayer *> asked; ServerPlayer *friendly;
  bool askForSkillInvoke(const QString &,const QVariant &data) override {auto giver=data.value<PlayerStar>();asked<<giver;return giver==friendly;}
 };
+class CardChoiceAI : public TrustAI {
+public:
+ explicit CardChoiceAI(ServerPlayer *p):TrustAI(p){}
+ int reply = 999999;
+ bool removeBeforeReply = false;
+ int askForCardChosen(ServerPlayer *who, const QString &flags, const QString &) override {
+  if(removeBeforeReply) for(auto card:who->getCards(flags)) who->removeCard(card,who->getRoom()->getCardPlace(card->getId()));
+  return reply;
+ }
+};
 class AIDecisionTest : public QObject {
  Q_OBJECT
 private slots:
  void initTestCase() { QVERIFY(QDir::setCurrent(QS_ASSET_ROOT)); Sanguosha=new Engine;Config.init(); }
+ void cardChoiceRejectsInvalidReply() {
+  Config.EnableAI=true;Config.AIDelay=0;
+  Room room(nullptr,"04p");room.thread=new RoomThread(&room);
+  auto actor=room.addSocket(nullptr);auto lord=room.addSocket(nullptr);
+  actor->setObjectName("actor");actor->setState("robot");actor->setRole("rebel");
+  lord->setObjectName("lord");lord->setRole("lord");
+  auto ai=new CardChoiceAI(actor);actor->setAI(ai);
+  const Card *equip=nullptr;
+  for(int i=0;i<Sanguosha->getCardCount();++i)if(Sanguosha->getCard(i)->inherits("EquipCard")){equip=Sanguosha->getCard(i);break;}
+  QVERIFY(equip);lord->setEquip(static_cast<const EquipCard *>(equip));
+  room.setCardMapping(equip->getId(),lord,Player::Equip);
+  // A stale/invalid choice must resolve only to a card in the requested area.
+  QCOMPARE(room.askForCardChosen(actor,lord,"hej","snatch"),equip->getId());
+ }
+ void snatchEmptyHand_data() {
+  QTest::addColumn<QString>("zone");QTest::addColumn<int>("reply");QTest::addColumn<bool>("remove");
+  for(const QString &zone:QStringList{"h","e","j"})
+   for(int reply:QList<int>{-1,-2,999999,0})
+    QTest::newRow(qPrintable(zone+QString::number(reply)))<<zone<<reply<<false;
+  QTest::newRow("target-emptied-during-choice")<<QString("e")<<-1<<true;
+ }
+ void snatchEmptyHand() {
+  QFETCH(QString,zone);QFETCH(int,reply);QFETCH(bool,remove);
+  Config.EnableAI=true;Config.AIDelay=0;
+  Room room(nullptr,"04p");room.thread=new RoomThread(&room);
+  auto actor=room.addSocket(nullptr);auto lord=room.addSocket(nullptr);
+  for(auto p:room.getPlayers()){p->setGeneralName("caocao");p->setMaxHp(4);p->setHp(4);}
+  actor->setObjectName("actor");actor->setState("robot");actor->setRole("rebel");
+  lord->setObjectName("lord");lord->setRole("lord");room.revivePlayer(lord);room.current=actor;
+  auto ai=new CardChoiceAI(actor);ai->reply=reply;ai->removeBeforeReply=remove;actor->setAI(ai);
+  const Card *chosen=nullptr;
+  for(int i=1;i<Sanguosha->getCardCount();++i){auto c=Sanguosha->getCard(i);
+   if((zone=="h" && c->inherits("BasicCard")) || (zone=="e" && c->inherits("EquipCard")) || (zone=="j" && c->inherits("DelayedTrick"))){chosen=c;break;}}
+  QVERIFY(chosen);
+  auto place=zone=="h"?Player::Hand:zone=="e"?Player::Equip:Player::Judging;
+  if(zone=="h")lord->drawCard(chosen);
+  else if(zone=="e")lord->setEquip(static_cast<const EquipCard *>(chosen));
+  else lord->addDelayedTrick(chosen);
+  room.setCardMapping(chosen->getId(),lord,place);
+  CardEffectStruct effect;effect.from=actor;effect.to=lord;
+  Snatch snatch(Card::Spade,3);effect.card=&snatch;snatch.onEffect(effect);
+  QCOMPARE(actor->getHandcardNum(),remove?0:1);
+  if(!remove)QVERIFY(actor->handCards().contains(chosen->getId()));
+  QVERIFY(lord->isAllNude());
+ }
+ void emptyCardAreas() {
+  Config.EnableAI=true;Room room(nullptr,"04p");room.thread=new RoomThread(&room);
+  auto actor=room.addSocket(nullptr);auto target=room.addSocket(nullptr);
+  QCOMPARE(target->getRandomHandCard(),nullptr);QCOMPARE(target->getRandomHandCardId(),-1);
+  for(const QString &flags:QStringList{"h","he","hej","e","j"})
+   QCOMPARE(room.askForCardChosen(actor,target,flags,"snatch"),-1);
+ }
+ void equipmentChoiceCannotTakeHand() {
+  Config.EnableAI=true;Config.AIDelay=0;Room room(nullptr,"04p");room.thread=new RoomThread(&room);
+  auto actor=room.addSocket(nullptr);auto target=room.addSocket(nullptr);actor->setState("robot");
+  auto ai=new CardChoiceAI(actor);ai->reply=-1;actor->setAI(ai);
+  auto hand=Sanguosha->getCard(0);target->drawCard(hand);room.setCardMapping(0,target,Player::Hand);
+  const EquipCard *equip=nullptr;
+  for(int i=1;i<Sanguosha->getCardCount();++i)if((equip=qobject_cast<const EquipCard *>(Sanguosha->getCard(i))))break;
+  QVERIFY(equip);target->setEquip(equip);room.setCardMapping(equip->getId(),target,Player::Equip);
+  QCOMPARE(room.askForCardChosen(actor,target,"e","snatch"),equip->getId());
+ }
  void enyuanBatchSources() {
   Config.EnableAI=true;Room room(nullptr,"04p");room.thread=new RoomThread(&room);
   QList<ServerPlayer *> players;

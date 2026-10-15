@@ -1,0 +1,22 @@
+********* Start testing of AIDecisionTest *********
+Config: Using QtTest library 6.11.1, Qt 6.11.1 (arm64-little_endian-lp64 shared (dynamic) release build; by Apple LLVM 21.0.0 (clang-2100.0.123.102)), macos 26.6.2
+PASS   : AIDecisionTest::initTestCase()
+PASS   : AIDecisionTest::cardChoiceRejectsInvalidReply()
+PASS   : AIDecisionTest::snatchEmptyHand(h-1)
+PASS   : AIDecisionTest::snatchEmptyHand(h-2)
+PASS   : AIDecisionTest::snatchEmptyHand(h999999)
+PASS   : AIDecisionTest::snatchEmptyHand(h0)
+PASS   : AIDecisionTest::snatchEmptyHand(e-1)
+PASS   : AIDecisionTest::snatchEmptyHand(e-2)
+PASS   : AIDecisionTest::snatchEmptyHand(e999999)
+PASS   : AIDecisionTest::snatchEmptyHand(e0)
+PASS   : AIDecisionTest::snatchEmptyHand(j-1)
+PASS   : AIDecisionTest::snatchEmptyHand(j-2)
+PASS   : AIDecisionTest::snatchEmptyHand(j999999)
+PASS   : AIDecisionTest::snatchEmptyHand(j0)
+PASS   : AIDecisionTest::snatchEmptyHand(target-emptied-during-choice)
+PASS   : AIDecisionTest::emptyCardAreas()
+PASS   : AIDecisionTest::equipmentChoiceCannotTakeHand()
+PASS   : AIDecisionTest::cleanupTestCase()
+Totals: 18 passed, 0 failed, 0 skipped, 0 blacklisted, 805ms
+********* Finished testing of AIDecisionTest *********

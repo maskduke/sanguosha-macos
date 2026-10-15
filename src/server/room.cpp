@@ -906,36 +906,43 @@ bool Room::_askForNullification(const TrickCard *trick, ServerPlayer *from, Serv
 }
 
 int Room::askForCardChosen(ServerPlayer *player, ServerPlayer *who, const QString &flags, const QString &reason){
+    // Requests can outlive the card state shown by the client. Never accept a
+    // reply (including the hidden-hand sentinel -1) without checking it again.
+    if(who->getCards(flags).isEmpty())
+        return -1;
     notifyMoveFocus(player, S_COMMAND_CHOOSE_CARD);
 
-    //@todo: whoever wrote this had better put a explantory note here
     if(!who->hasFlag("dongchaee") && who != player){
         if(flags == "h" || (flags == "he" && !who->hasEquip()))
             return who->getRandomHandCardId();
     }
 
-    int card_id;
-
+    int card_id = -2;
     AI *ai = player->getAI();
     if(ai){
         thread->delay(Config.AIDelay);
         card_id = ai->askForCardChosen(who, flags, reason);
     }else{
         bool success = doRequest(player, S_COMMAND_CHOOSE_CARD, toJsonArray(who->objectName(), flags, reason), true);
-        //@todo: check if the card returned is valid
         Json::Value clientReply = player->getClientReply();
-        if (!success || !clientReply.isInt())
-        {
-            // randomly choose a card
-            QList<const Card *> cards = who->getCards(flags);
-            int r = qrand() % cards.length();
-            return cards.at(r)->getId();
-        }
-        card_id = clientReply.asInt();
+        if(success && clientReply.isInt())
+            card_id = clientReply.asInt();
     }
 
-    if(card_id == -1)
+    const QList<const Card *> cards = who->getCards(flags);
+    if(cards.isEmpty())
+        return -1;
+    if(card_id == -1 && flags.contains('h') && !who->isKongcheng())
         card_id = who->getRandomHandCardId();
+
+    bool valid = false;
+    foreach(const Card *card, cards)
+        if(card->getEffectiveId() == card_id){
+            valid = true;
+            break;
+        }
+    if(!valid)
+        card_id = cards.at(qrand() % cards.length())->getEffectiveId();
 
     QVariant decisionData = QVariant::fromValue("cardChosen:"+reason+":"+QString::number(card_id));
     thread->trigger(ChoiceMade, this, player, decisionData);

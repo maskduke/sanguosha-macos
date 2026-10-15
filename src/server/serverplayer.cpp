@@ -59,10 +59,13 @@ void ServerPlayer::playCardEffect(const Card *card) const{
 }
 
 int ServerPlayer::getRandomHandCardId() const{
-    return getRandomHandCard()->getEffectiveId();
+    const Card *card = getRandomHandCard();
+    return card ? card->getEffectiveId() : -1;
 }
 
 const Card *ServerPlayer::getRandomHandCard() const{
+    if(handcards.isEmpty())
+        return NULL;
     int index = qrand() % handcards.length();
     return handcards.at(index);
 }

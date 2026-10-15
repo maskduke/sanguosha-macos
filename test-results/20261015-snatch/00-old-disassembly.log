@@ -1,0 +1,32 @@
+
+/Applications/QSanguosha-Nirvana.app/Contents/MacOS/QSanguosha:	file format mach-o arm64
+
+Disassembly of section __TEXT,__text:
+
+0000000100220834 <ServerPlayer::getRandomHandCardId() const>:
+100220834: a9be4ff4    	stp	x20, x19, [sp, #-0x20]!
+100220838: a9017bfd    	stp	x29, x30, [sp, #0x10]
+10022083c: 910043fd    	add	x29, sp, #0x10
+100220840: aa0003f3    	mov	x19, x0
+100220844: b0001480    	adrp	x0, 0x1004b1000 <_wcsrtombs+0x1004b1000>
+100220848: f9454000    	ldr	x0, [x0, #0xa80]
+10022084c: f9400008    	ldr	x8, [x0]
+100220850: d63f0100    	blr	x8
+100220854: 39400008    	ldrb	w8, [x0]
+100220858: 36000228    	tbz	w8, #0x0, 0x10022089c <ServerPlayer::getRandomHandCardId() const+0x68>
+10022085c: b0001480    	adrp	x0, 0x1004b1000 <_wcsrtombs+0x1004b1000>
+100220860: f9458800    	ldr	x0, [x0, #0xb10]
+100220864: f9400008    	ldr	x8, [x0]
+100220868: d63f0100    	blr	x8
+10022086c: d2800001    	mov	x1, #0x0                ; =0
+100220870: 52800022    	mov	w2, #0x1                ; =1
+100220874: 940754c8    	bl	0x1003f5b94 <_wcsrtombs+0x1003f5b94>
+100220878: 92407808    	and	x8, x0, #0x7fffffff
+10022087c: a95a266a    	ldp	x10, x9, [x19, #0x1a0]
+100220880: 9ac9090b    	udiv	x11, x8, x9
+100220884: 9b09a168    	msub	x8, x11, x9, x8
+100220888: f8687940    	ldr	x0, [x10, x8, lsl #3]
+10022088c: 97f8e457    	bl	0x1000599e8 <Card::getEffectiveId() const>
+100220890: a9417bfd    	ldp	x29, x30, [sp, #0x10]
+100220894: a8c24ff4    	ldp	x20, x19, [sp], #0x20
+100220898: d65f03c0    	ret
