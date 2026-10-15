@@ -1,0 +1,28 @@
+[0/2] Re-checking globbed directories...
+[1/41] Automatic MOC for target qs_legacy_protocol
+[2/39] Automatic MOC for target test_qt_compat
+[3/37] Automatic MOC for target test_lua_runtime
+[4/35] Automatic MOC for target test_original_audio
+[5/33] Automatic MOC for target test_qt_values
+[6/31] Automatic MOC for target test_paths
+AutoMoc warning
+---------------
+"SRC:/tests/platform/test_paths.cpp"
+includes the moc file "test_paths.moc", but does not contain a Q_OBJECT, Q_GADGET, Q_NAMESPACE, Q_NAMESPACE_EXPORT, Q_GADGET_EXPORT or Q_ENUM_NS macro.
+
+[7/29] Automatic MOC for target test_feedback
+[8/28] Automatic MOC for target test_audio_backend
+[9/26] Automatic MOC for target test_native_socket
+[10/25] Automatic MOC for target test_line_framer
+[11/23] Automatic MOC for target test_legacy_protocol
+[12/21] Automatic MOC for target test_replay
+AutoMoc warning
+---------------
+"SRC:/tests/replay/test_replay.cpp"
+includes the moc file "test_replay.moc", but does not contain a Q_OBJECT, Q_GADGET, Q_NAMESPACE, Q_NAMESPACE_EXPORT, Q_GADGET_EXPORT or Q_ENUM_NS macro.
+
+[13/19] Linking CXX executable test_feedback
+[14/19] Linking CXX executable test_native_socket
+[15/19] Automatic MOC for target test_ai_decision
+[16/18] Building CXX object CMakeFiles/test_ai_decision.dir/tests/ai/test_ai_decision.cpp.o
+[17/18] Linking CXX executable test_ai_decision

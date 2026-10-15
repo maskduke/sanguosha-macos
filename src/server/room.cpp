@@ -2940,51 +2940,40 @@ RoomThread *Room::getThread() const{
 }
 
 void Room::moveCardTo(const Card *card, ServerPlayer *to, Player::Place place, bool open){
-    QSet<ServerPlayer *> scope;
-
-    if(!open){
-        int eid = card->getEffectiveId();
-        ServerPlayer *from = getCardOwner(eid);
-        Player::Place from_place= getCardPlace(eid);
-
-        scope.insert(from);
-        scope.insert(to);
-
-        QString dongchaee_name = tag.value("Dongchaee").toString();
-        if(!dongchaee_name.isEmpty()){
-            ServerPlayer *dongchaee = findChild<ServerPlayer *>(dongchaee_name);
-            bool invoke_dongcha = false;
-            if(dongchaee == from)
-                invoke_dongcha = (from_place == Player::Hand);
-            else if(dongchaee == to)
-                invoke_dongcha = (place == Player::Hand);
-
-            if(invoke_dongcha){
-                QString dongchaer_name = tag.value("Dongchaer").toString();
-                ServerPlayer *dongchaer = findChild<ServerPlayer *>(dongchaer_name);
-                scope.insert(dongchaer);
+    // A virtual card may combine cards from different players or areas
+    // (Xuanhuo stages its first card in a private pile). Notify each actual
+    // move, rather than inferring the whole batch from its first subcard.
+    auto moveOne = [this](CardMoveStruct move) {
+        if(move.from == move.to && move.from_place == move.to_place)
+            return;
+        QSet<ServerPlayer *> scope;
+        const bool hiddenSource = move.from_place == Player::Hand || move.from_place == Player::Special;
+        const bool hiddenDestination = move.to_place == Player::Hand || move.to_place == Player::Special;
+        if(!move.open && move.from && move.to && hiddenSource && hiddenDestination){
+            scope.insert(move.from);
+            scope.insert(move.to);
+            const QString dongchaee = tag.value("Dongchaee").toString();
+            if(!dongchaee.isEmpty() && ((move.from->objectName() == dongchaee && move.from_place == Player::Hand)
+                || (move.to->objectName() == dongchaee && move.to_place == Player::Hand))){
+                ServerPlayer *watcher = findChild<ServerPlayer *>(tag.value("Dongchaer").toString());
+                if(watcher)
+                    scope.insert(watcher);
             }
+            QString from = move.from->objectName();
+            QString to = move.to->objectName();
+            if(move.from_place == Player::Special) from += "@special";
+            if(move.to_place == Player::Special) to += "@special";
+            const QString notification = QString("1:%1->%2").arg(from, to);
+            foreach(ServerPlayer *player, m_players)
+                if(!scope.contains(player))
+                    player->invoke("moveNCards", notification);
+        }else{
+            // Equipment/judging/discarded cards are public. The count-only
+            // protocol cannot represent their areas and must not call them hand cards.
+            move.open = true;
         }
-
-        QString from_str = from->objectName();
-        if(from_place == Player::Special)
-            from_str.append("@special");
-
-        QString to_str = to->objectName();
-        if(place == Player::Special)
-            to_str.append("@special");
-
-        int n = card->isVirtualCard() ? card->subcardsLength() : 1;
-        QString private_move = QString("%1:%2->%3")
-            .arg(n)
-            .arg(from_str)
-            .arg(to_str);
-
-        foreach(ServerPlayer *player, m_players){
-            if(!scope.contains(player))
-                player->invoke("moveNCards", private_move);
-        }
-    }
+        doMove(move, scope);
+    };
 
     CardMoveStruct move;
     move.to = to;
@@ -3005,7 +2994,7 @@ void Room::moveCardTo(const Card *card, ServerPlayer *to, Player::Place place, b
                 data = QVariant::fromValue(move);
                 thread->trigger(CardMoving, this, move.to, data);
             }
-            doMove(move, scope);
+            moveOne(move);
 
             if(move.from)
                 from = move.from;
@@ -3019,7 +3008,7 @@ void Room::moveCardTo(const Card *card, ServerPlayer *to, Player::Place place, b
             data = QVariant::fromValue(move);
             thread->trigger(CardMoving, this, move.to, data);
         }
-        doMove(move, scope);
+        moveOne(move);
 
         if(move.from)
             from = move.from;

@@ -1,0 +1,50 @@
+[0/2] Re-checking globbed directories...
+[1/2] Re-running CMake...
+-- Could NOT find WrapVulkanHeaders (missing: Vulkan_INCLUDE_DIR) 
+-- Configuring done (0.5s)
+-- Generating done (0.2s)
+-- Build files have been written to: /Users/haoranliu/Projects/sanguosha/build/macos-arm64-asan
+[0/4] Re-checking globbed directories...
+[1/24] Automatic MOC for target qs_audio
+[2/22] Automatic MOC for target qs_protocol
+[3/20] Automatic MOC for target qs_paths
+[4/18] Automatic MOC and UIC for target qs_legacy_objects
+[5/17] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/util/nativesocket.cpp.o
+[6/17] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/package/nostalgia.cpp.o
+[7/17] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/server/room.cpp.o
+/Users/haoranliu/Projects/sanguosha/src/server/room.cpp:728:17: warning: 'type' is deprecated: Use typeId() or metaType(). [-Wdeprecated-declarations]
+  728 |         if(data.type() == QVariant::String)
+      |                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qvariant.h:601:5: note: 'type' has been explicitly marked deprecated here
+  601 |     QT_DEPRECATED_VERSION_X_6_0("Use typeId() or metaType().")
+      |     ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:143:44: note: expanded from macro 'QT_DEPRECATED_VERSION_X_6_0'
+  143 | # define QT_DEPRECATED_VERSION_X_6_0(text) QT_DEPRECATED_X(text)
+      |                                            ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:31:33: note: expanded from macro 'QT_DEPRECATED_X'
+   31 | #  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+      |                                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qcompilerdetection.h:1018:36: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+ 1018 | #  define Q_DECL_DEPRECATED_X(x) [[deprecated(x)]]
+      |                                    ^
+/Users/haoranliu/Projects/sanguosha/src/server/room.cpp:728:37: warning: 'String' is deprecated: Use QMetaType::Type instead. [-Wdeprecated-declarations]
+  728 |         if(data.type() == QVariant::String)
+      |                                     ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qvariant.h:149:10: note: 'Type' has been explicitly marked deprecated here
+  149 |     enum QT_DEPRECATED_VERSION_X_6_0("Use QMetaType::Type instead.") Type
+      |          ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:143:44: note: expanded from macro 'QT_DEPRECATED_VERSION_X_6_0'
+  143 | # define QT_DEPRECATED_VERSION_X_6_0(text) QT_DEPRECATED_X(text)
+      |                                            ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:31:33: note: expanded from macro 'QT_DEPRECATED_X'
+   31 | #  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+      |                                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qcompilerdetection.h:1018:36: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+ 1018 | #  define Q_DECL_DEPRECATED_X(x) [[deprecated(x)]]
+      |                                    ^
+2 warnings generated.
+[8/17] Automatic MOC for target QSanguosha
+[9/16] Linking CXX executable QSanguosha.app/Contents/MacOS/QSanguosha
+[10/16] Automatic MOC for target test_ai_decision
+[11/15] Building CXX object CMakeFiles/test_ai_decision.dir/tests/ai/test_ai_decision.cpp.o
+[12/15] Linking CXX executable test_ai_decision

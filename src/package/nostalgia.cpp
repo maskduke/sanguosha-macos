@@ -332,7 +332,7 @@ public:
 
 
             if(choice == "slash"){
-                ServerPlayer *target = room->askForPlayerChosen(lingtong, targets1, "xuanfeng-slash");
+                ServerPlayer *target = room->askForPlayerChosen(lingtong, targets1, "nosxuanfeng-slash");
 
                 Slash *slash = new Slash(Card::NoSuit, 0);
                 slash->setSkillName("nosxuanfeng");
@@ -345,7 +345,7 @@ public:
             }else if(choice == "damage"){
                 room->playSkillEffect("xuanfeng");
 
-                ServerPlayer *target = room->askForPlayerChosen(lingtong, targets2, "xuanfeng-damage");
+                ServerPlayer *target = room->askForPlayerChosen(lingtong, targets2, "nosxuanfeng-damage");
 
                 DamageStruct damage;
                 damage.from = lingtong;

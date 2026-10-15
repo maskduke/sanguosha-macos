@@ -8,6 +8,11 @@
 #include "skill.h"
 #include "standard.h"
 #include "lua.hpp"
+#include "client.h"
+#include "socket.h"
+#include "yjcm-package.h"
+#include "playercarddialog.h"
+#include <QCommandLinkButton>
 class EnyuanCaptureAI : public TrustAI {
 public:
  EnyuanCaptureAI(ServerPlayer *p,ServerPlayer *friendly):TrustAI(p),friendly(friendly){}
@@ -24,10 +29,111 @@ public:
   return reply;
  }
 };
+class RecordingSocket : public ClientSocket {
+public:
+ QStringList messages;
+ void connectToHost() override {}
+ void disconnectFromHost() override {}
+ void send(const QString &message) override { messages << message; }
+ bool isConnected() const override { return true; }
+ QString peerName() const override { return "fixture"; }
+ QString peerAddress() const override { return "127.0.0.1"; }
+};
+class XuanhuoGiveAI : public TrustAI {
+public:
+ using TrustAI::TrustAI;
+ bool equipFirst=false;
+ bool askForSkillInvoke(const QString &,const QVariant &) override {return true;}
+ ServerPlayer *askForPlayerChosen(const QList<ServerPlayer *> &targets,const QString &) override {return targets.first();}
+ QString askForChoice(const QString &,const QString &,const QVariant &) override {return "give";}
+ int askForCardChosen(ServerPlayer *who,const QString &,const QString &) override {
+  if(who->hasEquip() && (equipFirst || who->isKongcheng()))return who->getEquips().first()->getId();
+  return who->getHandcards().first()->getId();
+ }
+};
+class ChoiceCapture : public TriggerSkill {
+public:
+ ChoiceCapture():TriggerSkill("test-choice-capture"){events<<ChoiceMade;}
+ mutable QString chosen;
+ bool triggerable(const ServerPlayer *) const override {return true;}
+ bool trigger(TriggerEvent,Room *,ServerPlayer *,QVariant &data) const override {
+  if(data.toString().startsWith("playerChosen:"))chosen=data.toString();return false;
+ }
+};
 class AIDecisionTest : public QObject {
  Q_OBJECT
 private slots:
  void initTestCase() { QVERIFY(QDir::setCurrent(QS_ASSET_ROOT)); Sanguosha=new Engine;Config.init(); }
+ void xuanhuoObserverHandCount_data() {
+  QTest::addColumn<bool>("shichou");QTest::addColumn<int>("equipmentOrder");
+  QTest::newRow("xuanhuo")<<false<<0;
+  QTest::newRow("shichou-bgm-liubei-noslingtong")<<true<<0;
+  QTest::newRow("shichou-hand-equipment")<<true<<2;
+  QTest::newRow("shichou-equipment-hand")<<true<<1;
+ }
+ void xuanhuoObserverHandCount() {
+  QFETCH(bool,shichou);QFETCH(int,equipmentOrder);
+  Config.EnableAI=true;Config.AIDelay=0;
+  Room room(nullptr,"04p");room.thread=new RoomThread(&room);
+  auto observerSocket=new RecordingSocket;observerSocket->setParent(&room);
+  auto observer=room.addSocket(observerSocket);
+  auto lord=room.addSocket(nullptr);auto fazheng=room.addSocket(nullptr);
+  observer->setObjectName("observer");lord->setObjectName("lord");fazheng->setObjectName("fazheng");
+  for(auto p:room.getPlayers()){p->setGeneralName(p==fazheng?"fazheng":"caocao");p->setMaxHp(4);p->setHp(4);p->setRole(p==lord?"lord":"rebel");p->setState("robot");p->setAI(new XuanhuoGiveAI(p));}
+  room.revivePlayer(lord);room.current=fazheng;
+  observerSocket->messages.clear();
+  if(shichou){
+   lord->setGeneralName("bgm_liubei");lord->setGeneral2Name("noslingtong");lord->setPhase(Player::Start);
+   if(equipmentOrder){
+    const Card *equip=nullptr;
+    for(int i=0;i<Sanguosha->getCardCount();++i)if(Sanguosha->getCard(i)->inherits("EquipCard")){equip=Sanguosha->getCard(i);break;}
+    QVERIFY(equip);room.setCardMapping(equip->getId(),nullptr,Player::DrawPile);room.moveCardTo(equip,lord,Player::Equip,true);
+    static_cast<XuanhuoGiveAI *>(lord->getAI())->equipFirst=equipmentOrder==1;
+   }
+   room.drawCards(lord,equipmentOrder?1:2);QVERIFY(lord->hasLordSkill("shichou"));
+   auto skill=Sanguosha->getTriggerSkill("shichou");QVERIFY(skill);QVariant data;
+   skill->trigger(PhaseChange,&room,lord,data);QCOMPARE(lord->getMark("hate"),1);
+  }else{
+   XuanhuoCard card;CardEffectStruct effect;effect.from=fazheng;effect.to=lord;effect.card=&card;card.onEffect(effect);
+  }
+  QCOMPARE(lord->getHandcardNum(),0);QCOMPARE(fazheng->getHandcardNum(),2);
+  QTemporaryFile replay("/private/tmp/qs-sync-XXXXXX.txt");QVERIFY(replay.open());
+  Client client(nullptr,replay.fileName());Self->setObjectName("observer");Self->setGeneralName("caocao");
+  auto feed=[&](const QString &message){return QMetaObject::invokeMethod(&client,"processReply",Qt::DirectConnection,Q_ARG(QByteArray,message.toUtf8()));};
+  QVERIFY(feed("addPlayer lord:bG9yZA==:caocao"));QVERIFY(feed("addPlayer fazheng:ZmF6aGVuZw==:fazheng"));
+  QVERIFY(feed("setPileNumber 178"));
+  for(const QString &message:observerSocket->messages)
+   if(message.startsWith("drawNCards ")||message.startsWith("moveNCards ")||message.startsWith("moveCard ")||message.startsWith("pile ")){qInfo().noquote()<<message;QVERIFY(feed(message));}
+  auto visibleLord=client.getPlayer("lord");visibleLord->setGeneralName("caocao");visibleLord->setHp(4);
+  QCOMPARE(visibleLord->getHandcardNum(),lord->getHandcardNum());
+  QCOMPARE(client.getPlayer("fazheng")->getHandcardNum(),fazheng->getHandcardNum());
+  QVERIFY(!visibleLord->hasEquip());
+  // Count-only notifications must not reveal the transferred hidden hand cards.
+  QCOMPARE(client.getPlayer("fazheng")->getCards().size(),equipmentOrder==2?1:0);
+  PlayerCardDialog dialog(visibleLord,"hej");
+  auto button=dialog.findChild<QCommandLinkButton *>("handcard_button");QVERIFY(button);QVERIFY(!button->isEnabled());
+  Self=nullptr;ClientInstance=nullptr;
+ }
+ void oldXuanfengChoosesEnemy_data() {
+  QTest::addColumn<QString>("action");QTest::newRow("damage")<<QString("damage");QTest::newRow("slash")<<QString("slash");QTest::newRow("friends-only")<<QString("nothing");
+ }
+ void oldXuanfengChoosesEnemy() {
+  QFETCH(QString,action);Config.EnableAI=true;Config.AIDelay=0;Config.Enable2ndGeneral=true;
+  Room room(nullptr,"04p");room.thread=new RoomThread(&room);
+  for(int i=0;i<4;++i){auto p=room.addSocket(nullptr);p->setObjectName(QString("p%1").arg(i));p->setRole(i==0?"lord":i==3?"rebel":"loyalist");p->setState("robot");p->setGeneralName(i==0?"bgm_liubei":"caocao");p->setMaxHp(4);p->setHp(4);}
+  auto lord=room.getPlayers()[0];lord->setGeneral2Name("noslingtong");room.revivePlayer(lord);room.current=lord;
+  for(auto p:room.getPlayers())p->setAI(room.cloneAI(p));
+  // Pin perception and make the missing-handler random fallback choose the ally.
+  QString lua="local ai=sgs.ais.p0; ai.isEnemy=function(self,p) return p:objectName()=='p3' end; ai.isFriend=function(self,p) return p:objectName()~='p3' end; ai.enemies={sgs.ais.p3.player}; math.random=function(a,b) return a end";
+  if(action=="nothing")lua+="; ai.enemies={}; ai.isEnemy=function() return false end";
+  if(action=="slash")lua+="; sgs.ai_skill_choice.nosxuanfeng=function() return 'slash' end";
+  QCOMPARE(luaL_dostring(room.getLuaState(),qPrintable(lua)),0);
+  ChoiceCapture capture;room.thread->addTriggerSkill(&capture);
+  const auto skill=Sanguosha->getTriggerSkill("nosxuanfeng");QVERIFY(skill);
+  lord->tag["InvokeNosXuanfeng"]=true;QVariant data;skill->trigger(CardLostDone,&room,lord,data);
+  if(action=="nothing")QVERIFY(capture.chosen.isEmpty());
+  else QVERIFY2(capture.chosen.endsWith(":p3"),qPrintable(capture.chosen));
+ }
  void cardChoiceRejectsInvalidReply() {
   Config.EnableAI=true;Config.AIDelay=0;
   Room room(nullptr,"04p");room.thread=new RoomThread(&room);

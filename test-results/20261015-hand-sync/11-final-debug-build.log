@@ -1,0 +1,73 @@
+[0/2] Re-checking globbed directories...
+[1/2] Re-running CMake...
+-- Could NOT find WrapVulkanHeaders (missing: Vulkan_INCLUDE_DIR) 
+-- Configuring done (0.5s)
+-- Generating done (0.2s)
+-- Build files have been written to: /Users/haoranliu/Projects/sanguosha/build/macos-arm64-debug
+[0/4] Re-checking globbed directories...
+[1/59] Automatic MOC for target qs_paths
+[2/57] Automatic MOC for target qs_protocol
+[3/55] Automatic MOC for target qs_audio
+[4/53] Automatic MOC for target qs_legacy_protocol
+[5/51] Automatic MOC for target test_original_audio
+[6/49] Automatic MOC for target test_qt_values
+[7/47] Automatic MOC for target test_qt_compat
+[8/45] Automatic MOC for target test_paths
+AutoMoc warning
+---------------
+"SRC:/tests/platform/test_paths.cpp"
+includes the moc file "test_paths.moc", but does not contain a Q_OBJECT, Q_GADGET, Q_NAMESPACE, Q_NAMESPACE_EXPORT, Q_GADGET_EXPORT or Q_ENUM_NS macro.
+
+[9/43] Automatic MOC for target test_line_framer
+[10/41] Automatic MOC for target test_audio_backend
+[11/39] Automatic MOC for target test_legacy_protocol
+[12/37] Automatic MOC for target test_replay
+AutoMoc warning
+---------------
+"SRC:/tests/replay/test_replay.cpp"
+includes the moc file "test_replay.moc", but does not contain a Q_OBJECT, Q_GADGET, Q_NAMESPACE, Q_NAMESPACE_EXPORT, Q_GADGET_EXPORT or Q_ENUM_NS macro.
+
+[13/35] Automatic MOC and UIC for target qs_legacy_objects
+[14/34] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/util/nativesocket.cpp.o
+[15/34] Building CXX object CMakeFiles/qs_legacy_objects.dir/src/server/room.cpp.o
+/Users/haoranliu/Projects/sanguosha/src/server/room.cpp:728:17: warning: 'type' is deprecated: Use typeId() or metaType(). [-Wdeprecated-declarations]
+  728 |         if(data.type() == QVariant::String)
+      |                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qvariant.h:601:5: note: 'type' has been explicitly marked deprecated here
+  601 |     QT_DEPRECATED_VERSION_X_6_0("Use typeId() or metaType().")
+      |     ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:143:44: note: expanded from macro 'QT_DEPRECATED_VERSION_X_6_0'
+  143 | # define QT_DEPRECATED_VERSION_X_6_0(text) QT_DEPRECATED_X(text)
+      |                                            ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:31:33: note: expanded from macro 'QT_DEPRECATED_X'
+   31 | #  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+      |                                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qcompilerdetection.h:1018:36: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+ 1018 | #  define Q_DECL_DEPRECATED_X(x) [[deprecated(x)]]
+      |                                    ^
+/Users/haoranliu/Projects/sanguosha/src/server/room.cpp:728:37: warning: 'String' is deprecated: Use QMetaType::Type instead. [-Wdeprecated-declarations]
+  728 |         if(data.type() == QVariant::String)
+      |                                     ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qvariant.h:149:10: note: 'Type' has been explicitly marked deprecated here
+  149 |     enum QT_DEPRECATED_VERSION_X_6_0("Use QMetaType::Type instead.") Type
+      |          ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:143:44: note: expanded from macro 'QT_DEPRECATED_VERSION_X_6_0'
+  143 | # define QT_DEPRECATED_VERSION_X_6_0(text) QT_DEPRECATED_X(text)
+      |                                            ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qtdeprecationmarkers.h:31:33: note: expanded from macro 'QT_DEPRECATED_X'
+   31 | #  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+      |                                 ^
+/opt/homebrew/opt/qtbase/lib/QtCore.framework/Headers/qcompilerdetection.h:1018:36: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+ 1018 | #  define Q_DECL_DEPRECATED_X(x) [[deprecated(x)]]
+      |                                    ^
+2 warnings generated.
+[16/34] Automatic MOC for target QSanguosha
+[17/33] Automatic MOC for target test_native_socket
+[18/32] Automatic MOC for target test_feedback
+[19/31] Linking CXX executable test_native_socket
+[20/31] Linking CXX executable test_feedback
+[21/31] Linking CXX executable QSanguosha.app/Contents/MacOS/QSanguosha
+[22/31] Automatic MOC for target test_lua_runtime
+[23/29] Automatic MOC for target test_ai_decision
+[24/28] Building CXX object CMakeFiles/test_ai_decision.dir/tests/ai/test_ai_decision.cpp.o
+[25/28] Linking CXX executable test_ai_decision

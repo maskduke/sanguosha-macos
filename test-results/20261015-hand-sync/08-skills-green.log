@@ -1,0 +1,50 @@
+********* Start testing of AIDecisionTest *********
+Config: Using QtTest library 6.11.1, Qt 6.11.1 (arm64-little_endian-lp64 shared (dynamic) release build; by Apple LLVM 21.0.0 (clang-2100.0.123.102)), macos 26.6.2
+PASS   : AIDecisionTest::initTestCase()
+QDEBUG : AIDecisionTest::xuanhuoObserverHandCount(xuanhuo) observer: #lord alive true
+QDEBUG : AIDecisionTest::xuanhuoObserverHandCount(xuanhuo) observer: #observer seat 1
+QDEBUG : AIDecisionTest::xuanhuoObserverHandCount(xuanhuo) observer: #lord seat 2
+QDEBUG : AIDecisionTest::xuanhuoObserverHandCount(xuanhuo) observer: #fazheng seat 3
+QDEBUG : AIDecisionTest::xuanhuoObserverHandCount(xuanhuo) observer: revivePlayer lord
+QDEBUG : AIDecisionTest::xuanhuoObserverHandCount(xuanhuo) observer: updateStateItem ZFF
+QDEBUG : AIDecisionTest::xuanhuoObserverHandCount(xuanhuo) observer: drawNCards lord:2
+QDEBUG : AIDecisionTest::xuanhuoObserverHandCount(xuanhuo) observer: [1,0,3,10,["lord",24]]
+QDEBUG : AIDecisionTest::xuanhuoObserverHandCount(xuanhuo) observer: [4,0,3,10,["fazheng",1]]
+QDEBUG : AIDecisionTest::xuanhuoObserverHandCount(xuanhuo) observer: moveNCards 1:lord->lord@special
+QDEBUG : AIDecisionTest::xuanhuoObserverHandCount(xuanhuo) observer: [7,0,3,10,["fazheng",1]]
+QDEBUG : AIDecisionTest::xuanhuoObserverHandCount(xuanhuo) observer: moveNCards 1:lord@special->fazheng
+QDEBUG : AIDecisionTest::xuanhuoObserverHandCount(xuanhuo) observer: moveNCards 1:lord->fazheng
+QINFO  : AIDecisionTest::xuanhuoObserverHandCount(xuanhuo) drawNCards lord:2
+QINFO  : AIDecisionTest::xuanhuoObserverHandCount(xuanhuo) moveNCards 1:lord->lord@special
+QINFO  : AIDecisionTest::xuanhuoObserverHandCount(xuanhuo) moveNCards 1:lord@special->fazheng
+QINFO  : AIDecisionTest::xuanhuoObserverHandCount(xuanhuo) moveNCards 1:lord->fazheng
+QWARN  : AIDecisionTest::xuanhuoObserverHandCount(xuanhuo) qt.qpa.fonts: Populating font family aliases took 107 ms. Replace uses of missing font family "Sans Serif" with one that exists to avoid this cost. 
+PASS   : AIDecisionTest::xuanhuoObserverHandCount(xuanhuo)
+QDEBUG : AIDecisionTest::xuanhuoObserverHandCount(shichou-bgm-liubei-noslingtong) observer: #lord alive true
+QDEBUG : AIDecisionTest::xuanhuoObserverHandCount(shichou-bgm-liubei-noslingtong) observer: #observer seat 1
+QDEBUG : AIDecisionTest::xuanhuoObserverHandCount(shichou-bgm-liubei-noslingtong) observer: #lord seat 2
+QDEBUG : AIDecisionTest::xuanhuoObserverHandCount(shichou-bgm-liubei-noslingtong) observer: #fazheng seat 3
+QDEBUG : AIDecisionTest::xuanhuoObserverHandCount(shichou-bgm-liubei-noslingtong) observer: revivePlayer lord
+QDEBUG : AIDecisionTest::xuanhuoObserverHandCount(shichou-bgm-liubei-noslingtong) observer: updateStateItem ZFF
+QDEBUG : AIDecisionTest::xuanhuoObserverHandCount(shichou-bgm-liubei-noslingtong) observer: drawNCards lord:2
+QDEBUG : AIDecisionTest::xuanhuoObserverHandCount(shichou-bgm-liubei-noslingtong) observer: [10,0,3,10,["lord",9]]
+QDEBUG : AIDecisionTest::xuanhuoObserverHandCount(shichou-bgm-liubei-noslingtong) observer: [13,0,3,9,["shichou","lord"]]
+QDEBUG : AIDecisionTest::xuanhuoObserverHandCount(shichou-bgm-liubei-noslingtong) observer: log #GetMark:fazheng->::@hate:1
+QDEBUG : AIDecisionTest::xuanhuoObserverHandCount(shichou-bgm-liubei-noslingtong) observer: setMark fazheng.@hate=1
+QDEBUG : AIDecisionTest::xuanhuoObserverHandCount(shichou-bgm-liubei-noslingtong) observer: [16,0,3,10,["lord",1]]
+QDEBUG : AIDecisionTest::xuanhuoObserverHandCount(shichou-bgm-liubei-noslingtong) observer: moveNCards 1:lord->lord@special
+QDEBUG : AIDecisionTest::xuanhuoObserverHandCount(shichou-bgm-liubei-noslingtong) observer: [19,0,3,10,["lord",1]]
+QDEBUG : AIDecisionTest::xuanhuoObserverHandCount(shichou-bgm-liubei-noslingtong) observer: moveNCards 1:lord@special->fazheng
+QDEBUG : AIDecisionTest::xuanhuoObserverHandCount(shichou-bgm-liubei-noslingtong) observer: moveNCards 1:lord->fazheng
+QINFO  : AIDecisionTest::xuanhuoObserverHandCount(shichou-bgm-liubei-noslingtong) drawNCards lord:2
+QINFO  : AIDecisionTest::xuanhuoObserverHandCount(shichou-bgm-liubei-noslingtong) moveNCards 1:lord->lord@special
+QINFO  : AIDecisionTest::xuanhuoObserverHandCount(shichou-bgm-liubei-noslingtong) moveNCards 1:lord@special->fazheng
+QINFO  : AIDecisionTest::xuanhuoObserverHandCount(shichou-bgm-liubei-noslingtong) moveNCards 1:lord->fazheng
+PASS   : AIDecisionTest::xuanhuoObserverHandCount(shichou-bgm-liubei-noslingtong)
+QWARN  : AIDecisionTest::oldXuanfengChoosesEnemy(damage) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+PASS   : AIDecisionTest::oldXuanfengChoosesEnemy(damage)
+QWARN  : AIDecisionTest::oldXuanfengChoosesEnemy(slash) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+PASS   : AIDecisionTest::oldXuanfengChoosesEnemy(slash)
+PASS   : AIDecisionTest::cleanupTestCase()
+Totals: 6 passed, 0 failed, 0 skipped, 0 blacklisted, 304ms
+********* Finished testing of AIDecisionTest *********

@@ -1,0 +1,25 @@
+********* Start testing of AIDecisionTest *********
+Config: Using QtTest library 6.11.1, Qt 6.11.1 (arm64-little_endian-lp64 shared (dynamic) release build; by Apple LLVM 21.0.0 (clang-2100.0.123.102)), macos 26.6.2
+PASS   : AIDecisionTest::initTestCase()
+QDEBUG : AIDecisionTest::xuanhuoObserverHandCount() observer: #lord alive true
+QDEBUG : AIDecisionTest::xuanhuoObserverHandCount() observer: #observer seat 1
+QDEBUG : AIDecisionTest::xuanhuoObserverHandCount() observer: #lord seat 2
+QDEBUG : AIDecisionTest::xuanhuoObserverHandCount() observer: #fazheng seat 3
+QDEBUG : AIDecisionTest::xuanhuoObserverHandCount() observer: revivePlayer lord
+QDEBUG : AIDecisionTest::xuanhuoObserverHandCount() observer: updateStateItem ZFF
+QDEBUG : AIDecisionTest::xuanhuoObserverHandCount() observer: drawNCards lord:2
+QDEBUG : AIDecisionTest::xuanhuoObserverHandCount() observer: [1,0,3,10,["lord",24]]
+QDEBUG : AIDecisionTest::xuanhuoObserverHandCount() observer: [4,0,3,10,["fazheng",1]]
+QDEBUG : AIDecisionTest::xuanhuoObserverHandCount() observer: moveNCards 1:lord->lord@special
+QDEBUG : AIDecisionTest::xuanhuoObserverHandCount() observer: [7,0,3,10,["fazheng",1]]
+QDEBUG : AIDecisionTest::xuanhuoObserverHandCount() observer: moveNCards 2:lord@special->fazheng
+QINFO  : AIDecisionTest::xuanhuoObserverHandCount() drawNCards lord:2
+QINFO  : AIDecisionTest::xuanhuoObserverHandCount() moveNCards 1:lord->lord@special
+QINFO  : AIDecisionTest::xuanhuoObserverHandCount() moveNCards 2:lord@special->fazheng
+FAIL!  : AIDecisionTest::xuanhuoObserverHandCount() Compared values are not the same
+   Actual   (visibleLord->getHandcardNum()): 1
+   Expected (lord->getHandcardNum())       : 0
+   Loc: [/Users/haoranliu/Projects/sanguosha/tests/ai/test_ai_decision.cpp(74)]
+PASS   : AIDecisionTest::cleanupTestCase()
+Totals: 2 passed, 1 failed, 0 skipped, 0 blacklisted, 67ms
+********* Finished testing of AIDecisionTest *********
