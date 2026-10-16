@@ -145,6 +145,7 @@ public:
     static void FillPlayerNames(QComboBox *combobox, bool add_none);
 
 public slots:
+    void adjustDashboard(bool expand);
     void addPlayer(ClientPlayer *player);
     void removePlayer(const QString &player_name);
     void drawCards(const QList<const Card *> &cards);
@@ -322,7 +323,6 @@ private slots:
     void setEmotion(const QString &who, const QString &emotion,bool permanent = false);
     void showSkillInvocation(const QString &who, const QString &skill_name);
     void doAnimation(const QString &name, const QStringList &args);
-    void adjustDashboard(bool expand);
     void showOwnerButtons(bool owner);
     void showJudgeResult(const QString &who, const QString &result);
     void showPlayerCards();

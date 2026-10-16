@@ -21,6 +21,11 @@
 #include <QScopeGuard>
 #include "generaloverview.h"
 #include "general.h"
+#include "roomscene.h"
+#include "dashboard.h"
+#include "photo.h"
+#include <QGraphicsView>
+#include <QTemporaryFile>
 
 class HoverCard : public CardItem {
 public:
@@ -98,6 +103,39 @@ private slots:
             QVERIFY(QMetaObject::invokeMethod(&window,"gotoStartScene",Qt::DirectConnection));
             QVERIFY2(server.isNull(),"Returning to menu must destroy the local server after stopping rooms");
             QVERIFY(probe.listen(QHostAddress::LocalHost,port)); probe.close();
+        }
+    }
+    void repeatedRoomKeepsExpandedLayout() {
+        Config.setValue("CircularView", true);
+        Config.setValue("UI/ExpandDashboard", true);
+        ServerInfo.GameMode="10pz";
+        QTemporaryFile replay("/private/tmp/qs-layout-XXXXXX.txt");
+        QVERIFY(replay.open());
+        Client client(nullptr,replay.fileName());
+        const auto cleanup=qScopeGuard([] { Self=nullptr; ClientInstance=nullptr; });
+        MainWindow window;
+        window.resize(1600,1000);
+        window.show();
+        QCoreApplication::processEvents();
+        QList<QRectF> firstPhotos;
+        QRectF firstDashboard;
+        for(int entry=0;entry<3;++entry) {
+            QVERIFY(QMetaObject::invokeMethod(&window,"enterRoom",Qt::DirectConnection));
+            QCoreApplication::processEvents();
+            auto view=window.findChild<QGraphicsView *>(); QVERIFY(view);
+            QList<QRectF> photos;
+            QRectF dashboard;
+            for(auto item:view->scene()->items()) {
+                if(dynamic_cast<Photo *>(item)) photos << item->sceneBoundingRect();
+                if(dynamic_cast<Dashboard *>(item)) dashboard=item->sceneBoundingRect();
+            }
+            QCOMPARE(photos.size(),9);
+            if(entry==0) { firstPhotos=photos; firstDashboard=dashboard; }
+            QCOMPARE(dashboard,firstDashboard);
+            QCOMPARE(photos,firstPhotos);
+            for(int i=0;i<photos.size();++i)
+                for(int j=i+1;j<photos.size();++j)
+                    QVERIFY2(!photos[i].intersects(photos[j]),"Opponent panels overlap");
         }
     }
     void hoveredCardAboveNeighbours() {

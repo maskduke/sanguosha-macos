@@ -1,0 +1,15 @@
+********* Start testing of FeedbackTest *********
+Config: Using QtTest library 6.11.1, Qt 6.11.1 (arm64-little_endian-lp64 shared (dynamic) release build; by Apple LLVM 21.0.0 (clang-2100.0.123.102)), macos 26.6.2
+PASS   : FeedbackTest::initTestCase()
+QWARN  : FeedbackTest::repeatedRoomKeepsExpandedLayout() qt.qpa.fonts: Populating font family aliases took 112 ms. Replace uses of missing font family "Sans Serif" with one that exists to avoid this cost. 
+QWARN  : FeedbackTest::repeatedRoomKeepsExpandedLayout() This plugin does not support propagateSizeHints()
+QWARN  : FeedbackTest::repeatedRoomKeepsExpandedLayout() This plugin does not support propagateSizeHints()
+QWARN  : FeedbackTest::repeatedRoomKeepsExpandedLayout() This plugin does not support propagateSizeHints()
+QWARN  : FeedbackTest::repeatedRoomKeepsExpandedLayout() This plugin does not support propagateSizeHints()
+FAIL!  : FeedbackTest::repeatedRoomKeepsExpandedLayout() Compared values are not the same
+   Actual   (dashboard)     : QRectF(-518.5,307.5 1037x170) (bottomright 518.5,477.5)
+   Expected (firstDashboard): QRectF(-795,307.5 1590x170) (bottomright 795,477.5)
+   Loc: [/Users/haoranliu/Projects/sanguosha/tests/feedback/test_feedback.cpp(134)]
+PASS   : FeedbackTest::cleanupTestCase()
+Totals: 2 passed, 1 failed, 0 skipped, 0 blacklisted, 455ms
+********* Finished testing of FeedbackTest *********

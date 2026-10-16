@@ -282,6 +282,9 @@ void MainWindow::enterRoom(){
 
     bool expand = Config.value("UI/ExpandDashboard", true).toBool();
     ui->actionExpand_dashboard->setChecked(expand);
+    // An unchanged QAction does not emit toggled on subsequent room entries.
+    // Each new scene still needs its own dashboard width initialized.
+    room_scene->adjustDashboard(expand);
 
     if(ServerInfo.FreeChoose){
         ui->menuCheat->setEnabled(true);
@@ -306,8 +309,8 @@ void MainWindow::enterRoom(){
     connect(room_scene, SIGNAL(restart()), this, SLOT(startConnection()));
     connect(room_scene, SIGNAL(return_to_start()), this, SLOT(gotoStartScene()));
 
-    room_scene->adjustItems();
     gotoScene(room_scene);
+    room_scene->adjustItems(view->transform());
 }
 
 bool MainWindow::stopLocalServer(){
