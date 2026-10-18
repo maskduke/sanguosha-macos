@@ -2480,7 +2480,7 @@ void Room::useCard(const CardUseStruct &card_use, bool add_history){
             key = card->metaObject()->className();
 
         bool slash_record =
-            key.contains("Slash") &&
+            card->inherits("Slash") &&
             card_use.from->getSlashCount() > 0 &&
             card_use.from->hasWeapon("crossbow");
 

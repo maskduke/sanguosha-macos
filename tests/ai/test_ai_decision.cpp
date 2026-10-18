@@ -65,6 +65,41 @@ class AIDecisionTest : public QObject {
  Q_OBJECT
 private slots:
  void initTestCase() { QVERIFY(QDir::setCurrent(QS_ASSET_ROOT)); Sanguosha=new Engine;Config.init(); }
+ void lianliRefusalWithCrossbow_data() {
+  QTest::addColumn<bool>("crossbow");QTest::addColumn<bool>("priorSlash");
+  for(bool weapon:{false,true})for(bool used:{false,true})
+   QTest::newRow(qPrintable(QString("crossbow-%1-prior-slash-%2").arg(weapon).arg(used)))<<weapon<<used;
+ }
+ void lianliRefusalWithCrossbow() {
+  QFETCH(bool,crossbow);QFETCH(bool,priorSlash);
+  Config.EnableAI=true;Config.AIDelay=0;Config.Enable2ndGeneral=false;
+  Room room(nullptr,"04p");room.thread=new RoomThread(&room);
+  for(int i=0;i<4;++i){auto p=room.addSocket(nullptr);p->setObjectName(QString("p%1").arg(i));p->setGeneralName(i==1?"xiahoujuan":"caocao");p->setRole(i<2? (i==0?"lord":"loyalist"):"rebel");p->setState("robot");p->setMaxHp(4);p->setHp(4);room.revivePlayer(p);}
+  auto requester=room.getPlayers()[0];auto provider=room.getPlayers()[1];auto enemy=room.getPlayers()[3];
+  room.current=requester;requester->setPhase(Player::Play);requester->setMark("@tied",1);provider->setMark("@tied",1);
+  requester->acquireSkill("lianli-slash");
+  if(crossbow)for(int i=0;i<Sanguosha->getCardCount();++i){auto c=Sanguosha->getCard(i);if(c->objectName()=="crossbow"){requester->addCard(c,Player::Equip);room.setCardMapping(i,requester,Player::Equip);break;}}
+  if(priorSlash)requester->addHistory("Slash");
+  for(auto p:room.getPlayers())p->setAI(room.cloneAI(p));
+  GameRule rule(nullptr);room.thread->constructTriggerTable(&rule);
+  const Card *skill=Card::Parse("@LianliSlashCard=.");QVERIFY(skill);
+  CardUseStruct use;use.card=skill;use.from=requester;use.to<<enemy;
+  // The empty provider takes the same refusal path as a cancelled human reply.
+  room.useCard(use);
+  QVERIFY2(requester->hasUsed("LianliSlashCard"),"Crossbow must not suppress the failed skill request history");
+  QCOMPARE(enemy->getHp(),4);
+  CardUseStruct next;next.from=requester;requester->getAI()->activate(next);
+  QVERIFY2(!next.card || !next.card->inherits("LianliSlashCard"),"AI must not immediately repeat the refused request");
+  if(crossbow) {
+   QVERIFY(Slash::IsAvailable(requester));
+   Slash ordinary(Card::NoSuit,0);CardUseStruct attack;attack.card=&ordinary;attack.from=requester;attack.to<<enemy;
+   room.useCard(attack);const int count=requester->getSlashCount();
+   room.useCard(attack);
+   QCOMPARE(requester->getSlashCount(),count);
+   QCOMPARE(enemy->getHp(),2);
+   QVERIFY(Slash::IsAvailable(requester));
+  }
+ }
  void zaoyaoThreshold_data() {
   QTest::addColumn<int>("count");QTest::addColumn<int>("order");QTest::addColumn<QString>("mode");
   for(const QString &mode:QStringList{"04p","10pz"})for(int count:{13,14,16})for(int order:{0,1,2})QTest::newRow(qPrintable(QString("%1-%2-order-%3").arg(mode).arg(count).arg(order)))<<count<<order<<mode;

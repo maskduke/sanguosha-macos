@@ -1,0 +1,15 @@
+********* Start testing of AIDecisionTest *********
+Config: Using QtTest library 6.11.1, Qt 6.11.1 (arm64-little_endian-lp64 shared (dynamic) release build; by Apple LLVM 21.0.0 (clang-2100.0.123.102)), macos 26.6.2
+PASS   : AIDecisionTest::initTestCase()
+QWARN  : AIDecisionTest::lianliRefusalWithCrossbow(crossbow-0-prior-slash-0) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+PASS   : AIDecisionTest::lianliRefusalWithCrossbow(crossbow-0-prior-slash-0)
+QWARN  : AIDecisionTest::lianliRefusalWithCrossbow(crossbow-0-prior-slash-1) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+PASS   : AIDecisionTest::lianliRefusalWithCrossbow(crossbow-0-prior-slash-1)
+QWARN  : AIDecisionTest::lianliRefusalWithCrossbow(crossbow-1-prior-slash-0) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+PASS   : AIDecisionTest::lianliRefusalWithCrossbow(crossbow-1-prior-slash-0)
+QWARN  : AIDecisionTest::lianliRefusalWithCrossbow(crossbow-1-prior-slash-1) QSanguosha AI 20120715 (V0.85 Stable), Powered by Lua 5.1
+FAIL!  : AIDecisionTest::lianliRefusalWithCrossbow(crossbow-1-prior-slash-1) 'requester->hasUsed("LianliSlashCard")' returned FALSE. (Crossbow must not suppress the failed skill request history)
+   Loc: [/Users/haoranliu/Projects/sanguosha/tests/ai/test_ai_decision.cpp(89)]
+PASS   : AIDecisionTest::cleanupTestCase()
+Totals: 5 passed, 1 failed, 0 skipped, 0 blacklisted, 171ms
+********* Finished testing of AIDecisionTest *********
